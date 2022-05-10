@@ -311,8 +311,8 @@ plate.</p>
 <h2>Method 1<a class="headerlink" href="#method-1" title="Permalink to this headline">¶</a></h2>
 <p>In this method the origin of <span class="math notranslate nohighlight">\(x\)</span> is at the wall and the numerical integration is done until the middle point between plates. All the variables are normalized with capillary length
 <span class="math notranslate nohighlight">\( l_s = \frac{\rho g}{\gamma} \)</span>. Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4b689d80-6a1e-437a-8b91-970846bd7021">
-<span class="eqno">(9)<a class="headerlink" href="#equation-4b689d80-6a1e-437a-8b91-970846bd7021" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-809e7472-dd7f-4f82-8b25-960298b92673">
+<span class="eqno">(9)<a class="headerlink" href="#equation-809e7472-dd7f-4f82-8b25-960298b92673" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 \xi &amp;=&amp; \frac{x}{l_s} \\
 \eta &amp;=&amp; \frac{z}{l_s} \\
 \beta &amp;=&amp; \frac{H}{l_s} \\
@@ -447,7 +447,7 @@ plate.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;lambdifygenerated-2&gt;:2: RuntimeWarning: invalid value encountered in sqrt
-  return (-sqrt(-1.0 + 1.0/(0.5*_Dummy_2007**2 + _Dummy_2007*beta - 1)**2))
+  return (-sqrt(-1.0 + 1.0/(0.5*_Dummy_2006**2 + _Dummy_2006*beta - 1)**2))
 </pre></div>
 </div>
 </div>
@@ -491,7 +491,7 @@ estimated value for lambda: 173
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fbdf9640670&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f91ec7ca640&gt;
 </pre></div>
 </div>
 <img alt="../_images/MeniscusBetweenPlates_28_1.png" src="../_images/MeniscusBetweenPlates_28_1.png" />
@@ -501,8 +501,8 @@ estimated value for lambda: 173
 <div class="section" id="method-2">
 <h2>Method 2<a class="headerlink" href="#method-2" title="Permalink to this headline">¶</a></h2>
 <p>In this method, we write the second order ODE as a system of two first order ODE’s:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-25b26480-4cc9-4a3a-81a4-164fd017271d">
-<span class="eqno">(10)<a class="headerlink" href="#equation-25b26480-4cc9-4a3a-81a4-164fd017271d" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-6d7db314-b384-4c36-b7e5-1ec55fc4ccab">
+<span class="eqno">(10)<a class="headerlink" href="#equation-6d7db314-b384-4c36-b7e5-1ec55fc4ccab" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 \zeta'(\zeta,\eta,\xi) &amp;=&amp; (\eta(\xi) + \beta)\left(1+\zeta(\xi)^2\right)^\frac{3}{2} \\
 \eta'(\zeta,\eta,\xi) &amp;=&amp; \zeta(\xi)
 \end{eqnarray}\]</div>

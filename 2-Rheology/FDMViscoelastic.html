@@ -97,21 +97,43 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../0-Intro/IntroPython.html">
    Introduction to scientific computation with Python
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../1-microFlows/Microflows.html">
-   Microflows. A very brief introduction with lubrication and capillarity
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0-Intro/Assignment0.html">
+     Assignment 0: Conical tank emptying time
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1-microFlows/Microflows.html">
+   Microflows. A very brief introduction with lubrication and capillarity
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-microFlows/MeniscusBetweenPlates.html">
+     Meniscus between plates. Solution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-microFlows/Assignment1.html">
+     Assignment 1. Computation of journal bearing
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -250,8 +272,8 @@ const thebe_selector_output = ".output, .cell_output"
 \[ \tau + \lambda \frac{\partial \tau}{\partial t} = \eta \frac{\partial u}{\partial r} \]</div>
 <p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the relaxation time.</p>
 <p>We can write this equations with dimensionless variables, by defining</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d8097614-da99-460e-b96f-6584c0554410">
-<span class="eqno">()<a class="headerlink" href="#equation-d8097614-da99-460e-b96f-6584c0554410" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-9218becd-ad09-422a-8fa4-3adf5dc730ed">
+<span class="eqno">()<a class="headerlink" href="#equation-9218becd-ad09-422a-8fa4-3adf5dc730ed" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 r^* &amp;=&amp; \frac{r}{R} \\
 t^* &amp;=&amp; \frac{\eta}{\rho R^2}t \\
 u^* &amp;=&amp; \frac{4\eta}{R^2P}u \\
@@ -259,8 +281,8 @@ u^* &amp;=&amp; \frac{4\eta}{R^2P}u \\
 \xi &amp;=&amp; \frac{\eta}{\rho R^2}\lambda
 \end{eqnarray}\]</div>
 <p>With these variables, the dimensionless equations are (we drop the “*” for the sake of simplicity):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d1f46562-280b-43ee-83eb-637f98617b71">
-<span class="eqno">()<a class="headerlink" href="#equation-d1f46562-280b-43ee-83eb-637f98617b71" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-447b606c-862b-4b39-a906-0f644bfbfb54">
+<span class="eqno">()<a class="headerlink" href="#equation-447b606c-862b-4b39-a906-0f644bfbfb54" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 \frac{\partial u}{\partial t} &amp;=&amp; 4 + \frac{\partial \tau}{\partial r} + \frac{\tau}{r} \\
 \tau + \xi\frac{\partial \tau}{\partial t} &amp;=&amp; \frac{\partial u}{\partial r}
 \end{eqnarray}\]</div>
@@ -275,14 +297,14 @@ u^* &amp;=&amp; \frac{4\eta}{R^2P}u \\
 <p>This is a system of PDE that cannot be solved analytically (at least, not easily).</p>
 <p>The more easier method is to use the <a class="reference external" href="https://en.wikipedia.org/wiki/Finite_difference_method">Finite Difference Method</a> (FD) Method</p>
 <p>Translating the previous equations to FD language, with explicit scheme, with central difference in space and forward in time, we get</p>
-<div class="amsmath math notranslate nohighlight" id="equation-653fab4b-7f09-452d-a6a3-f6e1db43c3e0">
-<span class="eqno">()<a class="headerlink" href="#equation-653fab4b-7f09-452d-a6a3-f6e1db43c3e0" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-7bec7109-e203-4698-b751-d933f685f66c">
+<span class="eqno">()<a class="headerlink" href="#equation-7bec7109-e203-4698-b751-d933f685f66c" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 \frac{u_i^{n+1} - u_i^n}{\Delta t} &amp;=&amp; 4 + \frac{\tau_{i+1}^n - \tau_{i-1}^n}{2\Delta r} + \frac{\tau_i^n}{r_i} \\
 \tau_i^n + \xi\frac{\tau_i^{n+1} - \tau_i^n}{\Delta t} &amp;=&amp; \frac{u_{i+1}^n-u_{i-1}^n}{2\Delta r}
 \end{eqnarray}\]</div>
 <p>and, in terms of previous time step,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-87e36129-4274-4d12-b0c9-7d3d4c222564">
-<span class="eqno">()<a class="headerlink" href="#equation-87e36129-4274-4d12-b0c9-7d3d4c222564" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-2d21008d-4d4d-4f3e-bf15-223eb3d6375a">
+<span class="eqno">()<a class="headerlink" href="#equation-2d21008d-4d4d-4f3e-bf15-223eb3d6375a" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 u_i^{n+1} &amp;=&amp; u_i^n + \Delta t\left( 4 + \frac{\tau_{i+1}^n - \tau_{i-1}^n}{2\Delta r} + \frac{\tau_i^n}{r_i} \right) \\
 \tau_i^{n+1} &amp;=&amp; \tau_i^n + \frac{\Delta t}{\xi}\left(\frac{u_{i+1}^n-u_{i-1}^n}{2\Delta r} - \tau_i^n  \right) 
 \end{eqnarray}\]</div>
