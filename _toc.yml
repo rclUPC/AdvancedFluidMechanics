@@ -1,0 +1,15 @@
+format: jb-book
+root: README
+chapters:
+- file: 0-Intro/IntroPython
+  sections:
+  - file: 0-Intro/Assignment0
+- file: 1-microFlows/Microflows
+  sections:
+  - file: 1-microFlows/MeniscusBetweenPlates
+  - file: 1-microFlows/Assignment1
+- file: 2-Rheology/rheology
+- file: 3-Turbulence/turbulence
+- file: 4-BoundaryLayer/BoundaryLayer
+- file: 5-CompressibleFlow/CompressibleFlow
+
