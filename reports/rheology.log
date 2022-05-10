@@ -1,0 +1,45 @@
+Traceback (most recent call last):
+  File "/home/robert/anaconda3/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/home/robert/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 1087, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/robert/anaconda3/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/robert/anaconda3/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/home/robert/anaconda3/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/home/robert/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 540, in async_execute
+    await self.async_execute_cell(
+  File "/home/robert/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 832, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/home/robert/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 740, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+sp.classify_ode(eq)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Input [0;32mIn [24][0m, in [0;36m<cell line: 1>[0;34m()[0m
+[0;32m----> 1[0m [43msp[49m[38;5;241;43m.[39;49m[43mclassify_ode[49m[43m([49m[43meq[49m[43m)[49m
+
+File [0;32m~/anaconda3/lib/python3.8/site-packages/sympy/solvers/ode/ode.py:975[0m, in [0;36mclassify_ode[0;34m(eq, func, dict, ics, prep, xi, eta, n, **kwargs)[0m
+[1;32m    972[0m eq_orig [38;5;241m=[39m eq
+[1;32m    974[0m [38;5;28;01mif[39;00m prep [38;5;129;01mor[39;00m func [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[0;32m--> 975[0m     eq, func_ [38;5;241m=[39m [43m_preprocess[49m[43m([49m[43meq[49m[43m,[49m[43m [49m[43mfunc[49m[43m)[49m
+[1;32m    976[0m     [38;5;28;01mif[39;00m func [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[1;32m    977[0m         func [38;5;241m=[39m func_
+
+File [0;32m~/anaconda3/lib/python3.8/site-packages/sympy/solvers/deutils.py:84[0m, in [0;36m_preprocess[0;34m(expr, func, hint)[0m
+[1;32m     82[0m     funcs [38;5;241m=[39m [38;5;28mset[39m()[38;5;241m.[39munion([38;5;241m*[39m[d[38;5;241m.[39matoms(AppliedUndef) [38;5;28;01mfor[39;00m d [38;5;129;01min[39;00m derivs])
+[1;32m     83[0m     [38;5;28;01mif[39;00m [38;5;28mlen[39m(funcs) [38;5;241m!=[39m [38;5;241m1[39m:
+[0;32m---> 84[0m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124m'[39m[38;5;124mThe function cannot be [39m[38;5;124m'[39m
+[1;32m     85[0m             [38;5;124m'[39m[38;5;124mautomatically detected for [39m[38;5;132;01m%s[39;00m[38;5;124m.[39m[38;5;124m'[39m [38;5;241m%[39m expr)
+[1;32m     86[0m     func [38;5;241m=[39m funcs[38;5;241m.[39mpop()
+[1;32m     87[0m fvars [38;5;241m=[39m [38;5;28mset[39m(func[38;5;241m.[39margs)
+
+[0;31mValueError[0m: The function cannot be automatically detected for -eta*Derivative(gamma(t), t) + tau(t) + eta*Derivative(tau(t), t)/G.
+ValueError: The function cannot be automatically detected for -eta*Derivative(gamma(t), t) + tau(t) + eta*Derivative(tau(t), t)/G.
+

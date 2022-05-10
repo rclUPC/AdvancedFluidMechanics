@@ -1,0 +1,1367 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compressible Flow. An introduction &#8212; UPC-205237 Advanced Fluid Mechanics</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Boundary Layer. An introduction" href="../4-BoundaryLayer/BoundaryLayer.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">UPC-205237 Advanced Fluid Mechanics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Advanced Fluid Mechanics
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../0-Intro/IntroPython.html">
+   Introduction to scientific computation with Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0-Intro/Assignment0.html">
+     Assignment 0: Conical tank emptying time
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1-microFlows/Microflows.html">
+   Microflows. A very brief introduction with lubrication and capillarity
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-microFlows/MeniscusBetweenPlates.html">
+     Meniscus between plates. Solution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-microFlows/Assignment1.html">
+     Assignment 1. Computation of journal bearing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Rheology/rheology.html">
+   Rheology. A very brief Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3-Turbulence/turbulence.html">
+   Turbulent flows. Statistical description and characteristic scales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-BoundaryLayer/BoundaryLayer.html">
+   Boundary Layer. An introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Compressible Flow. An introduction
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/5-CompressibleFlow/CompressibleFlow.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/5-CompressibleFlow/CompressibleFlow.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acoustics-and-velocity-of-sound">
+   Acoustics and velocity of sound
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#isentropic-flow">
+   Isentropic flow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sonic-or-critical-values">
+     Sonic (or critical values)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#normal-shock-waves">
+   Normal shock waves
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#oblique-shock-wave-and-expansion-waves">
+   Oblique shock wave and expansion waves
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shock-polar">
+     Shock Polar
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prandtl-meyer-expansion-fan">
+   Prandtl-Meyer expansion fan
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Compressible Flow. An introduction</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acoustics-and-velocity-of-sound">
+   Acoustics and velocity of sound
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#isentropic-flow">
+   Isentropic flow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sonic-or-critical-values">
+     Sonic (or critical values)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#normal-shock-waves">
+   Normal shock waves
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#oblique-shock-wave-and-expansion-waves">
+   Oblique shock wave and expansion waves
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shock-polar">
+     Shock Polar
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prandtl-meyer-expansion-fan">
+   Prandtl-Meyer expansion fan
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="compressible-flow-an-introduction">
+<h1>Compressible Flow. An introduction<a class="headerlink" href="#compressible-flow-an-introduction" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="acoustics-and-velocity-of-sound">
+<h2>Acoustics and velocity of sound<a class="headerlink" href="#acoustics-and-velocity-of-sound" title="Permalink to this headline">¶</a></h2>
+<p>We are going to consider, for the moment, that our flow is 1-D and inviscid. Also gravity or other body forces are ignored. In this case, continuity and Euler equations are written as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0f57f0fd-a22c-421c-8660-64e7f61eb2e4">
+<span class="eqno">(55)<a class="headerlink" href="#equation-0f57f0fd-a22c-421c-8660-64e7f61eb2e4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\frac{\partial \rho}{\partial t} + \frac{\partial }{\partial x}\left(\rho u\right) &amp;=  0 \\
+\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} &amp;= -\frac{1}{\rho}\frac{\partial p}{\partial x}
+\end{align}\]</div>
+<p>Let’s now consider that a small perturbation affects to velocity, density and pressure, <span class="math notranslate nohighlight">\(u^\prime\)</span>, <span class="math notranslate nohighlight">\(\rho^\prime\)</span>, <span class="math notranslate nohighlight">\(p^\prime\)</span> (do not confuse with fluctuations in turbulent flow), over some equilibrium state <span class="math notranslate nohighlight">\(u_0 (\approx 0)\)</span>, <span class="math notranslate nohighlight">\(\rho_0\)</span>, <span class="math notranslate nohighlight">\(p_0\)</span> that can be assumed  uniform and steady. Then, the equations for the fluctuations evolution, are (neglecting high order terms in convection)</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f7cd03ad-5178-4a31-a411-4526e787ee59">
+<span class="eqno">(56)<a class="headerlink" href="#equation-f7cd03ad-5178-4a31-a411-4526e787ee59" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\frac{\partial \rho^\prime}{\partial t} + \rho_0\frac{\partial u^\prime}{\partial x} &amp;= 0 \tag{1}\\
+\frac{\partial u^\prime}{\partial t}  &amp;= -\frac{1}{\rho_0}\frac{\partial p^\prime}{\partial x}
+\end{align}\]</div>
+<p>By deriving (1) with respect time and replacing <span class="math notranslate nohighlight">\(\frac{\partial u^\prime}{\partial t}\)</span> by (2), we get</p>
+<div class="amsmath math notranslate nohighlight" id="equation-931e3783-e185-4caf-b81e-0934ac3b1880">
+<span class="eqno">(57)<a class="headerlink" href="#equation-931e3783-e185-4caf-b81e-0934ac3b1880" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{\partial^2 \rho^\prime}{\partial t^2} - \frac{\partial^2 p^\prime}{\partial x^2} = 0 \tag{3}
+\end{equation}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(d p = d p^\prime\)</span> and <span class="math notranslate nohighlight">\(d \rho = d \rho^\prime\)</span>, we can write <span class="math notranslate nohighlight">\(d p^\prime = \left(\frac{dp}{d\rho}\right)d\rho^\prime\)</span> and, hence</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9c92fcd0-2d4b-4d8e-9389-11294d59b766">
+<span class="eqno">(58)<a class="headerlink" href="#equation-9c92fcd0-2d4b-4d8e-9389-11294d59b766" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{\partial^2 \rho^\prime}{\partial t^2} - \left(\frac{dp}{d\rho}\right) \frac{\partial^2 \rho^\prime}{\partial x^2} = 0 \tag{4}
+\end{equation}\]</div>
+<p>This is the classical <a class="reference external" href="https://en.wikipedia.org/wiki/Wave_equation#Wave_equation_in_one_space_dimension">1-D wave equation</a> with a wave velocity</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5fbd7e82-0363-44b7-918b-9036b119b906">
+<span class="eqno">(59)<a class="headerlink" href="#equation-5fbd7e82-0363-44b7-918b-9036b119b906" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+c^2 = \frac{dp}{d\rho}
+\end{equation}\]</div>
+<p>Since this process is infinitesimal, adiabatic and <a class="reference external" href="https://en.wikipedia.org/wiki/Isentropic_process#Derivation_of_the_isentropic_relations">isentropic</a>, the relationship between pressure and density is <span class="math notranslate nohighlight">\(p=\text{ct}\rho^\gamma\)</span>, where <span class="math notranslate nohighlight">\(\gamma\)</span> (<span class="math notranslate nohighlight">\(=1.4\)</span> for air at <span class="math notranslate nohighlight">\(20\)</span> C deg) is the <a class="reference external" href="https://en.wikipedia.org/wiki/Heat_capacity_ratio">adiabatic coefficient</a>  and, therefore,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2659776b-40d5-4181-95d0-5b26e0845e5e">
+<span class="eqno">(60)<a class="headerlink" href="#equation-2659776b-40d5-4181-95d0-5b26e0845e5e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+c^2 = \frac{dp}{d\rho} = \gamma \frac{p}{\rho} = \gamma r T \tag{5}
+\end{equation}\]</div>
+<p>if the gas can be considered ideal. <span class="math notranslate nohighlight">\(r\)</span> is the gas constant for the specific gas, <span class="math notranslate nohighlight">\(r = \frac{R}{M}\)</span>, where <span class="math notranslate nohighlight">\(R=8.314 \,\frac{\text{J}}{\text{K mol}}\)</span> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Gas_constant">Universal Gas Constant</a> and <span class="math notranslate nohighlight">\(M\)</span> is the <a class="reference external" href="https://www.engineeringtoolbox.com/molecular-mass-air-d_679.html">molecular mass of air</a>, <span class="math notranslate nohighlight">\(M \approx 29\,\text{g/mol}\)</span>. Hence,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ba2fd0c4-a570-440e-ac69-2e09c23eb57f">
+<span class="eqno">(61)<a class="headerlink" href="#equation-ba2fd0c4-a570-440e-ac69-2e09c23eb57f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+r = 287 \,\frac{\text{J}}{\text{Kg K}}
+\end{equation}\]</div>
+<p>We can now write a simple function for the computation of the velocity of sound</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gasConstant</span><span class="p">(</span><span class="n">M</span><span class="o">=</span><span class="mf">0.0289647</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the gas constant for a gas with molecular mass M (in J/molK)</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="mf">8.314463</span> <span class="c1"># Universal Gas Constant</span>
+    <span class="k">return</span> <span class="n">R</span><span class="o">/</span><span class="n">M</span>
+
+<span class="k">def</span> <span class="nf">sound_velocity</span><span class="p">(</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span><span class="n">M</span><span class="o">=</span><span class="mf">0.0289647</span><span class="p">,</span><span class="n">T</span><span class="o">=</span><span class="mf">293.15</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the velocity of sound for a gas with adiabatic index gamma and molecular mass M,</span>
+<span class="sd">    at the temperature T (in K).</span>
+<span class="sd">    The default arguments are for air at T = 20 C deg = 293 K</span>
+<span class="sd">    </span>
+<span class="sd">    Usage:</span>
+<span class="sd">    </span>
+<span class="sd">    c = sound_velocity(gamma = 1.34, M = 0.045, T = 312)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">sqrt</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">gasConstant</span><span class="p">(</span><span class="n">M</span><span class="o">=</span><span class="n">M</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">gamma</span><span class="o">*</span><span class="n">r</span><span class="o">*</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span>  <span class="o">=</span> <span class="n">sound_velocity</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;At </span><span class="si">{}</span><span class="s1"> Cdeg: c = </span><span class="si">{:.5g}</span><span class="s1"> m/s&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="n">c</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>At 20 Cdeg: c = 343.23 m/s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">c</span>  <span class="o">=</span> <span class="n">sound_velocity</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="mf">273.15</span><span class="o">+</span><span class="n">T</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;At </span><span class="si">{}</span><span class="s1"> Cdeg: c = </span><span class="si">{:.5g}</span><span class="s1"> m/s&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">c</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>At 50 Cdeg: c = 360.37 m/s
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="Mach-corn"></a>
+When the sound source is moving, the sound wave changes the origin and also wave length changes in function of the movement direction. Acoustic Doppler effect is produced.</p>
+<img src=attachment:52adfdb9-d1cd-4cd3-9884-b7a084a51d48.png width=500>
+<p>The behaviour of this flow is different depending on the value of the dimensionless <a class="reference external" href="https://en.wikipedia.org/wiki/Mach_number">Mach number</a> (check in this page the flow regimes in function of the Mach value). Let’s define a function for the computation of Mach number</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MaNumber</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span><span class="n">M</span><span class="o">=</span><span class="mf">0.0289647</span><span class="p">,</span><span class="n">T</span><span class="o">=</span><span class="mf">293.15</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the Mach number for a velocity u for a gas with adiabatic index gamma and molecular mass M,</span>
+<span class="sd">    at the temperature T (in K).</span>
+<span class="sd">    The default arguments are for air at T = 20 C deg = 293 K</span>
+<span class="sd">    </span>
+<span class="sd">    Usage:</span>
+<span class="sd">    </span>
+<span class="sd">    Ma = MaNumber(u = 750, gamma = 1.34, M = 0.045, T = 312)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">u</span><span class="o">/</span><span class="n">sound_velocity</span><span class="p">(</span><span class="n">gamma</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ma</span> <span class="o">=</span> <span class="n">MaNumber</span><span class="p">(</span><span class="mi">609</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ma = </span><span class="si">{:.4g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Ma</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ma = 1.774
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="isentropic-flow">
+<h2>Isentropic flow<a class="headerlink" href="#isentropic-flow" title="Permalink to this headline">¶</a></h2>
+<p><span class="math notranslate nohighlight">\(\newcommand{\Ma}{\mathrm{Ma}}\)</span></p>
+<p>Many cases in Engineering can be considered steady and isentropic (friction can be neglected) and, hence, 1-D, with the flow behavior defined only by the area of the passage. Some examples are nozzles, exhaust gases in gas/steam turbines, diffusera in jet engines…</p>
+<p><img alt="image.png" src="5-CompressibleFlow/attachment:5be2c2d0-0d04-4c55-95bb-71b65d5f78ef.png" /></p>
+<p>In these cases, continuity equation can be simply given as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b5bd697f-45bc-4a14-9bb2-568f7b05d783">
+<span class="eqno">(62)<a class="headerlink" href="#equation-b5bd697f-45bc-4a14-9bb2-568f7b05d783" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\rho(x)A(x)u(x) = \dot{m} = \text{ct} \tag{6}
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(x\)</span> is the axis defined by the center of the channel/pipe.</p>
+<p>The <strong>total temperature</strong> (also known as <strong>stagnation temperature</strong>) is the sum of static and dinamic energies,a ccording to energy banlance, that, for an idela gas, is written as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9654ba7a-6a50-4977-ad42-04d36f4ead92">
+<span class="eqno">(63)<a class="headerlink" href="#equation-9654ba7a-6a50-4977-ad42-04d36f4ead92" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+T_0 = T + \frac{u^2}{2 c_p}
+\end{equation}\]</div>
+<p>That can be translated to dimensionless way</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f18ba28a-4285-4867-b90c-180afc4f5dcc">
+<span class="eqno">(64)<a class="headerlink" href="#equation-f18ba28a-4285-4867-b90c-180afc4f5dcc" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\boxed{\frac{T_0}{T} = 1 + \frac{\gamma-1}{2} \Ma^2} \tag{7}
+\end{equation}\]</div>
+<p>We can now define the function for the computation of total temperature - static temperature ratio.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">T0overT</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the ratio total temperature over static temperature.</span>
+<span class="sd">    </span>
+<span class="sd">    typical usage:</span>
+<span class="sd">    </span>
+<span class="sd">    T0 = T*T0overT(Ma=3.5)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">Ma</span><span class="o">**</span><span class="mi">2</span>    
+</pre></div>
+</div>
+</div>
+</div>
+<p>For example, for a fluid at temperature <span class="math notranslate nohighlight">\(T = 350\,K\)</span> and Ma <span class="math notranslate nohighlight">\(=3.5\)</span> the total temperature is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T0</span> <span class="o">=</span> <span class="mi">350</span><span class="o">*</span><span class="n">T0overT</span><span class="p">(</span><span class="mf">3.5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;T_0 = </span><span class="si">{:.4g}</span><span class="s1"> K&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">T0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T_0 = 1207 K
+</pre></div>
+</div>
+</div>
+</div>
+<p>In a similar way, total pressure and density are defined as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e7e35794-5bab-4d40-9303-5372bf084a07">
+<span class="eqno">(65)<a class="headerlink" href="#equation-e7e35794-5bab-4d40-9303-5372bf084a07" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+\frac{p_0}{p} &amp; = &amp; \left( \frac{T_0}{T} \right)^\frac{\gamma}{\gamma-1} = \left( 1 + \frac{\gamma - 1}{2}\Ma^2 \right)^\frac{\gamma}{\gamma-1} \tag{8}\\
+\frac{\rho_0}{\rho} &amp; = &amp; \left( \frac{T_0}{T} \right)^\frac{1}{\gamma-1} = \left( 1 + \frac{\gamma - 1}{2}\Ma^2 \right)^\frac{1}{\gamma-1} \tag{9}
+\end{eqnarray}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p0overp</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the ratio total pressure over static pressure.</span>
+<span class="sd">    </span>
+<span class="sd">    typical usage:</span>
+<span class="sd">    </span>
+<span class="sd">    p0 = p*p0overp(Ma=3.5)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">T0overT</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="n">gamma</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">gamma</span><span class="o">/</span><span class="p">(</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
+
+<span class="k">def</span> <span class="nf">rho0overrho</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the ratio total density over static density.</span>
+<span class="sd">    </span>
+<span class="sd">    typical usage:</span>
+<span class="sd">    </span>
+<span class="sd">    p0 = p*p0overp(Ma=3.5)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">T0overT</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="n">gamma</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong>Exercise:</strong> Define the functions <code class="docutils literal notranslate"><span class="pre">MaFromT0overT(T0_T,gamma)</span></code>, <code class="docutils literal notranslate"><span class="pre">MaFromP0overP(p0_p,gamma)</span></code> and <code class="docutils literal notranslate"><span class="pre">MaFromRho0overRho(rho0_rho,gamma)</span></code> that return the values of <span class="math notranslate nohighlight">\(\Ma\)</span> from the thermodynamics conditions of the flow.</p>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>T0overT<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ma</span> <span class="o">=</span> <span class="mf">2.1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;for Ma = </span><span class="si">{}</span><span class="s1">:&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Ma</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t\t</span><span class="s1"> p_0/p = </span><span class="si">{:.4g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p0overp</span><span class="p">(</span><span class="n">Ma</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t\t</span><span class="s1"> rho_0/rho = </span><span class="si">{:.4g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rho0overrho</span><span class="p">(</span><span class="n">Ma</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for Ma = 2.1:
+		 p_0/p = 9.145
+		 rho_0/rho = 4.859
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="sonic-or-critical-values">
+<h3>Sonic (or critical values)<a class="headerlink" href="#sonic-or-critical-values" title="Permalink to this headline">¶</a></h3>
+<p>Are important also the values for temperature (and sound velocity), pressure and density, when Ma = 1, known as <strong>sonic values</strong> (also can be named critical values)</p>
+<p>These values are function uniquely of <span class="math notranslate nohighlight">\(\gamma\)</span> and the total values</p>
+<div class="amsmath math notranslate nohighlight" id="equation-45cd4601-839b-4a98-849f-68444b74be67">
+<span class="eqno">(66)<a class="headerlink" href="#equation-45cd4601-839b-4a98-849f-68444b74be67" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+T^{*}=T_{0}\frac{2}{\gamma+1} \\ 
+p^{*}=p_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{\gamma}{\gamma-1}} \\
+\rho^{*}=\rho_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{1}{\gamma-1}}\\ 
+c^{*}(=u^{*})=c_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{1}{2}}
+\end{equation}\]</div>
+<p>Following the previous examples, for a fluid at temperature <span class="math notranslate nohighlight">\(T = 350\,K\)</span>, <span class="math notranslate nohighlight">\(p = 80\,\text{kPa}\)</span> and Ma <span class="math notranslate nohighlight">\(=3.5\)</span> the sonic magnitudes are</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mi">350</span>
+<span class="n">Ma</span> <span class="o">=</span> <span class="mf">3.5</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mf">8e4</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">gasConstant</span><span class="p">()</span>
+<span class="n">gamma</span> <span class="o">=</span> <span class="mf">1.4</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="n">p</span><span class="o">/</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">T</span><span class="p">)</span>
+<span class="n">Tstar</span> <span class="o">=</span> <span class="n">T</span><span class="o">*</span><span class="n">T0overT</span><span class="p">(</span><span class="n">Ma</span><span class="o">=</span><span class="n">Ma</span><span class="p">)</span><span class="o">/</span><span class="n">T0overT</span><span class="p">(</span><span class="n">Ma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">pstar</span> <span class="o">=</span> <span class="n">p</span><span class="o">*</span><span class="n">p0overp</span><span class="p">(</span><span class="n">Ma</span><span class="o">=</span><span class="n">Ma</span><span class="p">)</span><span class="o">/</span><span class="n">p0overp</span><span class="p">(</span><span class="n">Ma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">rhostar</span> <span class="o">=</span> <span class="n">rho</span><span class="o">*</span><span class="n">rho0overrho</span><span class="p">(</span><span class="n">Ma</span><span class="o">=</span><span class="n">Ma</span><span class="p">)</span><span class="o">/</span><span class="n">rho0overrho</span><span class="p">(</span><span class="n">Ma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">cstar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">gamma</span><span class="o">*</span><span class="n">Tstar</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;T* = </span><span class="si">{:.5g}</span><span class="s1"> K&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Tstar</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;p* = </span><span class="si">{:.5g}</span><span class="s1"> Pa&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pstar</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;rho* = </span><span class="si">{:.5g}</span><span class="s1"> Kg/m^3&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rhostar</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c* = </span><span class="si">{:.5g}</span><span class="s1"> m/s&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cstar</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T* = 1006.2 K
+p* = 3.2235e+06 Pa
+rho* = 11.16 Kg/m^3
+c* = 635.92 m/s
+</pre></div>
+</div>
+</div>
+</div>
+<p>The definition of a critical speed of sound (from the critical temperature) allow to define also a characteristic, or critical, Mach number</p>
+<div class="amsmath math notranslate nohighlight" id="equation-01d551db-a26c-46ee-90f7-642f67e49b8f">
+<span class="eqno">(67)<a class="headerlink" href="#equation-01d551db-a26c-46ee-90f7-642f67e49b8f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\Ma^* = \frac{u}{c^*}
+\end{equation}\]</div>
+<p>Note that, despite being defined for sonic conditions, <span class="math notranslate nohighlight">\(\Ma^*\)</span> does not have to be 1. The relationship between <span class="math notranslate nohighlight">\(\Ma\)</span> and <span class="math notranslate nohighlight">\(\Ma^*\)</span> is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b4ba11b7-cd8b-43ef-8c98-fe2ebffbd22a">
+<span class="eqno">(68)<a class="headerlink" href="#equation-b4ba11b7-cd8b-43ef-8c98-fe2ebffbd22a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+{\Ma^*}^2 = \frac{\gamma +1}{\frac{2}{\Ma^2}+\gamma-1} \tag{10}
+\end{equation}\]</div>
+<hr class="docutils" />
+<p><strong>Exercise:</strong> Deduce this expression from energy balance between any point with a Mach value <span class="math notranslate nohighlight">\(\Ma\)</span> and the point with sonic conditions.</p>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MaStar</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Returns Ma* as function of Ma &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">gamma</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">Ma</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\({\Ma^*}^2\)</span> tends to <span class="math notranslate nohighlight">\(\frac{\gamma+1}{\gamma -1} (=6 \,\text{for air)}\)</span> when <span class="math notranslate nohighlight">\(\Ma \rightarrow \infty\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
+<span class="n">Ma_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$Ma$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$</span><span class="si">{Ma}</span><span class="s1">^*$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">,</span><span class="n">MaStar</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "d51d2f5935744bd285b56d0a1c787f75"}
+</script></div>
+</div>
+<p>And, also,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Ma^* = 1\)</span> when  <span class="math notranslate nohighlight">\(\Ma = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Ma^* &gt; 1\)</span> when  <span class="math notranslate nohighlight">\(\Ma &gt; 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Ma^* &lt; 1\)</span> when  <span class="math notranslate nohighlight">\(\Ma &lt; 1\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
+<span class="n">Ma_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$Ma$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$</span><span class="si">{Ma}</span><span class="s1">^*$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">,</span><span class="n">MaStar</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "f85201bde0da43aea86bdd28c0e40a74"}
+</script></div>
+</div>
+<p>Ratios between critical and total magnitudes are only function of gamma. For air at standard conditions, they are</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Tstar_T0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">T0overT</span><span class="p">(</span><span class="n">Ma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">pstar_p0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">p0overp</span><span class="p">(</span><span class="n">Ma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">rhostar_rho0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">rho0overrho</span><span class="p">(</span><span class="n">Ma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$$\frac{{T^*}}{{T_0}} = </span><span class="si">{:.5g}</span><span class="s1"> $$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Tstar_T0</span><span class="p">)</span>
+                 <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;$$\frac{{p^*}}{{p_0}} = </span><span class="si">{:.5g}</span><span class="s1"> $$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pstar_p0</span><span class="p">)</span>
+                 <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;$$\frac{{\rho^*}}{{\rho_0}} = </span><span class="si">{:.5g}</span><span class="s1"> $$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rhostar_rho0</span><span class="p">)</span>
+                <span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [16],</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">pstar_p0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">p0overp</span><span class="p">(</span><span class="n">Ma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">rhostar_rho0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">rho0overrho</span><span class="p">(</span><span class="n">Ma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$$\frac{{T^*}}{{T_0}} = </span><span class="si">{:.5g}</span><span class="s1"> $$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Tstar_T0</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                  <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;$$\frac{{p^*}}{{p_0}} = </span><span class="si">{:.5g}</span><span class="s1"> $$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pstar_p0</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>                  <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;$$\frac{{\rho^*}}{{\rho_0}} = </span><span class="si">{:.5g}</span><span class="s1"> $$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rhostar_rho0</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>                 <span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;Markdown&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Going back to Equation (6) for continuity, combining with steady Euler equation</p>
+<div class="amsmath math notranslate nohighlight" id="equation-53fdac48-b3a1-4ac9-8c22-0e454855588e">
+<span class="eqno">(69)<a class="headerlink" href="#equation-53fdac48-b3a1-4ac9-8c22-0e454855588e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+u\frac{\text d u}{\text d x} + \frac{1}{\rho}\frac{\text d p}{\text d x} = 0
+\end{equation}\]</div>
+<p>and fluid compressibility <span class="math notranslate nohighlight">\(\text d p = c^2 \text d \rho\)</span>, leads to</p>
+<div class="amsmath math notranslate nohighlight" id="equation-59100517-67a7-4c03-94df-95dc2dc42c3f">
+<span class="eqno">(70)<a class="headerlink" href="#equation-59100517-67a7-4c03-94df-95dc2dc42c3f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{\text d u}{u}=-\frac{\text d p}{\rho u^{2}}=\frac{1}{\Ma^{2}-1}\frac{\text d A}{A} \tag{11}
+\end{equation}\]</div>
+<p>and that shows that the behavior of the flow in a nozzle depends on the value of <span class="math notranslate nohighlight">\(\Ma\)</span></p>
+<img src=attachment:302ffd5d-f6a9-490e-beec-820192adf34d.png width=600>
+<p>Under critical or sonic conditions, the mass flow remains the same
+$<span class="math notranslate nohighlight">\(
+\rho^{*}u^{*}A^{*}=\rho uA=\dot{m}\,\Rightarrow\frac{A}{A^{*}}=\frac{\rho^{*}u^{*}}{\rho u},
+\)</span>$</p>
+<p>and this leads to an expression for the relationship between the area of a duct and the critical area as a function of <span class="math notranslate nohighlight">\(\Ma\)</span>
+$<span class="math notranslate nohighlight">\(
+\boxed{\frac{A}{A^{*}}=\frac{1}{\Ma}\left[\frac{2+(\gamma-1)\Ma^{2}}{\gamma+1}\right]^{\frac{1}{2}\frac{(\gamma+1)}{(\gamma-1)}}} \tag{12}
+\)</span>$</p>
+<p>It is useful to have a function for this operation (and the reverse)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">A_Astar</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the value of A/A* for a flow with Mach number Ma</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="n">Ma</span><span class="o">*</span><span class="p">((</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">Ma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">gamma</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">gamma</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">MaFromA_Astar</span><span class="p">(</span><span class="n">A_Astar_value</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns both subsonic and supersonic values of Ma for a value of A/A*</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">A_Astar_value</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The argument A/A* has to be greater than 1&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">elif</span> <span class="n">A_Astar_value</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">1.0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">brentq</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">brentq</span><span class="p">(</span><span class="k">lambda</span> <span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="p">:</span> <span class="n">A_Astar</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="p">)</span><span class="o">-</span><span class="n">A_Astar_value</span><span class="p">,</span><span class="mf">0.001</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">gamma</span><span class="p">,)),</span>
+                <span class="n">brentq</span><span class="p">(</span><span class="k">lambda</span> <span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="p">:</span> <span class="n">A_Astar</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="p">)</span><span class="o">-</span><span class="n">A_Astar_value</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">gamma</span><span class="p">,)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s plot this function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
+<span class="n">Ma_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">num</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">A_Astar_plot</span><span class="o">=</span><span class="n">A_Astar</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">,</span><span class="n">A_Astar_plot</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ma&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\frac</span><span class="si">{A}</span><span class="s1">{A^*}$&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "ed243dec59094d7582686396df934eae", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MaFromA_Astar</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.1971981216521863
+</pre></div>
+</div>
+</div>
+</div>
+<p>This shows that, for steady isentropic flow, the critical condition holds for the minimum area section (throat).</p>
+</div>
+</div>
+<div class="section" id="normal-shock-waves">
+<h2>Normal shock waves<a class="headerlink" href="#normal-shock-waves" title="Permalink to this headline">¶</a></h2>
+<p><a id="picturesSW"></a></p>
+<p>When flow is supersonic, usually transition to subsonic condition is achieved with a <a class="reference external" href="https://en.wikipedia.org/wiki/Shock_wave"><strong>shock wave</strong></a>. This can happens in an external supersonic flow, like a detached bow shock wave in front of a bullet</p>
+<p><img alt="image.png" src="5-CompressibleFlow/attachment:767b2cb7-6c12-4fc9-9736-951105df08dc.png" /></p>
+<p><a class="reference external" href="https://americanart.si.edu/artwork/bullet-shock-wave-32701">source of image</a></p>
+<p>or inside a duct</p>
+<p><img alt="image.png" src="5-CompressibleFlow/attachment:281f542b-7e17-4a21-9ecd-fa877a156248.png" /></p>
+<p>If we are talking about shock waves in a duct, or nozzle, this transition to subsonic flow happens in function of the conditions downstream:</p>
+<p><img alt="image.png" src="5-CompressibleFlow/attachment:299b50a0-2e89-49ab-8302-fe1dae79087c.png" /></p>
+<p>Source of image: <a class="reference external" href="https://discovery.upc.edu/iii/encore/record/C__Rb1437689?lang=cat">Kundu’s book</a></p>
+<p>Description of flows in function of dimensionless pressure downstream:</p>
+<ul class="simple">
+<li><p>a: Subsonic flow everywhere</p></li>
+<li><p>b: Subsonic flow everywhere except in <span class="math notranslate nohighlight">\(A^*\)</span> (throat), where it is sonic</p></li>
+<li><p>c: Subsonic until the throat, then supersonic until the (normal) shock wave in the duct. Pressure jumps to adapt to downstream conditions</p></li>
+<li><p>d: Subsonic until the throat, then supersonic until the (normal) shock wave in the exit section.</p></li>
+<li><p>e: Subsonic until the throat, then supersonic until the shock wave outside of the duct.</p></li>
+<li><p>f: Subsonic until the throat, then supersonic. No shock wave. Nozzle design conditions</p></li>
+<li><p>g: Subsonic until the throat, then supersonic and expansion waves outside the nozzle (the flows needs still to accelerate to adapt to downstream conditions)</p></li>
+</ul>
+<p><strong>Flow rate <span class="math notranslate nohighlight">\(\dot m\)</span> remains unchanged from <em>b</em> on</strong></p>
+<p>Naming <span class="math notranslate nohighlight">\(1\)</span> conditions upstream from the shock wave and <span class="math notranslate nohighlight">\(2\)</span> downstream (but just in the shock wave position so that surface section <span class="math notranslate nohighlight">\(A\)</span> are the same), equations that govern normal shock wave behavior are:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-58af5f0f-0a2c-4079-827c-16ad9e744a74">
+<span class="eqno">(71)<a class="headerlink" href="#equation-58af5f0f-0a2c-4079-827c-16ad9e744a74" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+\rho_1 u_1 &amp; = &amp; \rho_2 u_2 &amp; \; \text{(continuity)} \\
+p_1 + \rho_1 u_1^2 &amp; = &amp; p_2 + \rho_2 u_2^2 &amp; \; \text{(momentum)} \\
+h_1 + \frac{1}{2}u_1^2 &amp; = &amp; h_2 + \frac{1}{2} u_2^2 &amp; \; \text{(energy)}
+\end{eqnarray}\]</div>
+<p>Note that, unlike energy, entropy is not conserved.</p>
+<p>Also, ideal gas relationships hold:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f20875be-d10e-4aae-905f-c1aed386e41b">
+<span class="eqno">(72)<a class="headerlink" href="#equation-f20875be-d10e-4aae-905f-c1aed386e41b" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+\frac{p}{\rho} &amp; = &amp; r T \\
+h &amp; = &amp; c_p T 
+\end{eqnarray}\]</div>
+<p>On the other hand, since flow is adiabatic, <span class="math notranslate nohighlight">\({T_0}_1 = {T_0}_2 = T_0\)</span> (and, consequently, <span class="math notranslate nohighlight">\(T^*_1 = T^*_2 = T^*\)</span>). That does not hold for pressure or density, <span class="math notranslate nohighlight">\({p_0}_1 \neq {p_0}_2\)</span></p>
+<p>Operating these equations (see section 8.6 of <a class="reference external" href="https://discovery.upc.edu/permalink/34CSUC_UPC/19srfpi/cdi_proquest_ebookcentral_EBC5662650">Anderson’s book</a>) we can get the <em>Prandtl relation</em></p>
+<div class="amsmath math notranslate nohighlight" id="equation-bbcdbd83-e5b8-4a27-80a0-7a8ac518a627">
+<span class="eqno">(73)<a class="headerlink" href="#equation-bbcdbd83-e5b8-4a27-80a0-7a8ac518a627" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+u_1 u_2 = {c^*}^2 \tag{13}
+\end{equation}\]</div>
+<p>that can be expressed in dimensionless way as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a14cfe6a-1878-421c-987a-b2b07f301e9f">
+<span class="eqno">(74)<a class="headerlink" href="#equation-a14cfe6a-1878-421c-987a-b2b07f301e9f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\Ma^*_1 \Ma^*_2 = 1
+\end{equation}\]</div>
+<p>that implies that if in 1 flow is supersonic and <span class="math notranslate nohighlight">\(\Ma^*_1 &gt; 1\)</span>, in 2 it <em>must</em> be subsonic, <span class="math notranslate nohighlight">\(\Ma^*_2 &lt; 1\)</span></p>
+<p>By substitution of (19) we get the important relationship between Mach numbers before and after the normal shock wave:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-11507659-67a4-44e9-81d4-eec0acd603ae">
+<span class="eqno">(75)<a class="headerlink" href="#equation-11507659-67a4-44e9-81d4-eec0acd603ae" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\Ma_2^2 = \frac{1+\frac{\gamma -1}{2}\Ma_1^2}{\gamma \Ma_1^2-\frac{\gamma-1}{2}} \tag{14}
+\end{equation}\]</div>
+<p>and the reverse, which is exactly the same (obvious from dimensionless form of Prandtl equation (13)). An unique function serves to compute <span class="math notranslate nohighlight">\(\Ma_2\)</span> from <span class="math notranslate nohighlight">\(\Ma_1\)</span> or the reverse. Note that neither value <span class="math notranslate nohighlight">\(\Ma_1\)</span> and <span class="math notranslate nohighlight">\(\Ma_2\)</span> can be lower than <span class="math notranslate nohighlight">\(\sqrt{\frac{\gamma - 1}{2\gamma}} ( \approx 0.378 \; \text{for air})\)</span>. Nevertheless, keep in mind that it only has physical sense for <span class="math notranslate nohighlight">\(\Ma_1 &gt; 1\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MaShockwave</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the Mach number after a normal shock wave as funtion of Ma before the shock wave.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">Ma</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ma has to be greater or equal to 1&#39;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Ma2</span> <span class="o">=</span> <span class="n">Ma</span><span class="o">**</span><span class="mi">2</span>
+        <span class="n">beta</span> <span class="o">=</span> <span class="p">(</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+        <span class="n">Ma22</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">beta</span><span class="o">*</span><span class="n">Ma2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">gamma</span><span class="o">*</span><span class="n">Ma2</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Ma22</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ma1</span> <span class="o">=</span> <span class="mf">1e6</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s1">&#39;$\mathrm{{Ma}}_1 = </span><span class="si">{:.4g}</span><span class="s1"> \; </span><span class="se">\\</span><span class="s1">rightarrow \; \mathrm{{Ma}}_2 = </span><span class="si">{:.4g}</span><span class="s1">$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Ma1</span><span class="p">,</span><span class="n">MaShockwave</span><span class="p">(</span><span class="n">Ma1</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>$\mathrm{Ma}_1 = 1e+06 ; \rightarrow ; \mathrm{Ma}_2 = 0.378$</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We do not call MaShockWave to plot the function because we want to avoid the Ma_1 &lt; 1 restriction</span>
+<span class="o">%</span><span class="k">matplotlib</span> widget
+<span class="n">Ma_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">Ma_plot2</span> <span class="o">=</span> <span class="n">Ma_plot</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">gamma</span> <span class="o">=</span> <span class="mf">1.4</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="p">(</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">Ma_plot22</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">beta</span><span class="o">*</span><span class="n">Ma_plot2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">gamma</span><span class="o">*</span><span class="n">Ma_plot2</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{Ma}</span><span class="s1">_1$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{Ma}</span><span class="s1">_2$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Ma_plot22</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "038c00464ce44beabb94dae995191bce", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\Ma_1\)</span> (and consequently <span class="math notranslate nohighlight">\(\Ma^*_1\)</span>) is an important parameter in normal shock wave. Its value determines, for example, the ratio between densities and velocities</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9a6cf678-f6ee-4dd1-aac2-4b3b35d282b7">
+<span class="eqno">(76)<a class="headerlink" href="#equation-9a6cf678-f6ee-4dd1-aac2-4b3b35d282b7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{\rho_2}{\rho_1}=\frac{u_1}{u_2} = {\Ma^*_1}^2 = \frac{(\gamma + 1){\Ma_1}^2}{2 + (\gamma - 1){\Ma_1}^2 } \tag{15}
+\end{equation}\]</div>
+<p>The ratio between pressures can be derived from momentum balance, giving</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f91189d0-7843-4931-93a1-2f9b0dafea8a">
+<span class="eqno">(77)<a class="headerlink" href="#equation-f91189d0-7843-4931-93a1-2f9b0dafea8a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{p_2}{p_1}= 1 + \frac{2 \gamma}{\gamma+1}\left(\Ma_1^2 - 1 \right) \tag{16}
+\end{equation}\]</div>
+<p>And the temperatures ratios from the two previous relationships with perfect gas equation,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8db2c749-311a-479b-bc95-8fc2981c188d">
+<span class="eqno">(78)<a class="headerlink" href="#equation-8db2c749-311a-479b-bc95-8fc2981c188d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{T_2}{T_1} = \left[1 + \frac{2 \gamma}{\gamma+1}\left(\Ma_1^2 - 1 \right)\right]
+                \left[\frac{2 + (\gamma - 1){\Ma_1}^2 }{(\gamma + 1){\Ma_1}^2}\right] \tag{17}
+\end{equation}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rho2_rho1</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns rho_2/rho_1 for a shock wave with Mach number Ma &gt; 1&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">Ma</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ma has to be greater or equal to 1&#39;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">MaStar</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="n">gamma</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    
+<span class="k">def</span> <span class="nf">u2_u1</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns u_2/u_1 for a shock wave with Mach number Ma &gt; 1&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">Ma</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ma has to be greater or equal to 1&#39;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="n">MaStar</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="n">gamma</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">p2_p1</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns p_2/p_1 for a shock wave with Mach number Ma &gt; 1&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">Ma</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ma has to be greater or equal to 1&#39;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">gamma</span><span class="o">/</span><span class="p">(</span><span class="n">gamma</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">Ma</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">T2_T1</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns T_2/T_1 for a shock wave with Mach number Ma &gt; 1&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">Ma</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ma has to be greater or equal to 1&#39;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">p2_p1</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="p">)</span><span class="o">/</span><span class="n">rho2_rho1</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ma1</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm{{Ma}}_1 = </span><span class="si">{:.4g}</span><span class="s1">$:&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Ma1</span><span class="p">)</span> 
+                 <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;$$\frac{{\rho_2}}{{\rho_1}} = </span><span class="si">{:.4g}</span><span class="s1">$$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rho2_rho1</span><span class="p">(</span><span class="n">Ma1</span><span class="p">))</span>
+                 <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;$$\frac{{u_2}}{{u_1}} = </span><span class="si">{:.4g}</span><span class="s1">$$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u2_u1</span><span class="p">(</span><span class="n">Ma1</span><span class="p">))</span>
+                 <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;$$\frac{{p_2}}{{p_1}} = </span><span class="si">{:.4g}</span><span class="s1">$$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p2_p1</span><span class="p">(</span><span class="n">Ma1</span><span class="p">))</span>
+                 <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;$$\frac{{T_2}}{{T_1}} = </span><span class="si">{:.4g}</span><span class="s1">$$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">T2_T1</span><span class="p">(</span><span class="n">Ma1</span><span class="p">))</span>
+                <span class="p">))</span>
+                 
+                 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>$\mathrm{Ma}_1 = 6$:$$\frac{\rho_2}{\rho_1} = 5.268$$$$\frac{u_2}{u_1} = 0.1898$$$$\frac{p_2}{p_1} = 41.83$$$$\frac{T_2}{T_1} = 7.941$$</p>
+</div>
+</div>
+<p>The increment of entropy is computed from second law of thermodynamics</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c1e66f0f-57dd-4e86-a4cc-a9ae642532dc">
+<span class="eqno">(79)<a class="headerlink" href="#equation-c1e66f0f-57dd-4e86-a4cc-a9ae642532dc" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+s_2 - s_1 = c_p \ln{\frac{T2}{T1}} - r \ln{\frac{p_2}{p_1}}
+\end{equation}\]</div>
+<p>and, in dimensionless way</p>
+<div class="amsmath math notranslate nohighlight" id="equation-293bad75-8247-4abd-a891-9f4c1d60dcf2">
+<span class="eqno">(80)<a class="headerlink" href="#equation-293bad75-8247-4abd-a891-9f4c1d60dcf2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{s_2 - s_1}{r} = \frac{\gamma -1}{\gamma} \ln{\frac{T2}{T1}} - \ln{\frac{p_2}{p_1}} \tag{18}
+\end{equation}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">DeltaS_r</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns (s_2-s_1)/r for a shock wave&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">Ma</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ma has to be greater or equal to 1&#39;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">gamma</span><span class="o">/</span><span class="p">(</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">T2_T1</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="p">))</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">p2_p1</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Considering that, by definition, <span class="math notranslate nohighlight">\(p_0\)</span> and <span class="math notranslate nohighlight">\(T_0\)</span> are isentropic process from the state <span class="math notranslate nohighlight">\(p,T\)</span>, that means that for temperatures <span class="math notranslate nohighlight">\({T_0}_1\)</span> and <span class="math notranslate nohighlight">\({T_0}_2\)</span> and for pressures <span class="math notranslate nohighlight">\({p_0}_1\)</span> ad <span class="math notranslate nohighlight">\({p_0}_2\)</span> the increment of entropy would be the same. On the other side, for a shock wave, <span class="math notranslate nohighlight">\({T_0}_1 = {T_0}_2 = T_0\)</span> and, hence, difference of total pressure across a shock wave is given by</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6341505d-1bbf-4aa0-ad1f-c748982dd6d1">
+<span class="eqno">(81)<a class="headerlink" href="#equation-6341505d-1bbf-4aa0-ad1f-c748982dd6d1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{s_2 - s_1}{r} =  - \ln{\frac{{p_0}_2}{{p_0}_1} \; \Rightarrow \;\frac{{p_0}_2}{{p_0}_1}} = e^{-\frac{s_2 - s_1}{r}} \tag{19}
+\end{equation}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p02_p01</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns p02/p01 for a shock wave&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">Ma</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ma has to be greater or equal to 1&#39;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">DeltaS_r</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
+<span class="n">Ma_plot</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Ratio of properties across a normal shock wave&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{Ma}</span><span class="s1">_1$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{Ma}</span><span class="s1">_2\;,\;</span><span class="si">{p_0}</span><span class="s1">_2/</span><span class="si">{p_0}</span><span class="s1">_1$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">,</span><span class="n">MaShockwave</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">))</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">,</span><span class="n">p02_p01</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">))</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$p_2/p_1\; , \;T_2/T_1\; , \;\rho_2/\rho_1$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">,</span><span class="n">p2_p1</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:red&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">,</span><span class="n">T2_T1</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:green&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">,</span><span class="n">rho2_rho1</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:brown&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">10.0</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">))</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{Ma}</span><span class="s1">_2$&#39;</span><span class="p">,(</span><span class="mf">2.0</span><span class="p">,</span><span class="n">MaShockwave</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$</span><span class="si">{p_0}</span><span class="s1">_2/</span><span class="si">{p_0}</span><span class="s1">_1$&#39;</span><span class="p">,(</span><span class="mf">2.0</span><span class="p">,</span><span class="n">p02_p01</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:orange&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$p_2/p_1$&#39;</span><span class="p">,(</span><span class="mf">2.55</span><span class="p">,</span><span class="n">p2_p1</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:red&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$T_2/T_1$&#39;</span><span class="p">,(</span><span class="mf">2.6</span><span class="p">,</span><span class="n">T2_T1</span><span class="p">(</span><span class="mf">3.0</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:green&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\rho_2/\rho_1$&#39;</span><span class="p">,(</span><span class="mf">2.1</span><span class="p">,</span><span class="n">rho2_rho1</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:brown&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "2562421f9fc24feb84cde33167386d74", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<hr class="docutils" />
+<p><strong>Exercise:</strong></p>
+<p>Use the above functions to compute the mass flow rate in a nozzle knowing the area of the nozzle, the Mach number, the pressure and the temperature. It can be named, for instance <code class="docutils literal notranslate"><span class="pre">MassFlowRate(Ma,A,T,p,gamma=1.4,M=0.0289647)</span></code>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="oblique-shock-wave-and-expansion-waves">
+<h2>Oblique shock wave and expansion waves<a class="headerlink" href="#oblique-shock-wave-and-expansion-waves" title="Permalink to this headline">¶</a></h2>
+<p>Normal shock waves are a particular case of the more general <a class="reference external" href="https://en.wikipedia.org/wiki/Oblique_shock">oblique shock waves</a>. In a oblique shock, supersonic flow is deviated by an obstacle. We are going to consider, for the shake of simplicity that the obstacle is a corner of angle <span class="math notranslate nohighlight">\(\theta\)</span>, and the flow is everywhere uniform and parallel to ground</p>
+<p><img alt="image.png" src="5-CompressibleFlow/attachment:f91cacf1-ff29-4178-82dc-09daabbc8098.png" /></p>
+<p>In contrast, in an <a class="reference external" href="https://en.wikipedia.org/wiki/Prandtl%E2%80%93Meyer_expansion_fan">expansion wave</a>, the flow is accelerated by a convex corner.</p>
+<p>For the study of an oblique shock velocity is decomposed in normal and tangential velocity to sock wave. In this pictures, taken from Anderson’s book, velocity is named as <span class="math notranslate nohighlight">\(V\)</span> and normal and tangential as <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(w\)</span>. Where are going to use notation <span class="math notranslate nohighlight">\(u, u_n\)</span> and <span class="math notranslate nohighlight">\(u_t\)</span></p>
+<img src=attachment:484f71bc-afa9-4417-925d-5449e678c8de.png width=500>
+<p>The main results, that we are not going to prove are:</p>
+<ul class="simple">
+<li><p>Tangential velocity is conserved across the oblique shock wave (that also holds for normal shock wave where both components are null)</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-6907ef2c-4fdf-4071-b52d-419be2996b31">
+<span class="eqno">(82)<a class="headerlink" href="#equation-6907ef2c-4fdf-4071-b52d-419be2996b31" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+{u_t}_1 = {u_t}_2 \tag{20}
+\end{equation}\]</div>
+<ul class="simple">
+<li><p>Balance equations are</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-4e2b952b-f822-4b04-aebf-9370c0df003d">
+<span class="eqno">(83)<a class="headerlink" href="#equation-4e2b952b-f822-4b04-aebf-9370c0df003d" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+\rho_1 {u_n}_1 &amp; = &amp; \rho_2 {u_n}_2 &amp; \; \text{(continuity)} \\
+p_1 + \rho_1 {u_n}_1^2 &amp; = &amp; p_2 + \rho_2 {u_n}_2^2 &amp; \; \text{(momentum)} \\
+h_1 + \frac{1}{2}{u_n}_1^2 &amp; = &amp; h_2 + \frac{1}{2} {u_n}_2^2 &amp; \; \text{(energy)}
+\end{eqnarray}\]</div>
+<p>i.e., exactly the same expressions for normal shock wave applied to only the normal velocity. That means that we van use the above functions to make the computations for oblique shocks just keeping in mind that we are computing only normal component. That also implies that results are referred uniquely to normal Mach number</p>
+<div class="amsmath math notranslate nohighlight" id="equation-56e0f789-2d94-4222-9808-4fac7d79880a">
+<span class="eqno">(84)<a class="headerlink" href="#equation-56e0f789-2d94-4222-9808-4fac7d79880a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\Ma_n = \Ma\sin{\beta} \tag{21}
+\end{equation}\]</div>
+<p>From the picture above, is easily shown that</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e77bedf4-65a9-4141-864f-83a660967a0a">
+<span class="eqno">(85)<a class="headerlink" href="#equation-e77bedf4-65a9-4141-864f-83a660967a0a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\Ma_2 = \frac{{\Ma_n}_2}{\sin{(\beta-\theta)}}
+\end{equation}\]</div>
+<p>which will be useful when we will get <span class="math notranslate nohighlight">\({\Ma_n}_2\)</span> from the functions of normal shock.</p>
+<p>To the functions for normal shock wave, we have now to include a new parameter, <span class="math notranslate nohighlight">\(\beta\)</span>.
+Actually, note that normal shock wave is the particular case of oblique shock form <span class="math notranslate nohighlight">\(\beta = \pi/2\)</span>. The deflection angle <span class="math notranslate nohighlight">\(\theta\)</span> is a unique function of <span class="math notranslate nohighlight">\(\Ma_1\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c88076bc-ee76-48b7-859f-2827de63794b">
+<span class="eqno">(86)<a class="headerlink" href="#equation-c88076bc-ee76-48b7-859f-2827de63794b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{\tan{(\beta - \theta)}}{\tan{\beta}} = \frac{u_{n2}}{u_{n1}} = \frac{2+(\gamma-1)\Ma_1^2\sin^2\beta}{(\gamma+1)\Ma_1^2\sin^2\beta}
+\end{equation}\]</div>
+<p>that leads to</p>
+<div class="amsmath math notranslate nohighlight" id="equation-401439ca-fdbe-4189-ac7b-f8cdcd72d6f1">
+<span class="eqno">(87)<a class="headerlink" href="#equation-401439ca-fdbe-4189-ac7b-f8cdcd72d6f1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\tan \theta = \frac{2}{\tan\beta}\left[\frac{\Ma_1^2\sin^2\beta - 1}{\Ma_1^2(\gamma+\cos2\beta)+2}\right] \tag{22}
+\end{equation}\]</div>
+<p>known as the <span class="math notranslate nohighlight">\(\theta-\beta-\Ma\)</span> relation</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ThetaOSW</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">beta</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the deflection angle theta for an oblique shock wave, given the incident Ma number and the angle os the SW, beta. </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">tanTheta</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">Ma</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">Ma</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">gamma</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">beta</span><span class="p">))</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">tanTheta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This functions has a maximum value for a given value of <span class="math notranslate nohighlight">\(\Ma_1\)</span>. Let’s make a function that determines this maximum value given the incident Mach number</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MaxThetaOSW</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">brent</span>
+    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">beta</span><span class="p">):</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">ThetaOSW</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">beta</span><span class="p">,</span><span class="n">gamma</span><span class="p">)</span>
+    <span class="n">interval</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mi">80</span><span class="p">))</span>
+    <span class="n">betaMax</span> <span class="o">=</span> <span class="n">brent</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">brack</span><span class="o">=</span><span class="n">interval</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">betaMax</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">ThetaOSW</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">betaMax</span><span class="p">,</span><span class="n">gamma</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MaxThetaOSW</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(64.66897983522868, 22.97353176093794)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">beta_plot_deg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">beta_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">beta_plot_deg</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Deflection angle $\theta$ as function of $\beta$ and $\mathrm</span><span class="si">{Ma}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\beta$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\theta$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_plot_deg</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">ThetaOSW</span><span class="p">(</span><span class="n">Ma</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span><span class="n">beta</span><span class="o">=</span><span class="n">beta_plot</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:red&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm{{Ma}}_1 \rightarrow \infty, \theta_\mathrm{{max}} \rightarrow </span><span class="si">{:.3g}</span><span class="s1">^\circ$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MaxThetaOSW</span><span class="p">(</span><span class="mi">1000</span><span class="p">)[</span><span class="mi">1</span><span class="p">]),</span><span class="n">MaxThetaOSW</span><span class="p">(</span><span class="mi">1000</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:red&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_plot_deg</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">ThetaOSW</span><span class="p">(</span><span class="n">Ma</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">beta</span><span class="o">=</span><span class="n">beta_plot</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm{{Ma}}_1 = 2, \theta_\mathrm{{max}} = </span><span class="si">{:.3g}</span><span class="s1">^\circ$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MaxThetaOSW</span><span class="p">(</span><span class="mi">2</span><span class="p">)[</span><span class="mi">1</span><span class="p">]),</span><span class="n">MaxThetaOSW</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_plot_deg</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">ThetaOSW</span><span class="p">(</span><span class="n">Ma</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">beta</span><span class="o">=</span><span class="n">beta_plot</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:orange&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm{{Ma}}_1 = 3, \theta_\mathrm{{max}} = </span><span class="si">{:.3g}</span><span class="s1">^\circ$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MaxThetaOSW</span><span class="p">(</span><span class="mi">3</span><span class="p">)[</span><span class="mi">1</span><span class="p">]),</span><span class="n">MaxThetaOSW</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:orange&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_plot_deg</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">ThetaOSW</span><span class="p">(</span><span class="n">Ma</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">beta</span><span class="o">=</span><span class="n">beta_plot</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:green&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm{{Ma}}_1 = 5, \theta_\mathrm{{max}} = </span><span class="si">{:.3g}</span><span class="s1">^\circ$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MaxThetaOSW</span><span class="p">(</span><span class="mi">5</span><span class="p">)[</span><span class="mi">1</span><span class="p">]),</span><span class="n">MaxThetaOSW</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:green&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_plot_deg</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">ThetaOSW</span><span class="p">(</span><span class="n">Ma</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span><span class="n">beta</span><span class="o">=</span><span class="n">beta_plot</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:brown&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm{{Ma}}_1 = 1.5, \theta_\mathrm{{max}} = </span><span class="si">{:.3g}</span><span class="s1">^\circ$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MaxThetaOSW</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)[</span><span class="mi">1</span><span class="p">]),</span><span class="n">MaxThetaOSW</span><span class="p">(</span><span class="mf">1.5</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:brown&#39;</span><span class="p">)</span>
+<span class="n">Ma_plot</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">MaxBeta_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">MaxTheta_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Ma_plot</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+    <span class="n">MaxBeta_plot</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">MaxTheta_plot</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">MaxThetaOSW</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">MaxBeta_plot</span><span class="p">,</span><span class="n">MaxTheta_plot</span><span class="p">,</span><span class="s1">&#39;k--&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "b2d3d120527a46bd8dddb3441ad61aac", "version_major": 2, "version_minor": 0}
+</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f0ec3a77850&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that for given values of <span class="math notranslate nohighlight">\(\Ma_1\)</span> and <span class="math notranslate nohighlight">\(\theta &lt; \theta_\mathrm{max}\)</span> there are two possible values of <span class="math notranslate nohighlight">\(\beta\)</span>. The smaller value is related to a <strong>weak shock wave</strong> whereas the larger value is for a <strong>strong shock wave</strong></p>
+<hr class="docutils" />
+<p><strong>Exercise:</strong></p>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">betaOSW(Ma,theta,gamma=1.4)</span></code> that returns these two values.</p>
+<hr class="docutils" />
+<p>Usually, for typical situations, the weak OSW is the one obtained in the flow, but it will depend mainly on the back pressure. For the strong OSW flow downstream is subsonic. For the weak OSW, it is usually supersonic, except for some conditions.</p>
+<p>If, for a given <span class="math notranslate nohighlight">\(\Ma_1\)</span> the deflection angle is <span class="math notranslate nohighlight">\(\theta &gt; \theta_\mathrm{max}\)</span>, there is no solution for an OSW, the shock wave then detaches and it becomes a normal, or bow, shock wave, like the one in the <a class="reference external" href="#picturesSW">first picture of this notebook</a>.</p>
+<p>The value of <span class="math notranslate nohighlight">\(\beta\)</span> obtained for <span class="math notranslate nohighlight">\(\theta=0\)</span> is related to the OSW when the obstacle is very sharp, or just a point. This is called the <em>Mach angle</em> and the OSW is a <em>Mach wave</em>. This angle is the same as in the <a class="reference external" href="#Mach-cone">Mach cone</a>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-14f1f8b5-45c3-4f96-bd06-6a832c796ab1">
+<span class="eqno">(88)<a class="headerlink" href="#equation-14f1f8b5-45c3-4f96-bd06-6a832c796ab1" title="Permalink to this equation">¶</a></span>\[\begin{equation} 
+\beta_\mathrm{min} = \mu = \arcsin{\frac{1}{\Ma_1}}
+\end{equation}\]</div>
+<hr class="docutils" />
+<p><strong>Exercise:</strong></p>
+<p>Use the function of previous exercise to compute the shock wave angle angle of a uniform supersonic stream with <span class="math notranslate nohighlight">\(\Ma_1 = 3.0\)</span>, <span class="math notranslate nohighlight">\(p_1 = 1\,\mathrm{atm}\)</span> and
+<span class="math notranslate nohighlight">\(T_1 = 288\,\mathrm{K}\)</span> when it encounters a compression angle with a deflection angle <span class="math notranslate nohighlight">\(\theta = 20^\circ\)</span>. Compute also all the flow characteristics behind the shock wave.</p>
+<p>Analyze the results when <span class="math notranslate nohighlight">\(\theta\)</span> is raised (to <span class="math notranslate nohighlight">\(30^\circ\)</span> for instance) keeping <span class="math notranslate nohighlight">\(\Ma_1\)</span>, and when <span class="math notranslate nohighlight">\(\Ma_1\)</span> is increased (to 5, for instance) keeping the angle <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<hr class="docutils" />
+<div class="section" id="shock-polar">
+<h3>Shock Polar<a class="headerlink" href="#shock-polar" title="Permalink to this headline">¶</a></h3>
+<p>In a shock polar (see, for example, the section 6.7.3 in the <a class="reference external" href="https://discovery.upc.edu/iii/encore/record/C__Rb1437643?lang=cat">book by Houghton</a> ) the components of dimensionless velocity behind the OSW are plotted in an <a class="reference external" href="https://en.wikipedia.org/wiki/Hodograph">hodograph</a>. The polar angle of the points of the plot for a given <span class="math notranslate nohighlight">\(\Ma_1\)</span> is the deflection angle. Nevertheless, to represent dimensionless velocity in the plot (not the label for the plot) is more convenient to use <span class="math notranslate nohighlight">\(\Ma_2^*\)</span>, since it has a finite value  (see Eq (10)) even for <span class="math notranslate nohighlight">\(\Ma_1 \rightarrow \infty\)</span>.</p>
+<p>We can plot the shock polar computing velocity components for all the angles <span class="math notranslate nohighlight">\(\theta\)</span> in the range of previous plot, or, also, it can be used the expression (that we are not going to prove)</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d703bc01-9a90-4fff-80d0-ab817de342e8">
+<span class="eqno">(89)<a class="headerlink" href="#equation-d703bc01-9a90-4fff-80d0-ab817de342e8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+{{\Ma_2^*}_y}^2 = \frac{\left(\Ma_1^* - {\Ma_2^*}_x \right)^2\left( {\Ma_2^*}_x \Ma_1^* - 1\right)}
+{\frac{2}{\gamma+1}{\Ma_1^*}^2- \left({\Ma_2^*}_x \Ma_1^* - 1\right)} \tag{23}
+\end{equation}\]</div>
+<hr class="docutils" />
+<p><strong>ASSIGNMENT</strong></p>
+<p>Make a function that computes the shock polar for a given value of <span class="math notranslate nohighlight">\(\Ma_1\)</span> by computing the velocity components behind the OSW, and compare with the value obtained with (23)</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="prandtl-meyer-expansion-fan">
+<h2>Prandtl-Meyer expansion fan<a class="headerlink" href="#prandtl-meyer-expansion-fan" title="Permalink to this headline">¶</a></h2>
+<p>In the <a class="reference external" href="https://en.wikipedia.org/wiki/Prandtl%E2%80%93Meyer_expansion_fan">Prandtl-Meyer expansion fan</a> the behavior of the flow is just the opposite of with OSW. In this case, Mach number increases, and all temperature, pressure and density decrease. This expansion can be considered isentropic, and it can be interpreted as composed of infinite number of Mach waves, bounded by the angles <span class="math notranslate nohighlight">\(\mu_1 = \arcsin\left({\frac{1}{\Ma_1}}\right)\)</span> and <span class="math notranslate nohighlight">\(\mu_2 = \arcsin\left({\frac{1}{\Ma_2}}\right)\)</span></p>
+<blockquote>
+<div><p>Note: the following cell is a test for making simple drawings with latex package <a class="reference external" href="https://github.com/pgf-tikz/pgf">tikz</a></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> tikzmagic
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tikz</span> -s 500,500 -sc 1.2
+\fill[fill=gray!50](0,0)--(4,0)-- ++(-30:8)-- ++(-90:1)-- ++(-210:8)--(0,-1)--cycle;
+\draw[very thick] (0,0) -- (4,0) -- +(-30:8);
+\draw[very thin](4,0)-- +(75:8) node[sloped,above,midway]{Forward Mach wave};
+\draw[very thin](4,0)-- +(10:8) node[sloped,above,midway]{Rearward Mach wave};
+\draw[dashed](4,0)--(8,0);
+\draw[line width = 2mm,-stealth](1,3)--(4,3) node[sloped,above,midway]{$\mathrm{Ma}_1 &gt; 1$} node[align=center,below,midway]{$p_1$\\$T_1$};
+\draw[line width = 2mm,-stealth](9,0)--+(-30:3) node[sloped,above,midway]{$\mathrm{Ma}_1 &gt; \mathrm{Ma}_2$} node[align=center,sloped,below,midway]{$p_2$\\$T_2$};
+\draw[stealth-stealth] (4,0) ++(0:2) arc[start angle=0,end angle=75,radius=2] node[midway,right]{$\mu_1$};
+\draw[stealth-stealth] (4,0) +(-30:4) arc[start angle=-30,end angle=10,radius=4] node[midway,right]{$\mu_2$};
+\draw[stealth-stealth] (4,0) +(-30:3) arc[start angle=-30,end angle=0,radius=3] node[midway,right]{$\theta_2$};
+</pre></div>
+</div>
+</div>
+</div>
+<p>The derivation, from purely geometrical basis, with an infinitesimal deviation produced by a Mach wave, leads to</p>
+<div class="amsmath math notranslate nohighlight" id="equation-718c3190-2d86-4c09-9062-e524512f642e">
+<span class="eqno">(90)<a class="headerlink" href="#equation-718c3190-2d86-4c09-9062-e524512f642e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{u+\mathrm{d}u}{u} = 1 + \frac{\mathrm{d}u}{u} = \frac{\cos \mu}{\cos \mu \cos \mathrm{d}\theta - \sin \mu \sin \mathrm{d}\theta} 
+\approx \frac{1}{1-\tan \mu \mathrm{d}\theta} \approx 1 + \tan \mu \mathrm{d} \theta = 1 + \frac{\mathrm{d} \theta}{\sqrt{\Ma^2-1}}
+\end{equation}\]</div>
+<p>and, from here,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8b1dc310-14ea-42c0-92b8-089669595d0a">
+<span class="eqno">(91)<a class="headerlink" href="#equation-8b1dc310-14ea-42c0-92b8-089669595d0a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\mathrm{d} \theta = \sqrt{\Ma^2-1} \frac{\mathrm{d}u}{u} = \frac{\sqrt{\Ma^2-1}}{1+\frac{\gamma-1}{2}\Ma^2}\frac{\mathrm{d}\Ma}{\Ma}
+\end{equation}\]</div>
+<p>and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d20ef345-6a1f-4964-8c33-21daa640f796">
+<span class="eqno">(92)<a class="headerlink" href="#equation-d20ef345-6a1f-4964-8c33-21daa640f796" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\theta_2 - \theta_1 = \int_{\Ma_1}^{\Ma_2}\frac{\sqrt{\Ma^2-1}}{\Ma\left(1+\frac{\gamma-1}{2}\Ma^2\right)} \mathrm{d}\Ma = 
+\nu\left(\Ma_2\right) - \nu\left(\Ma_1\right)
+\end{equation}\]</div>
+<p>where</p>
+<div class="amsmath math notranslate nohighlight" id="equation-13f1362a-5368-44a0-b525-d4ada871f499">
+<span class="eqno">(93)<a class="headerlink" href="#equation-13f1362a-5368-44a0-b525-d4ada871f499" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\nu\left(\Ma\right) = \int \frac{\sqrt{\Ma^2-1}}{\Ma\left(1+\frac{\gamma-1}{2}\Ma^2\right)} \mathrm{d}\Ma = 
+\sqrt{\frac{\gamma+1}{\gamma-1}}\arctan \sqrt{\frac{\gamma-1}{\gamma+1}\left(\Ma^2-1\right)} - \arctan \sqrt{\Ma^2-1}
+\end{equation}\]</div>
+<p>is the <a class="reference external" href="https://en.wikipedia.org/wiki/Prandtl%E2%80%93Meyer_function">Prandtl-Meyer function</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">PrandtlMeyer</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns the Prandtl-Meyer function for a given Mach number, greater than 1, in radians&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">Ma</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ma has to be greater or equal to 1&#39;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">auxGamma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">gamma</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">auxMa</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Ma</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">auxGamma</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">auxMa</span><span class="o">/</span><span class="n">auxGamma</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">auxMa</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
+<span class="n">Ma_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.001</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">nu_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">PrandtlMeyer</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">130</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{Ma}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\nu$ [deg]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">,</span><span class="n">nu_plot</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./5-CompressibleFlow"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../4-BoundaryLayer/BoundaryLayer.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Boundary Layer. An introduction</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Robert Castilla - UPC CATMech Terrassa<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1266 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rheology. A very brief Introduction &#8212; UPC-205237 Advanced Fluid Mechanics</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Turbulent flows. Statistical description and characteristic scales" href="../3-Turbulence/turbulence.html" />
+    <link rel="prev" title="Assignment 1. Computation of journal bearing" href="../1-microFlows/Assignment1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">UPC-205237 Advanced Fluid Mechanics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Advanced Fluid Mechanics
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../0-Intro/IntroPython.html">
+   Introduction to scientific computation with Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0-Intro/Assignment0.html">
+     Assignment 0: Conical tank emptying time
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1-microFlows/Microflows.html">
+   Microflows. A very brief introduction with lubrication and capillarity
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-microFlows/MeniscusBetweenPlates.html">
+     Meniscus between plates. Solution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-microFlows/Assignment1.html">
+     Assignment 1. Computation of journal bearing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Rheology. A very brief Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3-Turbulence/turbulence.html">
+   Turbulent flows. Statistical description and characteristic scales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-BoundaryLayer/BoundaryLayer.html">
+   Boundary Layer. An introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5-CompressibleFlow/CompressibleFlow.html">
+   Compressible Flow. An introduction
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/2-Rheology/rheology.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/2-Rheology/rheology.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classification-of-fluids">
+   1. Classification of fluids
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generalized-newtonian-fluids">
+   2. Generalized Newtonian Fluids
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#power-law-fluid-in-a-pipe">
+     Power Law Fluid in a pipe
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plot-of-the-velocity-profile">
+       Plot of the velocity profile
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise">
+       Exercise
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Exercise
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-a">
+     Assignment A
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-b">
+     Assignment B
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#viscoelastic-fluids">
+   3. Viscoelastic fluids
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#maxwell-element">
+     Maxwell element
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#voigth-kelvin-element">
+     Voigth-Kelvin element
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jeffreys-burger-element">
+     Jeffreys-Burger element
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extension-to-vectorial-notation">
+     Extension to vectorial notation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Rheology. A very brief Introduction</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classification-of-fluids">
+   1. Classification of fluids
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generalized-newtonian-fluids">
+   2. Generalized Newtonian Fluids
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#power-law-fluid-in-a-pipe">
+     Power Law Fluid in a pipe
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plot-of-the-velocity-profile">
+       Plot of the velocity profile
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise">
+       Exercise
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Exercise
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-a">
+     Assignment A
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-b">
+     Assignment B
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#viscoelastic-fluids">
+   3. Viscoelastic fluids
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#maxwell-element">
+     Maxwell element
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#voigth-kelvin-element">
+     Voigth-Kelvin element
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jeffreys-burger-element">
+     Jeffreys-Burger element
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extension-to-vectorial-notation">
+     Extension to vectorial notation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="rheology-a-very-brief-introduction">
+<h1>Rheology. A very brief Introduction<a class="headerlink" href="#rheology-a-very-brief-introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="classification-of-fluids">
+<h2>1. Classification of fluids<a class="headerlink" href="#classification-of-fluids" title="Permalink to this headline">¶</a></h2>
+<p>This notebook is based principally on the <a class="reference external" href="https://discovery.upc.edu/permalink/34CSUC_UPC/rdgucl/alma991001402139706711">book by Irgens</a> and also on the classical <a class="reference external" href="https://discovery.upc.edu/iii/encore/record/C__Rb1230696?lang=cat">book by Bird</a>. Also chapter chapter 7 in the book of <a class="reference external" href="https://discovery.upc.edu/permalink/34CSUC_UPC/19srfpi/cdi_askewsholts_vlebooks_9781402067426">Engineerign Fluid Mechanics, by H. Yamaguchi</a> has been used.</p>
+<p>Very briefly, when we have studied Fluid Mechanics, we have focused on fluids that meet Newton’s law for shear stress,</p>
+<div class="math notranslate nohighlight">
+\[ \tau = \mu \dot\gamma \]</div>
+<p>for 2-D flow, where <span class="math notranslate nohighlight">\(\tau\)</span> is the shear stres, <span class="math notranslate nohighlight">\(\dot\gamma\)</span> is the shear rate. <span class="math notranslate nohighlight">\(\mu\)</span> is the <em>dynamic viscosity</em>, or just <em>viscosity</em>, of the fluid.</p>
+<p>Water, air and other molecularly simple fluids obey this law. But most of the liquids do not. <a class="reference external" href="https://en.wikipedia.org/wiki/Rheology">Rheology</a> is the branch of science and technology that studies this kind of non-linear behaviour, both in solids and in fluids. We are focusing in this part in the rheology of fluids.</p>
+<p>A fluid is called <em>pure viscous</em> if the shear rate is only function of shear stress</p>
+<div class="math notranslate nohighlight">
+\[ \tau = f(\dot\gamma) \]</div>
+<p>This function can be linear in the case of <strong>Newtonian fluids</strong> or non-linear in the case of <strong>non Newtonian fluids</strong> (also known as rheological fluids).</p>
+<p>In general, for pure viscous fluids, an <em>apparent viscosity</em> can be defined as</p>
+<div class="math notranslate nohighlight">
+\[ \mu (\dot\gamma) = \frac{\tau}{\dot\gamma} \]</div>
+<p>The most common model is the <strong>Generalized Newtonian Fluids</strong>, that is modeled with the <a class="reference external" href="https://en.wikipedia.org/wiki/Power-law_fluid"><strong>power law</strong></a>, also known as Ostwald-de Waele law, where shear stress is modelled as</p>
+<div class="math notranslate nohighlight">
+\[ \tau = K \dot\gamma^n \]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[ \mu(\dot\gamma) = K (\dot{\gamma})^{n-1} \]</div>
+<p><span class="math notranslate nohighlight">\(K\)</span> is the <em>consistency parameter</em> and <span class="math notranslate nohighlight">\(n\)</span> is the power law index</p>
+<ul class="simple">
+<li><p>When <span class="math notranslate nohighlight">\(n = 1\)</span> the fluid is Newtonian and <span class="math notranslate nohighlight">\(K\)</span> is just its viscosity</p></li>
+<li><p>When <span class="math notranslate nohighlight">\(n &lt; 1\)</span> apparent viscosity decreases with shear rate and the fluid is classified as <em>pseudoplastic</em> or <a class="reference external" href="https://en.wikipedia.org/wiki/Shear_thinning"><em>shear thinning</em></a>. Most non-Newtonian fluids are of this type, like paints, <a class="reference external" href="http://www.maths.gla.ac.uk/~xl/Arasu-biofluid.pdf">blood</a>, and most of food liquids (juices, creams, soups,…)</p></li>
+<li><p>When <span class="math notranslate nohighlight">\(n &gt; 1\)</span> apparent viscosity increases with shear rate and the fluid is known as dilatant or <a class="reference external" href="https://en.wikipedia.org/wiki/Dilatant#Examples"><em>shear thickening</em></a>. This is much less common, and the typical example is the cornstarch (maicena) which allow <a class="reference external" href="https://www.youtube.com/watch?v=q-DZ0f0_NCA">funny experiments</a></p></li>
+</ul>
+<p><img alt="image.png" src="2-Rheology/attachment:6ab6306f-0325-480c-bccb-5a1f6363d809.png" /></p>
+<p>Other type of behavior is the <a class="reference external" href="https://en.wikipedia.org/wiki/Viscoplasticity"><strong>viscoplastic fluid</strong></a> that behave as solid for a shear stress lower than a limit value, known as <em>yield shear stress</em>, and as a fluid fow larger values of the shear stress.</p>
+<p><img alt="image.png" src="2-Rheology/attachment:22b81f09-89b5-4bc0-afd4-ba92410ddd1c.png" /></p>
+<p>The most simple model is the <a class="reference external" href="https://en.wikipedia.org/wiki/Bingham_plastic"><em>Bingham fluid</em></a> (<a class="reference external" href="https://en.wikipedia.org/wiki/Eugene_C._Bingham">Bingham</a> was the inventor of the name “Rheology”). Theses fluids behave like newtonian for shear stress larger than the yield shear stress. This model is tipycally used for toothpaste, mud or slurries. It is mathematically modeled as</p>
+<div class="math notranslate nohighlight">
+\[ \tau(\dot\gamma) = \tau_y + \mu \dot\gamma \]</div>
+<p>There are also some <strong>Time Dependent</strong> models as <a class="reference external" href="https://en.wikipedia.org/wiki/Thixotropy"><em>Thixotropic fluids</em></a> when shear stress decreases in time for a constant shear rate, and <a class="reference external" href="https://en.wikipedia.org/wiki/Rheopecty"><em>Rheopectic fluids</em></a> otherwise. These kimd of fluids are beyond the scope of this course</p>
+</div>
+<div class="section" id="generalized-newtonian-fluids">
+<h2>2. Generalized Newtonian Fluids<a class="headerlink" href="#generalized-newtonian-fluids" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="power-law-fluid-in-a-pipe">
+<h3>Power Law Fluid in a pipe<a class="headerlink" href="#power-law-fluid-in-a-pipe" title="Permalink to this headline">¶</a></h3>
+<p>Let’s consider a very slow flow and/or very small, so that inertial and time terms can be neglected.</p>
+<p>We have seen in Fluid Mechanics that for a Newtonian Fluid, <a class="reference external" href="https://en.wikipedia.org/wiki/Hagen%E2%80%93Poiseuille_equation#Derivation">Hagen-Poiseuille law</a> holds, according to the Navier Stokes equation for a laminar, viscous flow</p>
+<div class="amsmath math notranslate nohighlight" id="equation-856ff92b-5bc3-411c-bb43-1bb4a3dc4f60">
+<span class="eqno">(11)<a class="headerlink" href="#equation-856ff92b-5bc3-411c-bb43-1bb4a3dc4f60" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+0 =  -\frac{\partial p}{\partial z} + \frac{1}{r}\frac{\partial}{\partial r}\left(r \tau_{rz}\right)
+\end{equation}\]</div>
+<p>giving a paraboloid velocity profile and a flowrate</p>
+<div class="math notranslate nohighlight">
+\[ Q = \frac{\Delta p \pi R^4}{8\mu L} \]</div>
+<p>provided that, as a Newtonian fluid, <span class="math notranslate nohighlight">\(\tau_{rz} = \mu \dot\gamma = \mu \frac{\partial u_z}{\partial r} \)</span>.</p>
+<p>Now, with a Power Law Fluid, <span class="math notranslate nohighlight">\(\tau_{rz} = K(\dot\gamma)^n\)</span>, it leads to</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\text{d} u_z}{\text{d}r} = \left[ \frac{1}{2K}\left(\frac{\text{d}p}{\text{d}z}\right)r\right]^\frac{1}{n} = \left[ \frac{1}{2K}\left(-\frac{\Delta p}{L}\right)r\right]^\frac{1}{n}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K</span><span class="p">,</span><span class="n">Deltap</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">R</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;K {\Delta}p L r n R&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">uz</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;uz&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">uz</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">r</span><span class="p">),(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">K</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">Deltap</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Eq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_6_0.png" src="../_images/rheology_6_0.png" />
+</div>
+</div>
+<p>First, we integrate it and try to simplify it a little bit …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">K</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">Deltap</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uz</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">exp</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="p">))</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uz</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_10_0.png" src="../_images/rheology_10_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uz</span> <span class="o">=</span> <span class="n">uz</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">powsimp</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">uz</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_11_0.png" src="../_images/rheology_11_0.png" />
+</div>
+</div>
+<p>… just to integrate it again and obtain the flow rate in the pipe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">uz</span><span class="o">*</span><span class="n">r</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">R</span><span class="p">))</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span><span class="o">.</span><span class="n">powsimp</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_13_0.png" src="../_images/rheology_13_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span> <span class="o">=</span> <span class="n">Q</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_14_0.png" src="../_images/rheology_14_0.png" />
+</div>
+</div>
+<p>and, from here, the average velocity, so that we can normalize velocity profile</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u_avg</span> <span class="o">=</span> <span class="n">Q</span><span class="o">/</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">u_avg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_16_0.png" src="../_images/rheology_16_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u_dimless</span> <span class="o">=</span> <span class="n">uz</span><span class="o">/</span><span class="n">u_avg</span>
+<span class="n">u_dimless</span> <span class="o">=</span> <span class="n">u_dimless</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">u_dimless</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_17_0.png" src="../_images/rheology_17_0.png" />
+</div>
+</div>
+<p>In order to get it in dimensionless form, we just impose <span class="math notranslate nohighlight">\(R=1\)</span> so that now <span class="math notranslate nohighlight">\(r\)</span> is the dimensionless radius <span class="math notranslate nohighlight">\(0&lt;r/R&lt;1\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u_dimless</span> <span class="o">=</span> <span class="n">u_dimless</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">R</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">u_dimless</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_19_0.png" src="../_images/rheology_19_0.png" />
+</div>
+</div>
+<div class="section" id="plot-of-the-velocity-profile">
+<h4>Plot of the velocity profile<a class="headerlink" href="#plot-of-the-velocity-profile" title="Permalink to this headline">¶</a></h4>
+<p>We are now plotting this dimensionless profile in order to see the effect of the parameter <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>First we <em>lambdify</em> the expression (that is, remember, to convert it to a numerical function of two variables in this case)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u_np</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">r</span><span class="p">),</span><span class="n">u_dimless</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u_np</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.25</span><span class="p">)</span> <span class="c1"># Just to check it</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_22_0.png" src="../_images/rheology_22_0.png" />
+</div>
+</div>
+<p>Now the <a class="reference external" href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets</a> module is used. It is very useful to make interactive widgets. It only works in a dynamic environment, with a kernel; so you have to download the notebook and run it in Jupyterlab or Google Colaborative.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interactive</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">u_np</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">u_np</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$n=1$&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">interactive_plot</span> <span class="o">=</span> <span class="n">interactive</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span><span class="mf">0.01</span><span class="p">))</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">interactive_plot</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">output</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="s1">&#39;350px&#39;</span>
+<span class="n">interactive_plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "bf13e2036b8649879dd413abb22e3819"}
+</script></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="exercise">
+<h4>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h4>
+<p>Check that dimensionless flowrate is independent of <span class="math notranslate nohighlight">\(n\)</span>. What is its value?</p>
+<hr class="docutils" />
+</div>
+<hr class="docutils" />
+<div class="section" id="id1">
+<h4>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>Reynolds number for power law fluids is defined differently than for a Newtonian fluid. Provided that the dimensionless stress <span class="math notranslate nohighlight">\(\tau^*\)</span> should be written in terms of a dimensionless strain rate <span class="math notranslate nohighlight">\(\gamma^*\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[ \tau^* = \frac{1}{\text{Re}_n}\left(\gamma^*\right)^n \]</div>
+<p>Find the definition of <span class="math notranslate nohighlight">\(\text{Re}_n\)</span></p>
+<p>This number defines the similarity when experiments with two different power law fluids are performed.</p>
+<hr class="docutils" />
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="assignment-a">
+<h3>Assignment A<a class="headerlink" href="#assignment-a" title="Permalink to this headline">¶</a></h3>
+<p>As assignment for this topic, I propose to make a similar study: the laminar flow in a pipe, for a Bingham plastic</p>
+<hr class="docutils" />
+</div>
+<hr class="docutils" />
+<div class="section" id="assignment-b">
+<h3>Assignment B<a class="headerlink" href="#assignment-b" title="Permalink to this headline">¶</a></h3>
+<p>It is a sample of rheological behaviour of some cosmetic creams, taken from <a class="reference external" href="https://www.rheologylab.com/articles/emulsion-stability/">here</a></p>
+<p><img alt="image.png" src="2-Rheology/attachment:f2a0f8eb-15c7-492f-ac13-3918a753c21c.png" /></p>
+<p>What conclusions would you get from that about the behaviour of day creams in front of body creams?</p>
+<p>Let’s consider the case of the body lotion C. Fit the Power Law model, get coefficients and plot it. You will see that it is not good. You will see that it does not agree with very low (<em>zero-shear rate viscosity</em>) or high (<em>infinity-shear rate viscosity</em>) shear stress. There are some other models that deals with this behaviour. The molt usual is the <a class="reference external" href="https://en.wikipedia.org/wiki/Carreau_fluid">Carreau model</a>. Apply this law to obtain a more accurate model of this fluid and discuss it.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="viscoelastic-fluids">
+<h2>3. Viscoelastic fluids<a class="headerlink" href="#viscoelastic-fluids" title="Permalink to this headline">¶</a></h2>
+<p>This is a complicated topic. Several constitutive equations have been proposed according to experimental results. Viscoelastic materials have both viscous and elastic behavior. Some examples are rubbers, melted glass and also some complex biofluids, as cytoplasm.</p>
+<p>Most of the cases in engineering can only be solved with CFD, due to the high non-linearity between constitutive equations, continuity and momentum balance. Here we are only focusing in simple cases with linear viscoelastic flows.</p>
+<p>In general, constitutive equations for linear viscoelastic material are linear relationship between shear stress, shear rate and its time derivative.</p>
+<div class="math notranslate nohighlight">
+\[ f(\tau, \frac{\text{d}^n \tau}{\text{d}t^n},\gamma, \frac{\text{d}^n \gamma}{\text{d}t^n}) = \sum_{n=0}^{N} \left( a_n \frac{\text{d}^n \tau}{\text{d}t^n} + b_n \frac{\text{d}^n \gamma}{\text{d}t^n}\right)= 0\]</div>
+<div class="section" id="maxwell-element">
+<h3>Maxwell element<a class="headerlink" href="#maxwell-element" title="Permalink to this headline">¶</a></h3>
+<p>The most fundamental model is the so-called <strong>Maxwell element</strong>, composed of a combination in series of a viscous element, with viscosity <span class="math notranslate nohighlight">\(\eta\)</span> and a spring, with constant <span class="math notranslate nohighlight">\(G\)</span>.</p>
+<img src="attachment:68ae15dc-2000-41d4-a647-1eaef6eb49b5.png" width="800">
+<p>In this case, both stresses are the same, <span class="math notranslate nohighlight">\(\tau_1= \tau_2\)</span>and the displacements<span class="math notranslate nohighlight">\(\gamma\)</span> are additive, <span class="math notranslate nohighlight">\(\gamma = \gamma_1 +\gamma_2\)</span>. By deriving this last expression an arranging terms, we get</p>
+<div class="math notranslate nohighlight">
+\[ \tau + \lambda \dot\tau = \eta \dot\gamma \]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda = \frac{\eta}{G}\)</span> is the <em>relaxation time</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">reset</span> -f
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">eta</span><span class="p">,</span><span class="n">G</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;eta,G&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gamma</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;gamma&#39;</span><span class="p">)</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;tau&#39;</span><span class="p">)</span>
+<span class="n">gammaDot</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;gammaDot&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">tau</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">eta</span><span class="o">/</span><span class="n">G</span><span class="o">*</span><span class="n">tau</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">eta</span><span class="o">*</span><span class="n">gamma</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">eq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_39_0.png" src="../_images/rheology_39_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#tauInf = sp.symbols(&#39;\\tau_{-\infty}&#39;)</span>
+<span class="c1">#tauSol = sp.dsolve(eq,tau(t),ics={tau(-sp.oo):tauInf})</span>
+<span class="n">tauSol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span><span class="n">tau</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The following commands have been tested with <code class="docutils literal notranslate"><span class="pre">sympy</span> <span class="pre">1.7.1</span></code>. Newer versions are not working properly</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tauSol</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_42_0.png" src="../_images/rheology_42_0.png" />
+</div>
+</div>
+<p>Let’s consider a first example in which <span class="math notranslate nohighlight">\(\gamma(t)\)</span> is a <a class="reference external" href="https://en.wikipedia.org/wiki/Step_function">step function</a> with <span class="math notranslate nohighlight">\(\gamma = 1\)</span> for <span class="math notranslate nohighlight">\(t&lt;0\)</span> and then it is imposed as <span class="math notranslate nohighlight">\(\gamma = 0\)</span> again for positive time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tauStep</span> <span class="o">=</span> <span class="n">tauSol</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">gamma</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">sp</span><span class="o">.</span><span class="n">Piecewise</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="n">t</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)))</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">tauStep</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_44_0.png" src="../_images/rheology_44_0.png" />
+</div>
+</div>
+<p>That is, stress is relaxed in time according to the value of viscosity and spring constant. Note that, in general, the value of the stress is not only function of <span class="math notranslate nohighlight">\(\gamma\)</span> and its derivative but also, <em>of its history</em>.</p>
+<p><span class="math notranslate nohighlight">\(G e^{-\frac{t}{\lambda}}\)</span> is the <em>relaxation modulus</em>.</p>
+<p>We could also write the expression for <span class="math notranslate nohighlight">\(\tau(t)\)</span> in terms of <span class="math notranslate nohighlight">\(\gamma\)</span> instead of <span class="math notranslate nohighlight">\(\dot\gamma\)</span> by integrating by parts, and then we could obtain</p>
+<p><span class="math notranslate nohighlight">\(\tau(t) = - \int \frac{\eta}{\lambda^2}e^{-\frac{t}{\lambda}} \gamma(t) dt\)</span></p>
+<p>and the function <span class="math notranslate nohighlight">\(M(t) = \frac{\eta}{\lambda^2}e^{-\frac{t}{\lambda}}\)</span> is called the <em>memory function</em></p>
+<p>Let’s now consider that we impose to shear an harmonic constraint</p>
+<div class="math notranslate nohighlight">
+\[ \gamma(t) = a\sin(\omega t) \]</div>
+<p>and we can measure stress.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">omega</span><span class="p">,</span><span class="n">a</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;omega,a&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">tauSin</span> <span class="o">=</span> <span class="n">tauSol</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">gamma</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">a</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">omega</span><span class="o">*</span><span class="n">t</span><span class="p">))</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
+<span class="n">tauSin</span> <span class="o">=</span> <span class="n">tauSin</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">tauSin</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_47_0.png" src="../_images/rheology_47_0.png" />
+</div>
+</div>
+<p>After a while, when relaxation time has passed, the first term, <span class="math notranslate nohighlight">\(C_1 e^{-\frac{Gt}{\eta}}\)</span>, can be neglected</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tauSinInf</span><span class="o">=</span><span class="n">tauSin</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tauSin</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">tauSinInf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_49_0.png" src="../_images/rheology_49_0.png" />
+</div>
+</div>
+<p>The modulus that multiplies the sinus term is known as <span class="math notranslate nohighlight">\(G'\)</span>, the <strong>storage modulus</strong>, and measures the ability of the fluid to store elastic energy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">GPrime1</span><span class="p">,</span><span class="n">GPrime2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;G</span><span class="se">\&#39;</span><span class="s1">,G</span><span class="se">\&#39;\&#39;</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">GPrime1</span> <span class="o">=</span> <span class="n">tauSinInf</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">omega</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">GPrime1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_52_0.png" src="../_images/rheology_52_0.png" />
+</div>
+</div>
+<p>The modulus that multiplies the cosinus term is known as <span class="math notranslate nohighlight">\(G''\)</span>, the <strong>loss modulus</strong>, and measures the ability of the fluid to lose energy through viscous dissipation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">GPrime2</span> <span class="o">=</span> <span class="n">tauSinInf</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">GPrime2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_54_0.png" src="../_images/rheology_54_0.png" />
+</div>
+</div>
+<p>We can write this moduli in terms of characteristic time (let me use here <span class="math notranslate nohighlight">\(t_c\)</span> since <span class="math notranslate nohighlight">\(\lambda\)</span> confuses python with the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tc</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t_c&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">GPrime1</span> <span class="o">=</span> <span class="n">GPrime1</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">eta</span><span class="p">,</span><span class="n">tc</span><span class="o">*</span><span class="n">G</span><span class="p">)</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+<span class="n">GPrime2</span> <span class="o">=</span> <span class="n">GPrime2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">eta</span><span class="p">,</span><span class="n">tc</span><span class="o">*</span><span class="n">G</span><span class="p">)</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">GPrime1</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">GPrime2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_56_0.png" src="../_images/rheology_56_0.png" />
+<img alt="../_images/rheology_56_1.png" src="../_images/rheology_56_1.png" />
+</div>
+</div>
+<p>We can estimate the behavior of this two parameters as function of the frequency <span class="math notranslate nohighlight">\(\omega\)</span> of the experiment, using the dimensionless time <span class="math notranslate nohighlight">\(\epsilon = \omega t_c\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epsilon</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;epsilon&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">GPrime1</span> <span class="o">=</span> <span class="n">GPrime1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span><span class="n">epsilon</span><span class="o">/</span><span class="n">tc</span><span class="p">)</span>
+<span class="n">GPrime2</span> <span class="o">=</span> <span class="n">GPrime2</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span><span class="n">epsilon</span><span class="o">/</span><span class="n">tc</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">GPrime1</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">GPrime2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_58_0.png" src="../_images/rheology_58_0.png" />
+<img alt="../_images/rheology_58_1.png" src="../_images/rheology_58_1.png" />
+</div>
+</div>
+<p>Let’s plot it…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">GPrime1_f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">epsilon</span><span class="p">,</span><span class="n">GPrime1</span><span class="o">/</span><span class="n">G</span><span class="p">)</span>
+<span class="n">GPrime2_f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">epsilon</span><span class="p">,</span><span class="n">GPrime2</span><span class="o">/</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">GPrime1_values</span> <span class="o">=</span> <span class="n">GPrime1_f</span><span class="p">(</span><span class="n">tt</span><span class="p">)</span>
+<span class="n">GPrime2_values</span> <span class="o">=</span> <span class="n">GPrime2_f</span><span class="p">(</span><span class="n">tt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span><span class="n">GPrime1_values</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$G^\prime$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span><span class="n">GPrime2_values</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$G^{\prime\prime} $&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span><span class="n">GPrime1_values</span><span class="o">+</span><span class="n">GPrime2_values</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\omega t_c$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f124dc7ce80&gt;
+</pre></div>
+</div>
+<img alt="../_images/rheology_64_1.png" src="../_images/rheology_64_1.png" />
+</div>
+</div>
+<p>The value of <span class="math notranslate nohighlight">\(\tau\)</span> for large <span class="math notranslate nohighlight">\(\omega\)</span> gives <span class="math notranslate nohighlight">\(G^\prime\)</span>, the storage modulus. The slope of the curve for small <span class="math notranslate nohighlight">\(\omega\)</span> allows the estimation of <span class="math notranslate nohighlight">\(G^{\prime\prime}\)</span> the loss modulus and, hence, the viscous component of the fluid. That is the fundamentals of the <a class="reference external" href="http://www.mate.tue.nl/~wyss/home/resources/publications/2007/Wyss_GIT_Lab_J_2007.pdf">oscillatory rheometers</a></p>
+</div>
+<div class="section" id="voigth-kelvin-element">
+<h3>Voigth-Kelvin element<a class="headerlink" href="#voigth-kelvin-element" title="Permalink to this headline">¶</a></h3>
+<p>However, Maxwell model does not explain most of the viscoelastic behavior. Another option is the  Voigth, or Kelvin, element</p>
+<img src="attachment:e0bde361-27b6-473e-9e10-8ed6a555e8dd.png" width="800">
+<p>In this element the strain <span class="math notranslate nohighlight">\(\gamma\)</span> (displacement) are the same, and the stress <span class="math notranslate nohighlight">\(\tau\)</span> (forces) are additives</p>
+<div class="math notranslate nohighlight">
+\[ \gamma_1 = \gamma_2 = \gamma \]</div>
+<div class="math notranslate nohighlight">
+\[\tau = \tau_1 + \tau_2 = G\gamma + \eta \dot\gamma \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">reset</span> -f
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">eta</span><span class="p">,</span><span class="n">G</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;eta,G&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gamma</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;gamma&#39;</span><span class="p">)</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;tau&#39;</span><span class="p">)</span>
+<span class="n">gammaDot</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;gammaDot&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">tau</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">G</span><span class="o">*</span><span class="n">gamma</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">eta</span><span class="o">*</span><span class="n">gamma</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">eq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_72_0.png" src="../_images/rheology_72_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gammaSol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span><span class="n">gamma</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">simplify</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">ics</span><span class="o">=</span><span class="p">{</span><span class="n">gamma</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span><span class="mi">0</span><span class="p">})</span>
+<span class="n">gammaSol</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_73_0.png" src="../_images/rheology_73_0.png" />
+</div>
+</div>
+<p>In a <strong>creep experiment</strong>, a constant stress is applied and then the element is released</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span><span class="p">,</span><span class="n">tau0</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t_1,tau_0&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">gammaSolTau0</span> <span class="o">=</span> <span class="n">gammaSol</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tau</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">sp</span><span class="o">.</span><span class="n">Piecewise</span><span class="p">((</span><span class="n">tau0</span><span class="p">,</span><span class="n">t</span><span class="o">&lt;</span><span class="n">t1</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="o">&gt;=</span><span class="n">t1</span><span class="p">)))</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">gammaSolTau0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_75_0.png" src="../_images/rheology_75_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tc</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t_c&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">gammaSolTau0</span> <span class="o">=</span> <span class="n">gammaSolTau0</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">eta</span><span class="p">,</span><span class="n">G</span><span class="o">*</span><span class="n">tc</span><span class="p">)</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">gammaSolTau0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_76_0.png" src="../_images/rheology_76_0.png" />
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\xi(t) = \gamma(t) \frac{G}{\tau_0}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xi</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;xi&#39;</span><span class="p">)</span>
+<span class="n">xiEq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">xi</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">gammaSolTau0</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tau0</span><span class="p">,</span><span class="n">G</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">xiEq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_78_0.png" src="../_images/rheology_78_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epsilon</span><span class="p">,</span><span class="n">epsilon1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;epsilon, epsilon_1&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">xiEq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">xi</span><span class="p">(</span><span class="n">epsilon</span><span class="p">),</span><span class="n">xiEq</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">tc</span><span class="o">*</span><span class="n">epsilon</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span><span class="n">tc</span><span class="o">*</span><span class="n">epsilon1</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">xiEq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_79_0.png" src="../_images/rheology_79_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xi_f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">((</span><span class="n">epsilon</span><span class="p">,</span><span class="n">epsilon1</span><span class="p">),</span><span class="n">xiEq</span><span class="o">.</span><span class="n">rhs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">epsilon1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">xi_values</span> <span class="o">=</span> <span class="n">xi_f</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span><span class="n">epsilon1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span><span class="n">xi_values</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\gamma\frac</span><span class="si">{G}</span><span class="s1">{\tau_0}$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\frac</span><span class="si">{t}</span><span class="s1">{\lambda}$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f124d940dc0&gt;
+</pre></div>
+</div>
+<img alt="../_images/rheology_83_1.png" src="../_images/rheology_83_1.png" />
+</div>
+</div>
+<p>In this case, the characteristic time <span class="math notranslate nohighlight">\(\lambda = \frac{\eta}{G}\)</span> is called <strong>retardation time</strong>. This model describes the behavior of a viscoelastic solid.</p>
+</div>
+<div class="section" id="jeffreys-burger-element">
+<h3>Jeffreys-Burger element<a class="headerlink" href="#jeffreys-burger-element" title="Permalink to this headline">¶</a></h3>
+<p>However, Maxwell and Voight elements are not able to describe correctly real viscoelastic materials. The are several complex combinations of this elements, and the more usual is the Jeffreys (or Burger) element that replaces in the Maxwell element the spring by a Voight element.</p>
+<img src=attachment:853f6259-aaee-4889-a701-5eb2128e1f7a.png width=800>
+<p>Stress in both parts are the same</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bb7e0e36-1e62-4d06-8638-cbd130d060a3">
+<span class="eqno">(12)<a class="headerlink" href="#equation-bb7e0e36-1e62-4d06-8638-cbd130d060a3" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+\tau &amp;=&amp; \eta_1 \dot\gamma_1 \\
+\tau &amp;=&amp; G_2\gamma_2 + \eta_2\dot\gamma_2
+\end{eqnarray}\]</div>
+<p>and, on the other side,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-72ded692-7491-4d1d-92d2-abe3d2ec0cd5">
+<span class="eqno">(13)<a class="headerlink" href="#equation-72ded692-7491-4d1d-92d2-abe3d2ec0cd5" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+\gamma = \gamma_1 + \gamma_2 \\
+\dot\gamma = \dot\gamma_1 + \dot\gamma_2
+\end{eqnarray}\]</div>
+<p>By combining these equations, we can obtain</p>
+<div class="math notranslate nohighlight">
+\[ \tau + \lambda_1\dot\tau = \eta_0\left(\dot\gamma + \lambda_2\ddot\gamma\right)\]</div>
+<p>with</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ee5d5e97-ecf5-4c61-aefa-db7e1b0fa548">
+<span class="eqno">(14)<a class="headerlink" href="#equation-ee5d5e97-ecf5-4c61-aefa-db7e1b0fa548" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+\lambda_1 &amp;=&amp; \frac{\eta_1+\eta_2}{G_2}\\
+\eta_0 &amp;=&amp; \eta_1 \\
+\lambda_2 &amp;=&amp; \frac{\eta_2}{G_2}
+\end{eqnarray}\]</div>
+<p>There is a viscosity <span class="math notranslate nohighlight">\(\eta_0\)</span> (or <span class="math notranslate nohighlight">\(\eta_1\)</span>), which is known as the viscosity of the fluid part (considered newtonian) and two characteristic times, $\lambda_1<span class="math notranslate nohighlight">\( and \)</span>\lambda_2$, which are the relaxation and the retardation times, respectively.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">reset</span> -f
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">eta1</span><span class="p">,</span><span class="n">eta2</span><span class="p">,</span><span class="n">G2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;eta_1,eta_2,G_2&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gamma</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;gamma&#39;</span><span class="p">)</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;tau&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">tau</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">eta1</span><span class="o">+</span><span class="n">eta2</span><span class="p">)</span><span class="o">/</span><span class="n">G2</span><span class="o">*</span><span class="n">tau</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">eta1</span><span class="o">*</span><span class="n">gamma</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">eta2</span><span class="o">/</span><span class="n">G2</span><span class="o">*</span><span class="n">gamma</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">eq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_91_0.png" src="../_images/rheology_91_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#tauInf = sp.symbols(&#39;\\tau_{-\infty}&#39;)</span>
+<span class="c1">#tauSol = sp.dsolve(eq,tau(t),ics={tau(-sp.oo):tauInf})</span>
+<span class="n">tauSol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span><span class="n">tau</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tauSol</span> <span class="o">=</span> <span class="n">tauSol</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">tauSol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_93_0.png" src="../_images/rheology_93_0.png" />
+</div>
+</div>
+<p>Again, first term can be neglected after a while</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tauSolInf</span><span class="o">=</span><span class="n">tauSol</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tauSol</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">tauSolInf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rheology_95_0.png" src="../_images/rheology_95_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="extension-to-vectorial-notation">
+<h3>Extension to vectorial notation<a class="headerlink" href="#extension-to-vectorial-notation" title="Permalink to this headline">¶</a></h3>
+<p>Maxwell model is written, in vector and tensor notation as</p>
+<div class="math notranslate nohighlight">
+\[ \boldsymbol{\tau} + \lambda \stackrel{\triangledown}{\boldsymbol{\tau}} = \eta \boldsymbol{\dot\gamma} = \eta \left(\nabla \boldsymbol{u} + \nabla \boldsymbol{u}^T \right) \]</div>
+<p>where <span class="math notranslate nohighlight">\(\stackrel{\triangledown}{\boldsymbol{\tau}}\)</span> is the Upper Convective Time Derivative, defined as</p>
+<div class="math notranslate nohighlight">
+\[ \stackrel{\triangledown}{\boldsymbol{\tau}} = \dot{\boldsymbol{\tau}} - \nabla \boldsymbol{u}\cdot\boldsymbol{\tau} - \boldsymbol{\tau}\cdot \nabla \boldsymbol{u}^T \]</div>
+<p>In a similar way, Jeffreys model is written as</p>
+<div class="math notranslate nohighlight">
+\[ \boldsymbol{\tau} + \lambda_1 \stackrel{\triangledown}{\boldsymbol{\tau}} = \eta \left( \boldsymbol{\dot\gamma} + \lambda_2 \stackrel{\triangledown}{\boldsymbol{\dot\gamma}}\right) \]</div>
+<p>known as the <a class="reference external" href="https://en.wikipedia.org/wiki/Oldroyd-B_model"><strong>Oldroyd-B</strong> model</a></p>
+</div>
+</div>
+</div>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"6257f82359f5418b966b145401fcab23": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "bf13e2036b8649879dd413abb22e3819": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_afbbe765bf644eccac3895ad7c0552ef", "IPY_MODEL_1a9e1e1565454cbb82ff3669565b2f48"], "layout": "IPY_MODEL_6257f82359f5418b966b145401fcab23"}}, "68871084730245cca54bdd7ce6bd16b7": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2c68c88c2254444186ca3a69f27976bd": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "afbbe765bf644eccac3895ad7c0552ef": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatSliderView", "continuous_update": true, "description": "n", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_68871084730245cca54bdd7ce6bd16b7", "max": 2.0, "min": 0.01, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.01, "style": "IPY_MODEL_2c68c88c2254444186ca3a69f27976bd", "value": 1.0}}, "c882e83816104b3e900b393acec1fd9a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "350px", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "1a9e1e1565454cbb82ff3669565b2f48": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_c882e83816104b3e900b393acec1fd9a", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {"needs_background": "light"}, "data": {"text/plain": "<Figure size 432x288 with 1 Axes>", "image/png": "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\n"}}]}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./2-Rheology"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../1-microFlows/Assignment1.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Assignment 1. Computation of journal bearing</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../3-Turbulence/turbulence.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Turbulent flows. Statistical description and characteristic scales</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Robert Castilla - UPC CATMech Terrassa<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1296 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Microflows. A very brief introduction with lubrication and capillarity &#8212; UPC-205237 Advanced Fluid Mechanics</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Meniscus between plates. Solution" href="MeniscusBetweenPlates.html" />
+    <link rel="prev" title="Assignment 0: Conical tank emptying time" href="../0-Intro/Assignment0.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">UPC-205237 Advanced Fluid Mechanics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Advanced Fluid Mechanics
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../0-Intro/IntroPython.html">
+   Introduction to scientific computation with Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0-Intro/Assignment0.html">
+     Assignment 0: Conical tank emptying time
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   Microflows. A very brief introduction with lubrication and capillarity
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MeniscusBetweenPlates.html">
+     Meniscus between plates. Solution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Assignment1.html">
+     Assignment 1. Computation of journal bearing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Rheology/rheology.html">
+   Rheology. A very brief Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3-Turbulence/turbulence.html">
+   Turbulent flows. Statistical description and characteristic scales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-BoundaryLayer/BoundaryLayer.html">
+   Boundary Layer. An introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5-CompressibleFlow/CompressibleFlow.html">
+   Compressible Flow. An introduction
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/1-microFlows/Microflows.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/1-microFlows/Microflows.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laminar-flows-and-fundamentals-of-lubrication">
+   Laminar flows and fundamentals of lubrication
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#activity">
+     Activity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reynolds-equation">
+     Reynolds equation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pressure-distribution">
+     Pressure distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#activity-very-easy">
+     Activity (very easy)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise">
+     Exercise
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pressure-driven-microflow-hele-shaw-flow">
+   Pressure driven microflow. Hele-Shaw flow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-example">
+     For example…
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#surface-tension-driven-flows">
+   Surface Tension driven flows
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-shape-of-fluid-interface-near-a-wall">
+     Example : Shape of fluid interface near a wall
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-shape-of-meniscus-between-two-plates">
+     Exercise. Shape of meniscus between two plates
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Microflows. A very brief introduction with lubrication and capillarity</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laminar-flows-and-fundamentals-of-lubrication">
+   Laminar flows and fundamentals of lubrication
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#activity">
+     Activity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reynolds-equation">
+     Reynolds equation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pressure-distribution">
+     Pressure distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#activity-very-easy">
+     Activity (very easy)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise">
+     Exercise
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pressure-driven-microflow-hele-shaw-flow">
+   Pressure driven microflow. Hele-Shaw flow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-example">
+     For example…
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#surface-tension-driven-flows">
+   Surface Tension driven flows
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-shape-of-fluid-interface-near-a-wall">
+     Example : Shape of fluid interface near a wall
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-shape-of-meniscus-between-two-plates">
+     Exercise. Shape of meniscus between two plates
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="microflows-a-very-brief-introduction-with-lubrication-and-capillarity">
+<h1>Microflows. A very brief introduction with lubrication and capillarity<a class="headerlink" href="#microflows-a-very-brief-introduction-with-lubrication-and-capillarity" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="laminar-flows-and-fundamentals-of-lubrication">
+<h2>Laminar flows and fundamentals of lubrication<a class="headerlink" href="#laminar-flows-and-fundamentals-of-lubrication" title="Permalink to this headline">¶</a></h2>
+<p>For a correct development of this lecture, a review of viscous flows (Couette and Hagen-Poiseullie flows and similar) studied in previous courses of Introductory Fluid Mechanics is advised.</p>
+<p>This section is focused on fluid flows at very small scales. This is the basis of the technological field known as <a class="reference external" href="https://en.wikipedia.org/wiki/Microfluidics">Microfluidics</a>.</p>
+<p>At very small scales, with confined or semi-confined flows, Reynolds number is commonly very small even with high velocities or low viscosities. For example, for a small journal bearing, say 5mm diameter, spinning at 1500 rpm, with a clearance of 0.1 mm, even with water, Reynolds number is</p>
+<div class="math notranslate nohighlight">
+\[ \text{Re} = \frac{\omega d c}{2\nu} \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># mm</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># mm</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1500</span> <span class="c1"># rpm</span>
+<span class="n">nu</span> <span class="o">=</span> <span class="mf">1e-6</span> <span class="c1"># m^2/s</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">5</span><span class="o">/</span><span class="mi">1000</span> <span class="c1"># m</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">/</span><span class="mi">1000</span> <span class="c1"># m</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="mi">1500</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">30</span> <span class="c1">#rad/s</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">omega</span><span class="o">*</span><span class="n">d</span><span class="o">/</span><span class="mi">2</span> <span class="c1">#m/s</span>
+<span class="n">Re</span> <span class="o">=</span> <span class="n">u</span><span class="o">*</span><span class="n">c</span><span class="o">/</span><span class="n">nu</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Reynolds number = </span><span class="si">{:.3g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Re</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reynolds number = 39.3
+</pre></div>
+</div>
+</div>
+</div>
+<p>For more viscous fluid, or smaller devices, Reynolds number can be much lower than 1.</p>
+<hr class="docutils" />
+<div class="section" id="activity">
+<h3>Activity<a class="headerlink" href="#activity" title="Permalink to this headline">¶</a></h3>
+<p>Think on some device with fluid flow at very low Reynolds number. Estimate the value of this Reynolds number. Try to think on something with <span class="math notranslate nohighlight">\(\text{Re} &lt; 1\)</span>.</p>
+<hr class="docutils" />
+<p>In previous introductory Fluid Mechanics courses, this kind of flows have been studied with very simple geometries. Examples are flow between two parallel planes with relative velocity (Couette flow) or with pressure gradient (Poisueille flow) or viscous flow inside a pipe with pressure gradient (Hagen-Poiseuille flow). For details, see sections 4.11 and 6.4 in White’s book.</p>
+<p>Here we are going to generalise this kind of flows, when pressure difference and relative velocity are combined, and planes are not parallels (but quasi-parallels). This kind of flows are very important in lubrication, which has a principal role in all the industrial processes. The technology branch that studies lubrication and wear is known as <em><a class="reference external" href="https://en.wikipedia.org/wiki/Tribology">Tribology</a></em>.</p>
+<p>Let’s consider a 2D flow in the <span class="math notranslate nohighlight">\(x-y\)</span> plane, confined by two surfaces (we consider as unity the length in the <span class="math notranslate nohighlight">\(z\)</span> direction). The lower surface is plane and it lies on the <span class="math notranslate nohighlight">\(y\)</span>-normal plane, and the upper is separated by a distance <span class="math notranslate nohighlight">\(h(x,t)\)</span>.</p>
+<p><img alt="surfaces.dio.svg" src="../_images/surfaces.dio.svg" /></p>
+<p>We are considering that length <span class="math notranslate nohighlight">\(L \gg h(x,t)\)</span> and also that walls are planes, or with a curvature radius much larger also than <span class="math notranslate nohighlight">\(h(x,t)\)</span></p>
+<p>The continuity equation is</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial u_i}{\partial x_i} = 0\]</div>
+<p>that, in 2D reduces to</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y}= 0 \label{eq:cont} \tag{1}\]</div>
+<p>The Navier-Stokes equations are</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial u_i}{\partial t} + u_j\frac{\partial u_i}{\partial x_j} = -\frac{1}{\rho}\frac{\partial p}{\partial x_i} + \nu \frac{\partial^2 u_i}{\partial u_j \partial u_j} \tag{2}\]</div>
+<p>The boundary conditions are <span class="math notranslate nohighlight">\(u\left(y=0,t\right)=U_b(t)\)</span> and <span class="math notranslate nohighlight">\(u\left(y=h(x,t),t \right)=U_t(t)\)</span> and also <span class="math notranslate nohighlight">\(p=p(t)\)</span></p>
+<p>As it is usually done in Fluid Mechanics, let’s study which scales are important by writing the  dimensionless equations. First, we consider the aspect ratio of the geometry, <span class="math notranslate nohighlight">\(\varepsilon = \frac{h}{L}\)</span>, a characteristic velocity of the flow (it can be, for example, the velocity of any of the surfaces) <span class="math notranslate nohighlight">\(U\)</span> and a characteristic pressure <span class="math notranslate nohighlight">\(p_c\)</span> (it is usually the atmospheric pressure). Then the variables of the problema can be normalized as</p>
+<div class="math notranslate nohighlight">
+\[ x^* = \frac{x}{L}\]</div>
+<div class="math notranslate nohighlight">
+\[ y^* = \frac{y}{h} = \frac{y}{\varepsilon L}\]</div>
+<div class="math notranslate nohighlight">
+\[ t^* = t \frac{L}{U} \]</div>
+<div class="math notranslate nohighlight">
+\[ u^* = \frac{u}{U}\]</div>
+<div class="math notranslate nohighlight">
+\[ v^* = \frac{v}{V} = \frac{v}{\varepsilon U} \]</div>
+<div class="math notranslate nohighlight">
+\[ p^* = \frac{p}{p_c} \]</div>
+<p>Then continuity equation leads to</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial u^*}{\partial x^*} + \frac{\partial v^*}{\partial y^*}= 0 \label{eq:cont*} \tag{3}\]</div>
+<p>that is, no changes. But Navier-Stokes equations yields</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon^2 \text{Re}_L  \left( \frac{\partial u^*}{\partial t^*} + u^*\frac{\partial u^*}{\partial x^*} + v^*\frac{\partial u^*}{\partial y^*} \right)  = -\frac{1}{\Lambda}\frac{\partial p^*}{\partial x^*} + \varepsilon^2 \frac{\partial^2 u^*}{\partial {x^*}^2} + \frac{\partial^2 u^*}{\partial {y^*}^2} \tag{4a}\]</div>
+<div class="math notranslate nohighlight">
+\[\varepsilon^4 \text{Re}_L  \left( \frac{\partial v^*}{\partial t^*} + u^*\frac{\partial v^*}{\partial x^*} + v^*\frac{\partial v^*}{\partial y^*} \right)  = -\frac{1}{\Lambda}\frac{\partial p^*}{\partial y^*} + \varepsilon^4 \frac{\partial^2 v^*}{\partial {x^*}^2} + \varepsilon^2 \frac{\partial^2 v^*}{\partial {y^*}^2} \tag{4b}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Lambda = \frac{\mu U L}{p_c h^2}\)</span> is the <em>bearing number</em> (ratio of viscous and pressure forces).</p>
+<p>For the previous example, considering a bearing lentgh of the same size than diameter, the value of <span class="math notranslate nohighlight">\(\varepsilon^2 \text{Re}_L\)</span> is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epsilon</span> <span class="o">=</span> <span class="n">c</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">d</span><span class="p">)</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># mm</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">L</span><span class="o">/</span><span class="mi">1000</span> <span class="c1">#  m</span>
+<span class="n">ReL</span> <span class="o">=</span> <span class="n">Re</span><span class="o">*</span><span class="n">L</span><span class="o">/</span><span class="n">c</span>
+<span class="n">epsilon2ReL</span> <span class="o">=</span> <span class="n">epsilon</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">ReL</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;epsilon2ReL = </span><span class="si">{:.2g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">epsilon2ReL</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epsilon2ReL = 0.08
+</pre></div>
+</div>
+</div>
+</div>
+<p>That is, <span class="math notranslate nohighlight">\(\varepsilon^2 \text{Re}_L \ll 1\)</span>, and, hence, inertial term (including time derivative) can usually be neglected (Remember that this example is with water. Lubricant oils are usually hundreds times more viscous than water)</p>
+<p>On  the other hand, bearing number is typically close to unity. We can estimate the characteristic pressure of the journal bearing, and, from here, the characteristic load.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># Kg/m^3</span>
+<span class="n">Lambda</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">p_c</span> <span class="o">=</span> <span class="n">rho</span><span class="o">*</span><span class="n">nu</span><span class="o">*</span><span class="n">u</span><span class="o">*</span><span class="n">L</span><span class="o">/</span><span class="p">(</span><span class="n">Lambda</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;p_c = </span><span class="si">{:.4g}</span><span class="s1"> Pa&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p_c</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p_c = 196.3 Pa
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">W</span> <span class="o">=</span> <span class="n">p_c</span><span class="o">*</span><span class="n">L</span><span class="o">*</span><span class="n">d</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;W = </span><span class="si">{:.3g}</span><span class="s1"> N&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">W</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>W = 0.00491 N
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is a very low load. Actually it is the typical load that this bearing can bears with a <em>uniform</em> clearance, i.e. without eccentricity. When load increases, the journal moves away from the center and the clearance is not longer uniform, and the value can be very small at apecific location in the direction of eccentricity.</p>
+<p>Equation (4a) leads then to</p>
+<div class="math notranslate nohighlight">
+\[-\frac{1}{\rho}\frac{\partial p}{\partial x} + \nu \frac{\partial^2 u}{\partial y^2} = 0 \tag{5}\]</div>
+<p>and (4b) to</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial p}{\partial y} = 0\]</div>
+<p>Note that in (4a) there is no explicit dependence on time. But time is still an independent variable through <span class="math notranslate nohighlight">\(p(x,t)\)</span> an boundary conditions, which can be unesteady.</p>
+<p>Now we integrate the linear equation</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">mu</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,y,t,mu&#39;</span><span class="p">)</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">mu</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="n">y</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_19_0.png" src="../_images/Microflows_19_0.png" />
+</div>
+</div>
+<p>We define the top and bottom velocities and the boundary conditions, by means of a dictionary</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ub</span><span class="p">,</span><span class="n">Ut</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;U_b,U_t&#39;</span><span class="p">)</span>
+<span class="n">ics</span> <span class="o">=</span> <span class="p">{</span><span class="n">u</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span><span class="n">Ub</span><span class="p">,</span><span class="n">u</span><span class="p">(</span><span class="n">h</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span><span class="n">Ut</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And we solve the EDO with the defined boundary conditions</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span><span class="n">u</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="n">ics</span><span class="o">=</span><span class="n">ics</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And this is the solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Sol</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_25_0.png" src="../_images/Microflows_25_0.png" />
+</div>
+</div>
+<p>That can be a little bit simplified</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Sol</span> <span class="o">=</span> <span class="n">Sol</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Sol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_27_0.png" src="../_images/Microflows_27_0.png" />
+</div>
+</div>
+<p>Let’s consider, for the shake of simplicity, the case with <span class="math notranslate nohighlight">\(U_t(t) = U; U_b(t)=0\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">U</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="p">)</span>
+<span class="n">Sol</span> <span class="o">=</span> <span class="n">Sol</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">Ut</span><span class="p">,</span><span class="n">U</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">Ub</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Sol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_29_0.png" src="../_images/Microflows_29_0.png" />
+</div>
+</div>
+<p>In order to calculate the pressure distribution, we need another condition for the velocity. This condition is the <strong>mass balance</strong>. The flow rate in any section <span class="math notranslate nohighlight">\(x\)</span> must be
+independent of <span class="math notranslate nohighlight">\(x\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">intU</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">Sol</span><span class="o">.</span><span class="n">rhs</span><span class="p">,(</span><span class="n">y</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">h</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">intU</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_31_0.png" src="../_images/Microflows_31_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="reynolds-equation">
+<h3>Reynolds equation<a class="headerlink" href="#reynolds-equation" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Reynolds_equation">Reynolds equation</a> for lubrications yields when we impose that this flow rate cannot be function of <span class="math notranslate nohighlight">\(x\)</span> (that is continuity condition)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ReynoldsEq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">intU</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">ReynoldsEq</span> <span class="o">=</span> <span class="n">ReynoldsEq</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">ReynoldsEq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_33_0.png" src="../_images/Microflows_33_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="pressure-distribution">
+<h3>Pressure distribution<a class="headerlink" href="#pressure-distribution" title="Permalink to this headline">¶</a></h3>
+<p>To calculate the pressure distribution, we consider the solution of</p>
+<div class="math notranslate nohighlight">
+\[ q = \int_0^h u(y) \text{d} y\]</div>
+<p>and we isolate the pressure gradient</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">)</span>
+<span class="n">exp_dpdx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">intU</span><span class="o">-</span><span class="n">q</span><span class="p">,</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">exp_dpdx</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_35_0.png" src="../_images/Microflows_35_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">exp_dpdx</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">display</span><span class="p">(</span><span class="n">p_eq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_36_0.png" src="../_images/Microflows_36_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">p_eq</span><span class="p">,</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_37_0.png" src="../_images/Microflows_37_0.png" />
+</div>
+</div>
+<p>This is the general soluction for any shape for <span class="math notranslate nohighlight">\(h(x)\)</span>. The values for <span class="math notranslate nohighlight">\(q\)</span> and the integration constant are obtained from suitable boundary conditions</p>
+</div>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>Let’s apply that for the linear case <span class="math notranslate nohighlight">\(h(x)=h_0(1+\alpha x/L)\)</span>, with <span class="math notranslate nohighlight">\(\alpha \ll 1\)</span>. It is the working principle of a <a class="reference external" href="https://en.wikipedia.org/wiki/Fluid_bearing#Michell.2FKingsbury_tilting-pad_fluid_bearings">tilting-pad bearing</a></p>
+<p><img alt="image.png" src="../_images/tiltingPad1.png" /></p>
+<p><img alt="image.png" src="../_images/tiltingPad2.png" /></p>
+<p>First, we replace the generic <span class="math notranslate nohighlight">\(h(x)\)</span> by this particular case</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h0</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">L</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;h_0, alpha,L&#39;</span><span class="p">)</span>
+<span class="n">p_eq</span> <span class="o">=</span> <span class="n">p_eq</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">h</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">h0</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">alpha</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_eq</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_42_0.png" src="../_images/Microflows_42_0.png" />
+</div>
+</div>
+<p>Next, we integrate the pressure distribution with the proper boundary condition for <span class="math notranslate nohighlight">\(p(x=0)=p_a\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pa</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;pa&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">p_eq</span><span class="p">,</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">ics</span><span class="o">=</span><span class="p">{</span><span class="n">p</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span><span class="n">pa</span><span class="p">})</span>
+<span class="n">display</span><span class="p">(</span><span class="n">p_sol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_45_0.png" src="../_images/Microflows_45_0.png" />
+</div>
+</div>
+<p>The flow rate in this moving pad can be calulated with the other boundary condition, <span class="math notranslate nohighlight">\(p(x=L)=p_a\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q_sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">p_sol</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">L</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">L</span><span class="p">),</span><span class="n">pa</span><span class="p">),</span><span class="n">q</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">q_sol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_47_0.png" src="../_images/Microflows_47_0.png" />
+</div>
+</div>
+<p>and we replace again this result in the pressure distribution</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_sol</span> <span class="o">=</span> <span class="n">p_sol</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="n">q_sol</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">p_sol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_49_0.png" src="../_images/Microflows_49_0.png" />
+</div>
+</div>
+<p>Let’s rearrange the terms to get it it nicer</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">p_sol</span><span class="o">.</span><span class="n">lhs</span><span class="o">-</span><span class="n">pa</span><span class="p">,</span><span class="n">p_sol</span><span class="o">.</span><span class="n">rhs</span><span class="o">-</span><span class="n">pa</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">p_sol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_51_0.png" src="../_images/Microflows_51_0.png" />
+</div>
+</div>
+<p>This solution is complex, since it is considering all the values of <span class="math notranslate nohighlight">\(\alpha\)</span>. We can take advantage of the assumption <span class="math notranslate nohighlight">\(\alpha \ll 1\)</span> in order to expand the right hand side in
+<span class="math notranslate nohighlight">\(\alpha\)</span> up to the first order</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">p_sol</span><span class="o">.</span><span class="n">lhs</span><span class="p">,</span><span class="n">p_sol</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">removeO</span><span class="p">())</span>
+<span class="n">p_sol</span> <span class="o">=</span> <span class="n">p_sol</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">p_sol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_53_0.png" src="../_images/Microflows_53_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">W</span> <span class="o">=</span> <span class="o">-</span><span class="n">p_sol</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">integrate</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_54_0.png" src="../_images/Microflows_54_0.png" />
+</div>
+</div>
+<p>Remember that it is for unit lenght in the <span class="math notranslate nohighlight">\(z\)</span> direction, so the mean (relative) pressure in this fluid film is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pf</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;p_f&#39;</span><span class="p">)</span>
+<span class="n">pf</span> <span class="o">=</span> <span class="n">W</span><span class="o">/</span><span class="n">L</span>
+<span class="n">display</span><span class="p">(</span><span class="n">pf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_56_0.png" src="../_images/Microflows_56_0.png" />
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="activity-very-easy">
+<h3>Activity (very easy)<a class="headerlink" href="#activity-very-easy" title="Permalink to this headline">¶</a></h3>
+<p>Estimate the value of the bearing number <span class="math notranslate nohighlight">\(\Lambda\)</span> for this tilting pad</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
+<p>What happens when slope of pad is not increasing, but decreasing?</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="pressure-driven-microflow-hele-shaw-flow">
+<h2>Pressure driven microflow. Hele-Shaw flow<a class="headerlink" href="#pressure-driven-microflow-hele-shaw-flow" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Henry_Selby_Hele-Shaw">Henry Hele-Shaw</a> was a British engineer in the late 19th and the early 20th centuries. He published a paper in 1898 about the Stokes flow between to close plates. This kind of flow are now know as <a class="reference external" href="https://en.wikipedia.org/wiki/Hele-Shaw_flow">Hele-Shaw flows</a>.</p>
+<p>The interest of this flow is that, although being highly influence by viscosity, the flow shape in presence of an obstacle (large in comparison with plates distance) is actually a potential flow. This has a hide range of applications in present microdevices design and manufacturing (see, for example, this <a class="reference external" href="https://repository.tudelft.nl/islandora/object/uuid:eacb9fa0-401b-4b17-97b6-f0eed6744bdf">MSc thesis from Delft University</a>).</p>
+<p>This flow is very similar to a <a class="reference external" href="https://en.wikipedia.org/wiki/Hagen%E2%80%93Poiseuille_equation#Plane_Poiseuille_flow">Poiseuille flow</a>, in the sense of quasi-2D flow driven by a pressure gradient.  Let’s consider that the flow is parallel to the <span class="math notranslate nohighlight">\(x-y\)</span> plane, and normal to the <span class="math notranslate nohighlight">\(z\)</span> axis and pressure gradient is given also only in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions.</p>
+<p><img alt="image.png" src="../_images/Hele-Shaw.png" /></p>
+<p>Velocity equations for <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> are, following equation (5),</p>
+<div class="math notranslate nohighlight">
+\[-\frac{1}{\rho}\frac{\partial p}{\partial x} + \nu \frac{\partial^2 u}{\partial z^2} = 0 \tag{6a}\]</div>
+<div class="math notranslate nohighlight">
+\[-\frac{1}{\rho}\frac{\partial p}{\partial y} + \nu \frac{\partial^2 v}{\partial z^2} = 0 \tag{6b}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\partial p}{\partial z} = 0 \tag{6c}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span><span class="p">,</span><span class="n">h</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;z,h&#39;</span><span class="p">)</span> <span class="c1"># now h is not a function. It is constant</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+<span class="n">uEq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">mu</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="n">z</span><span class="p">),</span><span class="n">z</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">vEq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">mu</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span><span class="n">y</span><span class="p">)</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">v</span><span class="p">(</span><span class="n">z</span><span class="p">),</span><span class="n">z</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">uEq</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">vEq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_59_0.png" src="../_images/Microflows_59_0.png" />
+<img alt="../_images/Microflows_59_1.png" src="../_images/Microflows_59_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uics</span> <span class="o">=</span> <span class="p">{</span><span class="n">u</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span><span class="mi">0</span><span class="p">,</span><span class="n">u</span><span class="p">(</span><span class="n">h</span><span class="p">):</span><span class="mi">0</span><span class="p">}</span>
+<span class="n">vics</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span><span class="mi">0</span><span class="p">,</span><span class="n">v</span><span class="p">(</span><span class="n">h</span><span class="p">):</span><span class="mi">0</span><span class="p">}</span>
+<span class="n">uSol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">uEq</span><span class="p">,</span><span class="n">u</span><span class="p">(</span><span class="n">z</span><span class="p">),</span><span class="n">ics</span><span class="o">=</span><span class="n">uics</span><span class="p">)</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+<span class="n">vSol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">vEq</span><span class="p">,</span><span class="n">v</span><span class="p">(</span><span class="n">z</span><span class="p">),</span><span class="n">ics</span><span class="o">=</span><span class="n">vics</span><span class="p">)</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">uSol</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">vSol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_60_0.png" src="../_images/Microflows_60_0.png" />
+<img alt="../_images/Microflows_60_1.png" src="../_images/Microflows_60_1.png" />
+</div>
+</div>
+<p>Remember the definition of <a class="reference external" href="https://en.wikipedia.org/wiki/Velocity_potential">velocity potential</a>. In this case, the solution is very easy</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phi_u</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;phi_u&#39;</span><span class="p">)</span>
+<span class="n">phi_v</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;phi_v&#39;</span><span class="p">)</span>
+<span class="n">phi_u</span> <span class="o">=</span> <span class="n">uSol</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">phi_v</span> <span class="o">=</span> <span class="n">vSol</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">phi_u</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">phi_v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_62_0.png" src="../_images/Microflows_62_0.png" />
+<img alt="../_images/Microflows_62_1.png" src="../_images/Microflows_62_1.png" />
+</div>
+</div>
+<p>Both solutions are the same and, so, we can just define the velocity potential al</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phi</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;phi&#39;</span><span class="p">)</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="n">phi_u</span>
+<span class="n">display</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_64_0.png" src="../_images/Microflows_64_0.png" />
+</div>
+</div>
+<p>Asuming that there is no vertical velocity, <span class="math notranslate nohighlight">\(w = 0\)</span>, the continuity equation for 2D flow is just</p>
+<div class="math notranslate nohighlight">
+\[ \nabla_{2D} \cdot \mathbf{u} = \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = \Delta \phi = \Delta p = \frac{\partial^2 p}{\partial x^2} + \frac{\partial^2 p}{\partial y^2} = 0 \]</div>
+<div class="section" id="for-example">
+<h3>For example…<a class="headerlink" href="#for-example" title="Permalink to this headline">¶</a></h3>
+<p>Let’s consider a flow in the <span class="math notranslate nohighlight">\(x\)</span> direction with</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ubar</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;ubar&#39;</span><span class="p">)</span>
+<span class="n">uInt</span> <span class="o">=</span> <span class="n">uSol</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">integrate</span><span class="p">((</span><span class="n">z</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">h</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">uInt</span><span class="p">)</span>
+<span class="n">pEq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">uInt</span><span class="o">/</span><span class="n">h</span><span class="p">,</span><span class="n">ubar</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">pEq</span><span class="p">)</span>
+<span class="n">pdiffSol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">pEq</span><span class="p">,</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">pdiffSol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_67_0.png" src="../_images/Microflows_67_0.png" />
+<img alt="../_images/Microflows_67_1.png" src="../_images/Microflows_67_1.png" />
+<img alt="../_images/Microflows_67_2.png" src="../_images/Microflows_67_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uSol</span> <span class="o">=</span> <span class="n">uSol</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">pdiffSol</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">uSol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_68_0.png" src="../_images/Microflows_68_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pSol</span> <span class="o">=</span> <span class="n">pdiffSol</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">pSol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_69_0.png" src="../_images/Microflows_69_0.png" />
+</div>
+</div>
+<p>In this video some experimental flows are presented to show the potential-like Hele-Shaw flows</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;WUilsJ_HMvQ&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="800"
+    height="600"
+    src="https://www.youtube.com/embed/WUilsJ_HMvQ"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+<p>Note that this solution does not satisfy the non-slip condition for, for example, <span class="math notranslate nohighlight">\(y=0\)</span> (a wall in the <span class="math notranslate nohighlight">\(x\)</span> axis). There is a mathematical trick to overcome that: add a velocity <span class="math notranslate nohighlight">\(u'\)</span></p>
+<div class="math notranslate nohighlight">
+\[ U(y,z) = u(z) + u'(y,z)\]</div>
+<p>such that <span class="math notranslate nohighlight">\(u' \rightarrow -u\)</span> for <span class="math notranslate nohighlight">\( y \rightarrow 0\)</span> and <span class="math notranslate nohighlight">\(u' \rightarrow 0\)</span> for <span class="math notranslate nohighlight">\( y \gg 0\)</span></p>
+<p>We could make it if we wad more time…</p>
+</div>
+</div>
+<div class="section" id="surface-tension-driven-flows">
+<h2>Surface Tension driven flows<a class="headerlink" href="#surface-tension-driven-flows" title="Permalink to this headline">¶</a></h2>
+<p>The third kind of microflow that we considering is surface tension driven flows. <a class="reference external" href="https://en.wikipedia.org/wiki/Surface_tension">Surface tension</a> is the property of liquids responsible of the surface stability.</p>
+<p>The surface tension coefficient (or just surface tension), <span class="math notranslate nohighlight">\(\gamma\)</span>, has units of force per lenght unit (N/m) and in the particular case of water in air at 20 Celsius degrees its value is <span class="math notranslate nohighlight">\(\gamma = 72.8\, \text{mN/m}\)</span>. This value is very small compared with inertial forces, or pressure forces, for usual liquid volumes. But it can becomes very important when the liquid volume is of micrometers (or even milimeters) scale.</p>
+<p>We have seen in previous courses some basic concepts related to surface tension, as pressure inside bubbles or capillary rise, which are governed by the <a class="reference external" href="https://en.wikipedia.org/wiki/Young%E2%80%93Laplace_equation">Laplace-Young equation</a> for spherical surfaces. Here we are going to develope a little bit the subject.</p>
+<p>From a Fluid Mechanics viewpoint, the presence of an interface implies a pressure jump. This pressure jump is positive or negative in function of the curvature of the surface.</p>
+<p>Let’s consider the thermodynamics of a liquid droplet in a surface.</p>
+<p><img alt="image.png" src="../_images/drop.png" /></p>
+<p>(from <a class="reference external" href="https://www.researchgate.net/publication/318574875_Atomic-scale_computational_design_of_hydrophobic_RE_surface-doped_Al2O3_and_TiO2"><em>Atomic-scale computational design of hydrophobic RE surface-doped Al2O3 and TiO2</em> by Czelej et al</a></p>
+<p>Its <a class="reference external" href="https://en.wikipedia.org/wiki/Helmholtz_free_energy">free energy</a> (neglecting temperature variations) is</p>
+<div class="math notranslate nohighlight">
+\[ \newcommand{Vol}{V\kern-0.65em\raise0.3ex-} \]</div>
+<div class="math notranslate nohighlight">
+\[ E = \sum_{i \neq j} A_{ij}\gamma_{ij} - \lambda \Vol \]</div>
+<p>where <span class="math notranslate nohighlight">\(\Vol\)</span> is the droplet volume (constant) and <span class="math notranslate nohighlight">\(\lambda\)</span> is a <a class="reference external" href="https://en.wikipedia.org/wiki/Lagrange_multiplier">Lagrange multiplier</a> that, physically, is the pressure drop across the interface. <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> can be <span class="math notranslate nohighlight">\(l\)</span>, <span class="math notranslate nohighlight">\(g\)</span> or <span class="math notranslate nohighlight">\(s\)</span> depending on the nature os the material (liquid, gas or solid), <span class="math notranslate nohighlight">\(A_{ij}\)</span> is the interfacial area between phases <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>. It should be noted that if <span class="math notranslate nohighlight">\(A_{lg}\)</span> increase on some amount, <span class="math notranslate nohighlight">\(A_{sg}\)</span> is decreased in the same amount.</p>
+<div class="math notranslate nohighlight">
+\[ A_{ls} = \pi R^{2} \sin^{2}{\left(\theta \right)} \]</div>
+<div class="math notranslate nohighlight">
+\[ A_{lg} = 2 \pi R^{2} \left(1 - \cos{\left(\theta \right)}\right) \]</div>
+<div class="math notranslate nohighlight">
+\[ \Vol = \pi R^{3} \left(\frac{2}{3} - \frac{3}{4}\cos{\left(\theta \right)} + \frac{\cos{3\theta}}{12}\right)\]</div>
+<p>So,</p>
+<div class="math notranslate nohighlight">
+\[ E = \underbrace{\pi R^{2} \sin^{2}{\left(\theta \right)} \left( \gamma_{ls}-\gamma_{sg}\right) + \gamma_{lv}2 \pi R^{2} \left(1 - \cos{\left(\theta \right)}\right)}_A - \lambda \underbrace{\pi R^{3} \left(\frac{2}{3} - \frac{3}{4}\cos{\left(\theta \right)} + \frac{\cos{3\theta}}{12}\right)}_B\]</div>
+<p>and the minimum condition, <span class="math notranslate nohighlight">\(\frac{\partial E}{\partial R} = \frac{\partial E}{\partial \theta} = 0\)</span> leads to</p>
+<div class="math notranslate nohighlight">
+\[ \lambda = \frac{\frac{\partial A}{\partial R}}{\frac{\partial B}{\partial R}}=\frac{\frac{\partial A}{\partial \theta}}{\frac{\partial B}{\partial \theta}} \]</div>
+<p>and, after some operations,</p>
+<div class="math notranslate nohighlight">
+\[ \cos{(\theta)} = \frac{\gamma_{sg} - \gamma_{sl}}{\gamma_{lg}} \]</div>
+<p><span class="math notranslate nohighlight">\(\lambda\)</span> is the pressure drop across the liquid-gas surface,</p>
+<div class="math notranslate nohighlight">
+\[\lambda = \Delta p = \frac{\frac{\partial A}{\partial R}}{\frac{\partial B}{\partial R}} = 2 \frac{\gamma_{lg}}{R} \]</div>
+<p>For a more general shape (not spherical) is becomes</p>
+<div class="math notranslate nohighlight">
+\[ \Delta p = \gamma_{lg}\left( \frac{1}{R1} + \frac{1}{R2} \right) \]</div>
+<p>Gravity effect leads to the definition of a characteristic length scale (capillary length)</p>
+<div class="math notranslate nohighlight">
+\[ l_s = \sqrt{\frac{\gamma}{\rho g}} \]</div>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/E%C3%B6tv%C3%B6s_number">Bond (or Eötvös) number</a> is defined as the ratio between characteristic lenght of the system and the capillary length</p>
+<div class="math notranslate nohighlight">
+\[ \text{Bo} = \left( \frac{L}{l_s} \right)^2 \]</div>
+<p>Under action of gravity, surface tension is only important if <span class="math notranslate nohighlight">\(\text{Bo} \lesssim 1\)</span>, that is <span class="math notranslate nohighlight">\(L \lesssim 3\,\text{mm}\)</span> for water.</p>
+<div class="section" id="example-shape-of-fluid-interface-near-a-wall">
+<h3>Example : Shape of fluid interface near a wall<a class="headerlink" href="#example-shape-of-fluid-interface-near-a-wall" title="Permalink to this headline">¶</a></h3>
+<p>Let’s consider the calculation of the shape of the interface of water with a hidrophilic surface, with a known contact angle <span class="math notranslate nohighlight">\(\theta &lt; 90^\circ\)</span>. The wall is vertical and plane, so there will be curvature in only one direction (say <span class="math notranslate nohighlight">\(y\)</span>)</p>
+<p><img alt="image.png" src="../_images/fluidWallInterface.png" /></p>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Curvature#Graph_of_a_function">local curvature</a> of a line is given by</p>
+<div class="math notranslate nohighlight">
+\[ \frac{1}{r} = \frac{\text{d}^2 z / \text{d} x^2}{\left[1+\left(\text{d} z / \text{d} x\right)^2 \right]^{3/2}} \]</div>
+<p>On the otherhand, for a point of the curve, which is at height <span class="math notranslate nohighlight">\(z\)</span> there is static relative pressure <span class="math notranslate nohighlight">\(-\rho g z\)</span>,and the pressure jump in the interface is <span class="math notranslate nohighlight">\(\frac{\gamma}{r}\)</span>, so the ODE is</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\rho g z}{\gamma} - \frac{z''}{\left(1 + {z'}^2\right)^{3/2}} = 0 \]</div>
+<p>since <span class="math notranslate nohighlight">\(z=0\)</span> far away from the surface, where it is plane, and <span class="math notranslate nohighlight">\(z'' = z' =0\)</span>. The boundary conditions are <span class="math notranslate nohighlight">\(z'=z''=0\)</span> for <span class="math notranslate nohighlight">\(x\rightarrow \infty\)</span> and <span class="math notranslate nohighlight">\(z'=-\frac{1}{\tan{\theta}}\)</span> for <span class="math notranslate nohighlight">\(x=0\)</span>.</p>
+<p>We can make the change of variable <span class="math notranslate nohighlight">\(\eta = z/l_s\)</span> and <span class="math notranslate nohighlight">\(\xi = x/l_s\)</span> and then the EDO is writen as</p>
+<div class="math notranslate nohighlight">
+\[ \eta- \frac{\eta''}{\left(1+\eta'^2\right)^{3/2}} = 0\]</div>
+<p>with the same boundary conditions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#This command clears all the variables and history. Just to start over again...</span>
+<span class="o">%</span><span class="k">reset</span> -f  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xi</span><span class="p">,</span><span class="n">theta</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;xi,theta&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;eta&#39;</span><span class="p">)</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="n">eta</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span><span class="o">-</span><span class="n">eta</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">eta</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_78_0.png" src="../_images/Microflows_78_0.png" />
+</div>
+</div>
+<p>This expression is not directly integrable</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_80_0.png" src="../_images/Microflows_80_0.png" />
+</div>
+</div>
+<p>But if we use the integration factor <span class="math notranslate nohighlight">\(\eta'\)</span>, it becomes integrable</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span> <span class="o">=</span> <span class="n">exp</span><span class="o">*</span><span class="n">eta</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_82_0.png" src="../_images/Microflows_82_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exp2</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">exp2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_83_0.png" src="../_images/Microflows_83_0.png" />
+</div>
+</div>
+<p>Since when <span class="math notranslate nohighlight">\(\eta(\xi) = 0\)</span> (i.e. for <span class="math notranslate nohighlight">\(\xi\rightarrow \infty\)</span>), <span class="math notranslate nohighlight">\(\eta'(\xi)=0\)</span>, that gives that this expression has to be 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dEq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">exp2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">dEq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_85_0.png" src="../_images/Microflows_85_0.png" />
+</div>
+</div>
+<p>This equation can be analitically solved (see the book by <a class="reference external" href="https://discovery.upc.edu/iii/encore/record/C__Rb1437689?lang=cat">Kundu</a>, example 4.7) but it is not staightforward. Let us  solve it here numerically with <a class="reference external" href="https://www.scipy.org/">scipy</a>.</p>
+<p>First, we get the value of the heigth of the surface just in the surface, it is, when <span class="math notranslate nohighlight">\(\eta'= -\frac{1}{\tan{\theta}}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">delta</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;delta&#39;</span><span class="p">)</span>
+<span class="n">deltaEq</span> <span class="o">=</span> <span class="n">dEq</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">eta</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">xi</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">eta</span><span class="p">(</span><span class="n">xi</span><span class="p">),</span><span class="n">delta</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">deltaEq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_87_0.png" src="../_images/Microflows_87_0.png" />
+</div>
+</div>
+<p>There are two solutions. We keep the second one, positive.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">delta</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">deltaEq</span><span class="p">,</span><span class="n">delta</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_89_0.png" src="../_images/Microflows_89_0.png" />
+</div>
+</div>
+<p>and we try to simplify it a little bit</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">delta</span> <span class="o">=</span> <span class="n">delta</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span><span class="o">.</span><span class="n">trigsimp</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_91_0.png" src="../_images/Microflows_91_0.png" />
+</div>
+</div>
+<p>In order to solve dEq we have to isolate the derivative of <span class="math notranslate nohighlight">\(\eta\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">dEq</span><span class="p">,</span><span class="n">eta</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">xi</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_93_0.png" src="../_images/Microflows_93_0.png" />
+</div>
+</div>
+<p>and we generate a function for this derivative</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_np</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">((</span><span class="n">eta</span><span class="p">(</span><span class="n">xi</span><span class="p">),</span><span class="n">xi</span><span class="p">),</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we make a function for <span class="math notranslate nohighlight">\(\delta(\theta)\)</span>, the heigth of the fluid surface in the wall and we solve numerically this equation with <span class="math notranslate nohighlight">\(\eta(\xi=0)=\delta\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eta0_f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">delta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta_n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> 
+<span class="n">eta0</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">N</span><span class="p">(</span><span class="n">eta0_f</span><span class="p">(</span><span class="n">theta_n</span><span class="p">),</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">eta0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_99_0.png" src="../_images/Microflows_99_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xi_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">250</span><span class="p">)</span>
+<span class="n">eta_np</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">f_np</span><span class="p">,</span><span class="n">eta0</span><span class="p">,</span><span class="n">xi_p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>and, finally, we plot it</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xi_p</span><span class="p">,</span><span class="n">eta_np</span><span class="p">,</span><span class="n">scaley</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f68db3dadc0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/Microflows_102_1.png" src="../_images/Microflows_102_1.png" />
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="exercise-shape-of-meniscus-between-two-plates">
+<h3>Exercise. Shape of meniscus between two plates<a class="headerlink" href="#exercise-shape-of-meniscus-between-two-plates" title="Permalink to this headline">¶</a></h3>
+<p>Find the shape for two parallels walls separated a distance <span class="math notranslate nohighlight">\(L\)</span></p>
+<p>Hint: In the middle point between both walls, curvature is not zero, so there is also there a pressure jump. This pressure jump is related, then, to the height of the column, <span class="math notranslate nohighlight">\(H\)</span>. I suggest to change corrdinate axes, as shown in the picture, and change the first equation as</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\rho g (z+H)}{\gamma} - \frac{z''}{\left(1 + {z'}^2\right)^{3/2}} = 0 \]</div>
+<p>Also, there are 2 boundary conditions: the derivative of <span class="math notranslate nohighlight">\(z(x)\)</span> for <span class="math notranslate nohighlight">\(x=-\frac{L}{2}\)</span> and for <span class="math notranslate nohighlight">\(x=\frac{L}{2}\)</span></p>
+<p><img alt="image.png" src="../_images/MeniscusBetweenPlates.png" /></p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./1-microFlows"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../0-Intro/Assignment0.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Assignment 0: Conical tank emptying time</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="MeniscusBetweenPlates.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Meniscus between plates. Solution</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Robert Castilla - UPC CATMech Terrassa<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

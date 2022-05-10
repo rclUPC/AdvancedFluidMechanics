@@ -1,0 +1,974 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boundary Layer. An introduction &#8212; UPC-205237 Advanced Fluid Mechanics</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Compressible Flow. An introduction" href="../5-CompressibleFlow/CompressibleFlow.html" />
+    <link rel="prev" title="Turbulent flows. Statistical description and characteristic scales" href="../3-Turbulence/turbulence.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">UPC-205237 Advanced Fluid Mechanics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Advanced Fluid Mechanics
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../0-Intro/IntroPython.html">
+   Introduction to scientific computation with Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0-Intro/Assignment0.html">
+     Assignment 0: Conical tank emptying time
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1-microFlows/Microflows.html">
+   Microflows. A very brief introduction with lubrication and capillarity
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-microFlows/MeniscusBetweenPlates.html">
+     Meniscus between plates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-microFlows/Assignment1.html">
+     Assignment 1. Computation of journal bearing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Rheology/rheology.html">
+   Rheology. A very brief Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3-Turbulence/turbulence.html">
+   Turbulent flows. Statistical description and characteristic scales
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Boundary Layer. An introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5-CompressibleFlow/CompressibleFlow.html">
+   Compressible Flow. An introduction
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/4-BoundaryLayer/BoundaryLayer.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/4-BoundaryLayer/BoundaryLayer.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#blasius-theory">
+   Blasius theory
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-easy">
+     Exercise (easy):
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integral-analysis-of-bl">
+   Integral Analysis of BL
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#turbulent-bl">
+   Turbulent BL
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Boundary Layer. An introduction</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#blasius-theory">
+   Blasius theory
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-easy">
+     Exercise (easy):
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integral-analysis-of-bl">
+   Integral Analysis of BL
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#turbulent-bl">
+   Turbulent BL
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="boundary-layer-an-introduction">
+<h1>Boundary Layer. An introduction<a class="headerlink" href="#boundary-layer-an-introduction" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="blasius-theory">
+<h2>Blasius theory<a class="headerlink" href="#blasius-theory" title="Permalink to this headline">¶</a></h2>
+<p>We consider a uniform flow in the <span class="math notranslate nohighlight">\(x\)</span> direction, <span class="math notranslate nohighlight">\(\boldsymbol{u} = (U,0,0)\)</span>, and a plane semi-infinite plate on <span class="math notranslate nohighlight">\(x-z\)</span> plane, normal to <span class="math notranslate nohighlight">\(y\)</span> axis, and with one edge on the <span class="math notranslate nohighlight">\(z\)</span> axis.</p>
+<p>The non-slip condition of the flow on the plate, <span class="math notranslate nohighlight">\(\boldsymbol{u} = (0,0,0)\)</span> for <span class="math notranslate nohighlight">\(y=0\)</span>, produces a development of the flow on the <span class="math notranslate nohighlight">\(y\)</span> direction on a region known as <a class="reference external" href="https://en.wikipedia.org/wiki/Boundary_layer"><strong>boundary layer</strong></a> (BL). This perturbed flow extend up to a distance <span class="math notranslate nohighlight">\(\delta\)</span>, the BL thickness, that is, in general, function of <span class="math notranslate nohighlight">\(x\)</span>. If the flow <span class="math notranslate nohighlight">\(U\)</span> is slow, compared with a reference viscosity-related velocity, <span class="math notranslate nohighlight">\(\frac{\nu}{x}\)</span> or <span class="math notranslate nohighlight">\(\frac{\nu}{\delta}\)</span>, the viscosity will keep the inertial term low and it prevent the boundary layer from becoming turbulent. But when the BL reachs a certain point <span class="math notranslate nohighlight">\(x\)</span>, the inertial term (mainly the convective one) will gain importance and the BL will eventually  evolve to a turbulent regime.</p>
+<!--- <img src="attachment:f83fcec3-1e8c-4f25-b734-06bd36d9dfff.png" width=600> --->
+<img src="Boundary-Layer.png" width=600><p>In this section we are going to focus on the laminar regime. The turbulent BL will be studied in the next part.</p>
+<p>As usual, we start with N-S and continuity equations for the non-perturbed (outside the BL) flow, assumed inviscid.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f00484d4-c68e-41ac-a35d-0c846e79a912">
+<span class="eqno">(15)<a class="headerlink" href="#equation-f00484d4-c68e-41ac-a35d-0c846e79a912" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+\label{eq1}
+\tag{1}
+\frac{\partial U}{\partial t} + U\frac{\partial U}{\partial x} &amp;=&amp; -\frac{1}{\rho}\frac{\partial p}{\partial x}\\
+\frac{\partial U}{\partial x} + \frac{\partial V}{\partial y} &amp;=&amp; 0 \; \text{with}\, U \gg V
+\end{eqnarray}\]</div>
+<p>and in the perturbed flow (inside the BL)</p>
+<div class="amsmath math notranslate nohighlight" id="equation-99a01efb-f34b-4ea9-964a-ebb9ca2d2ed1">
+<span class="eqno">(16)<a class="headerlink" href="#equation-99a01efb-f34b-4ea9-964a-ebb9ca2d2ed1" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+\frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} &amp;=&amp; -\frac{1}{\rho}\frac{\partial p}{\partial x} \tag{2}
++ \nu \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} \right) \\
+\frac{\partial v}{\partial t} + u\frac{\partial v}{\partial x} + v\frac{\partial v}{\partial y} &amp;=&amp; -\frac{1}{\rho}\frac{\partial p}{\partial y} \tag{3}
++ \nu \left( \frac{\partial^2 v}{\partial x^2} + \frac{\partial^2 v}{\partial y^2} \right) \\
+\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} &amp;=&amp; 0 \tag{4}
+\end{eqnarray}\]</div>
+<p>En general, we are going to consider only steady flows (or with very smooth variation in time) and, for a certain position <span class="math notranslate nohighlight">\(x = L\)</span>, we can make a first estimation of scales by considering</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e0f68031-905b-4f75-8d29-46406dd706ce">
+<span class="eqno">(17)<a class="headerlink" href="#equation-e0f68031-905b-4f75-8d29-46406dd706ce" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+u &amp;\sim&amp; U &amp;  v &amp;\sim&amp; V \\
+\frac{\partial u}{\partial x} &amp;\sim&amp; \frac{U}{L} &amp; 
+\frac{\partial u}{\partial y} &amp;\sim&amp; \frac{U}{\delta} \\
+\frac{\partial v}{\partial x} &amp;\sim&amp; \frac{V}{L} &amp; 
+\frac{\partial v}{\partial y} &amp;\sim&amp; \frac{V}{\delta} \\
+\frac{\partial^2 u}{\partial x^2} &amp;\sim&amp; \frac{U}{L^2} &amp; 
+\frac{\partial^2 u}{\partial y^2} &amp;\sim&amp; \frac{U}{\delta^2} \\
+\frac{\partial^2 v}{\partial x^2} &amp;\sim&amp; \frac{V}{L^2} &amp; 
+\frac{\partial^2 v}{\partial y^2} &amp;\sim&amp; \frac{V}{\delta^2}
+\end{eqnarray}\]</div>
+<p>Then continuity equation (4) holds <span class="math notranslate nohighlight">\( V \sim U \frac{\delta}{L}\)</span>, and, hence, it is deduced that the BL is very thin compared with length of flow development <span class="math notranslate nohighlight">\(\delta \ll L\)</span>.
+Replacing the scales estimations in <span class="math notranslate nohighlight">\(x\)</span> N-S equation, (2), and using that <span class="math notranslate nohighlight">\(\frac{U}{L^2} \ll \frac{U}{\delta^2}\)</span>, we get that convective and viscous terms are of the same order if</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4e0f106c-a940-4bab-bfaa-abb6c3260f3d">
+<span class="eqno">(18)<a class="headerlink" href="#equation-4e0f106c-a940-4bab-bfaa-abb6c3260f3d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{U^2}{L} \sim \nu\frac{U}{\delta^2} \; \Rightarrow \; \delta^2 \sim \frac{\nu L}{U} 
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f4d604ec-f0b0-4dd0-af59-7274b3f04a44">
+<span class="eqno">(19)<a class="headerlink" href="#equation-f4d604ec-f0b0-4dd0-af59-7274b3f04a44" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\Rightarrow \; \delta \sim \sqrt{\frac{\nu L}{U}} = \frac{L}{\sqrt{\frac{UL}{\nu}}} = \frac{L}{\sqrt{\text{Re}_L}}  
+\end{equation}\]</div>
+<p>From this simple scales analysis we get an important result that indicates the growth of the BL thickness</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3e921d48-03b6-400e-9db1-b4665438706a">
+<span class="eqno">(20)<a class="headerlink" href="#equation-3e921d48-03b6-400e-9db1-b4665438706a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\boxed{ \delta \sim \frac{L}{\sqrt{\text{Re}_L}} }  
+\end{equation}\]</div>
+<p>By comparing scales between equations (3) and (4) it can be shown that <span class="math notranslate nohighlight">\(\frac{\partial p}{\partial x} \gg \frac{\partial p}{\partial y}\)</span> and, hence, the pressure inside the BL is, in the practice, determined by the pressure in the unperturbed flow outside the BL.</p>
+<p>After scaling N-S and continuity equations, BL layer can be described with</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b770e104-db2f-470e-bf4e-54fea8d30af2">
+<span class="eqno">(21)<a class="headerlink" href="#equation-b770e104-db2f-470e-bf4e-54fea8d30af2" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+\text{continuity :}&amp; \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} &amp;=&amp; 0 \\
+x\,\text{-momentum :} &amp; \frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} &amp;=&amp; 
+-\frac{1}{\rho}\frac{\partial p}{\partial x} + \nu \frac{\partial^2 u}{\partial y^2} \tag{5} \\
+y\,\text{-momentum :} &amp; \frac{\partial p}{\partial y} &amp;=&amp; 0
+\end{eqnarray}\]</div>
+<p>and, for the non-perturbed flow, again,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d66ae28b-c658-4014-81f2-f50705317a30">
+<span class="eqno">(22)<a class="headerlink" href="#equation-d66ae28b-c658-4014-81f2-f50705317a30" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{\partial U}{\partial t} + U\frac{\partial U}{\partial x} = -\frac{1}{\rho}\frac{\partial p}{\partial x} \tag{6}
+\end{equation}\]</div>
+<p>It is important to note that gradient pressure term in BL equations is determined by the flow outside BL.</p>
+<p>These equations are valid for plane surface or with a very low curvature.</p>
+<p>For the particular case of steady flow without pressure gradient, <a class="reference external" href="https://en.wikipedia.org/wiki/Blasius_boundary_layer">Blasius (1908)</a> found an analytical solution by introducing dimensionless variables for <span class="math notranslate nohighlight">\(y\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c7e5fe91-cead-400d-81a5-281cec83752f">
+<span class="eqno">(23)<a class="headerlink" href="#equation-c7e5fe91-cead-400d-81a5-281cec83752f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\eta = y\sqrt{\frac{U}{\nu x}} \left( \sim \frac{y}{\delta} \right)
+\end{equation}\]</div>
+<p>and for <span class="math notranslate nohighlight">\(u(x,y)\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-60fd90e1-a554-49f4-9ecc-68f94d91847a">
+<span class="eqno">(24)<a class="headerlink" href="#equation-60fd90e1-a554-49f4-9ecc-68f94d91847a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+g(\eta) = \frac{u}{U}
+\end{equation}\]</div>
+<p>Since it is a 2D incompressible flow, it is possible to write in terms of a stream function <span class="math notranslate nohighlight">\(\psi(x,y)\)</span> so that</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fc3df9cd-6c3c-4d90-bdf6-b3386d1ef0a8">
+<span class="eqno">(25)<a class="headerlink" href="#equation-fc3df9cd-6c3c-4d90-bdf6-b3386d1ef0a8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+u = U g(\eta) = \frac{\partial \psi}{\partial y} = \sqrt{\frac{U}{\nu x}}\frac{\partial\psi}{\partial\eta}
+\end{equation}\]</div>
+<p>From here, we get that</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ea99d740-dc23-4098-9c9e-3078734af32e">
+<span class="eqno">(26)<a class="headerlink" href="#equation-ea99d740-dc23-4098-9c9e-3078734af32e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\psi(x,y) = \sqrt{\nu U x} f(\eta)
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(f(\eta) = \int g(\eta) d \eta\)</span>. Velocities are then written in terms of <span class="math notranslate nohighlight">\(f\)</span> as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-19060040-1877-4258-9c17-e764cef9870f">
+<span class="eqno">(27)<a class="headerlink" href="#equation-19060040-1877-4258-9c17-e764cef9870f" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+u &amp; = &amp; \frac{\partial \psi}{\partial y} = U f'(\eta) \\
+v &amp; = &amp; -\frac{\partial \psi}{\partial x} = \frac{1}{2}\sqrt{\frac{\nu U}{x}}\left[\eta f'(\eta) - f(\eta)\right]
+\end{eqnarray}\]</div>
+<p>And gathering everything in the N-S equations, we get an only equation</p>
+<div class="amsmath math notranslate nohighlight" id="equation-44d31c15-bc3e-4b15-8580-467fc5a51c78">
+<span class="eqno">(28)<a class="headerlink" href="#equation-44d31c15-bc3e-4b15-8580-467fc5a51c78" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\boxed{2f''' + f f'' = 0} \tag{7}
+\end{equation}\]</div>
+<p>with the boundary conditions</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9957fe82-ab83-4243-bbf3-5e2e6b34b357">
+<span class="eqno">(29)<a class="headerlink" href="#equation-9957fe82-ab83-4243-bbf3-5e2e6b34b357" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+f = \frac{d f}{d \eta} = 0 &amp; \;\text{for}\,\eta = 0 \\
+\frac{d f}{d \eta} \rightarrow 1 &amp; \;\text{for}\,\eta \rightarrow \infty
+\end{eqnarray}\]</div>
+<p>This equation cannot be solved with <code class="docutils literal notranslate"><span class="pre">odeint</span></code>, since it is not an intial value problem, but a <a class="reference external" href="https://en.wikipedia.org/wiki/Boundary_value_problem">boundary value problem</a>. We are going to solve it with the <code class="docutils literal notranslate"><span class="pre">solve_bvp</span></code> method in the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_bvp.html">scipy.ode package</a>.</p>
+<p>First, we decompose the 3rd order ODE in a system of 3 first-order ODE’s, as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b7f34b69-66f0-4189-ad3a-fe2a880a865c">
+<span class="eqno">(30)<a class="headerlink" href="#equation-b7f34b69-66f0-4189-ad3a-fe2a880a865c" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+f_0' &amp; = &amp; f_1 \\
+f_1' &amp; = &amp; f_2 \\
+f_2' &amp; = &amp; -\frac{1}{2}f_0f_2
+\end{eqnarray}\]</div>
+<p>with <span class="math notranslate nohighlight">\(f_0=f\)</span> and the boundary conditions</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0de95687-55aa-4ceb-b9e0-4a03a3eda422">
+<span class="eqno">(31)<a class="headerlink" href="#equation-0de95687-55aa-4ceb-b9e0-4a03a3eda422" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+f_0(\eta=0) &amp; = &amp; 0 \\
+f_1(\eta=0) &amp; = &amp; 0 \\
+f_1(\eta \rightarrow \infty) &amp; = &amp; 1 
+\end{eqnarray}\]</div>
+<p>First, we import the needed modules</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_bvp</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we define our system of ODE’s, with a function that return the derivatives of <span class="math notranslate nohighlight">\(f\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>and, also, we define the boundary values, as residuals (that has to tend to 0) for initial (<span class="math notranslate nohighlight">\(a\)</span>) and final (<span class="math notranslate nohighlight">\(b\)</span>) values of the functions. The number of elements in the return array has to be the same as the number of equations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bc</span><span class="p">(</span><span class="n">fa</span><span class="p">,</span><span class="n">fb</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">fa</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">fa</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mf">1.0</span><span class="o">-</span><span class="n">fb</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we prepare the solution. The domain of <span class="math notranslate nohighlight">\(\eta\)</span> has been chosen as [0,10], and initially, <span class="math notranslate nohighlight">\(f_i = 0\)</span> in all the domain.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">f_init</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="n">eta</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we call the solver</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">solve_bvp</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">bc</span><span class="p">,</span><span class="n">eta</span><span class="p">,</span><span class="n">f_init</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The return has a lot of information. The most important are <code class="docutils literal notranslate"><span class="pre">sol.y[i]</span></code>, which is the solution for <span class="math notranslate nohighlight">\(f_i\)</span> in the points defined by the <code class="docutils literal notranslate"><span class="pre">eta</span></code> array (which is stored in <code class="docutils literal notranslate"><span class="pre">sol.x</span></code>), and <code class="docutils literal notranslate"><span class="pre">sol.sol</span></code>, which is an interpolation instance as cubic spline, that allows to estimate the values for any value of <span class="math notranslate nohighlight">\(\eta\)</span> in the domain.</p>
+<p>Let’s we make some plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">eta</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">eta</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">eta</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\eta$&#39;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$f$&#39;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\frac</span><span class="si">{df}</span><span class="s1">{d\eta} = \frac</span><span class="si">{u}{U}</span><span class="s1">$&#39;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\frac{d^2 f}{d \eta^2}$&#39;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$\\frac{d^2 f}{d \\eta^2}$&#39;)
+</pre></div>
+</div>
+<img alt="../_images/BoundaryLayer_23_1.png" src="../_images/BoundaryLayer_23_1.png" />
+</div>
+</div>
+<p>This theoretical solution gives an infinite thickness of the BL, since, strictly speaking, <span class="math notranslate nohighlight">\(u=U\)</span> is reached asymptotically for <span class="math notranslate nohighlight">\(\eta \rightarrow \infty\)</span>. Hence, it has been agreed that the thickness of the BL extends up to <span class="math notranslate nohighlight">\(0.99U\)</span>. We find now which value of <span class="math notranslate nohighlight">\(\eta\)</span> gives this velocity, using the method for root finding <code class="docutils literal notranslate"><span class="pre">brentq</span></code> from the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.brentq.html">scipy.optimize package</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">brentq</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">etaBL</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">sol</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mf">0.99</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">etaBLSol</span> <span class="o">=</span> <span class="n">brentq</span><span class="p">(</span><span class="n">etaBL</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">etaBLSol</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.910933508107021
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hence, the Blasius BL extends up to <span class="math notranslate nohighlight">\(\eta = 4.91 \approx 5\)</span>, that is, <span class="math notranslate nohighlight">\(\delta \approx \frac{5}{\sqrt{\frac{U}{\nu x}}}\)</span>,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-81e35405-be04-4246-85e4-e30327592902">
+<span class="eqno">(32)<a class="headerlink" href="#equation-81e35405-be04-4246-85e4-e30327592902" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\boxed{\delta \approx \frac{5 x}{\sqrt{\text{Re}_x}}}
+\end{equation}\]</div>
+<p>We re-escale now the <span class="math notranslate nohighlight">\(\eta\)</span> variable, so that <span class="math notranslate nohighlight">\(\eta=1\)</span> is the BL thickness</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eta</span> <span class="o">=</span> <span class="n">eta</span><span class="o">/</span><span class="n">etaBLSol</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">eta</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">eta</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">eta</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\eta$&#39;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$f$&#39;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\frac</span><span class="si">{df}</span><span class="s1">{d\eta} = \frac</span><span class="si">{u}{U}</span><span class="s1">$&#39;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\frac{d^2 f}{d \eta^2}$&#39;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$\\frac{d^2 f}{d \\eta^2}$&#39;)
+</pre></div>
+</div>
+<img alt="../_images/BoundaryLayer_32_1.png" src="../_images/BoundaryLayer_32_1.png" />
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="exercise-easy">
+<h3>Exercise (easy):<a class="headerlink" href="#exercise-easy" title="Permalink to this headline">¶</a></h3>
+<p>Compute the stress on the wall in the Blasius BL.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="integral-analysis-of-bl">
+<h2>Integral Analysis of BL<a class="headerlink" href="#integral-analysis-of-bl" title="Permalink to this headline">¶</a></h2>
+<p>Direct analytical solution of the BL is only possible, with a medium difficulty, for laminar, (quasi)uniform and steady flow, as we have previously seen.</p>
+<p>Nevertheless, most of the times, a good approximation can be achieved with velocity profile is assumed known and BL equation (5) is integrated in the BL thickness. Then the wall friction can be estimated for any kind of flow (unsteady, turbulent, with pressure gradient…)</p>
+<p>The Volume Control is not exactly integral, but semi-integral, with an extension <span class="math notranslate nohighlight">\(dx\)</span> in the flow direction. It is sketched her:</p>
+<!--- <img src=attachment:5d340606-a430-49ee-9efa-75955bf21069.png width=600> --->
+<img src=VC_vonKarman.png width=600><p>We integrate BL equation from <span class="math notranslate nohighlight">\(y=0\)</span> (the wall) to <span class="math notranslate nohighlight">\(y=h\)</span> where <span class="math notranslate nohighlight">\(h\rightarrow \infty\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-88f1062a-5bba-4016-92ae-f24d8788061d">
+<span class="eqno">(33)<a class="headerlink" href="#equation-88f1062a-5bba-4016-92ae-f24d8788061d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\int_0^\infty\frac{\partial u}{\partial t} dy + \int_0^\infty u\frac{\partial u}{\partial x} dy + \int_0^\infty v\frac{\partial u}{\partial y} dy =
+\int_0^\infty -\frac{1}{\rho}\frac{\partial p}{\partial x} dy + 
+\underbrace{\int_0^\infty \nu \frac{\partial^2 u}{\partial y^2} dy}_{=\nu \left.\frac{\partial u}{\partial y}\right|_0^\infty = -\frac{\tau_w}{\rho}}
+\end{equation}\]</div>
+<p>The term of pressure gradient can be replaced by the behavior of (inviscid) flow outside of the BL (equation (6))</p>
+<div class="amsmath math notranslate nohighlight" id="equation-caf0126a-536d-41b9-a980-7de0bcbc5dd1">
+<span class="eqno">(34)<a class="headerlink" href="#equation-caf0126a-536d-41b9-a980-7de0bcbc5dd1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\int_0^\infty-\frac{1}{\rho}\frac{\partial p}{\partial x} dy = \int_0^\infty \frac{\partial U}{\partial t}dy + \int_0^\infty U\frac{\partial U}{\partial x} dy
+\end{equation}\]</div>
+<p>yielding</p>
+<div class="amsmath math notranslate nohighlight" id="equation-759c3c44-45db-4081-871d-2abaa5b3d8c2">
+<span class="eqno">(35)<a class="headerlink" href="#equation-759c3c44-45db-4081-871d-2abaa5b3d8c2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\int_0^\infty \frac{\partial u}{\partial t} dy + \int_0^\infty u\frac{\partial u}{\partial x} dy + \int_0^\infty v\frac{\partial u}{\partial y} dy =
+\int_0^\infty \frac{\partial U}{\partial t}dy + \int_0^\infty U\frac{\partial U}{\partial x} dy - \frac{\tau_w}{\rho}
+\end{equation}\]</div>
+<p>The component <span class="math notranslate nohighlight">\(v\)</span> of velocity can be obtained in term of <span class="math notranslate nohighlight">\(u\)</span> by integrating continuity equation (4), <span class="math notranslate nohighlight">\(v = -\int_0^\infty\frac{\partial u}{\partial x} dy\)</span> and, hence, after integrating by parts,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-862e50d2-cd7e-494c-a3ae-cd1432b79d1c">
+<span class="eqno">(36)<a class="headerlink" href="#equation-862e50d2-cd7e-494c-a3ae-cd1432b79d1c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\int_0^\infty v\frac{\partial u}{\partial y} dy = -\int_0^\infty \left(\int_0^\infty \frac{\partial u}{\partial x} dy \right) \frac{\partial u}{\partial y} dy = -U\int_0^\infty \frac{\partial u}{\partial x} dy + \int_0^\infty u\frac{\partial u}{\partial x} dy
+\end{equation}\]</div>
+<p>Collecting all together, we get</p>
+<div class="amsmath math notranslate nohighlight" id="equation-525a9853-97b6-4315-8215-21b203e13716">
+<span class="eqno">(37)<a class="headerlink" href="#equation-525a9853-97b6-4315-8215-21b203e13716" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\int_0^\infty \frac{\partial u}{\partial t} dy + 2\int_0^\infty u\frac{\partial u}{\partial x} dy -U\int_0^\infty \frac{\partial u}{\partial x} dy =
+\int_0^\infty \frac{\partial U}{\partial t}dy + \int_0^\infty U\frac{\partial U}{\partial x} dy - \frac{\tau_w}{\rho}
+\end{equation}\]</div>
+<p>and, after, rearranging terms and factorizing,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2f335b6c-42d8-4e35-85b5-3c9b29e7145c">
+<span class="eqno">(38)<a class="headerlink" href="#equation-2f335b6c-42d8-4e35-85b5-3c9b29e7145c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{\partial}{\partial t} \int_0^\infty U\left(1-\frac{u}{U}\right) dy + \int_0^\infty \frac{\partial}{\partial x} U^2\left[\frac{u}{U}\left(1-\frac{u}{U}\right)\right]dy + U\frac{\partial U}{\partial x}\int_0^\infty \left(1-\frac{u}{U}\right) dy =  \frac{\tau_w}{\rho}
+\end{equation}\]</div>
+<p>and defining the <em>displacement thickness</em>, <span class="math notranslate nohighlight">\(\delta'\)</span>, and <em>momentum thickness</em>, <span class="math notranslate nohighlight">\(\theta\)</span>, as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-24ce0c5e-919f-4b97-a955-4dfe669f1618">
+<span class="eqno">(39)<a class="headerlink" href="#equation-24ce0c5e-919f-4b97-a955-4dfe669f1618" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+\delta' &amp; = &amp; \int_0^\infty \left(1-\frac{u}{U}\right) dy \\
+\theta &amp; = &amp; \int_0^\infty \frac{u}{U}\left(1-\frac{u}{U}\right) dy \\
+\end{eqnarray}\]</div>
+<p>the von Kàrmàn (1921) equation is finally obtained</p>
+<div class="amsmath math notranslate nohighlight" id="equation-853128be-70d3-49a7-9181-dcbd818fa2d2">
+<span class="eqno">(40)<a class="headerlink" href="#equation-853128be-70d3-49a7-9181-dcbd818fa2d2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+ \frac{\partial}{\partial t}\left( U \delta'\right) + \frac{\partial}{\partial x}\left( U^2 \theta\right)+ U \delta'\frac{\partial U}{\partial x} = \frac{\tau_w}{\rho} \tag{8}
+\end{equation}\]</div>
+<p>This equation relates, knowing the velocity profile <span class="math notranslate nohighlight">\(\frac{u}{U}\left(\frac{y}{\delta}\right)\)</span>, the BL thickness, <span class="math notranslate nohighlight">\(\delta\)</span> with the wall friction <span class="math notranslate nohighlight">\(\tau_w\)</span>.</p>
+<p>As an example, for steady uniform non-perturbed flow <span class="math notranslate nohighlight">\(U\)</span>, this simplifies to</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8ddd431a-1d0d-47e7-a512-8a5cd1387a75">
+<span class="eqno">(41)<a class="headerlink" href="#equation-8ddd431a-1d0d-47e7-a512-8a5cd1387a75" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\tau_w = \rho U^2 \frac{\partial \theta}{\partial x} \tag{9}
+\end{equation}\]</div>
+<p>regardless the turbulent regime of the flow.</p>
+<p>The momentum thickness <span class="math notranslate nohighlight">\(\theta\)</span> is usually considered as an important scale for the description of the BL.</p>
+<p>Let’s compute the displacement and momentum thicknesses for the Blasius BL.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">simpson</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Latex</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="nn">Input In [13],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">simpson</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Latex</span>
+
+<span class="ne">ImportError</span>: cannot import name &#39;simpson&#39; from &#39;scipy.integrate&#39; (/home/robert/anaconda3/lib/python3.8/site-packages/scipy/integrate/__init__.py)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">displThicknessBlasius</span> <span class="o">=</span> <span class="n">simpson</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="n">eta</span><span class="p">)</span>
+<span class="n">Latex</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\delta^\prime = </span><span class="si">{:.3g}</span><span class="s1">\,\delta$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">displThicknessBlasius</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">momentumThicknessBlasius</span> <span class="o">=</span> <span class="n">simpson</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="n">eta</span><span class="p">)</span>
+<span class="n">Latex</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\theta = </span><span class="si">{:.3g}</span><span class="s1">\,\delta$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">momentumThicknessBlasius</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When the velocity profile in the BL is unknown, it is usual to model it with an arbitrary function <span class="math notranslate nohighlight">\(\frac{u}{U}=f(\eta)\)</span> that fulfills the conditions:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f9447bdd-b005-420b-b833-d0871ee10c48">
+<span class="eqno">(42)<a class="headerlink" href="#equation-f9447bdd-b005-420b-b833-d0871ee10c48" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+f(0) &amp; = &amp; 0 \\
+f(\eta \rightarrow \infty) &amp; \rightarrow &amp; 1 \\
+\left.\frac{d^n f}{d \eta^n}\right|_{\eta \rightarrow \infty} &amp; \rightarrow &amp; 0
+\end{eqnarray}\]</div>
+<p>The simplest example is a the piecewise second degree polynomial</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3cb28943-3d2e-47ec-8597-897d2f9bd62d">
+<span class="eqno">(43)<a class="headerlink" href="#equation-3cb28943-3d2e-47ec-8597-897d2f9bd62d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+f(\eta) = 
+\begin{cases} 
+2\eta - \eta^2 &amp; \;\text{for } \eta &lt; 1 \\
+1 &amp; \;\text{for }\eta \geq 1
+\end{cases}
+\end{equation}\]</div>
+<p>Let’s compare it with the Blasius velocity profile.</p>
+<p>Remember that we have a <code class="docutils literal notranslate"><span class="pre">sol.sol</span></code> function that returns the velocity profile for any value of the original <span class="math notranslate nohighlight">\(\eta\)</span>  (not normalized with BL thickness). We construct a function that returns the actual value in function of the present <span class="math notranslate nohighlight">\(\eta\)</span>  for Blasius and the 2nd degree polynomial</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">uoverUBlasius</span><span class="p">(</span><span class="n">eta</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">sol</span><span class="o">.</span><span class="n">sol</span><span class="p">(</span><span class="n">eta</span><span class="o">*</span><span class="n">etaBLSol</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">uoverU2ndDeg</span><span class="p">(</span><span class="n">eta</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">piecewise</span><span class="p">(</span><span class="n">eta</span><span class="p">,[</span><span class="n">eta</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">,</span><span class="n">eta</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">],[</span><span class="k">lambda</span> <span class="n">eta</span><span class="p">:(</span><span class="mi">2</span><span class="o">*</span><span class="n">eta</span><span class="o">-</span><span class="n">eta</span><span class="o">*</span><span class="n">eta</span><span class="p">),</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uoverUBlasius</span><span class="p">(</span><span class="n">eta</span><span class="p">),</span><span class="n">eta</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Blasius&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uoverU2ndDeg</span><span class="p">(</span><span class="n">eta</span><span class="p">),</span><span class="n">eta</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2nd degree&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\frac</span><span class="si">{u}{U}</span><span class="s1">$&#39;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p>Exercise:</p>
+<p>Compute <span class="math notranslate nohighlight">\(\delta^\prime\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> for the 2nd degree approximation. Use (9) to compute <span class="math notranslate nohighlight">\(\delta(x)\)</span> and compare with Blasus</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="turbulent-bl">
+<h2>Turbulent BL<a class="headerlink" href="#turbulent-bl" title="Permalink to this headline">¶</a></h2>
+<p>When flow is turbulent,  according to the <a class="reference external" href="https://en.wikipedia.org/wiki/Reynolds-averaged_Navier%E2%80%93Stokes_equations">Reynolds Averaged Navier-Stokes equations</a>, equation for the BL is practically the same as (5), but <span class="math notranslate nohighlight">\(u\)</span> is replaced by <span class="math notranslate nohighlight">\(\overline{u}\)</span> (we get an equation for averaged velocity) and an extra term <span class="math notranslate nohighlight">\(\frac{\partial}{\partial y}\left(-\rho \overline{u'v'}\right)\)</span>. known as <a class="reference external" href="https://en.wikipedia.org/wiki/Reynolds_stress">Reynolds turbulent stress tensor</a>,  appears.Hence,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-179d3dc3-e098-49c6-845c-a4f323537e06">
+<span class="eqno">(44)<a class="headerlink" href="#equation-179d3dc3-e098-49c6-845c-a4f323537e06" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+\frac{\partial \overline u}{\partial x} + \frac{\partial \overline v}{\partial y} &amp;=&amp; 0 \\
+\frac{\partial \overline u}{\partial t} + \overline u\frac{\partial \overline u}{\partial x} + \overline v\frac{\partial \overline u}{\partial y} &amp;=&amp; 
+-\frac{1}{\rho}\frac{\partial \overline p}{\partial x} + \nu \frac{\partial^2 \overline u}{\partial y^2} - \frac{\partial}{\partial y}\left(\overline{u'v'}\right) \tag{10}
+\end{eqnarray}\]</div>
+<p>One way to model this term is with the definition of an <a class="reference external" href="https://en.wikipedia.org/wiki/Turbulence_modeling#Eddy_viscosity">eddy viscosity</a> , according to the <em>Boussinesq aproximation</em>. The Reynolds term is then written in terms of the average velocity as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-650a8d5f-5447-4bc5-8df1-696ba42dd602">
+<span class="eqno">(45)<a class="headerlink" href="#equation-650a8d5f-5447-4bc5-8df1-696ba42dd602" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+- \frac{\partial}{\partial y}\left(\overline{u'v'}\right) = \nu_t\left(\frac{\partial \overline u}{\partial y}\right)
+\end{equation}\]</div>
+<p>Note that <span class="math notranslate nohighlight">\(\nu_t\)</span> is not a property of the fluid (like molecular viscosity) but of the flow (like velocity) and, so, it is function of space and time. The effective viscosity is, therefore, the sum of both of them, and the viscous term can be written as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-74e53f2f-013b-4a3a-b032-02a92992c584">
+<span class="eqno">(46)<a class="headerlink" href="#equation-74e53f2f-013b-4a3a-b032-02a92992c584" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{\tau}{\rho} = \left(\nu + \nu_t\right)\left(\frac{\partial \overline u}{\partial y}\right) \tag{11}
+\end{equation}\]</div>
+<p>But with that the problem is not solved, only it has been transferred to another unknown, <span class="math notranslate nohighlight">\(\nu_t\)</span>. A successful approach is the <a class="reference external" href="https://en.wikipedia.org/wiki/Turbulence_modeling#Prandtl%27s_mixing-length_concept">Prandtl’s mixing length</a>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b30ee71b-c097-4c56-9f4d-ec00300c0e7c">
+<span class="eqno">(47)<a class="headerlink" href="#equation-b30ee71b-c097-4c56-9f4d-ec00300c0e7c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\nu_t = l^2\left|\frac{\partial \overline u}{\partial y}\right| \tag{12}
+\end{equation}\]</div>
+<p>where, in the case of turbulent BL, the mixing length <span class="math notranslate nohighlight">\(l\)</span> can be estimated in function of the distance to the wall.</p>
+<p>In a turbulent BL several regions can be defined.</p>
+<!--- <img src=attachment:cf6a678a-4cbd-415c-ab47-db4c3c844029.png width=600> --->
+<img src=TurbulentBL.png width=600><p>But, before, we have to define the normalization of this kind of BL. In a turbulent BL the effect of the wall is very important,so, it is very usual to normalize the velocity inside the BL, <span class="math notranslate nohighlight">\(\overline u\)</span> using the wall friction instead of the free stream velocity. Therefore, a <em>friction velocity</em> <span class="math notranslate nohighlight">\(u_\tau = \sqrt{\frac{\tau_w}{\rho}}\)</span> is defined, and a dimensionless distance <span class="math notranslate nohighlight">\(y^+\)</span> and velocity <span class="math notranslate nohighlight">\(u^+\)</span> are defined as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-86500ceb-4c64-4473-8204-1024e604a762">
+<span class="eqno">(48)<a class="headerlink" href="#equation-86500ceb-4c64-4473-8204-1024e604a762" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+y^+ &amp; = &amp; \frac{y u_\tau}{\nu} \\
+u^+ &amp; = &amp; \frac{\overline u}{u_\tau}
+\end{eqnarray}\]</div>
+<p>The two main regions of the TBL are the <em>Inner layer</em>, which extends up to <span class="math notranslate nohighlight">\(y^+ \approx 35\)</span>, and the <em>Outer layer</em>, that begins around <span class="math notranslate nohighlight">\(y^+ \approx 350\)</span>. Between these regions there is an <em>Overlap layer</em>.</p>
+<p>In the Inner layer the influence of the wall is specially important, and the mixing length depends strongly on its distance. In the overlap layer it is considered that the mixing layer increase linearly with the distance to the wall and, finally, in the Outer layer, the wall is so far away that there is no dependence on the distance.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6d4c4ffe-588e-4eac-8572-a36f1bf5d2ed">
+<span class="eqno">(49)<a class="headerlink" href="#equation-6d4c4ffe-588e-4eac-8572-a36f1bf5d2ed" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+l \sim y^2 &amp;\;&amp; \text{in the Inner layer} \\
+l \sim y &amp;\;&amp; \text{in the Overlap layer} \\
+l \sim \text{ct} &amp;\;&amp; \text{in the Outer layer}
+\end{eqnarray}\]</div>
+<p>In the most adjacent layer, the <strong>viscous sublayer</strong>, the turbulence is low and the flow is dominated by viscosity, yielding a Couette-like flow with a linear profile <span class="math notranslate nohighlight">\(u^+ = k_l y^+\)</span>, where <span class="math notranslate nohighlight">\(k_l\)</span> is a constant, that is has been measured as <span class="math notranslate nohighlight">\(k_l \approx 1\)</span>. This behavior is typically valid up to <span class="math notranslate nohighlight">\(y^+ \approx 5 \div 10\)</span></p>
+<p>On the <strong>overlap region</strong>, though, turbulent viscosity is much bigger than molecular viscosity, and it can be assumed that <span class="math notranslate nohighlight">\(\nu + \nu_t \approx \nu_t\)</span>. Hence, with the mixing length model,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c43e8af0-a67a-4c95-b484-81e535a4cee0">
+<span class="eqno">(50)<a class="headerlink" href="#equation-c43e8af0-a67a-4c95-b484-81e535a4cee0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\nu_t\left(\frac{\partial \overline u}{\partial y}\right) = l^2\left(\frac{\partial \overline u}{\partial y}\right)^2 = a^2y^2\left(\frac{\partial \overline u}{\partial y}\right)^2
+\end{equation}\]</div>
+<p>Assuming that this stress is the same than in the wall, <span class="math notranslate nohighlight">\(\tau_t \approx \tau_w\)</span> we can get the relationship</p>
+<div class="amsmath math notranslate nohighlight" id="equation-40ba0584-0aa2-42fb-930a-4e29ced89e83">
+<span class="eqno">(51)<a class="headerlink" href="#equation-40ba0584-0aa2-42fb-930a-4e29ced89e83" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+u_\tau^2 = a^2y^2\left(\frac{\partial \overline u}{\partial y}\right)^2
+\end{equation}\]</div>
+<p>that leads to</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2d49e542-548a-4e68-9bb4-96db52494c5a">
+<span class="eqno">(52)<a class="headerlink" href="#equation-2d49e542-548a-4e68-9bb4-96db52494c5a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+u^+ = \frac{1}{a}\ln{y^+}+b
+\tag{13}
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\approx 0.41\)</span> and <span class="math notranslate nohighlight">\(b\approx 5.0\)</span></p>
+<p>Between viscous sublayer and the overlap region there is the buffer layer, up to <span class="math notranslate nohighlight">\(y^+ \approx 30\)</span>, where neither law hold.</p>
+<!--- <img src=attachment:510c97df-d1a9-41e9-8cba-1f79510bad29.png width=600> --->
+<img src=LogLaw.png width=600><p>In the <strong>outer layer</strong>, the velocity defect, <span class="math notranslate nohighlight">\(U-\overline{u}(y)\)</span> is considered to be function only of the distance to wall, <span class="math notranslate nohighlight">\(y\)</span>. In dimensionless way it is written as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4e49e374-bc08-4330-8dbd-913bdf6d7bd0">
+<span class="eqno">(53)<a class="headerlink" href="#equation-4e49e374-bc08-4330-8dbd-913bdf6d7bd0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{U-\overline{u}}{u_\tau} = F(\eta)
+\end{equation}\]</div>
+<p>Now the question is: how can we get <span class="math notranslate nohighlight">\(\tau_w\)</span> from these expressions? We cannot use Newton’s law <span class="math notranslate nohighlight">\(\tau_w = \mu u_{,y}(y=0)\)</span>, since the log law does not reach the wall and the slope for he linear low in the viscous sublayer is unknown. So, we have to use indirect relationship through the definition of <span class="math notranslate nohighlight">\(u_\tau\)</span> that describes the log law.</p>
+<p>We introduce the definition of the skin factor</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1b7b99da-6ae1-4989-9961-bddaeaeeb009">
+<span class="eqno">(54)<a class="headerlink" href="#equation-1b7b99da-6ae1-4989-9961-bddaeaeeb009" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+c_f = \frac{\tau_w}{\frac{1}{2}\rho U^2} = 2\left(\frac{u_\tau}{U}\right)^2
+\end{equation}\]</div>
+<p>and, also we are going to use <span class="math notranslate nohighlight">\(Re_\delta = \frac{\delta U}{\nu}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uPlus</span><span class="p">,</span> <span class="n">yPlus</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;u^+,y^+,a,b&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LogLaw</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">uPlus</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="n">a</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="n">yPlus</span><span class="p">)</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+<span class="n">LogLaw</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">rho</span><span class="p">,</span><span class="n">tauW</span><span class="p">,</span><span class="n">nu</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;y,u,rho,tau_w,nu&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LogLaw</span> <span class="o">=</span> <span class="n">LogLaw</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">uPlus</span><span class="p">,</span><span class="n">u</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">rho</span><span class="o">/</span><span class="n">tauW</span><span class="p">))</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">yPlus</span><span class="p">,</span><span class="n">y</span><span class="o">/</span><span class="n">nu</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">tauW</span><span class="o">/</span><span class="n">rho</span><span class="p">))</span>
+<span class="n">LogLaw</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">delta</span><span class="p">,</span> <span class="n">U</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;delta,U&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LogLawDelta</span> <span class="o">=</span> <span class="n">LogLaw</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">delta</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">U</span><span class="p">)</span>
+<span class="n">LogLawDelta</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cf</span><span class="p">,</span> <span class="n">ReDelta</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;c_f,Re_delta&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LogLawDelta</span> <span class="o">=</span> <span class="n">LogLawDelta</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tauW</span><span class="p">,</span><span class="n">cf</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">Rational</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">rho</span><span class="o">*</span><span class="n">U</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+<span class="n">LogLawDelta</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LogLawDelta</span> <span class="o">=</span> <span class="n">LogLawDelta</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="n">ReDelta</span><span class="o">*</span><span class="n">nu</span><span class="o">/</span><span class="n">U</span><span class="p">)</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LogLawDelta</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LogLawDelta</span> <span class="o">=</span> <span class="n">LogLawDelta</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mf">0.41</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">LogLawDelta</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ReDeltaSol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">LogLawDelta</span><span class="p">,</span><span class="n">ReDelta</span><span class="p">)</span>
+<span class="n">ReDeltaSol</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ReDelta_n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="n">ReDeltaSol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong>Exercise:</strong> Find the value of <span class="math notranslate nohighlight">\(c_f\)</span> for several <span class="math notranslate nohighlight">\(Re_\delta\)</span> numbers and fit the expression with a power law <span class="math notranslate nohighlight">\(c_f = C_1*Re_\delta^{C2}\)</span></p>
+<hr class="docutils" />
+<hr class="docutils" />
+<p><strong>ASSIGNMENT</strong></p>
+<p>Write a python function so that, given an arbitrary velocity profile (that fulfills the requirements), gives the shear stress in the wall, and the BL thicknesses as function of <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<hr class="docutils" />
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./4-BoundaryLayer"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../3-Turbulence/turbulence.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Turbulent flows. Statistical description and characteristic scales</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../5-CompressibleFlow/CompressibleFlow.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Compressible Flow. An introduction</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Robert Castilla - UPC CATMech Terrassa<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

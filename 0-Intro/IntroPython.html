@@ -1,0 +1,2172 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to scientific computation with Python &#8212; UPC-205237 Advanced Fluid Mechanics</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignment 0: Conical tank emptying time" href="Assignment0.html" />
+    <link rel="prev" title="Advanced Fluid Mechanics" href="../README.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">UPC-205237 Advanced Fluid Mechanics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Advanced Fluid Mechanics
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   Introduction to scientific computation with Python
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Assignment0.html">
+     Assignment 0: Conical tank emptying time
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1-microFlows/Microflows.html">
+   Microflows. A very brief introduction with lubrication and capillarity
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Rheology/rheology.html">
+   Rheology. A very brief Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3-Turbulence/turbulence.html">
+   Turbulent flows. Statistical description and characteristic scales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-BoundaryLayer/BoundaryLayer.html">
+   Boundary Layer. An introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5-CompressibleFlow/CompressibleFlow.html">
+   Compressible Flow. An introduction
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/0-Intro/IntroPython.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/0-Intro/IntroPython.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy">
+   1. Numpy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sympy">
+   2. Sympy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#manipulating-algebraic-functions-and-solvind-odes">
+     Manipulating algebraic functions and solvind ODEs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-solving-the-equation-of-motion-of-a-roquet">
+     Example: Solving the equation of motion of a roquet
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas">
+   3. Pandas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#series">
+     Series
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataframe">
+     DataFrame
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-fitting">
+   4. Data fitting
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-regression">
+     Linear regression
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#non-linear-regression">
+     Non linear regression
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to scientific computation with Python</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy">
+   1. Numpy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sympy">
+   2. Sympy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#manipulating-algebraic-functions-and-solvind-odes">
+     Manipulating algebraic functions and solvind ODEs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-solving-the-equation-of-motion-of-a-roquet">
+     Example: Solving the equation of motion of a roquet
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas">
+   3. Pandas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#series">
+     Series
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataframe">
+     DataFrame
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-fitting">
+   4. Data fitting
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-regression">
+     Linear regression
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#non-linear-regression">
+     Non linear regression
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-scientific-computation-with-python">
+<h1>Introduction to scientific computation with Python<a class="headerlink" href="#introduction-to-scientific-computation-with-python" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> is a high level computational language. It is quite similar to Matlab, but with the advantage that is is open source, free and internet is <a class="reference external" href="https://pypi.org/">plenty of libraries</a> that
+allow to solve a large variety of problems.</p>
+<p>The main labraries used in scientific computations are <strong><a class="reference external" href="https://numpy.org/">numpy</a></strong> for numerical computation, <strong><a class="reference external" href="https://www.sympy.org/en/index.html">sympy</a></strong> for Computer Albegra System (CAS), <strong><a class="reference external" href="https://matplotlib.org/">matplotlib</a></strong> for plotting, and <strong><a class="reference external" href="https://pandas.pydata.org/">pandas</a></strong> for data analysis. All this packages are collected in the <strong><a class="reference external" href="https://www.scipy.org/">scipy</a></strong> ecosystem.</p>
+<p>One practical way to compute with python is a <a class="reference external" href="https://jupyter.org/">Jupyter</a> notebook, like the present one. It allows to combine text, equations, graphs and pictures with code. One of the most interesting features of a Jupyter Notebook is that it is interactive. That means that the user can download, open and play with it.</p>
+<p>All that can be installed in any system (Windows, Mac, Linux,…) (and even in an android!) but it is highly recommended to install through an special distribution. The most popular is now <a class="reference external" href="https://en.wikipedia.org/wiki/Anaconda_(Python_distribution)">Anaconda</a> that has free and paid versions. However, recently it has been launched an small multi-platform application called <a class="reference external" href="https://github.com/jupyterlab/jupyterlab-desktop">Jupyterlab Desktop</a> that is very recommended because of its size and practicality.</p>
+<div class="section" id="numpy">
+<h2>1. Numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h2>
+<p>Python is a powerful language. Its power lies mainly in its modulability. With naked python few interesting things can be done. But modules of libraries can be easily imported and used to perform almost everything we need.</p>
+<p>In maths and science, one of the main modules is numpy, which gives acces to numerical computations with arrays, matrix, functions, … with optimized performance.</p>
+<p>To import a module in python is very easy (as long as it is installed in the system…). Just type</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>and access any component of the library with, por example</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0986122886681098
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another way to import a module is with</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>and then you can use the same components without need of type the word <em>numpy</em> everytime</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">log</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0986122886681098
+</pre></div>
+</div>
+</div>
+</div>
+<p>The last way is with</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0986122886681098
+</pre></div>
+</div>
+</div>
+</div>
+<p>This last is my favorite, but you can use whichever you prefer.</p>
+<p>If the module is not installed in just system it can be easily downloaded and installed with a <code class="docutils literal notranslate"><span class="pre">pip</span></code> (Package Installer for Python)  command in a python cell:</p>
+<blockquote>
+<div><p>!pip install numpy</p>
+</div></blockquote>
+<p>The <code class="docutils literal notranslate"><span class="pre">!</span></code> symbols is to scape to shell to execute the command.</p>
+<p>To get fast information about any component of python or any module, just type a ‘?’ at the end of the command</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>np.log<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sympy">
+<h2>2. Sympy<a class="headerlink" href="#sympy" title="Permalink to this headline">¶</a></h2>
+<p>With the library <a class="reference external" href="https://peerj.com/articles/cs-103/"><em>sympy</em></a> symbolic manipulation of mathematical equations can be performed, in a similar way as with Maple, Mathematica or Wolfram Alpha.</p>
+<p>The first step to perform symbolic computation is to declare the <em>symbols</em> that are going to used</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,y&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If, in addition, we include the command</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>the ouput will be nicely rendered in a Jupyter notebook</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_25_0.png" src="../_images/IntroPython_25_0.png" />
+</div>
+</div>
+<p>An expression can be build with our symbols</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span>
+<span class="n">display</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_27_0.png" src="../_images/IntroPython_27_0.png" />
+</div>
+</div>
+<p>and it can be simplified, either with</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_29_0.png" src="../_images/IntroPython_29_0.png" />
+</div>
+</div>
+<p>or with</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_31_0.png" src="../_images/IntroPython_31_0.png" />
+</div>
+</div>
+<p>Expressions can be factorized</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">factor</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_33_0.png" src="../_images/IntroPython_33_0.png" />
+</div>
+</div>
+<p>or expanded again</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_35_0.png" src="../_images/IntroPython_35_0.png" />
+</div>
+</div>
+<p>We can <strong>solve equations</strong>, by defining an equality of two expressions with the <em>sympy.Eq()</em> class</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">equation</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">expr</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">equation</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_37_0.png" src="../_images/IntroPython_37_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">equation</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">x_sol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_38_0.png" src="../_images/IntroPython_38_0.png" />
+</div>
+</div>
+<p>It gives 3 complex solutions. We can access to each of them as member of an array</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">x_sol</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_40_0.png" src="../_images/IntroPython_40_0.png" />
+</div>
+</div>
+<p>Or we can solve systems of equations</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eq1</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">display</span><span class="p">(</span><span class="n">eq1</span><span class="p">)</span>
+<span class="n">eq2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">display</span><span class="p">(</span><span class="n">eq2</span><span class="p">)</span>
+<span class="n">eq_sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">([</span><span class="n">eq1</span><span class="p">,</span><span class="n">eq2</span><span class="p">],[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">])</span>
+<span class="n">display</span><span class="p">(</span><span class="n">eq_sol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_42_0.png" src="../_images/IntroPython_42_0.png" />
+<img alt="../_images/IntroPython_42_1.png" src="../_images/IntroPython_42_1.png" />
+<img alt="../_images/IntroPython_42_2.png" src="../_images/IntroPython_42_2.png" />
+</div>
+</div>
+<p>We can make substitutions in an expression, with <em>subs()</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_44_0.png" src="../_images/IntroPython_44_0.png" />
+</div>
+</div>
+<p>or with <em>replace()</em> that is often more powerful</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_46_0.png" src="../_images/IntroPython_46_0.png" />
+</div>
+</div>
+<p>Several substitutions can be performed by means of a <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">dictionary</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">changes</span> <span class="o">=</span> <span class="p">{</span><span class="n">y</span><span class="p">:</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="n">x</span><span class="p">:</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)}</span>
+<span class="n">equation</span> <span class="o">=</span> <span class="n">equation</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">changes</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">equation</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_48_0.png" src="../_images/IntroPython_48_0.png" />
+</div>
+</div>
+<p>We can also perform <strong>numerical evaluations</strong>.</p>
+<p>The best way is with a <a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html?highlight=lambda#lambda-expressions">lambda</a> method that creates a function to evaluate any value</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr_func</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">expr</span><span class="p">)</span>
+<span class="n">expr_func</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_50_0.png" src="../_images/IntroPython_50_0.png" />
+</div>
+</div>
+<div class="section" id="manipulating-algebraic-functions-and-solvind-odes">
+<h3>Manipulating algebraic functions and solvind ODEs<a class="headerlink" href="#manipulating-algebraic-functions-and-solvind-odes" title="Permalink to this headline">¶</a></h3>
+<p>Besides symbols, we can define functions, and its derivatives</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_52_0.png" src="../_images/IntroPython_52_0.png" />
+<img alt="../_images/IntroPython_52_1.png" src="../_images/IntroPython_52_1.png" />
+<img alt="../_images/IntroPython_52_2.png" src="../_images/IntroPython_52_2.png" />
+</div>
+</div>
+<p>In this case, the function <span class="math notranslate nohighlight">\(f(x)\)</span> is not defined and <code class="docutils literal notranslate"><span class="pre">sympy</span></code> can just represents symbolicaly its derivative. But we can
+make the derivative of any expression</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_54_0.png" src="../_images/IntroPython_54_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_55_0.png" src="../_images/IntroPython_55_0.png" />
+</div>
+</div>
+<p>Also we can, of course, integrate a function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">integrate</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_57_0.png" src="../_images/IntroPython_57_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">integrate</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_58_0.png" src="../_images/IntroPython_58_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span><span class="o">.</span><span class="n">integrate</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_59_0.png" src="../_images/IntroPython_59_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span><span class="o">.</span><span class="n">integrate</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_60_0.png" src="../_images/IntroPython_60_0.png" />
+</div>
+</div>
+<p>We can calculate series expansion, both symbolicaly</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_62_0.png" src="../_images/IntroPython_62_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_63_0.png" src="../_images/IntroPython_63_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_64_0.png" src="../_images/IntroPython_64_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">removeO</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_65_0.png" src="../_images/IntroPython_65_0.png" />
+</div>
+</div>
+<p>or explicitely</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sqrt_x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sqrt_x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_67_0.png" src="../_images/IntroPython_67_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sqrt_x</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_68_0.png" src="../_images/IntroPython_68_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sqrt_x</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">removeO</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_69_0.png" src="../_images/IntroPython_69_0.png" />
+</div>
+</div>
+<hr class="docutils" />
+<p>Let’s now solve an ODE</p>
+<p>Let’s consider the first order ODE for Newton’s cooling law</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\text{d} T}{\text{d}t} = -k \left(T(t) - T_a\right) \]</div>
+<p>with <span class="math notranslate nohighlight">\(T(0) = T_0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">Ta</span><span class="p">,</span><span class="n">T0</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t,k,T_a,T_0&#39;</span><span class="p">)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ode</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">T</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="o">-</span><span class="n">k</span><span class="o">*</span><span class="p">(</span><span class="n">T</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="n">Ta</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">ode</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_72_0.png" src="../_images/IntroPython_72_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ode_sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">ode</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">ode_sol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_73_0.png" src="../_images/IntroPython_73_0.png" />
+</div>
+</div>
+<p>and it can be done directly with the initial condition</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ode_sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">ode</span><span class="p">,</span><span class="n">ics</span><span class="o">=</span><span class="p">{</span><span class="n">T</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span><span class="n">T0</span><span class="p">})</span>
+<span class="n">display</span><span class="p">(</span><span class="n">ode_sol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_75_0.png" src="../_images/IntroPython_75_0.png" />
+</div>
+</div>
+<hr class="docutils" />
+<p>For a second order ODE, let’s consider a damped harmonic oscillator</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span><span class="n">omega0</span><span class="p">,</span><span class="n">gamma</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t,omega0,gamma&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">ode2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">gamma</span><span class="o">*</span><span class="n">omega0</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">omega0</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">ode2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_77_0.png" src="../_images/IntroPython_77_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ode2_sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">ode2</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">ode2_sol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_78_0.png" src="../_images/IntroPython_78_0.png" />
+</div>
+</div>
+<p>The boundary conditions are that <span class="math notranslate nohighlight">\(x=1\)</span> and its derivative is 0 for <span class="math notranslate nohighlight">\(t=0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ics</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">):</span><span class="mi">0</span><span class="p">}</span>
+<span class="n">ode2_sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">ode2</span><span class="p">,</span><span class="n">ics</span><span class="o">=</span><span class="n">ics</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">ode2_sol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_80_0.png" src="../_images/IntroPython_80_0.png" />
+</div>
+</div>
+<hr class="docutils" />
+<p>We see now how to plot a particular case of this equations by using <a class="reference external" href="https://matplotlib.org/">matplotlib</a></p>
+<p>we are going to consider the case <span class="math notranslate nohighlight">\(\omega_0 = 2\pi\)</span> and <span class="math notranslate nohighlight">\(\gamma = 0.1\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="p">{</span><span class="n">omega0</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">gamma</span><span class="p">:</span><span class="mf">0.1</span><span class="p">}</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">tt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">250</span><span class="p">)</span>
+<span class="n">x_t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">ode2_sol</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">values</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span><span class="n">x_t</span><span class="p">(</span><span class="n">tt</span><span class="p">)</span><span class="o">.</span><span class="n">real</span><span class="p">)</span> <span class="c1"># There are some complex results. We take only the real part</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_83_0.png" src="../_images/IntroPython_83_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="example-solving-the-equation-of-motion-of-a-roquet">
+<h3>Example: Solving the equation of motion of a roquet<a class="headerlink" href="#example-solving-the-equation-of-motion-of-a-roquet" title="Permalink to this headline">¶</a></h3>
+<p>In this example we are going to use <code class="docutils literal notranslate"><span class="pre">sympy</span></code> to solve the equation of motion of a roquet, as described in many basic Fluid Mechanics textbook. See, for instance, example 3.12 of <a class="reference external" href="https://discovery.upc.edu/permalink/34CSUC_UPC/11q3oqt/alma991004874831006711">White’s book</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m0</span><span class="p">,</span><span class="n">mDot</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">vg</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;m_0,\dot</span><span class="si">{m}</span><span class="s1">,t,v_g&#39;</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+<span class="n">ode</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">((</span><span class="n">m0</span><span class="o">+</span><span class="n">mDot</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="o">-</span><span class="n">mDot</span><span class="o">*</span><span class="n">vg</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">ode</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_86_0.png" src="../_images/IntroPython_86_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">condCont</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span><span class="mi">0</span><span class="p">}</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">ode</span><span class="p">,</span><span class="n">ics</span><span class="o">=</span><span class="n">condCont</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_87_0.png" src="../_images/IntroPython_87_0.png" />
+</div>
+</div>
+<p>We test and plot the solutions with some random values:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5e76ea80-5741-458f-b276-29e2df3e351e">
+<span class="eqno">(1)<a class="headerlink" href="#equation-5e76ea80-5741-458f-b276-29e2df3e351e" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+ \dot{m} &amp;=&amp; -1\;\textrm{kg/s} \\
+ m_0 &amp;=&amp; 400\;\textrm{Kg} \\
+ v_g &amp;=&amp; 10\;\textrm{m/s}
+\end{eqnarray}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="p">{</span><span class="n">mDot</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">m0</span><span class="p">:</span><span class="mi">400</span><span class="p">,</span><span class="n">vg</span><span class="p">:</span><span class="mi">10</span><span class="p">}</span>
+<span class="n">v_t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">sol</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">values</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">tt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">250</span><span class="p">)</span>
+<span class="n">vtt</span> <span class="o">=</span> <span class="n">v_t</span><span class="p">(</span><span class="n">tt</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span><span class="n">vtt</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t$ [s]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$v$ [m/s]&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_90_0.png" src="../_images/IntroPython_90_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">integrate</span><span class="p">((</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_91_0.png" src="../_images/IntroPython_91_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">values</span><span class="p">))</span>
+<span class="n">xtt</span> <span class="o">=</span> <span class="n">x_t</span><span class="p">(</span><span class="n">tt</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span><span class="n">xtt</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t$ [s]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x$ [m]&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_92_0.png" src="../_images/IntroPython_92_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pandas">
+<h2>3. Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h2>
+<p>Pandas is a library for data analysis. Is some kind of powerful datasheet.
+Documentation is <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/index.html">here</a>.</p>
+<p>The two main data structures are <em>Series</em> and <em>DataFrame</em></p>
+<div class="section" id="series">
+<h3>Series<a class="headerlink" href="#series" title="Permalink to this headline">¶</a></h3>
+<p>A Series is an array that can be indexed with labels instead of integers</p>
+<p>For example, we can make a Series with grades in some subjects</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">5.5</span><span class="p">,</span><span class="mf">7.6</span><span class="p">,</span><span class="mf">4.3</span><span class="p">,</span><span class="mf">8.6</span><span class="p">,</span><span class="mf">6.5</span><span class="p">])</span>
+<span class="n">grades</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    5.5
+1    7.6
+2    4.3
+3    8.6
+4    6.5
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RangeIndex(start=0, stop=5, step=1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is the array inside the Series</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5.5, 7.6, 4.3, 8.6, 6.5])
+</pre></div>
+</div>
+</div>
+</div>
+<p>And now we can changes index</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Maths&quot;</span><span class="p">,</span><span class="s2">&quot;Spanish&quot;</span><span class="p">,</span><span class="s2">&quot;Catalan&quot;</span><span class="p">,</span><span class="s2">&quot;Physics&quot;</span><span class="p">,</span><span class="s2">&quot;German&quot;</span><span class="p">]</span>
+<span class="n">grades</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Grades&quot;</span>
+<span class="n">grades</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maths      5.5
+Spanish    7.6
+Catalan    4.3
+Physics    8.6
+German     6.5
+Name: Grades, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>That could be also done with</p>
+<p>It is easy to access to some values</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="p">[</span><span class="s2">&quot;Physics&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_106_0.png" src="../_images/IntroPython_106_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="p">[[</span><span class="s2">&quot;Maths&quot;</span><span class="p">,</span><span class="s2">&quot;Physics&quot;</span><span class="p">,</span><span class="s2">&quot;German&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maths      5.5
+Physics    8.6
+German     6.5
+Name: Grades, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Some statistics:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Median of grades is </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">grades</span><span class="o">.</span><span class="n">median</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mean of grades is </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">grades</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Standard deviation of grades is </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">grades</span><span class="o">.</span><span class="n">std</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Maximum of grades is </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">grades</span><span class="o">.</span><span class="n">max</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Minimum of grades is </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">grades</span><span class="o">.</span><span class="n">min</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quartile of grades is </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">grades</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Median of grades is 6.5
+Mean of grades is 6.5
+Standard deviation of grades is 1.6926310879810755
+Maximum of grades is 8.6
+Minimum of grades is 4.3
+Quartile of grades is 5.5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Also, in brief</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    5.000000
+mean     6.500000
+std      1.692631
+min      4.300000
+25%      5.500000
+50%      6.500000
+75%      7.600000
+max      8.600000
+Name: Grades, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plot method can be used for easily plot data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">grades</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/IntroPython_114_1.png" src="../_images/IntroPython_114_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="dataframe">
+<h3>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h3>
+<p>It is like a multidimensional Series. Typically, a table</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subjects</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">grades</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subjects</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Grades&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subjects</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Grades</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Maths</th>
+      <td>5.5</td>
+    </tr>
+    <tr>
+      <th>Spanish</th>
+      <td>7.6</td>
+    </tr>
+    <tr>
+      <th>Catalan</th>
+      <td>4.3</td>
+    </tr>
+    <tr>
+      <th>Physics</th>
+      <td>8.6</td>
+    </tr>
+    <tr>
+      <th>German</th>
+      <td>6.5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teachers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s2">&quot;Dave&quot;</span><span class="p">,</span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span><span class="s2">&quot;John&quot;</span><span class="p">,</span><span class="s2">&quot;Grace&quot;</span><span class="p">,</span><span class="s2">&quot;Mike&quot;</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Teacher&quot;</span><span class="p">,</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Maths&quot;</span><span class="p">,</span><span class="s2">&quot;Spanish&quot;</span><span class="p">,</span><span class="s2">&quot;Catalan&quot;</span><span class="p">,</span><span class="s2">&quot;Physics&quot;</span><span class="p">,</span><span class="s2">&quot;German&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subjects</span> <span class="o">=</span> <span class="n">subjects</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">teachers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subjects</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Grades</th>
+      <th>Teacher</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Maths</th>
+      <td>5.5</td>
+      <td>Dave</td>
+    </tr>
+    <tr>
+      <th>Spanish</th>
+      <td>7.6</td>
+      <td>Ana</td>
+    </tr>
+    <tr>
+      <th>Catalan</th>
+      <td>4.3</td>
+      <td>John</td>
+    </tr>
+    <tr>
+      <th>Physics</th>
+      <td>8.6</td>
+      <td>Grace</td>
+    </tr>
+    <tr>
+      <th>German</th>
+      <td>6.5</td>
+      <td>Mike</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subjects</span><span class="o">.</span><span class="n">Grades</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_122_0.png" src="../_images/IntroPython_122_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subjects</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Maths&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Grades      5.5
+Teacher    Dave
+Name: Maths, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subjects</span><span class="o">.</span><span class="n">Teacher</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maths       Dave
+Spanish      Ana
+Catalan     John
+Physics    Grace
+German      Mike
+Name: Teacher, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="data-fitting">
+<h2>4. Data fitting<a class="headerlink" href="#data-fitting" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="linear-regression">
+<h3>Linear regression<a class="headerlink" href="#linear-regression" title="Permalink to this headline">¶</a></h3>
+<p>Some times we need to fit experimental data in order to create a model (a math expression). There are two main python modules to make it: <a class="reference external" href="https://www.statsmodels.org/stable/index.html">statsmodels</a> and <a class="reference external" href="https://patsy.readthedocs.io/en/latest/">patsy</a>. Actually, statsmodel calls internally to patsy, and it is ususlly not necessary to explicitely import it, but we are doing it for the sake of clarity</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#This command resets the python kernel, and remove all modules, variables and data</span>
+<span class="o">%</span><span class="k">reset</span> -f 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If not done, you have to install the <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> module with</p>
+<blockquote>
+<div><p>pip install statsmodel</p>
+</div></blockquote>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+<span class="kn">import</span> <span class="nn">statsmodels.graphics.api</span> <span class="k">as</span> <span class="nn">smg</span>
+<span class="kn">import</span> <span class="nn">patsy</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s consider the next image, taken from <a class="reference external" href="https://en.wikipedia.org/wiki/Scatter_plot">Wikipedia-Scatter Plot</a></p>
+<!--- <img src="Scatter_plot.png" width="400"> --->
+<p><img alt="Scatter_plot.png" src="../_images/Scatter_plot.png" /></p>
+<p>The first step is to get the data. It is done with a plot digitizer. There are several tools to do that: <a class="reference external" href="https://github.com/pn2200/g3data">3gdata</a> for linux, the Java app <a class="reference external" href="http://plotdigitizer.sourceforge.net/">Plot Digitizer</a> or the online app <a class="reference external" href="https://apps.automeris.io/wpd/">Web Plot Digitizer</a>. I recommend this last one. With this app we can generate a CSV file, that I have called “Scatter_data.csv”.</p>
+<p>The second step is to load this data file into a pandas DataFrame</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ScatterData</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Scatter_data.csv&quot;</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span><span class="s2">&quot;y&quot;</span><span class="p">])</span> <span class="c1"># It&#39;s important the names for the columns data</span>
+<span class="n">ScatterData</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.011</td>
+      <td>103.186</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.344</td>
+      <td>101.689</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.678</td>
+      <td>102.855</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.011</td>
+      <td>101.286</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.344</td>
+      <td>100.897</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can plot it to check it…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">ScatterData</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span><span class="n">ScatterData</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fded264edf0&gt;
+</pre></div>
+</div>
+<img alt="../_images/IntroPython_134_1.png" src="../_images/IntroPython_134_1.png" />
+</div>
+</div>
+<p>The third step is to create a model. We are using a formula for the model. Actually, it is just a linear regression, made with <a class="reference external" href="https://en.wikipedia.org/wiki/Ordinary_least_squares">ordinary least square</a> estimation. Check <a class="reference external" href="https://patsy.readthedocs.io/en/latest/formulas.html">here</a> how is the syntax for the formulae in patsy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s2">&quot;y~x&quot;</span><span class="p">,</span><span class="n">ScatterData</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>That only creates the model, but does not compute anything. The computation is made with the fit method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We check the result</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>            <td>y</td>        <th>  R-squared:         </th> <td>   0.703</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.698</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   139.8</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Tue, 10 May 2022</td> <th>  Prob (F-statistic):</th> <td>3.34e-17</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>10:32:37</td>     <th>  Log-Likelihood:    </th> <td> -102.79</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>    61</td>      <th>  AIC:               </th> <td>   209.6</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>    59</td>      <th>  BIC:               </th> <td>   213.8</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th> <td>  101.0919</td> <td>    0.336</td> <td>  300.828</td> <td> 0.000</td> <td>  100.420</td> <td>  101.764</td>
+</tr>
+<tr>
+  <th>x</th>         <td>   -0.3422</td> <td>    0.029</td> <td>  -11.824</td> <td> 0.000</td> <td>   -0.400</td> <td>   -0.284</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td> 0.117</td> <th>  Durbin-Watson:     </th> <td>   1.789</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.943</td> <th>  Jarque-Bera (JB):  </th> <td>   0.155</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td> 0.095</td> <th>  Prob(JB):          </th> <td>   0.925</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 2.841</td> <th>  Cond. No.          </th> <td>    23.1</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<p>The result object has a lot of components. One is the <em>params</em>: the coefficient <em>Intercept</em> which is the independent term, and the <em>x</em>, which is, in this case, the kinear term coefficient.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;Intercept&quot;</span><span class="p">])</span>
+<span class="n">display</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_142_0.png" src="../_images/IntroPython_142_0.png" />
+<img alt="../_images/IntroPython_142_1.png" src="../_images/IntroPython_142_1.png" />
+</div>
+</div>
+<p>In the last step, let’s now plot it to see how it looks like.</p>
+<p>First, we create the set of <em>x</em> points to make the plot. It has to be a pandas DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_plot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">250</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>and now we calculate the prediction, according to our linear model</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_plot</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_plot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.080321</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.160643</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.240964</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.321285</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>245</th>
+      <td>19.678715</td>
+    </tr>
+    <tr>
+      <th>246</th>
+      <td>19.759036</td>
+    </tr>
+    <tr>
+      <th>247</th>
+      <td>19.839357</td>
+    </tr>
+    <tr>
+      <th>248</th>
+      <td>19.919679</td>
+    </tr>
+    <tr>
+      <th>249</th>
+      <td>20.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>250 rows × 1 columns</p>
+</div></div></div>
+</div>
+<p>and, finally, we plot it</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;Intercept&quot;</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">ScatterData</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span><span class="n">ScatterData</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">y_plot</span><span class="p">,</span><span class="s2">&quot;r-&quot;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">9.0</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="sa">r</span><span class="s2">&quot;$y = </span><span class="si">{:.2f}</span><span class="s2"> </span><span class="si">{:+.2f}</span><span class="s2">x$&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(9.0, 101, &#39;$y = 101.09 -0.34x$&#39;)
+</pre></div>
+</div>
+<img alt="../_images/IntroPython_149_1.png" src="../_images/IntroPython_149_1.png" />
+</div>
+</div>
+<p>If we want to make another fit, for example, with a quadratic expression, we have to create another column in the DataFrame with the new data (in this case, with <span class="math notranslate nohighlight">\(x^2\)</span>). This is still considered a linear regression, since it can be written as linear combination of polynomical terms <span class="math notranslate nohighlight">\( y = \sum_{n=0}^{N} a_n x^n\)</span>. Note also that a model as <span class="math notranslate nohighlight">\(y=a_0x^{a_1}\)</span>, or <span class="math notranslate nohighlight">\(y=a_0\exp(a_1x)\)</span>, can be tranformed into a linear model just calculating logarithm of both sides.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ScatterData</span><span class="p">[</span><span class="s2">&quot;x2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ScatterData</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ScatterData</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y</th>
+      <th>x2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.011</td>
+      <td>103.186</td>
+      <td>0.000121</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.344</td>
+      <td>101.689</td>
+      <td>0.118336</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.678</td>
+      <td>102.855</td>
+      <td>0.459684</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>and then we create the new model, and perform the <code class="docutils literal notranslate"><span class="pre">fit()</span></code> method</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sqr_model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;y~ x + x2&#39;</span><span class="p">,</span><span class="n">ScatterData</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sqr_result</span> <span class="o">=</span> <span class="n">sqr_model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sqr_result</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>            <td>y</td>        <th>  R-squared:         </th> <td>   0.706</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.696</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   69.69</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Tue, 10 May 2022</td> <th>  Prob (F-statistic):</th> <td>3.76e-16</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>10:32:38</td>     <th>  Log-Likelihood:    </th> <td> -102.49</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>    61</td>      <th>  AIC:               </th> <td>   211.0</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>    58</td>      <th>  BIC:               </th> <td>   217.3</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     2</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th> <td>  101.3684</td> <td>    0.496</td> <td>  204.170</td> <td> 0.000</td> <td>  100.375</td> <td>  102.362</td>
+</tr>
+<tr>
+  <th>x</th>         <td>   -0.4262</td> <td>    0.114</td> <td>   -3.724</td> <td> 0.000</td> <td>   -0.655</td> <td>   -0.197</td>
+</tr>
+<tr>
+  <th>x2</th>        <td>    0.0042</td> <td>    0.006</td> <td>    0.759</td> <td> 0.451</td> <td>   -0.007</td> <td>    0.015</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td> 0.048</td> <th>  Durbin-Watson:     </th> <td>   1.807</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.976</td> <th>  Jarque-Bera (JB):  </th> <td>   0.166</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td> 0.061</td> <th>  Prob(JB):          </th> <td>   0.920</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 2.775</td> <th>  Cond. No.          </th> <td>    540.</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sqr_result</span><span class="o">.</span><span class="n">params</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intercept    101.368371
+x             -0.426238
+x2             0.004192
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x2_plot</span> <span class="o">=</span> <span class="n">x_plot</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">x_plot</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;x2&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x2_plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>x2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.080321</td>
+      <td>0.006452</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.160643</td>
+      <td>0.025806</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.240964</td>
+      <td>0.058064</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.321285</td>
+      <td>0.103224</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>245</th>
+      <td>19.678715</td>
+      <td>387.251819</td>
+    </tr>
+    <tr>
+      <th>246</th>
+      <td>19.759036</td>
+      <td>390.419509</td>
+    </tr>
+    <tr>
+      <th>247</th>
+      <td>19.839357</td>
+      <td>393.600103</td>
+    </tr>
+    <tr>
+      <th>248</th>
+      <td>19.919679</td>
+      <td>396.793600</td>
+    </tr>
+    <tr>
+      <th>249</th>
+      <td>20.000000</td>
+      <td>400.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>250 rows × 2 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y2_plot</span> <span class="o">=</span> <span class="n">sqr_result</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x2_plot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;Intercept&quot;</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span>
+<span class="n">a0</span> <span class="o">=</span> <span class="n">sqr_result</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;Intercept&quot;</span><span class="p">]</span>
+<span class="n">a1</span> <span class="o">=</span> <span class="n">sqr_result</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">sqr_result</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;x2&quot;</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$y$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">ScatterData</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span><span class="n">ScatterData</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">y_plot</span><span class="p">,</span><span class="s2">&quot;r-&quot;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">y2_plot</span><span class="p">,</span><span class="s2">&quot;g-&quot;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">9.0</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="sa">r</span><span class="s2">&quot;$y = </span><span class="si">{:.2f}</span><span class="s2"> </span><span class="si">{:+.2g}</span><span class="s2">x$&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">9.0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="sa">r</span><span class="s2">&quot;$y = </span><span class="si">{:.2f}</span><span class="s2"> </span><span class="si">{:+.2g}</span><span class="s2">x </span><span class="si">{:+.2g}</span><span class="s2">x^2$&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a0</span><span class="p">,</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(9.0, 100, &#39;$y = 101.37 -0.43x +0.0042x^2$&#39;)
+</pre></div>
+</div>
+<img alt="../_images/IntroPython_161_1.png" src="../_images/IntroPython_161_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="non-linear-regression">
+<h3>Non linear regression<a class="headerlink" href="#non-linear-regression" title="Permalink to this headline">¶</a></h3>
+<p>When we want to make a non linear regression, for instance to fit with a model as <span class="math notranslate nohighlight">\(y=a_0+a_1*\exp{a_2*x}\)</span>, an optimization method to compute mininum squares has to be performed. We use then the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/tutorial/optimize.html"><em>optimize</em></a> module of scipy, and, in particular, the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html#scipy.optimize.curve_fit">curve_fit</a> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="k">as</span> <span class="nn">opt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We load the data. Now it can be just with an array instead of a pandas DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">xdata</span><span class="p">,</span><span class="n">ydata</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;Scatter_data.csv&quot;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="c1">#The traspose has to be made in order to load columns instead of rows</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ac</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ac</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xdata</span><span class="p">,</span><span class="n">ydata</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fdecdf99190&gt;
+</pre></div>
+</div>
+<img alt="../_images/IntroPython_167_1.png" src="../_images/IntroPython_167_1.png" />
+</div>
+</div>
+<p>We define the fitting function (our model) with the independent variable <span class="math notranslate nohighlight">\(x\)</span>, and the set of parameters (the parameters name is free)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">a0</span><span class="p">,</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a0</span><span class="o">+</span><span class="n">a1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">a2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And we perform the curve fitting. Note the <code class="docutils literal notranslate"><span class="pre">p0</span></code> argument. It gives an initial guess. Otherwise the iterative process can be very long and eventually, it an fail. It gives two results. The first is the solution. The second is the covariance matrix. The diagonal of this matrix is the statistical variance of the solutions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">curve_fit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">xdata</span><span class="p">,</span><span class="n">ydata</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">a0</span><span class="p">,</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">]</span> <span class="o">=</span> <span class="n">popt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s calculate the predicted values of a uniform <span class="math notranslate nohighlight">\(x\)</span> distribution</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xdata_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">250</span><span class="p">)</span>
+<span class="n">ydata_plot</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">xdata_plot</span><span class="p">,</span><span class="n">a0</span><span class="p">,</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And let’s plot it, with comparison with linear regression.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xdata</span><span class="p">,</span><span class="n">ydata</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">y_plot</span><span class="p">,</span><span class="s2">&quot;r-&quot;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xdata_plot</span><span class="p">,</span><span class="n">ydata_plot</span><span class="p">,</span><span class="s2">&quot;g-&quot;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">9.0</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="sa">r</span><span class="s2">&quot;$y = </span><span class="si">{:.2f}</span><span class="s2"> </span><span class="si">{:+.2g}</span><span class="s2">x$&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">9.0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="sa">r</span><span class="s2">&quot;$y = </span><span class="si">{:.2f}</span><span class="s2"> </span><span class="si">{:+.2g}</span><span class="s2">e^{{a2 x}}$&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a0</span><span class="p">,</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(9.0, 100, &#39;$y = 84.38 +17e^{a2 x}$&#39;)
+</pre></div>
+</div>
+<img alt="../_images/IntroPython_176_1.png" src="../_images/IntroPython_176_1.png" />
+</div>
+</div>
+<p>The statsmodel ols gives the R-squared as part of the results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">rsquared</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_178_0.png" src="../_images/IntroPython_178_0.png" />
+</div>
+</div>
+<p>The scipy optimize doesn’t do this computation, but it is easy to perform by hand, as stated in this <a class="reference external" href="https://stackoverflow.com/questions/19189362/getting-the-r-squared-value-using-curve-fit">stackoverflow</a> answer, according to <a class="reference external" href="https://en.wikipedia.org/wiki/Coefficient_of_determination#Definitions">wikipedia page</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">residuals</span> <span class="o">=</span> <span class="n">ydata</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">xdata</span><span class="p">,</span><span class="n">a0</span><span class="p">,</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">)</span>
+<span class="n">ss_res</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">residuals</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ss_tot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">ydata</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ydata</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">r_squared</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">ss_res</span> <span class="o">/</span> <span class="n">ss_tot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_squared</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/IntroPython_181_0.png" src="../_images/IntroPython_181_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./0-Intro"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Advanced Fluid Mechanics</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Assignment0.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assignment 0: Conical tank emptying time</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Robert Castilla - UPC CATMech Terrassa<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
