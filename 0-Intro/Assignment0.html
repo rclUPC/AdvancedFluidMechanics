@@ -229,7 +229,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/0-Intro/Assignment0.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rclUPC/AdvancedFluidMechanics/master?urlpath=tree/0-Intro/Assignment0.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -288,30 +288,30 @@ const thebe_selector_output = ".output, .cell_output"
 \[\begin{equation*}
 u_1 D_h^2 = u_1 \left(d + 2h \tan \theta \right)^2 = u_2 d^2 \label{eq_cont}
 \end{equation*}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-30a0e759-4b3c-4d85-b709-a46c59579c49">
-<span class="eqno">(1)<a class="headerlink" href="#equation-30a0e759-4b3c-4d85-b709-a46c59579c49" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-21193471-43a4-4120-ace2-3d3c85997bc4">
+<span class="eqno">(1)<a class="headerlink" href="#equation-21193471-43a4-4120-ace2-3d3c85997bc4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Rightarrow \; u_2 = u_1\left(1 + 2\frac{h}{d} \tan \theta \right)^2
 \end{equation}\]</div>
 <p>On the other hand, Bernoulli’s equation, considering quasi-steady flow and without viscosity,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-53a12646-a823-471b-a717-172075084a3e">
-<span class="eqno">(2)<a class="headerlink" href="#equation-53a12646-a823-471b-a717-172075084a3e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-54786c78-4d45-4bf9-a91d-dd83c27f7ac2">
+<span class="eqno">(2)<a class="headerlink" href="#equation-54786c78-4d45-4bf9-a91d-dd83c27f7ac2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 u_1^2 + 2gh = u_2^2 = u_1^2 \left(1 + 2\frac{h}{d} \tan \theta \right)^4
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-be8a1852-dbfa-4a6c-a916-dd996dd70967">
-<span class="eqno">(3)<a class="headerlink" href="#equation-be8a1852-dbfa-4a6c-a916-dd996dd70967" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a1d62f08-8612-4778-909b-ce2bedcce20f">
+<span class="eqno">(3)<a class="headerlink" href="#equation-a1d62f08-8612-4778-909b-ce2bedcce20f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Rightarrow \; u_1^2 \left[ \left(1 + 2\frac{h}{d} \tan \theta \right)^4 -1 \right] = 2gh
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-c4396518-1dba-4644-a592-178d816a3778">
-<span class="eqno">(4)<a class="headerlink" href="#equation-c4396518-1dba-4644-a592-178d816a3778" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fceafd2a-fd73-4193-9e73-7370f9ec0986">
+<span class="eqno">(4)<a class="headerlink" href="#equation-fceafd2a-fd73-4193-9e73-7370f9ec0986" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Rightarrow \; u_1 = \left[ \frac{2gh}{\left(1 + 2\frac{h}{d} \tan \theta \right)^4 -1} \right]^\frac{1}{2} = -\frac{\textrm{d} h}{\textrm{d} t}
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-3cd93978-80b1-4ab1-b622-3964aee8e520">
-<span class="eqno">(5)<a class="headerlink" href="#equation-3cd93978-80b1-4ab1-b622-3964aee8e520" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4b328d1a-e8d5-4d2f-9586-8768cba8c290">
+<span class="eqno">(5)<a class="headerlink" href="#equation-4b328d1a-e8d5-4d2f-9586-8768cba8c290" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Rightarrow \; \boxed{dt = - \left[ \frac{\left(1 + 2\frac{h}{d} \tan \theta \right)^4 -1}{2gh}\right]^\frac{1} {2} \textrm{d} h} \label{eq:int}
 \end{equation}\]</div>
 <p>This can be written dimensionless with a time characteristic <span class="math notranslate nohighlight">\(\tau = \sqrt{\frac{d}{2g}}\)</span>, a change to dimensionless variable <span class="math notranslate nohighlight">\(\xi = \frac{h}{d}\)</span>, and a parameter <span class="math notranslate nohighlight">\(A = 2\tan \theta\)</span>, becoming</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fd2b753f-7c59-42b8-866a-0949ee4de461">
-<span class="eqno">(6)<a class="headerlink" href="#equation-fd2b753f-7c59-42b8-866a-0949ee4de461" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bd1aa567-b0b9-4a30-912e-91972041fc32">
+<span class="eqno">(6)<a class="headerlink" href="#equation-bd1aa567-b0b9-4a30-912e-91972041fc32" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{\textrm{d} t}{\tau} = - \left[ \frac{\left(1 + A \xi \right)^4 -1}{\xi}\right]^\frac{1 }{2} \textrm{d} \xi
 \end{equation}\]</div>
 <p>Use sympy to analytically compute this time, making an estimation with  <span class="math notranslate nohighlight">\(d \ll h\)</span> so that it can be supposed that  <span class="math notranslate nohighlight">\(\xi \gg 1\)</span>.</p>
