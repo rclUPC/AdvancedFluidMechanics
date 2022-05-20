@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"Ma": "\\mathrm{Ma}"}}, "tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -81,6 +81,11 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/eseiaat-positiu-p3005-interior-blanc.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">UPC-205237 Advanced Fluid Mechanics</h1>
@@ -967,12 +972,12 @@ make the derivative of any expression</p>
 </div>
 </div>
 <p>We test and plot the solutions with some random values:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4df46f2d-51ae-4512-96e6-795e1e436216">
-<span class="eqno">(1)<a class="headerlink" href="#equation-4df46f2d-51ae-4512-96e6-795e1e436216" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
  \dot{m} &amp;=&amp; -1\;\textrm{kg/s} \\
  m_0 &amp;=&amp; 400\;\textrm{Kg} \\
  v_g &amp;=&amp; 10\;\textrm{m/s}
-\end{eqnarray}\]</div>
+\end{eqnarray*}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="p">{</span><span class="n">mDot</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">m0</span><span class="p">:</span><span class="mi">400</span><span class="p">,</span><span class="n">vg</span><span class="p">:</span><span class="mi">10</span><span class="p">}</span>
@@ -1496,7 +1501,7 @@ Name: Teacher, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f8b8b5aecd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f342e5c8fa0&gt;
 </pre></div>
 </div>
 <img alt="../_images/IntroPython_134_1.png" src="../_images/IntroPython_134_1.png" />
@@ -1538,10 +1543,10 @@ Name: Teacher, dtype: object
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   139.8</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 10 May 2022</td> <th>  Prob (F-statistic):</th> <td>3.34e-17</td>
+  <th>Date:</th>             <td>Fri, 20 May 2022</td> <th>  Prob (F-statistic):</th> <td>3.34e-17</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>11:57:58</td>     <th>  Log-Likelihood:    </th> <td> -102.79</td>
+  <th>Time:</th>                 <td>17:45:27</td>     <th>  Log-Likelihood:    </th> <td> -102.79</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    61</td>      <th>  AIC:               </th> <td>   209.6</td>
@@ -1803,10 +1808,10 @@ Name: Teacher, dtype: object
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   69.69</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 10 May 2022</td> <th>  Prob (F-statistic):</th> <td>3.76e-16</td>
+  <th>Date:</th>             <td>Fri, 20 May 2022</td> <th>  Prob (F-statistic):</th> <td>3.76e-16</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>11:57:58</td>     <th>  Log-Likelihood:    </th> <td> -102.49</td>
+  <th>Time:</th>                 <td>17:45:28</td>     <th>  Log-Likelihood:    </th> <td> -102.49</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    61</td>      <th>  AIC:               </th> <td>   211.0</td>
@@ -2023,7 +2028,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f8b86efabb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f3429f80f70&gt;
 </pre></div>
 </div>
 <img alt="../_images/IntroPython_167_1.png" src="../_images/IntroPython_167_1.png" />

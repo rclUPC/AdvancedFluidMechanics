@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"Ma": "\\mathrm{Ma}"}}, "tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -79,6 +79,11 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/eseiaat-positiu-p3005-interior-blanc.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">UPC-205237 Advanced Fluid Mechanics</h1>
@@ -298,42 +303,42 @@ const thebe_selector_output = ".output, .cell_output"
 <hr class="docutils" />
 <p>Let’s calculate how long it takes to <a class="reference external" href="https://www.youtube.com/watch?v=2jQ1jA8uJuU">empty a conical tank</a></p>
 <p>The simplification of the continuity equation leads, for a generic <span class="math notranslate nohighlight">\(h\)</span>, to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b81d71f8-0be6-4172-a60b-bb0b3c93f35c">
-<span class="eqno">()<a class="headerlink" href="#equation-b81d71f8-0be6-4172-a60b-bb0b3c93f35c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-46f82708-4419-4c14-b813-815f881361e5">
+<span class="eqno">()<a class="headerlink" href="#equation-46f82708-4419-4c14-b813-815f881361e5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 u_1 D_h^2 = u_1 \left(d + 2h \tan \theta \right)^2 = u_2 d^2 \tag{1} \label{eq_cont}
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-a663904c-1512-4047-9166-295a4adb2abb">
-<span class="eqno">()<a class="headerlink" href="#equation-a663904c-1512-4047-9166-295a4adb2abb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-71bb369f-e5f5-45cf-9f62-120cf648659b">
+<span class="eqno">()<a class="headerlink" href="#equation-71bb369f-e5f5-45cf-9f62-120cf648659b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Rightarrow \; u_2 = u_1\left(1 + 2\frac{h}{d} \tan \theta \right)^2
 \end{equation}\]</div>
 <p>On the other hand, Bernoulli’s equation, considering quasi-steady flow and without viscosity,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f1a74a15-27c0-4b6c-8cb3-ab41988d252d">
-<span class="eqno">()<a class="headerlink" href="#equation-f1a74a15-27c0-4b6c-8cb3-ab41988d252d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-68b4e8b1-b745-4296-90f1-40d497b407ec">
+<span class="eqno">()<a class="headerlink" href="#equation-68b4e8b1-b745-4296-90f1-40d497b407ec" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 u_1^2 + 2gh = u_2^2 = u_1^2 \left(1 + 2\frac{h}{d} \tan \theta \right)^4
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-4e7bf22c-1c07-43d0-8ec5-b7ebe35e22b9">
-<span class="eqno">()<a class="headerlink" href="#equation-4e7bf22c-1c07-43d0-8ec5-b7ebe35e22b9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2a720b0c-21ef-4fd2-92fc-2e96a0609454">
+<span class="eqno">()<a class="headerlink" href="#equation-2a720b0c-21ef-4fd2-92fc-2e96a0609454" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Rightarrow \; u_1^2 \left[ \left(1 + 2\frac{h}{d} \tan \theta \right)^4 -1 \right] = 2gh
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-715de453-0ad1-4b0a-adab-b69f6e528106">
-<span class="eqno">()<a class="headerlink" href="#equation-715de453-0ad1-4b0a-adab-b69f6e528106" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-86a33454-216c-4f66-a04e-fa7dc308b570">
+<span class="eqno">()<a class="headerlink" href="#equation-86a33454-216c-4f66-a04e-fa7dc308b570" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Rightarrow \; u_1 = \left[ \frac{2gh}{\left(1 + 2\frac{h}{d} \tan \theta \right)^4 -1} \right]^\frac{1}{2} = -\frac{\textrm{d} h}{\textrm{d} t}
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-3af27964-b5f8-4fe8-919d-866a984e77e3">
-<span class="eqno">()<a class="headerlink" href="#equation-3af27964-b5f8-4fe8-919d-866a984e77e3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-04ad2279-43e8-4c64-b58f-78ea098d56a0">
+<span class="eqno">()<a class="headerlink" href="#equation-04ad2279-43e8-4c64-b58f-78ea098d56a0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Rightarrow \; \boxed{dt = - \left[ \frac{\left(1 + 2\frac{h}{d} \tan \theta \right)^4 -1}{2gh}\right]^\frac{1} {2} \textrm{d} h} \tag{2} \label{eq:int}
 \end{equation}\]</div>
 <p>This can be written dimensionless with a time characteristic <span class="math notranslate nohighlight">\(\tau = \sqrt{\frac{d}{2g}}\)</span>, a change to dimensionless variable <span class="math notranslate nohighlight">\(\xi = \frac{h}{d}\)</span>, and a parameter <span class="math notranslate nohighlight">\(A = 2\tan \theta\)</span>, becoming</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7e5e9d4f-1446-4971-bc75-7f3e24df319e">
-<span class="eqno">()<a class="headerlink" href="#equation-7e5e9d4f-1446-4971-bc75-7f3e24df319e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bc2652d5-8500-4d39-946c-7b23ee8600aa">
+<span class="eqno">()<a class="headerlink" href="#equation-bc2652d5-8500-4d39-946c-7b23ee8600aa" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{\textrm{d} t}{\tau} = - \left[ \frac{\left(1 + A \xi \right)^4 -1}{\xi}\right]^\frac{1 }{2} \textrm{d} \xi
 \end{equation}\]</div>
 <p>Use sympy to analytically compute this time, making an estimation with  <span class="math notranslate nohighlight">\(d \ll h\)</span> so that it can be supposed that  <span class="math notranslate nohighlight">\(\xi \gg 1\)</span>.</p>
 <div class="section" id="simplified-form">
 <h2>Simplified form<a class="headerlink" href="#simplified-form" title="Permalink to this headline">¶</a></h2>
 <p>A first simplification is to assume that <span class="math notranslate nohighlight">\(d \ll h\)</span> at all times, so that <span class="math notranslate nohighlight">\(\xi\)</span> is very large. In this case, <span class="math notranslate nohighlight">\((1+A\xi)^4-1 \approx (1+A\xi)^4\)</span> can be considered. This is what would be obtained from directly applying Torricelli’s equation,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1185c018-2cc9-4d7b-83ee-31ec24da99d4">
-<span class="eqno">()<a class="headerlink" href="#equation-1185c018-2cc9-4d7b-83ee-31ec24da99d4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e2882cf0-4fef-4840-8800-df9f0bc3c18d">
+<span class="eqno">()<a class="headerlink" href="#equation-e2882cf0-4fef-4840-8800-df9f0bc3c18d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 u_2 = \sqrt{2gh}
 \end{equation}\]</div>
 <div class="cell docutils container">

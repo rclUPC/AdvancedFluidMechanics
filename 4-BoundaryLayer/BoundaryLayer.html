@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"Ma": "\\mathrm{Ma}"}}, "tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -81,6 +81,11 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/eseiaat-positiu-p3005-interior-blanc.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">UPC-205237 Advanced Fluid Mechanics</h1>
@@ -329,16 +334,16 @@ const thebe_selector_output = ".output, .cell_output"
 <!--- <img src="attachment:f83fcec3-1e8c-4f25-b734-06bd36d9dfff.png" width=600> --->
 <img src="Boundary-Layer.png" width=600><p>In this section we are going to focus on the laminar regime. The turbulent BL will be studied in the next part.</p>
 <p>As usual, we start with N-S and continuity equations for the non-perturbed (outside the BL) flow, assumed inviscid.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8998ba91-8bd4-4f4e-b437-6bb845ef3421">
-<span class="eqno">(15)<a class="headerlink" href="#equation-8998ba91-8bd4-4f4e-b437-6bb845ef3421" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-762c72a1-b110-4e19-9eda-54d20ba4d609">
+<span class="eqno">(13)<a class="headerlink" href="#equation-762c72a1-b110-4e19-9eda-54d20ba4d609" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 \label{eq1}
 \tag{1}
 \frac{\partial U}{\partial t} + U\frac{\partial U}{\partial x} &amp;=&amp; -\frac{1}{\rho}\frac{\partial p}{\partial x}\\
 \frac{\partial U}{\partial x} + \frac{\partial V}{\partial y} &amp;=&amp; 0 \; \text{with}\, U \gg V
 \end{eqnarray}\]</div>
 <p>and in the perturbed flow (inside the BL)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bb204f00-a1fe-49e5-b089-8b2f57a18f7e">
-<span class="eqno">(16)<a class="headerlink" href="#equation-bb204f00-a1fe-49e5-b089-8b2f57a18f7e" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-b21bee27-dbab-4f25-ae3c-2b716b5eb8dc">
+<span class="eqno">(14)<a class="headerlink" href="#equation-b21bee27-dbab-4f25-ae3c-2b716b5eb8dc" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 \frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} &amp;=&amp; -\frac{1}{\rho}\frac{\partial p}{\partial x} \tag{2}
 + \nu \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} \right) \\
 \frac{\partial v}{\partial t} + u\frac{\partial v}{\partial x} + v\frac{\partial v}{\partial y} &amp;=&amp; -\frac{1}{\rho}\frac{\partial p}{\partial y} \tag{3}
@@ -346,8 +351,8 @@ const thebe_selector_output = ".output, .cell_output"
 \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} &amp;=&amp; 0 \tag{4}
 \end{eqnarray}\]</div>
 <p>En general, we are going to consider only steady flows (or with very smooth variation in time) and, for a certain position <span class="math notranslate nohighlight">\(x = L\)</span>, we can make a first estimation of scales by considering</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fba98bec-8d59-47c6-8b32-d4a8d4cb0c5d">
-<span class="eqno">(17)<a class="headerlink" href="#equation-fba98bec-8d59-47c6-8b32-d4a8d4cb0c5d" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-22c8cf57-adae-42ad-8670-f8fbc99fe29d">
+<span class="eqno">(15)<a class="headerlink" href="#equation-22c8cf57-adae-42ad-8670-f8fbc99fe29d" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 u &amp;\sim&amp; U &amp;  v &amp;\sim&amp; V \\
 \frac{\partial u}{\partial x} &amp;\sim&amp; \frac{U}{L} &amp; 
 \frac{\partial u}{\partial y} &amp;\sim&amp; \frac{U}{\delta} \\
@@ -360,83 +365,83 @@ u &amp;\sim&amp; U &amp;  v &amp;\sim&amp; V \\
 \end{eqnarray}\]</div>
 <p>Then continuity equation (4) holds <span class="math notranslate nohighlight">\( V \sim U \frac{\delta}{L}\)</span>, and, hence, it is deduced that the BL is very thin compared with length of flow development <span class="math notranslate nohighlight">\(\delta \ll L\)</span>.
 Replacing the scales estimations in <span class="math notranslate nohighlight">\(x\)</span> N-S equation, (2), and using that <span class="math notranslate nohighlight">\(\frac{U}{L^2} \ll \frac{U}{\delta^2}\)</span>, we get that convective and viscous terms are of the same order if</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3c89fd7a-8e24-4ce2-a579-7c747b3bed1a">
-<span class="eqno">(18)<a class="headerlink" href="#equation-3c89fd7a-8e24-4ce2-a579-7c747b3bed1a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a2b4ea0f-f81c-467e-9cf1-ee07b31c0b82">
+<span class="eqno">(16)<a class="headerlink" href="#equation-a2b4ea0f-f81c-467e-9cf1-ee07b31c0b82" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{U^2}{L} \sim \nu\frac{U}{\delta^2} \; \Rightarrow \; \delta^2 \sim \frac{\nu L}{U} 
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-01fb5b51-1533-4811-9f53-8d3e86ed45e0">
-<span class="eqno">(19)<a class="headerlink" href="#equation-01fb5b51-1533-4811-9f53-8d3e86ed45e0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d72a6101-eef4-4652-929f-d74d65f35510">
+<span class="eqno">(17)<a class="headerlink" href="#equation-d72a6101-eef4-4652-929f-d74d65f35510" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Rightarrow \; \delta \sim \sqrt{\frac{\nu L}{U}} = \frac{L}{\sqrt{\frac{UL}{\nu}}} = \frac{L}{\sqrt{\text{Re}_L}}  
 \end{equation}\]</div>
 <p>From this simple scales analysis we get an important result that indicates the growth of the BL thickness</p>
-<div class="amsmath math notranslate nohighlight" id="equation-af76cd21-46dd-41f8-aad4-fe74f0294716">
-<span class="eqno">(20)<a class="headerlink" href="#equation-af76cd21-46dd-41f8-aad4-fe74f0294716" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-50539af6-daa3-451f-935d-feb86ee23817">
+<span class="eqno">(18)<a class="headerlink" href="#equation-50539af6-daa3-451f-935d-feb86ee23817" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \boxed{ \delta \sim \frac{L}{\sqrt{\text{Re}_L}} }  
 \end{equation}\]</div>
 <p>By comparing scales between equations (3) and (4) it can be shown that <span class="math notranslate nohighlight">\(\frac{\partial p}{\partial x} \gg \frac{\partial p}{\partial y}\)</span> and, hence, the pressure inside the BL is, in the practice, determined by the pressure in the unperturbed flow outside the BL.</p>
 <p>After scaling N-S and continuity equations, BL layer can be described with</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bc5f0c4e-89df-4959-a132-2dec1bc21cce">
-<span class="eqno">(21)<a class="headerlink" href="#equation-bc5f0c4e-89df-4959-a132-2dec1bc21cce" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-fe7bebef-f330-49ed-a232-2408b4ec8971">
+<span class="eqno">(19)<a class="headerlink" href="#equation-fe7bebef-f330-49ed-a232-2408b4ec8971" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 \text{continuity :}&amp; \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} &amp;=&amp; 0 \\
 x\,\text{-momentum :} &amp; \frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} &amp;=&amp; 
 -\frac{1}{\rho}\frac{\partial p}{\partial x} + \nu \frac{\partial^2 u}{\partial y^2} \tag{5} \\
 y\,\text{-momentum :} &amp; \frac{\partial p}{\partial y} &amp;=&amp; 0
 \end{eqnarray}\]</div>
 <p>and, for the non-perturbed flow, again,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-94bf2568-b4e0-40a3-909f-2c5c5563256c">
-<span class="eqno">(22)<a class="headerlink" href="#equation-94bf2568-b4e0-40a3-909f-2c5c5563256c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d9ff92f6-2449-49ef-9fd5-476929c1a324">
+<span class="eqno">(20)<a class="headerlink" href="#equation-d9ff92f6-2449-49ef-9fd5-476929c1a324" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{\partial U}{\partial t} + U\frac{\partial U}{\partial x} = -\frac{1}{\rho}\frac{\partial p}{\partial x} \tag{6}
 \end{equation}\]</div>
 <p>It is important to note that gradient pressure term in BL equations is determined by the flow outside BL.</p>
 <p>These equations are valid for plane surface or with a very low curvature.</p>
 <p>For the particular case of steady flow without pressure gradient, <a class="reference external" href="https://en.wikipedia.org/wiki/Blasius_boundary_layer">Blasius (1908)</a> found an analytical solution by introducing dimensionless variables for <span class="math notranslate nohighlight">\(y\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f9650ddb-8694-4a97-a680-ace8dc0becae">
-<span class="eqno">(23)<a class="headerlink" href="#equation-f9650ddb-8694-4a97-a680-ace8dc0becae" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f8dae66c-88cd-4dc1-bc4c-a3e78a0336ef">
+<span class="eqno">(21)<a class="headerlink" href="#equation-f8dae66c-88cd-4dc1-bc4c-a3e78a0336ef" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \eta = y\sqrt{\frac{U}{\nu x}} \left( \sim \frac{y}{\delta} \right)
 \end{equation}\]</div>
 <p>and for <span class="math notranslate nohighlight">\(u(x,y)\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5fce06ca-9e4f-4e58-82cc-75fd7d1ed6a6">
-<span class="eqno">(24)<a class="headerlink" href="#equation-5fce06ca-9e4f-4e58-82cc-75fd7d1ed6a6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-76cf1d5b-da40-489b-9916-9b5a555a7f74">
+<span class="eqno">(22)<a class="headerlink" href="#equation-76cf1d5b-da40-489b-9916-9b5a555a7f74" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 g(\eta) = \frac{u}{U}
 \end{equation}\]</div>
 <p>Since it is a 2D incompressible flow, it is possible to write in terms of a stream function <span class="math notranslate nohighlight">\(\psi(x,y)\)</span> so that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bdf9d334-b0a4-4b9f-9489-bf0cd571f46f">
-<span class="eqno">(25)<a class="headerlink" href="#equation-bdf9d334-b0a4-4b9f-9489-bf0cd571f46f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1df520cd-f725-40f4-913d-c39c7b0a3edf">
+<span class="eqno">(23)<a class="headerlink" href="#equation-1df520cd-f725-40f4-913d-c39c7b0a3edf" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 u = U g(\eta) = \frac{\partial \psi}{\partial y} = \sqrt{\frac{U}{\nu x}}\frac{\partial\psi}{\partial\eta}
 \end{equation}\]</div>
 <p>From here, we get that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-49b652c9-288b-4423-876b-887cee7ae90a">
-<span class="eqno">(26)<a class="headerlink" href="#equation-49b652c9-288b-4423-876b-887cee7ae90a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ef1d9cc5-4573-49ae-998a-73d362b9763d">
+<span class="eqno">(24)<a class="headerlink" href="#equation-ef1d9cc5-4573-49ae-998a-73d362b9763d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \psi(x,y) = \sqrt{\nu U x} f(\eta)
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(f(\eta) = \int g(\eta) d \eta\)</span>. Velocities are then written in terms of <span class="math notranslate nohighlight">\(f\)</span> as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-665cf7bf-af27-4865-b688-7523ba2d42c7">
-<span class="eqno">(27)<a class="headerlink" href="#equation-665cf7bf-af27-4865-b688-7523ba2d42c7" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-d2b0a229-dbd9-4221-a132-467092f3dae3">
+<span class="eqno">(25)<a class="headerlink" href="#equation-d2b0a229-dbd9-4221-a132-467092f3dae3" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 u &amp; = &amp; \frac{\partial \psi}{\partial y} = U f'(\eta) \\
 v &amp; = &amp; -\frac{\partial \psi}{\partial x} = \frac{1}{2}\sqrt{\frac{\nu U}{x}}\left[\eta f'(\eta) - f(\eta)\right]
 \end{eqnarray}\]</div>
 <p>And gathering everything in the N-S equations, we get an only equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-707c2c79-6ea1-4c26-bfce-ad6a75a7cef1">
-<span class="eqno">(28)<a class="headerlink" href="#equation-707c2c79-6ea1-4c26-bfce-ad6a75a7cef1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-253bd064-c6a5-4359-a114-105d89dbc245">
+<span class="eqno">(26)<a class="headerlink" href="#equation-253bd064-c6a5-4359-a114-105d89dbc245" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \boxed{2f''' + f f'' = 0} \tag{7}
 \end{equation}\]</div>
 <p>with the boundary conditions</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3cff8679-0c45-435b-8b97-83866f45b39f">
-<span class="eqno">(29)<a class="headerlink" href="#equation-3cff8679-0c45-435b-8b97-83866f45b39f" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-07321a1b-6fa7-44de-82c4-71a751d9431d">
+<span class="eqno">(27)<a class="headerlink" href="#equation-07321a1b-6fa7-44de-82c4-71a751d9431d" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 f = \frac{d f}{d \eta} = 0 &amp; \;\text{for}\,\eta = 0 \\
 \frac{d f}{d \eta} \rightarrow 1 &amp; \;\text{for}\,\eta \rightarrow \infty
 \end{eqnarray}\]</div>
 <p>This equation cannot be solved with <code class="docutils literal notranslate"><span class="pre">odeint</span></code>, since it is not an intial value problem, but a <a class="reference external" href="https://en.wikipedia.org/wiki/Boundary_value_problem">boundary value problem</a>. We are going to solve it with the <code class="docutils literal notranslate"><span class="pre">solve_bvp</span></code> method in the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_bvp.html">scipy.ode package</a>.</p>
 <p>First, we decompose the 3rd order ODE in a system of 3 first-order ODE’s, as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-440147ec-2fd8-48a5-b2c2-9b2668cff09c">
-<span class="eqno">(30)<a class="headerlink" href="#equation-440147ec-2fd8-48a5-b2c2-9b2668cff09c" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-6d2b7146-ad54-4207-8fcf-0c65603d61bd">
+<span class="eqno">(28)<a class="headerlink" href="#equation-6d2b7146-ad54-4207-8fcf-0c65603d61bd" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 f_0' &amp; = &amp; f_1 \\
 f_1' &amp; = &amp; f_2 \\
 f_2' &amp; = &amp; -\frac{1}{2}f_0f_2
 \end{eqnarray}\]</div>
 <p>with <span class="math notranslate nohighlight">\(f_0=f\)</span> and the boundary conditions</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6fae70b2-8e59-4b40-89b3-fced8d899e08">
-<span class="eqno">(31)<a class="headerlink" href="#equation-6fae70b2-8e59-4b40-89b3-fced8d899e08" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-ea99484e-0850-4be9-a40b-3b3f95f3a6ba">
+<span class="eqno">(29)<a class="headerlink" href="#equation-ea99484e-0850-4be9-a40b-3b3f95f3a6ba" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 f_0(\eta=0) &amp; = &amp; 0 \\
 f_1(\eta=0) &amp; = &amp; 0 \\
 f_1(\eta \rightarrow \infty) &amp; = &amp; 1 
@@ -544,8 +549,8 @@ f_1(\eta \rightarrow \infty) &amp; = &amp; 1
 </div>
 </div>
 <p>Hence, the Blasius BL extends up to <span class="math notranslate nohighlight">\(\eta = 4.91 \approx 5\)</span>, that is, <span class="math notranslate nohighlight">\(\delta \approx \frac{5}{\sqrt{\frac{U}{\nu x}}}\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9ac728b5-36d1-4430-b5e1-50adf2a24620">
-<span class="eqno">(32)<a class="headerlink" href="#equation-9ac728b5-36d1-4430-b5e1-50adf2a24620" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f908efa5-89df-4c70-8504-d811d8c047a6">
+<span class="eqno">(30)<a class="headerlink" href="#equation-f908efa5-89df-4c70-8504-d811d8c047a6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \boxed{\delta \approx \frac{5 x}{\sqrt{\text{Re}_x}}}
 \end{equation}\]</div>
 <p>We re-escale now the <span class="math notranslate nohighlight">\(\eta\)</span> variable, so that <span class="math notranslate nohighlight">\(\eta=1\)</span> is the BL thickness</p>
@@ -590,54 +595,54 @@ f_1(\eta \rightarrow \infty) &amp; = &amp; 1
 <p>The Volume Control is not exactly integral, but semi-integral, with an extension <span class="math notranslate nohighlight">\(dx\)</span> in the flow direction. It is sketched her:</p>
 <!--- <img src=attachment:5d340606-a430-49ee-9efa-75955bf21069.png width=600> --->
 <img src=VC_vonKarman.png width=600><p>We integrate BL equation from <span class="math notranslate nohighlight">\(y=0\)</span> (the wall) to <span class="math notranslate nohighlight">\(y=h\)</span> where <span class="math notranslate nohighlight">\(h\rightarrow \infty\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-7ea66087-ed92-43c3-93f5-10a71a2dc2c4">
-<span class="eqno">(33)<a class="headerlink" href="#equation-7ea66087-ed92-43c3-93f5-10a71a2dc2c4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bb980bfa-615b-403f-94aa-3254aa147ee6">
+<span class="eqno">(31)<a class="headerlink" href="#equation-bb980bfa-615b-403f-94aa-3254aa147ee6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \int_0^\infty\frac{\partial u}{\partial t} dy + \int_0^\infty u\frac{\partial u}{\partial x} dy + \int_0^\infty v\frac{\partial u}{\partial y} dy =
 \int_0^\infty -\frac{1}{\rho}\frac{\partial p}{\partial x} dy + 
 \underbrace{\int_0^\infty \nu \frac{\partial^2 u}{\partial y^2} dy}_{=\nu \left.\frac{\partial u}{\partial y}\right|_0^\infty = -\frac{\tau_w}{\rho}}
 \end{equation}\]</div>
 <p>The term of pressure gradient can be replaced by the behavior of (inviscid) flow outside of the BL (equation (6))</p>
-<div class="amsmath math notranslate nohighlight" id="equation-926ad933-1837-47ab-89da-4499fbbd2e23">
-<span class="eqno">(34)<a class="headerlink" href="#equation-926ad933-1837-47ab-89da-4499fbbd2e23" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5b88b944-4391-432e-b4fc-b0c01d7a7343">
+<span class="eqno">(32)<a class="headerlink" href="#equation-5b88b944-4391-432e-b4fc-b0c01d7a7343" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \int_0^\infty-\frac{1}{\rho}\frac{\partial p}{\partial x} dy = \int_0^\infty \frac{\partial U}{\partial t}dy + \int_0^\infty U\frac{\partial U}{\partial x} dy
 \end{equation}\]</div>
 <p>yielding</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4134baca-e813-438c-8e98-8f53d565cbe5">
-<span class="eqno">(35)<a class="headerlink" href="#equation-4134baca-e813-438c-8e98-8f53d565cbe5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fabf00ff-822c-4ae5-aa9f-953bbce2de68">
+<span class="eqno">(33)<a class="headerlink" href="#equation-fabf00ff-822c-4ae5-aa9f-953bbce2de68" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \int_0^\infty \frac{\partial u}{\partial t} dy + \int_0^\infty u\frac{\partial u}{\partial x} dy + \int_0^\infty v\frac{\partial u}{\partial y} dy =
 \int_0^\infty \frac{\partial U}{\partial t}dy + \int_0^\infty U\frac{\partial U}{\partial x} dy - \frac{\tau_w}{\rho}
 \end{equation}\]</div>
 <p>The component <span class="math notranslate nohighlight">\(v\)</span> of velocity can be obtained in term of <span class="math notranslate nohighlight">\(u\)</span> by integrating continuity equation (4), <span class="math notranslate nohighlight">\(v = -\int_0^\infty\frac{\partial u}{\partial x} dy\)</span> and, hence, after integrating by parts,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f76f170c-aa62-4c85-99c2-b9cf221738e9">
-<span class="eqno">(36)<a class="headerlink" href="#equation-f76f170c-aa62-4c85-99c2-b9cf221738e9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-05d9b138-ad46-4585-b540-34d33fa146a8">
+<span class="eqno">(34)<a class="headerlink" href="#equation-05d9b138-ad46-4585-b540-34d33fa146a8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \int_0^\infty v\frac{\partial u}{\partial y} dy = -\int_0^\infty \left(\int_0^\infty \frac{\partial u}{\partial x} dy \right) \frac{\partial u}{\partial y} dy = -U\int_0^\infty \frac{\partial u}{\partial x} dy + \int_0^\infty u\frac{\partial u}{\partial x} dy
 \end{equation}\]</div>
 <p>Collecting all together, we get</p>
-<div class="amsmath math notranslate nohighlight" id="equation-513f73ad-31d3-45b7-8a75-8ef5638f4048">
-<span class="eqno">(37)<a class="headerlink" href="#equation-513f73ad-31d3-45b7-8a75-8ef5638f4048" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d67ba067-114e-4f83-b758-f34a9b5ad5e7">
+<span class="eqno">(35)<a class="headerlink" href="#equation-d67ba067-114e-4f83-b758-f34a9b5ad5e7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \int_0^\infty \frac{\partial u}{\partial t} dy + 2\int_0^\infty u\frac{\partial u}{\partial x} dy -U\int_0^\infty \frac{\partial u}{\partial x} dy =
 \int_0^\infty \frac{\partial U}{\partial t}dy + \int_0^\infty U\frac{\partial U}{\partial x} dy - \frac{\tau_w}{\rho}
 \end{equation}\]</div>
 <p>and, after, rearranging terms and factorizing,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6afd826d-5c57-4757-b164-e94fba95ea3a">
-<span class="eqno">(38)<a class="headerlink" href="#equation-6afd826d-5c57-4757-b164-e94fba95ea3a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b458e606-4e86-462f-b962-bcc219a84864">
+<span class="eqno">(36)<a class="headerlink" href="#equation-b458e606-4e86-462f-b962-bcc219a84864" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{\partial}{\partial t} \int_0^\infty U\left(1-\frac{u}{U}\right) dy + \int_0^\infty \frac{\partial}{\partial x} U^2\left[\frac{u}{U}\left(1-\frac{u}{U}\right)\right]dy + U\frac{\partial U}{\partial x}\int_0^\infty \left(1-\frac{u}{U}\right) dy =  \frac{\tau_w}{\rho}
 \end{equation}\]</div>
 <p>and defining the <em>displacement thickness</em>, <span class="math notranslate nohighlight">\(\delta'\)</span>, and <em>momentum thickness</em>, <span class="math notranslate nohighlight">\(\theta\)</span>, as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4401ffc9-2af4-45dd-baa3-7b09678954fb">
-<span class="eqno">(39)<a class="headerlink" href="#equation-4401ffc9-2af4-45dd-baa3-7b09678954fb" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-408ea9ce-494b-4c6a-ab36-c6a23aefa2f1">
+<span class="eqno">(37)<a class="headerlink" href="#equation-408ea9ce-494b-4c6a-ab36-c6a23aefa2f1" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 \delta' &amp; = &amp; \int_0^\infty \left(1-\frac{u}{U}\right) dy \\
 \theta &amp; = &amp; \int_0^\infty \frac{u}{U}\left(1-\frac{u}{U}\right) dy \\
 \end{eqnarray}\]</div>
 <p>the von Kàrmàn (1921) equation is finally obtained</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b1950cd1-979a-4734-8602-43165cf9ded4">
-<span class="eqno">(40)<a class="headerlink" href="#equation-b1950cd1-979a-4734-8602-43165cf9ded4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-302d1ff4-232d-4b54-abed-b1ea5f236b59">
+<span class="eqno">(38)<a class="headerlink" href="#equation-302d1ff4-232d-4b54-abed-b1ea5f236b59" title="Permalink to this equation">¶</a></span>\[\begin{equation}
  \frac{\partial}{\partial t}\left( U \delta'\right) + \frac{\partial}{\partial x}\left( U^2 \theta\right)+ U \delta'\frac{\partial U}{\partial x} = \frac{\tau_w}{\rho} \tag{8}
 \end{equation}\]</div>
 <p>This equation relates, knowing the velocity profile <span class="math notranslate nohighlight">\(\frac{u}{U}\left(\frac{y}{\delta}\right)\)</span>, the BL thickness, <span class="math notranslate nohighlight">\(\delta\)</span> with the wall friction <span class="math notranslate nohighlight">\(\tau_w\)</span>.</p>
 <p>As an example, for steady uniform non-perturbed flow <span class="math notranslate nohighlight">\(U\)</span>, this simplifies to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-278d06e4-9a7b-48c5-af1f-32dec305e0a0">
-<span class="eqno">(41)<a class="headerlink" href="#equation-278d06e4-9a7b-48c5-af1f-32dec305e0a0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-23566235-091a-45fd-a608-4219390ea5b5">
+<span class="eqno">(39)<a class="headerlink" href="#equation-23566235-091a-45fd-a608-4219390ea5b5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \tau_w = \rho U^2 \frac{\partial \theta}{\partial x} \tag{9}
 \end{equation}\]</div>
 <p>regardless the turbulent regime of the flow.</p>
@@ -679,15 +684,15 @@ f_1(\eta \rightarrow \infty) &amp; = &amp; 1
 </div>
 </div>
 <p>When the velocity profile in the BL is unknown, it is usual to model it with an arbitrary function <span class="math notranslate nohighlight">\(\frac{u}{U}=f(\eta)\)</span> that fulfills the conditions:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a841a3c6-4ddf-4d7a-87a0-92368499b955">
-<span class="eqno">(42)<a class="headerlink" href="#equation-a841a3c6-4ddf-4d7a-87a0-92368499b955" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-5273cdb4-05b7-4080-82ff-b7786636ef96">
+<span class="eqno">(40)<a class="headerlink" href="#equation-5273cdb4-05b7-4080-82ff-b7786636ef96" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 f(0) &amp; = &amp; 0 \\
 f(\eta \rightarrow \infty) &amp; \rightarrow &amp; 1 \\
 \left.\frac{d^n f}{d \eta^n}\right|_{\eta \rightarrow \infty} &amp; \rightarrow &amp; 0
 \end{eqnarray}\]</div>
 <p>The simplest example is a the piecewise second degree polynomial</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0dd73789-2e03-4bfb-8465-1cbabd3c4208">
-<span class="eqno">(43)<a class="headerlink" href="#equation-0dd73789-2e03-4bfb-8465-1cbabd3c4208" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ba3abdaa-1235-4c11-ab5a-6d3fd7d4c2ea">
+<span class="eqno">(41)<a class="headerlink" href="#equation-ba3abdaa-1235-4c11-ab5a-6d3fd7d4c2ea" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(\eta) = 
 \begin{cases} 
 2\eta - \eta^2 &amp; \;\text{for } \eta &lt; 1 \\
@@ -727,58 +732,58 @@ f(\eta) =
 <div class="section" id="turbulent-bl">
 <h2>Turbulent BL<a class="headerlink" href="#turbulent-bl" title="Permalink to this headline">¶</a></h2>
 <p>When flow is turbulent,  according to the <a class="reference external" href="https://en.wikipedia.org/wiki/Reynolds-averaged_Navier%E2%80%93Stokes_equations">Reynolds Averaged Navier-Stokes equations</a>, equation for the BL is practically the same as (5), but <span class="math notranslate nohighlight">\(u\)</span> is replaced by <span class="math notranslate nohighlight">\(\overline{u}\)</span> (we get an equation for averaged velocity) and an extra term <span class="math notranslate nohighlight">\(\frac{\partial}{\partial y}\left(-\rho \overline{u'v'}\right)\)</span>. known as <a class="reference external" href="https://en.wikipedia.org/wiki/Reynolds_stress">Reynolds turbulent stress tensor</a>,  appears.Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-73693e91-87a5-418f-a8b9-71d356297b60">
-<span class="eqno">(44)<a class="headerlink" href="#equation-73693e91-87a5-418f-a8b9-71d356297b60" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-43756d61-a784-4f00-8cd9-6a81b0156199">
+<span class="eqno">(42)<a class="headerlink" href="#equation-43756d61-a784-4f00-8cd9-6a81b0156199" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 \frac{\partial \overline u}{\partial x} + \frac{\partial \overline v}{\partial y} &amp;=&amp; 0 \\
 \frac{\partial \overline u}{\partial t} + \overline u\frac{\partial \overline u}{\partial x} + \overline v\frac{\partial \overline u}{\partial y} &amp;=&amp; 
 -\frac{1}{\rho}\frac{\partial \overline p}{\partial x} + \nu \frac{\partial^2 \overline u}{\partial y^2} - \frac{\partial}{\partial y}\left(\overline{u'v'}\right) \tag{10}
 \end{eqnarray}\]</div>
 <p>One way to model this term is with the definition of an <a class="reference external" href="https://en.wikipedia.org/wiki/Turbulence_modeling#Eddy_viscosity">eddy viscosity</a> , according to the <em>Boussinesq aproximation</em>. The Reynolds term is then written in terms of the average velocity as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4d565f26-c0cd-40bb-ac81-9a0d9728e96f">
-<span class="eqno">(45)<a class="headerlink" href="#equation-4d565f26-c0cd-40bb-ac81-9a0d9728e96f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9f3426e9-2668-48f0-af1a-13aa230d7c1d">
+<span class="eqno">(43)<a class="headerlink" href="#equation-9f3426e9-2668-48f0-af1a-13aa230d7c1d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 - \frac{\partial}{\partial y}\left(\overline{u'v'}\right) = \nu_t\left(\frac{\partial \overline u}{\partial y}\right)
 \end{equation}\]</div>
 <p>Note that <span class="math notranslate nohighlight">\(\nu_t\)</span> is not a property of the fluid (like molecular viscosity) but of the flow (like velocity) and, so, it is function of space and time. The effective viscosity is, therefore, the sum of both of them, and the viscous term can be written as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-41fc903c-4492-4315-8e6b-3e70a115eb9a">
-<span class="eqno">(46)<a class="headerlink" href="#equation-41fc903c-4492-4315-8e6b-3e70a115eb9a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c05955e0-8399-4cc0-b7e1-85ed60459cf3">
+<span class="eqno">(44)<a class="headerlink" href="#equation-c05955e0-8399-4cc0-b7e1-85ed60459cf3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{\tau}{\rho} = \left(\nu + \nu_t\right)\left(\frac{\partial \overline u}{\partial y}\right) \tag{11}
 \end{equation}\]</div>
 <p>But with that the problem is not solved, only it has been transferred to another unknown, <span class="math notranslate nohighlight">\(\nu_t\)</span>. A successful approach is the <a class="reference external" href="https://en.wikipedia.org/wiki/Turbulence_modeling#Prandtl%27s_mixing-length_concept">Prandtl’s mixing length</a>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6c3c17c8-e19c-48f5-91f6-670acec948b8">
-<span class="eqno">(47)<a class="headerlink" href="#equation-6c3c17c8-e19c-48f5-91f6-670acec948b8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-061a76b2-888b-4025-a20b-aa0424e09b53">
+<span class="eqno">(45)<a class="headerlink" href="#equation-061a76b2-888b-4025-a20b-aa0424e09b53" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \nu_t = l^2\left|\frac{\partial \overline u}{\partial y}\right| \tag{12}
 \end{equation}\]</div>
 <p>where, in the case of turbulent BL, the mixing length <span class="math notranslate nohighlight">\(l\)</span> can be estimated in function of the distance to the wall.</p>
 <p>In a turbulent BL several regions can be defined.</p>
 <!--- <img src=attachment:cf6a678a-4cbd-415c-ab47-db4c3c844029.png width=600> --->
 <img src=TurbulentBL.png width=600><p>But, before, we have to define the normalization of this kind of BL. In a turbulent BL the effect of the wall is very important,so, it is very usual to normalize the velocity inside the BL, <span class="math notranslate nohighlight">\(\overline u\)</span> using the wall friction instead of the free stream velocity. Therefore, a <em>friction velocity</em> <span class="math notranslate nohighlight">\(u_\tau = \sqrt{\frac{\tau_w}{\rho}}\)</span> is defined, and a dimensionless distance <span class="math notranslate nohighlight">\(y^+\)</span> and velocity <span class="math notranslate nohighlight">\(u^+\)</span> are defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ea27b268-ee76-493d-b2c2-4ff8fa4b1bf1">
-<span class="eqno">(48)<a class="headerlink" href="#equation-ea27b268-ee76-493d-b2c2-4ff8fa4b1bf1" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-48aae211-9f3d-4485-9b22-559717dc06d9">
+<span class="eqno">(46)<a class="headerlink" href="#equation-48aae211-9f3d-4485-9b22-559717dc06d9" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 y^+ &amp; = &amp; \frac{y u_\tau}{\nu} \\
 u^+ &amp; = &amp; \frac{\overline u}{u_\tau}
 \end{eqnarray}\]</div>
 <p>The two main regions of the TBL are the <em>Inner layer</em>, which extends up to <span class="math notranslate nohighlight">\(y^+ \approx 35\)</span>, and the <em>Outer layer</em>, that begins around <span class="math notranslate nohighlight">\(y^+ \approx 350\)</span>. Between these regions there is an <em>Overlap layer</em>.</p>
 <p>In the Inner layer the influence of the wall is specially important, and the mixing length depends strongly on its distance. In the overlap layer it is considered that the mixing layer increase linearly with the distance to the wall and, finally, in the Outer layer, the wall is so far away that there is no dependence on the distance.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5da7ad03-ca4c-4982-bb12-03689bf770b5">
-<span class="eqno">(49)<a class="headerlink" href="#equation-5da7ad03-ca4c-4982-bb12-03689bf770b5" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-cba69030-14ab-4779-8dac-bce2fd2ff990">
+<span class="eqno">(47)<a class="headerlink" href="#equation-cba69030-14ab-4779-8dac-bce2fd2ff990" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 l \sim y^2 &amp;\;&amp; \text{in the Inner layer} \\
 l \sim y &amp;\;&amp; \text{in the Overlap layer} \\
 l \sim \text{ct} &amp;\;&amp; \text{in the Outer layer}
 \end{eqnarray}\]</div>
 <p>In the most adjacent layer, the <strong>viscous sublayer</strong>, the turbulence is low and the flow is dominated by viscosity, yielding a Couette-like flow with a linear profile <span class="math notranslate nohighlight">\(u^+ = k_l y^+\)</span>, where <span class="math notranslate nohighlight">\(k_l\)</span> is a constant, that is has been measured as <span class="math notranslate nohighlight">\(k_l \approx 1\)</span>. This behavior is typically valid up to <span class="math notranslate nohighlight">\(y^+ \approx 5 \div 10\)</span></p>
 <p>On the <strong>overlap region</strong>, though, turbulent viscosity is much bigger than molecular viscosity, and it can be assumed that <span class="math notranslate nohighlight">\(\nu + \nu_t \approx \nu_t\)</span>. Hence, with the mixing length model,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-60f52174-f921-4962-b02b-adb909da4baf">
-<span class="eqno">(50)<a class="headerlink" href="#equation-60f52174-f921-4962-b02b-adb909da4baf" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8472a38f-9be8-4ee8-a605-a61341f9bab5">
+<span class="eqno">(48)<a class="headerlink" href="#equation-8472a38f-9be8-4ee8-a605-a61341f9bab5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \nu_t\left(\frac{\partial \overline u}{\partial y}\right) = l^2\left(\frac{\partial \overline u}{\partial y}\right)^2 = a^2y^2\left(\frac{\partial \overline u}{\partial y}\right)^2
 \end{equation}\]</div>
 <p>Assuming that this stress is the same than in the wall, <span class="math notranslate nohighlight">\(\tau_t \approx \tau_w\)</span> we can get the relationship</p>
-<div class="amsmath math notranslate nohighlight" id="equation-eb4c6151-733b-4e83-9df4-4843018fbd7d">
-<span class="eqno">(51)<a class="headerlink" href="#equation-eb4c6151-733b-4e83-9df4-4843018fbd7d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5f6139d2-dc0a-438e-b8d4-8b3d3ffb40eb">
+<span class="eqno">(49)<a class="headerlink" href="#equation-5f6139d2-dc0a-438e-b8d4-8b3d3ffb40eb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 u_\tau^2 = a^2y^2\left(\frac{\partial \overline u}{\partial y}\right)^2
 \end{equation}\]</div>
 <p>that leads to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e64443c7-a9f3-406e-9616-66b0bb7f4b15">
-<span class="eqno">(52)<a class="headerlink" href="#equation-e64443c7-a9f3-406e-9616-66b0bb7f4b15" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c1678e04-da70-4610-908a-c95d5536f9e1">
+<span class="eqno">(50)<a class="headerlink" href="#equation-c1678e04-da70-4610-908a-c95d5536f9e1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 u^+ = \frac{1}{a}\ln{y^+}+b
 \tag{13}
 \end{equation}\]</div>
@@ -786,14 +791,14 @@ u^+ = \frac{1}{a}\ln{y^+}+b
 <p>Between viscous sublayer and the overlap region there is the buffer layer, up to <span class="math notranslate nohighlight">\(y^+ \approx 30\)</span>, where neither law hold.</p>
 <!--- <img src=attachment:510c97df-d1a9-41e9-8cba-1f79510bad29.png width=600> --->
 <img src=LogLaw.png width=600><p>In the <strong>outer layer</strong>, the velocity defect, <span class="math notranslate nohighlight">\(U-\overline{u}(y)\)</span> is considered to be function only of the distance to wall, <span class="math notranslate nohighlight">\(y\)</span>. In dimensionless way it is written as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a14c1b44-b90e-4cea-865d-c436e945f3d6">
-<span class="eqno">(53)<a class="headerlink" href="#equation-a14c1b44-b90e-4cea-865d-c436e945f3d6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6f377cfc-01be-4184-a4a0-e53a16784058">
+<span class="eqno">(51)<a class="headerlink" href="#equation-6f377cfc-01be-4184-a4a0-e53a16784058" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{U-\overline{u}}{u_\tau} = F(\eta)
 \end{equation}\]</div>
 <p>Now the question is: how can we get <span class="math notranslate nohighlight">\(\tau_w\)</span> from these expressions? We cannot use Newton’s law <span class="math notranslate nohighlight">\(\tau_w = \mu u_{,y}(y=0)\)</span>, since the log law does not reach the wall and the slope for he linear low in the viscous sublayer is unknown. So, we have to use indirect relationship through the definition of <span class="math notranslate nohighlight">\(u_\tau\)</span> that describes the log law.</p>
 <p>We introduce the definition of the skin factor</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d90c5fbd-fd85-469e-8e97-5aa6543621e4">
-<span class="eqno">(54)<a class="headerlink" href="#equation-d90c5fbd-fd85-469e-8e97-5aa6543621e4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d3c022f5-5288-440e-9a77-f6f1ca22cadd">
+<span class="eqno">(52)<a class="headerlink" href="#equation-d3c022f5-5288-440e-9a77-f6f1ca22cadd" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 c_f = \frac{\tau_w}{\frac{1}{2}\rho U^2} = 2\left(\frac{u_\tau}{U}\right)^2
 \end{equation}\]</div>
 <p>and, also we are going to use <span class="math notranslate nohighlight">\(Re_\delta = \frac{\delta U}{\nu}\)</span></p>

@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"Ma": "\\mathrm{Ma}"}}, "tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -79,6 +79,11 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/eseiaat-positiu-p3005-interior-blanc.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">UPC-205237 Advanced Fluid Mechanics</h1>
@@ -272,8 +277,8 @@ const thebe_selector_output = ".output, .cell_output"
 \[ \tau + \lambda \frac{\partial \tau}{\partial t} = \eta \frac{\partial u}{\partial r} \]</div>
 <p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the relaxation time.</p>
 <p>We can write this equations with dimensionless variables, by defining</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9218becd-ad09-422a-8fa4-3adf5dc730ed">
-<span class="eqno">()<a class="headerlink" href="#equation-9218becd-ad09-422a-8fa4-3adf5dc730ed" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-f6b276cf-bd80-4f62-a979-962d08324840">
+<span class="eqno">()<a class="headerlink" href="#equation-f6b276cf-bd80-4f62-a979-962d08324840" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 r^* &amp;=&amp; \frac{r}{R} \\
 t^* &amp;=&amp; \frac{\eta}{\rho R^2}t \\
 u^* &amp;=&amp; \frac{4\eta}{R^2P}u \\
@@ -281,8 +286,8 @@ u^* &amp;=&amp; \frac{4\eta}{R^2P}u \\
 \xi &amp;=&amp; \frac{\eta}{\rho R^2}\lambda
 \end{eqnarray}\]</div>
 <p>With these variables, the dimensionless equations are (we drop the “*” for the sake of simplicity):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-447b606c-862b-4b39-a906-0f644bfbfb54">
-<span class="eqno">()<a class="headerlink" href="#equation-447b606c-862b-4b39-a906-0f644bfbfb54" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-7b716712-267f-4b8d-99c8-279012e1ff37">
+<span class="eqno">()<a class="headerlink" href="#equation-7b716712-267f-4b8d-99c8-279012e1ff37" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 \frac{\partial u}{\partial t} &amp;=&amp; 4 + \frac{\partial \tau}{\partial r} + \frac{\tau}{r} \\
 \tau + \xi\frac{\partial \tau}{\partial t} &amp;=&amp; \frac{\partial u}{\partial r}
 \end{eqnarray}\]</div>
@@ -297,14 +302,14 @@ u^* &amp;=&amp; \frac{4\eta}{R^2P}u \\
 <p>This is a system of PDE that cannot be solved analytically (at least, not easily).</p>
 <p>The more easier method is to use the <a class="reference external" href="https://en.wikipedia.org/wiki/Finite_difference_method">Finite Difference Method</a> (FD) Method</p>
 <p>Translating the previous equations to FD language, with explicit scheme, with central difference in space and forward in time, we get</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7bec7109-e203-4698-b751-d933f685f66c">
-<span class="eqno">()<a class="headerlink" href="#equation-7bec7109-e203-4698-b751-d933f685f66c" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-10c3e905-43e6-4808-aa77-f88f44ecced9">
+<span class="eqno">()<a class="headerlink" href="#equation-10c3e905-43e6-4808-aa77-f88f44ecced9" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 \frac{u_i^{n+1} - u_i^n}{\Delta t} &amp;=&amp; 4 + \frac{\tau_{i+1}^n - \tau_{i-1}^n}{2\Delta r} + \frac{\tau_i^n}{r_i} \\
 \tau_i^n + \xi\frac{\tau_i^{n+1} - \tau_i^n}{\Delta t} &amp;=&amp; \frac{u_{i+1}^n-u_{i-1}^n}{2\Delta r}
 \end{eqnarray}\]</div>
 <p>and, in terms of previous time step,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2d21008d-4d4d-4f3e-bf15-223eb3d6375a">
-<span class="eqno">()<a class="headerlink" href="#equation-2d21008d-4d4d-4f3e-bf15-223eb3d6375a" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-aa947953-d090-432d-9c44-51b926996a19">
+<span class="eqno">()<a class="headerlink" href="#equation-aa947953-d090-432d-9c44-51b926996a19" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 u_i^{n+1} &amp;=&amp; u_i^n + \Delta t\left( 4 + \frac{\tau_{i+1}^n - \tau_{i-1}^n}{2\Delta r} + \frac{\tau_i^n}{r_i} \right) \\
 \tau_i^{n+1} &amp;=&amp; \tau_i^n + \frac{\Delta t}{\xi}\left(\frac{u_{i+1}^n-u_{i-1}^n}{2\Delta r} - \tau_i^n  \right) 
 \end{eqnarray}\]</div>

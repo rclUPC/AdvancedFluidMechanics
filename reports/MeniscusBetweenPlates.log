@@ -17,16 +17,20 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-tauSinInf=tauSin.replace(tauSin.rhs.args[0],0)
-display(tauSinInf)
+from scipy.integrate import odeint
+theta_n = np.deg2rad(30)
+beta_n = 0.01
+eta0 = sp.N(eta0_n(beta_n,theta_n),4)
+display(eta0)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mIndexError[0m                                Traceback (most recent call last)
-Input [0;32mIn [26][0m, in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0m tauSinInf[38;5;241m=[39mtauSin[38;5;241m.[39mreplace([43mtauSin[49m[38;5;241;43m.[39;49m[43mrhs[49m[38;5;241;43m.[39;49m[43margs[49m[43m[[49m[38;5;241;43m0[39;49m[43m][49m,[38;5;241m0[39m)
-[1;32m      2[0m display(tauSinInf)
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Input [0;32mIn [10][0m, in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mintegrate[39;00m [38;5;28;01mimport[39;00m odeint
+[1;32m      2[0m theta_n [38;5;241m=[39m np[38;5;241m.[39mdeg2rad([38;5;241m30[39m)
+[1;32m      3[0m beta_n [38;5;241m=[39m [38;5;241m0.01[39m
 
-[0;31mIndexError[0m: tuple index out of range
-IndexError: tuple index out of range
+[0;31mModuleNotFoundError[0m: No module named 'scipy'
+ModuleNotFoundError: No module named 'scipy'
 

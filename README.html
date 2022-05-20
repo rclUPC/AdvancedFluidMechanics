@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"Ma": "\\mathrm{Ma}"}}, "tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -80,6 +80,11 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/eseiaat-positiu-p3005-interior-blanc.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">UPC-205237 Advanced Fluid Mechanics</h1>
@@ -276,6 +281,14 @@ const thebe_selector_output = ".output, .cell_output"
 except for the Notebook <em>0 - Introduction to scientific computation with Python</em>, that introduces the main tools that are being used in the rest of Notebooks.</p>
 <p>Each topic is studied with a special Python module (although there are some, as <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> that is used across most of them). For instance, in the topic of <em>Microflows
 and lubrication</em>, the use of <code class="docutils literal notranslate"><span class="pre">sympy</span></code> is specially important, whereas in <em>Turbulence</em> is important <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and in rheology, <code class="docutils literal notranslate"><span class="pre">scipy</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The notebooks have been tested with <code class="docutils literal notranslate"><span class="pre">sympy</span> <span class="pre">1.7.1</span></code>. Newer version of <code class="docutils literal notranslate"><span class="pre">sympy</span></code> are not working properly.</p>
+<p>Install this version with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">sympy</span><span class="o">==</span><span class="mf">1.7.1</span>
+</pre></div>
+</div>
+</div>
 <p>The notebooks are quite interactive. The student can download them from GitHub and play with them in Jupyterlab, Google Colab or any other IDE that supports Python Jupyter Notebooks. Also there are some exercices for practicing and some Assignments that my students had to deliver in groups fro grading.</p>
 <p>It is advisable to have basic knowledge of Fluid Mechanics before using the Notebooks. In the beginning of each Notebook a basic lecture on the subject is suggested.</p>
 </div>

@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"Ma": "\\mathrm{Ma}"}}, "tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -81,6 +81,11 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/eseiaat-positiu-p3005-interior-blanc.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">UPC-205237 Advanced Fluid Mechanics</h1>
@@ -311,8 +316,8 @@ plate.</p>
 <h2>Method 1<a class="headerlink" href="#method-1" title="Permalink to this headline">¶</a></h2>
 <p>In this method the origin of <span class="math notranslate nohighlight">\(x\)</span> is at the wall and the numerical integration is done until the middle point between plates. All the variables are normalized with capillary length
 <span class="math notranslate nohighlight">\( l_s = \frac{\rho g}{\gamma} \)</span>. Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-809e7472-dd7f-4f82-8b25-960298b92673">
-<span class="eqno">(9)<a class="headerlink" href="#equation-809e7472-dd7f-4f82-8b25-960298b92673" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-ed2ce94c-1e14-454e-9696-3c9e81a0a124">
+<span class="eqno">(7)<a class="headerlink" href="#equation-ed2ce94c-1e14-454e-9696-3c9e81a0a124" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 \xi &amp;=&amp; \frac{x}{l_s} \\
 \eta &amp;=&amp; \frac{z}{l_s} \\
 \beta &amp;=&amp; \frac{H}{l_s} \\
@@ -447,7 +452,7 @@ plate.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;lambdifygenerated-2&gt;:2: RuntimeWarning: invalid value encountered in sqrt
-  return (-sqrt(-1.0 + 1.0/(0.5*_Dummy_2006**2 + _Dummy_2006*beta - 1)**2))
+  return (-sqrt(-1.0 + 1.0/(0.5*_Dummy_2007**2 + _Dummy_2007*beta - 1)**2))
 </pre></div>
 </div>
 </div>
@@ -491,7 +496,7 @@ estimated value for lambda: 173
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f91ec7ca640&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7faf5fae7760&gt;
 </pre></div>
 </div>
 <img alt="../_images/MeniscusBetweenPlates_28_1.png" src="../_images/MeniscusBetweenPlates_28_1.png" />
@@ -501,8 +506,8 @@ estimated value for lambda: 173
 <div class="section" id="method-2">
 <h2>Method 2<a class="headerlink" href="#method-2" title="Permalink to this headline">¶</a></h2>
 <p>In this method, we write the second order ODE as a system of two first order ODE’s:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6d7db314-b384-4c36-b7e5-1ec55fc4ccab">
-<span class="eqno">(10)<a class="headerlink" href="#equation-6d7db314-b384-4c36-b7e5-1ec55fc4ccab" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-c1081dae-8c09-4fb4-b129-c536c4875546">
+<span class="eqno">(8)<a class="headerlink" href="#equation-c1081dae-8c09-4fb4-b129-c536c4875546" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 \zeta'(\zeta,\eta,\xi) &amp;=&amp; (\eta(\xi) + \beta)\left(1+\zeta(\xi)^2\right)^\frac{3}{2} \\
 \eta'(\zeta,\eta,\xi) &amp;=&amp; \zeta(\xi)
 \end{eqnarray}\]</div>
