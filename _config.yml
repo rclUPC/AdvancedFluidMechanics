@@ -1,7 +1,7 @@
 # In _config.yml
 title: UPC-205237 Advanced Fluid Mechanics
 author: Robert Castilla - UPC CATMech Terrassa
-logo: logo.png
+logo: eseiaat-positiu-p3005-interior-blanc.png
 execute:
   execute_notebooks: force
 parse:
@@ -11,9 +11,15 @@ parse:
     - amsmath
     - dollarmath
     - colon_fence
-TeX:
-  Macros:
-    "Ma": "\\mathrm{Ma}"
+sphinx:
+  config:
+    mathjax_config:
+      TeX:
+        Macros:
+            "Ma": "\\mathrm{Ma}"
+#        equationNumbers: 
+#            autoNumber: "AMS"
+#  equationNumbers: { autoNumber: "AMS" } }
 # Add a bibtex file so that we can create citations
 #bibtex_bibfiles:
 #  - references.bib
