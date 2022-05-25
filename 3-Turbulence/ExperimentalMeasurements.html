@@ -1,0 +1,1776 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Statistical process of experimental measurements &#8212; UPC-205237 Advanced Fluid Mechanics</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"Ma": "\\mathrm{Ma}"}}, "tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignment 3 : Computation of length scales and spectrum in space" href="Assignment3.html" />
+    <link rel="prev" title="Turbulent flows. Statistical description and characteristic scales" href="turbulence.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/eseiaat-positiu-p3005-interior-blanc.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UPC-205237 Advanced Fluid Mechanics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Advanced Fluid Mechanics
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../0-Intro/IntroPython.html">
+   Introduction to scientific computation with Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0-Intro/Assignment0.html">
+     Assignment 0: Conical tank emptying time
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1-microFlows/Microflows.html">
+   Microflows. A very brief introduction with lubrication and capillarity
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-microFlows/Assignment1.html">
+     Assignment 1. Computation of journal bearing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Rheology/rheology.html">
+   Rheology. A brief introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Rheology/FDMViscoelastic.html">
+   Viscoelastic fluid in a pipe (Maxwell model)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Rheology/Assignment2.html">
+   Assignment 2. Rheological behaviour of cosmetic creams
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="turbulence.html">
+   Turbulent flows. Statistical description and characteristic scales
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Statistical process of experimental measurements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Assignment3.html">
+     Assignment 3 : Computation of length scales and spectrum in space
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-BoundaryLayer/BoundaryLayer.html">
+   Boundary Layer. An introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5-CompressibleFlow/CompressibleFlow.html">
+   Compressible Flow. An introduction
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/3-Turbulence/ExperimentalMeasurements.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rclUPC/AdvancedFluidMechanics/master?urlpath=tree/3-Turbulence/ExperimentalMeasurements.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#description-of-the-data">
+   1. Description of the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computation-of-turbulence-intensities">
+   2. Computation of turbulence intensities
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computation-of-fluctuations">
+   3. Computation of fluctuations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computation-of-turbulence-kinetic-energy">
+   4. Computation of turbulence kinetic energy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-time-scales">
+   5. Some time scales
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#histogram-and-pdf">
+   6. Histogram and PDF
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#power-spectrum">
+   7. Power spectrum
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Statistical process of experimental measurements</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#description-of-the-data">
+   1. Description of the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computation-of-turbulence-intensities">
+   2. Computation of turbulence intensities
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computation-of-fluctuations">
+   3. Computation of fluctuations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computation-of-turbulence-kinetic-energy">
+   4. Computation of turbulence kinetic energy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-time-scales">
+   5. Some time scales
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#histogram-and-pdf">
+   6. Histogram and PDF
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#power-spectrum">
+   7. Power spectrum
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="statistical-process-of-experimental-measurements">
+<h1>Statistical process of experimental measurements<a class="headerlink" href="#statistical-process-of-experimental-measurements" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description-of-the-data">
+<h2>1. Description of the data<a class="headerlink" href="#description-of-the-data" title="Permalink to this headline">¶</a></h2>
+<p>In our lab some measurements of local velocity were made with a CTA probe (see for example the <a class="reference external" href="https://en.wikipedia.org/wiki/Anemometer#Hot-wire_anemometers">Wikipedia page for hot-wire anemometry</a>, or the <a class="reference external" href="https://www.dantecdynamics.com/solutions-applications/solutions/fluid-mechanics/constant-temperature-anemometry-cta/measurement-principles-of-cta/">Dantec information</a>)</p>
+<p>The measurements were performed in the wake behind a NACA profile with 5 degrees incidence angle</p>
+<p><img alt="image.png" src="../_images/profileWake.png" /></p>
+<p>The data provided have been acquired at a distance of, approximately, <span class="math notranslate nohighlight">\(\frac{x}{c} \approx 1.1\)</span>, where <span class="math notranslate nohighlight">\(c = 265 \,\text{mm}\)</span> is the profile’s chord. and there are 17 <span class="math notranslate nohighlight">\(y\)</span> positions,
+from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <span class="math notranslate nohighlight">\(y=+4 \,\text{cm}\)</span>, in intervals of 5 mm. In each point the velocity has been acquired for a second with a frequency of 1 kHz (that is, 1000 velocities in each point). It has been measured only the <span class="math notranslate nohighlight">\(x\)</span> component (main flow direction).</p>
+<p>Most of the topics covered in this notebook have been consulted in the <a class="reference external" href="https://www.cfd-online.com/Wiki/Introduction_to_turbulence">CFD-online Wiki page “Introduction to turbulence”</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We define the names for the columns, according with the definition</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">17</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">8</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span>
+    <span class="n">columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;y = &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;mm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">turbulenceData</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;TurbVel.csv&#39;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">names</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">turbulenceData</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Time&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">turbulenceData</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>y = -40mm</th>
+      <th>y = -35mm</th>
+      <th>y = -30mm</th>
+      <th>y = -25mm</th>
+      <th>y = -20mm</th>
+      <th>y = -15mm</th>
+      <th>y = -10mm</th>
+      <th>y = -5mm</th>
+      <th>y = 0mm</th>
+      <th>y = 5mm</th>
+      <th>y = 10mm</th>
+      <th>y = 15mm</th>
+      <th>y = 20mm</th>
+      <th>y = 25mm</th>
+      <th>y = 30mm</th>
+      <th>y = 35mm</th>
+      <th>y = 40mm</th>
+    </tr>
+    <tr>
+      <th>Time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0.000</th>
+      <td>20.916005</td>
+      <td>21.013892</td>
+      <td>19.890369</td>
+      <td>20.564816</td>
+      <td>19.247617</td>
+      <td>20.242762</td>
+      <td>20.171834</td>
+      <td>19.326923</td>
+      <td>17.711748</td>
+      <td>17.954515</td>
+      <td>19.112384</td>
+      <td>19.247617</td>
+      <td>18.955669</td>
+      <td>19.624038</td>
+      <td>18.989162</td>
+      <td>20.337691</td>
+      <td>17.901476</td>
+    </tr>
+    <tr>
+      <th>0.001</th>
+      <td>20.757920</td>
+      <td>21.124463</td>
+      <td>19.878740</td>
+      <td>20.528820</td>
+      <td>19.258909</td>
+      <td>20.278330</td>
+      <td>20.124676</td>
+      <td>19.417902</td>
+      <td>16.314876</td>
+      <td>17.534186</td>
+      <td>19.213710</td>
+      <td>19.292888</td>
+      <td>18.922264</td>
+      <td>19.704760</td>
+      <td>18.833365</td>
+      <td>20.313920</td>
+      <td>17.743229</td>
+    </tr>
+    <tr>
+      <th>0.002</th>
+      <td>20.661140</td>
+      <td>21.087559</td>
+      <td>20.101135</td>
+      <td>20.492846</td>
+      <td>19.213710</td>
+      <td>20.337691</td>
+      <td>20.136438</td>
+      <td>19.360977</td>
+      <td>13.902128</td>
+      <td>18.590930</td>
+      <td>19.202443</td>
+      <td>19.349631</td>
+      <td>18.933382</td>
+      <td>19.716296</td>
+      <td>18.601871</td>
+      <td>20.254624</td>
+      <td>17.922668</td>
+    </tr>
+    <tr>
+      <th>0.003</th>
+      <td>20.794288</td>
+      <td>21.099841</td>
+      <td>20.207287</td>
+      <td>20.421109</td>
+      <td>19.315560</td>
+      <td>20.219094</td>
+      <td>20.124676</td>
+      <td>19.349631</td>
+      <td>12.840679</td>
+      <td>18.340470</td>
+      <td>19.281544</td>
+      <td>19.372364</td>
+      <td>18.955669</td>
+      <td>19.785785</td>
+      <td>18.503472</td>
+      <td>20.278330</td>
+      <td>17.471901</td>
+    </tr>
+    <tr>
+      <th>0.004</th>
+      <td>20.952667</td>
+      <td>21.099841</td>
+      <td>20.349604</td>
+      <td>20.480892</td>
+      <td>19.292888</td>
+      <td>20.313920</td>
+      <td>20.148242</td>
+      <td>19.326923</td>
+      <td>15.086783</td>
+      <td>18.243283</td>
+      <td>19.247617</td>
+      <td>19.349631</td>
+      <td>18.944540</td>
+      <td>19.785785</td>
+      <td>17.838033</td>
+      <td>20.195451</td>
+      <td>18.135857</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>If we want to save this data in another file, keeping the information for index, columns, etc… instead of csv, we can use a more powerful format, as HDF. This is a Hierarchical Data Format, widely used to store big amounts of data in a organized way. More information, in the <a class="reference external" href="https://www.hdfgroup.org/solutions/hdf5">HDF group web page</a> or in <a class="reference external" href="https://en.wikipedia.org/wiki/Hierarchical_Data_Format">Wikipedia</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In ordert to save as HDF you will need the <a class="reference external" href="https://www.pytables.org/index.html">pytables</a> module installed.</p>
+<p>Just run</p>
+<blockquote>
+<div><p>pip install tables</p>
+</div></blockquote>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">turbulenceData</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="s2">&quot;TurbVel.hdf&quot;</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can then get again the data with the format provided</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">newTurbulenceData</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="s2">&quot;TurbVel.hdf&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">newTurbulenceData</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>y = -40mm</th>
+      <th>y = -35mm</th>
+      <th>y = -30mm</th>
+      <th>y = -25mm</th>
+      <th>y = -20mm</th>
+      <th>y = -15mm</th>
+      <th>y = -10mm</th>
+      <th>y = -5mm</th>
+      <th>y = 0mm</th>
+      <th>y = 5mm</th>
+      <th>y = 10mm</th>
+      <th>y = 15mm</th>
+      <th>y = 20mm</th>
+      <th>y = 25mm</th>
+      <th>y = 30mm</th>
+      <th>y = 35mm</th>
+      <th>y = 40mm</th>
+    </tr>
+    <tr>
+      <th>Time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0.000</th>
+      <td>20.916005</td>
+      <td>21.013892</td>
+      <td>19.890369</td>
+      <td>20.564816</td>
+      <td>19.247617</td>
+      <td>20.242762</td>
+      <td>20.171834</td>
+      <td>19.326923</td>
+      <td>17.711748</td>
+      <td>17.954515</td>
+      <td>19.112384</td>
+      <td>19.247617</td>
+      <td>18.955669</td>
+      <td>19.624038</td>
+      <td>18.989162</td>
+      <td>20.337691</td>
+      <td>17.901476</td>
+    </tr>
+    <tr>
+      <th>0.001</th>
+      <td>20.757920</td>
+      <td>21.124463</td>
+      <td>19.878740</td>
+      <td>20.528820</td>
+      <td>19.258909</td>
+      <td>20.278330</td>
+      <td>20.124676</td>
+      <td>19.417902</td>
+      <td>16.314876</td>
+      <td>17.534186</td>
+      <td>19.213710</td>
+      <td>19.292888</td>
+      <td>18.922264</td>
+      <td>19.704760</td>
+      <td>18.833365</td>
+      <td>20.313920</td>
+      <td>17.743229</td>
+    </tr>
+    <tr>
+      <th>0.002</th>
+      <td>20.661140</td>
+      <td>21.087559</td>
+      <td>20.101135</td>
+      <td>20.492846</td>
+      <td>19.213710</td>
+      <td>20.337691</td>
+      <td>20.136438</td>
+      <td>19.360977</td>
+      <td>13.902128</td>
+      <td>18.590930</td>
+      <td>19.202443</td>
+      <td>19.349631</td>
+      <td>18.933382</td>
+      <td>19.716296</td>
+      <td>18.601871</td>
+      <td>20.254624</td>
+      <td>17.922668</td>
+    </tr>
+    <tr>
+      <th>0.003</th>
+      <td>20.794288</td>
+      <td>21.099841</td>
+      <td>20.207287</td>
+      <td>20.421109</td>
+      <td>19.315560</td>
+      <td>20.219094</td>
+      <td>20.124676</td>
+      <td>19.349631</td>
+      <td>12.840679</td>
+      <td>18.340470</td>
+      <td>19.281544</td>
+      <td>19.372364</td>
+      <td>18.955669</td>
+      <td>19.785785</td>
+      <td>18.503472</td>
+      <td>20.278330</td>
+      <td>17.471901</td>
+    </tr>
+    <tr>
+      <th>0.004</th>
+      <td>20.952667</td>
+      <td>21.099841</td>
+      <td>20.349604</td>
+      <td>20.480892</td>
+      <td>19.292888</td>
+      <td>20.313920</td>
+      <td>20.148242</td>
+      <td>19.326923</td>
+      <td>15.086783</td>
+      <td>18.243283</td>
+      <td>19.247617</td>
+      <td>19.349631</td>
+      <td>18.944540</td>
+      <td>19.785785</td>
+      <td>17.838033</td>
+      <td>20.195451</td>
+      <td>18.135857</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>0.995</th>
+      <td>21.087559</td>
+      <td>21.248015</td>
+      <td>19.349631</td>
+      <td>20.007225</td>
+      <td>19.785785</td>
+      <td>19.832212</td>
+      <td>19.612552</td>
+      <td>18.844470</td>
+      <td>17.010890</td>
+      <td>18.877784</td>
+      <td>17.234927</td>
+      <td>19.937022</td>
+      <td>20.373413</td>
+      <td>18.800155</td>
+      <td>17.451182</td>
+      <td>18.922264</td>
+      <td>19.808986</td>
+    </tr>
+    <tr>
+      <th>0.996</th>
+      <td>21.013892</td>
+      <td>21.334855</td>
+      <td>19.474945</td>
+      <td>19.972095</td>
+      <td>19.774176</td>
+      <td>19.855463</td>
+      <td>19.601036</td>
+      <td>18.844470</td>
+      <td>16.960352</td>
+      <td>18.082340</td>
+      <td>17.513403</td>
+      <td>20.183621</td>
+      <td>20.148242</td>
+      <td>18.800155</td>
+      <td>17.440815</td>
+      <td>19.532177</td>
+      <td>20.207287</td>
+    </tr>
+    <tr>
+      <th>0.997</th>
+      <td>21.050677</td>
+      <td>21.310005</td>
+      <td>19.440708</td>
+      <td>20.054129</td>
+      <td>19.704760</td>
+      <td>19.867080</td>
+      <td>19.578058</td>
+      <td>18.888878</td>
+      <td>16.373577</td>
+      <td>18.623839</td>
+      <td>17.680285</td>
+      <td>19.960385</td>
+      <td>20.148242</td>
+      <td>18.329634</td>
+      <td>17.461523</td>
+      <td>19.797365</td>
+      <td>20.160017</td>
+    </tr>
+    <tr>
+      <th>0.998</th>
+      <td>21.001619</td>
+      <td>21.297609</td>
+      <td>19.452103</td>
+      <td>20.054129</td>
+      <td>19.727874</td>
+      <td>19.832212</td>
+      <td>19.681671</td>
+      <td>18.933382</td>
+      <td>15.899636</td>
+      <td>18.039642</td>
+      <td>17.440815</td>
+      <td>19.693194</td>
+      <td>20.709496</td>
+      <td>18.211012</td>
+      <td>17.607118</td>
+      <td>19.601036</td>
+      <td>20.183621</td>
+    </tr>
+    <tr>
+      <th>0.999</th>
+      <td>21.062977</td>
+      <td>21.272798</td>
+      <td>19.497812</td>
+      <td>20.112884</td>
+      <td>19.612552</td>
+      <td>19.855463</td>
+      <td>19.658606</td>
+      <td>19.045057</td>
+      <td>16.570464</td>
+      <td>17.173579</td>
+      <td>17.327294</td>
+      <td>19.532177</td>
+      <td>20.721574</td>
+      <td>18.050324</td>
+      <td>17.378822</td>
+      <td>19.486393</td>
+      <td>20.065853</td>
+    </tr>
+  </tbody>
+</table>
+<p>1000 rows × 17 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span><span class="p">(</span><span class="n">newTurbulenceData</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can easily plot velocity time series in any point</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">turbulenceData</span><span class="p">[</span><span class="s2">&quot;y = 0mm&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;u&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Time&#39;, ylabel=&#39;u&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/ExperimentalMeasurements_15_1.png" src="../_images/ExperimentalMeasurements_15_1.png" />
+</div>
+</div>
+<p>And also we can get the main features</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">statData</span> <span class="o">=</span> <span class="n">turbulenceData</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<span class="n">statData</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>y = -40mm</th>
+      <th>y = -35mm</th>
+      <th>y = -30mm</th>
+      <th>y = -25mm</th>
+      <th>y = -20mm</th>
+      <th>y = -15mm</th>
+      <th>y = -10mm</th>
+      <th>y = -5mm</th>
+      <th>y = 0mm</th>
+      <th>y = 5mm</th>
+      <th>y = 10mm</th>
+      <th>y = 15mm</th>
+      <th>y = 20mm</th>
+      <th>y = 25mm</th>
+      <th>y = 30mm</th>
+      <th>y = 35mm</th>
+      <th>y = 40mm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>21.104367</td>
+      <td>21.044473</td>
+      <td>20.757320</td>
+      <td>20.316435</td>
+      <td>20.247308</td>
+      <td>20.270573</td>
+      <td>19.733937</td>
+      <td>19.493431</td>
+      <td>17.798975</td>
+      <td>17.059820</td>
+      <td>19.138614</td>
+      <td>19.377307</td>
+      <td>19.330135</td>
+      <td>19.228752</td>
+      <td>19.026175</td>
+      <td>19.121565</td>
+      <td>18.570242</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.187226</td>
+      <td>0.228523</td>
+      <td>0.762061</td>
+      <td>0.776583</td>
+      <td>0.536762</td>
+      <td>0.262442</td>
+      <td>0.251107</td>
+      <td>0.491538</td>
+      <td>1.124547</td>
+      <td>0.988907</td>
+      <td>0.305786</td>
+      <td>0.354726</td>
+      <td>0.462051</td>
+      <td>0.478166</td>
+      <td>0.694788</td>
+      <td>0.662401</td>
+      <td>0.860208</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>20.468907</td>
+      <td>20.207287</td>
+      <td>18.634798</td>
+      <td>18.866662</td>
+      <td>19.123603</td>
+      <td>19.704760</td>
+      <td>19.168608</td>
+      <td>18.297226</td>
+      <td>12.824605</td>
+      <td>13.765816</td>
+      <td>17.234927</td>
+      <td>17.764286</td>
+      <td>17.245155</td>
+      <td>17.265657</td>
+      <td>16.373577</td>
+      <td>16.511184</td>
+      <td>16.101291</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>20.989390</td>
+      <td>20.989390</td>
+      <td>20.322845</td>
+      <td>19.751012</td>
+      <td>19.797365</td>
+      <td>20.065853</td>
+      <td>19.566596</td>
+      <td>19.075895</td>
+      <td>17.327294</td>
+      <td>16.491465</td>
+      <td>18.977981</td>
+      <td>19.213710</td>
+      <td>19.109572</td>
+      <td>18.989162</td>
+      <td>18.678760</td>
+      <td>18.722815</td>
+      <td>17.983749</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>21.099841</td>
+      <td>21.112168</td>
+      <td>20.733695</td>
+      <td>20.225018</td>
+      <td>20.272393</td>
+      <td>20.219094</td>
+      <td>19.704760</td>
+      <td>19.532177</td>
+      <td>18.071674</td>
+      <td>17.173579</td>
+      <td>19.168608</td>
+      <td>19.440708</td>
+      <td>19.338256</td>
+      <td>19.258909</td>
+      <td>19.045057</td>
+      <td>19.258909</td>
+      <td>18.689782</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>21.173826</td>
+      <td>21.186155</td>
+      <td>21.062977</td>
+      <td>20.624988</td>
+      <td>20.676252</td>
+      <td>20.492846</td>
+      <td>19.913683</td>
+      <td>19.937022</td>
+      <td>18.569031</td>
+      <td>17.774791</td>
+      <td>19.315560</td>
+      <td>19.601036</td>
+      <td>19.658606</td>
+      <td>19.520739</td>
+      <td>19.477807</td>
+      <td>19.601036</td>
+      <td>19.227838</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>21.647802</td>
+      <td>21.447038</td>
+      <td>23.727658</td>
+      <td>23.157105</td>
+      <td>21.774209</td>
+      <td>20.842895</td>
+      <td>20.361487</td>
+      <td>20.661140</td>
+      <td>19.843817</td>
+      <td>19.727874</td>
+      <td>20.077620</td>
+      <td>20.230943</td>
+      <td>20.721574</td>
+      <td>20.444995</td>
+      <td>20.830752</td>
+      <td>20.337691</td>
+      <td>20.492846</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">statData</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Mean velocities&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Mean velocities&#39;}&gt;
+</pre></div>
+</div>
+<img alt="../_images/ExperimentalMeasurements_18_1.png" src="../_images/ExperimentalMeasurements_18_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="computation-of-turbulence-intensities">
+<h2>2. Computation of turbulence intensities<a class="headerlink" href="#computation-of-turbulence-intensities" title="Permalink to this headline">¶</a></h2>
+<p>Remember the definition of turbulence intensity:</p>
+<div class="math notranslate nohighlight">
+\[ I = \frac{\sqrt{\overline{u'^2}}}{\bar{u}} \tag{1} \]</div>
+<p>where the numerator is, precisely, the <code class="docutils literal notranslate"><span class="pre">std</span></code> index of our statistical data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">turbIntensity</span> <span class="o">=</span> <span class="n">statData</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;std&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">statData</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">turbIntensity</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Turbulence Intensity&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Turbulence Intensity&#39;}&gt;
+</pre></div>
+</div>
+<img alt="../_images/ExperimentalMeasurements_21_1.png" src="../_images/ExperimentalMeasurements_21_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="computation-of-fluctuations">
+<h2>3. Computation of fluctuations<a class="headerlink" href="#computation-of-fluctuations" title="Permalink to this headline">¶</a></h2>
+<p>By definition, in each point the fluctuation of velocity is</p>
+<div class="math notranslate nohighlight">
+\[ u' = u  - \overline{u} \tag{2}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">turbVelFluct</span> <span class="o">=</span> <span class="n">turbulenceData</span><span class="o">-</span><span class="n">statData</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">turbVelFluct</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">layout</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ExperimentalMeasurements_24_0.png" src="../_images/ExperimentalMeasurements_24_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="computation-of-turbulence-kinetic-energy">
+<h2>4. Computation of turbulence kinetic energy<a class="headerlink" href="#computation-of-turbulence-kinetic-energy" title="Permalink to this headline">¶</a></h2>
+<p>The turbulent kinetic energy (TKE), <span class="math notranslate nohighlight">\(k\)</span> is computed as</p>
+<div class="math notranslate nohighlight">
+\[ k = \frac{1}{2}\overline{\boldsymbol{u'}\cdot\boldsymbol{u'}} = \frac{1}{2} \overline{u'_i u'_i} \tag{3}\]</div>
+<p>and we should need also <span class="math notranslate nohighlight">\(v'\)</span> and <span class="math notranslate nohighlight">\(w'\)</span>. We are then only computing the contribution of <span class="math notranslate nohighlight">\(u'\)</span> to TKE. Note that although main flow is in the <span class="math notranslate nohighlight">\(x\)</span> direction and components of velocities <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> can be neglected, it is not possible for fluctuating velocities <span class="math notranslate nohighlight">\(v'\)</span> and <span class="math notranslate nohighlight">\(w'\)</span>. They can be as important as <span class="math notranslate nohighlight">\(u'\)</span>. We can make the assumption that turbulence, at small scales, is isotropic and, hence <span class="math notranslate nohighlight">\(\overline{u'}^2 \approx \overline{v'}^2 \approx \overline{w'}^2 \)</span> and</p>
+<div class="math notranslate nohighlight">
+\[ k \approx \frac{3}{2}\overline{u'}^2 \tag{4}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TKE</span> <span class="o">=</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">statData</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;std&quot;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TKE</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/ExperimentalMeasurements_27_1.png" src="../_images/ExperimentalMeasurements_27_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="some-time-scales">
+<h2>5. Some time scales<a class="headerlink" href="#some-time-scales" title="Permalink to this headline">¶</a></h2>
+<p>For the moment, we focus on <span class="math notranslate nohighlight">\(y = 0 \,\text{mm}\)</span> time series. The TKE in this point is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="n">TKE</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;y = 0mm&quot;</span><span class="p">]</span>
+<span class="n">k</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.8969099438209815
+</pre></div>
+</div>
+</div>
+</div>
+<p>The turbulence Reynolds number, locally defined in this point, is calculated with a length scale, which can be estimated, for now, as the larger eddy in the flow, of the order of the profile’s chord.</p>
+<div class="math notranslate nohighlight">
+\[ \text{Re}_t = \frac{\sqrt{k}c}{\nu} \tag{5}\]</div>
+<p>We need also the viscosity of air.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nu</span> <span class="o">=</span> <span class="mf">1.5e-5</span> <span class="c1"># m^2/s</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">0.265</span> <span class="c1"># m</span>
+<span class="n">Re_t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">c</span><span class="o">/</span><span class="n">nu</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Re_t = </span><span class="si">{:.5g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Re_t</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Re_t = 24332
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Kolmogorov_microscales">Kolmogorov time scale</a> can be estimated as</p>
+<div class="math notranslate nohighlight">
+\[ \tau_k = \sqrt{\frac{\nu}{\varepsilon}} \tag{6}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\varepsilon\)</span> is the energy dissipation rate, that can be estimated as</p>
+<div class="math notranslate nohighlight">
+\[ \varepsilon = \frac{k^{\frac{3}{2}}}{c} \tag{7}\]</div>
+<p>(it is considered that energy is injected at larger scales)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epsilon</span> <span class="o">=</span> <span class="n">k</span><span class="o">**</span><span class="mf">1.5</span><span class="o">/</span><span class="n">c</span>
+<span class="n">epsilon</span> <span class="c1"># m^2/s^3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.858803164295566
+</pre></div>
+</div>
+</div>
+</div>
+<p>And the Kolmogorov time scale is, approximately,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tau_k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">nu</span><span class="o">/</span><span class="n">epsilon</span><span class="p">)</span>
+<span class="n">tau_k</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.001233484031713226
+</pre></div>
+</div>
+</div>
+</div>
+<p>that is of the order of our time resolution.</p>
+<p>An integral time scale is defined with the autocorrelation of time signal.</p>
+<div class="math notranslate nohighlight">
+\[ R(\tau) = \overline{u'(t)u'(t+\tau)} \tag{8}\]</div>
+<p>Computing autocorrelation is very time consuming, but pandas has a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.autocorrelation_plot.html">plotting method</a> that performs this computation much faster. The problem is that the output is directly a plot, and it is tricky to get the autocorrelation values from it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uPrime</span> <span class="o">=</span> <span class="n">turbVelFluct</span><span class="p">[</span><span class="s2">&quot;y = 0mm&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">autocorrelation_plot</span><span class="p">(</span><span class="n">uPrime</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ExperimentalMeasurements_38_0.png" src="../_images/ExperimentalMeasurements_38_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">autocorr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">autocorrelation_plot</span><span class="p">(</span><span class="n">uPrime</span><span class="p">)</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">get_xydata</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ExperimentalMeasurements_39_0.png" src="../_images/ExperimentalMeasurements_39_0.png" />
+</div>
+</div>
+<p>We change the “lag” <span class="math notranslate nohighlight">\(x\)</span> numbers with time lag, form the Data Frame</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">autocorr</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">turbVelFluct</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And also zoom for a narrower <span class="math notranslate nohighlight">\(x\)</span> span. Note that the pandas function gives the normalized correlation <span class="math notranslate nohighlight">\(\rho(\tau)=\frac{R(\tau)}{R(0)} \)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">autocorr</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">autocorr</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;o-&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$R(\tau)$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Autocorrelation for y = 0 mm&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ExperimentalMeasurements_43_0.png" src="../_images/ExperimentalMeasurements_43_0.png" />
+</div>
+</div>
+<p>The integral time scale is defined as the integral of autocorrelation function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">autocorr</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">autocorr</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="nn">Input In [27],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">T</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">autocorr</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">autocorr</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">T</span>
+
+<span class="ne">AttributeError</span>: module &#39;scipy.integrate&#39; has no attribute &#39;trapezoid&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>It gives a very small (negative) value because the number of samples (1000) is still very low to get a good autocorrelation for large lag. It is assumed that after the second or third root, the autocorrelation is zero. So, we change the limits of integration:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">autocorr</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">autocorr</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0038772428514055016
+</pre></div>
+</div>
+</div>
+</div>
+<p>This method has the inconvenient that there is not the lag 0. It should be included in the very first point.</p>
+<p>Alternatively, the statistic models package provides a better way to estimate autocorrelation, even with the option of choosing the number of lags for the computation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">tsa</span><span class="o">.</span><span class="n">acf</span><span class="p">(</span><span class="n">uPrime</span><span class="p">,</span><span class="n">nlags</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">fft</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">rho</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.00000000e+00,  8.04541350e-01,  5.73932067e-01,  4.34197820e-01,
+        3.66033657e-01,  3.52249759e-01,  3.37537587e-01,  3.17333281e-01,
+        3.02811025e-01,  2.88497039e-01,  2.57130409e-01,  1.92849680e-01,
+        1.36546784e-01,  1.03957571e-01,  8.32353264e-02,  8.38373665e-02,
+        7.86032962e-02,  6.10277646e-02,  4.65580669e-02,  1.99746693e-02,
+       -9.26964982e-03, -2.42545223e-02, -2.72775430e-02, -1.88646766e-02,
+       -9.32923832e-03, -1.87112884e-02, -2.96367351e-02, -3.06195932e-02,
+       -2.30782249e-02, -1.88316863e-02, -1.35537818e-02, -3.97915265e-03,
+       -1.47696686e-02, -3.43907404e-02, -4.63080674e-02, -4.27395164e-02,
+       -3.48795246e-02, -3.31582168e-02, -3.40160661e-02, -3.72166240e-02,
+       -3.81736376e-02, -2.71323604e-02, -7.79263410e-03,  2.27309238e-03,
+        5.12746823e-04, -1.00859193e-02, -1.05058317e-02,  9.75072762e-03,
+        1.29933159e-02,  7.25182676e-03,  8.90439779e-03])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.graphics.api</span> <span class="k">as</span> <span class="nn">smg</span>
+<span class="n">smg</span><span class="o">.</span><span class="n">tsa</span><span class="o">.</span><span class="n">plot_acf</span><span class="p">(</span><span class="n">uPrime</span><span class="p">,</span><span class="n">lags</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span><span class="n">fft</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ExperimentalMeasurements_50_0.png" src="../_images/ExperimentalMeasurements_50_0.png" />
+<img alt="../_images/ExperimentalMeasurements_50_1.png" src="../_images/ExperimentalMeasurements_50_1.png" />
+</div>
+</div>
+<p>The computation of the integral time is more accurate because of the 0-lag point.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">rho</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">],</span><span class="n">autocorr</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.004771435414182847
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="histogram-and-pdf">
+<h2>6. Histogram and PDF<a class="headerlink" href="#histogram-and-pdf" title="Permalink to this headline">¶</a></h2>
+<p>PDF is the Probability Density Function. It defines the probability of an event between to values. For example, if the pdf of our velocity fluctuation is  <span class="math notranslate nohighlight">\(f(x)\)</span>, then the probability that a value of the fluctuation lies between <span class="math notranslate nohighlight">\(u'_1\)</span> and <span class="math notranslate nohighlight">\(u'_2\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[ P\left(u'_1 &lt; u' &lt; u'_2\right) = \int_{u'_1}^{u'_2} f(x) \text{d}x \tag{9}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">statData</span><span class="p">[</span><span class="s2">&quot;y = 0mm&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;std&quot;</span><span class="p">])</span>
+<span class="n">X_samples</span><span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">F</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">patches</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">uPrime</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Integral = 1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">X_samples</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ExperimentalMeasurements_54_0.png" src="../_images/ExperimentalMeasurements_54_0.png" />
+</div>
+</div>
+<p>Since we have included the option <code class="docutils literal notranslate"><span class="pre">density=True</span></code>, the integral (moment of order 0) of this PDF is 1.</p>
+<div class="math notranslate nohighlight">
+\[ M_0 = \int_{-\infty}^{+\infty} f(u') \text{d}u' = 1 \tag{10}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deltaUPrime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">bins</span><span class="p">)</span> 
+<span class="n">M0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">F</span><span class="o">*</span><span class="n">deltaUPrime</span><span class="p">)</span>
+<span class="n">M0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>The moment of order <span class="math notranslate nohighlight">\(n\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[ M_n = \int_{-\infty}^{+\infty} u'^n f(u') \text{d}u' \tag{11}\]</div>
+<p>The moment of order 1 is the average of the samples, that should be 0</p>
+<div class="math notranslate nohighlight">
+\[ M_1 = \overline{u'} = \int_{-\infty}^{+\infty} u' f(u') \text{d}u' = 0 \tag{12}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UPrimePDF</span> <span class="o">=</span> <span class="n">bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">deltaUPrime</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">UPrimePDF</span>
+<span class="n">M1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">UPrimePDF</span><span class="o">*</span><span class="n">F</span><span class="o">*</span><span class="n">deltaUPrime</span><span class="p">)</span>
+<span class="n">M1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.00034572943202194895
+</pre></div>
+</div>
+</div>
+</div>
+<p>The moment of order 2 is the variance of the samples, that should be the square of the standard deviation given by pandas before…</p>
+<div class="math notranslate nohighlight">
+\[ M_2 = \overline{u'^2} = \int_{-\infty}^{+\infty} u'^2 f(u') \text{d}u' \tag{13}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">UPrimePDF</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">F</span><span class="o">*</span><span class="n">deltaUPrime</span><span class="p">)</span>
+<span class="n">M2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2646119129824565
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can check it easily with the statistical data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">statData</span><span class="p">[</span><span class="s2">&quot;y = 0mm&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;std&quot;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2646066292139868
+</pre></div>
+</div>
+</div>
+</div>
+<p>The moment of order 3 is</p>
+<div class="math notranslate nohighlight">
+\[ M_3 = \overline{u'^3} = \int_{-\infty}^{+\infty} u'^3 f(u') \text{d}u' \tag{14}\]</div>
+<p>The <em>skewness</em> of the <span class="math notranslate nohighlight">\(u'\)</span> distribution is defined as</p>
+<div class="math notranslate nohighlight">
+\[ S = \frac{M_3}{M_2^\frac{3}{2}} \tag{15}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">UPrimePDF</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">F</span><span class="o">*</span><span class="n">deltaUPrime</span><span class="p">)</span>
+<span class="n">M3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.9216881739274576
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">M3</span><span class="o">/</span><span class="n">M2</span><span class="o">**</span><span class="mf">1.5</span>
+<span class="n">S</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.351285182374243
+</pre></div>
+</div>
+</div>
+</div>
+<p>The moment of order 4 is</p>
+<div class="math notranslate nohighlight">
+\[ M_4= \overline{u'^4} = \int_{-\infty}^{+\infty} u'^4 f(u') \text{d}u' \tag{16}\]</div>
+<p>The <em>kurtosis</em> of the <span class="math notranslate nohighlight">\(u'\)</span> distribution is defined as</p>
+<div class="math notranslate nohighlight">
+\[ K = \frac{M_4}{M_2^2} \tag{17}\]</div>
+<p>For a normal distribution, it should be 3 (check it)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">UPrimePDF</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">F</span><span class="o">*</span><span class="n">deltaUPrime</span><span class="p">)</span>
+<span class="n">M4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.337551070336596
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K</span> <span class="o">=</span> <span class="n">M4</span><span class="o">/</span><span class="n">M2</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">K</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.21343507900745
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="power-spectrum">
+<h2>7. Power spectrum<a class="headerlink" href="#power-spectrum" title="Permalink to this headline">¶</a></h2>
+<p>Finally, from the time series signal, we can get the spectrum in frequency by performing a <a class="reference external" href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">Fast Fourier Transform</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">uPrime</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">E</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ExperimentalMeasurements_70_0.png" src="../_images/ExperimentalMeasurements_70_0.png" />
+</div>
+</div>
+<p>We compute the frequencies range, providing the periode of the data acquisition</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">uPrime</span><span class="o">.</span><span class="n">size</span><span class="p">,</span><span class="mf">0.001</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span><span class="n">E</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ExperimentalMeasurements_72_0.png" src="../_images/ExperimentalMeasurements_72_0.png" />
+</div>
+</div>
+<p>and we keep only half the data, since it is symmetric</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E</span> <span class="o">=</span> <span class="n">E</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">freq</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">freq</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span><span class="n">E</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ExperimentalMeasurements_74_0.png" src="../_images/ExperimentalMeasurements_74_0.png" />
+</div>
+</div>
+<p>and, finally, we compute the energy, which is the square of the velocity</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">E</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span><span class="n">E</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7faffa619670&gt;]
+</pre></div>
+</div>
+<img alt="../_images/ExperimentalMeasurements_76_1.png" src="../_images/ExperimentalMeasurements_76_1.png" />
+</div>
+</div>
+<p>Let’s plot it in a log-log graph with the <a class="reference external" href="https://physics.stackexchange.com/questions/13161/physical-explanation-for-kolmogorov-5-3-spectrum-in-fluid-mechanics">-5/3 Kolmogorov’s law</a> as a reference line for the energy decay in frequency</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">1e5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span><span class="n">P</span><span class="p">)</span>
+<span class="n">f_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">2.7</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">f_ref</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">#Just a Frequancy and Energy of reference for the -5/3 law</span>
+<span class="n">P_ref</span> <span class="o">=</span> <span class="mf">1e5</span>
+<span class="n">P_plot</span> <span class="o">=</span> <span class="n">P_ref</span><span class="o">/</span><span class="n">f_ref</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">f_plot</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">f_plot</span><span class="p">,</span><span class="n">P_plot</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">20000</span><span class="p">,</span><span class="s1">&#39;-5/3&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ExperimentalMeasurements_78_0.png" src="../_images/ExperimentalMeasurements_78_0.png" />
+</div>
+</div>
+<p>This spectrum can also be computed via the velocity autocorrelation</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">tsa</span><span class="o">.</span><span class="n">acf</span><span class="p">(</span><span class="n">uPrime</span><span class="p">,</span><span class="n">nlags</span><span class="o">=</span><span class="mi">999</span><span class="p">,</span><span class="n">fft</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">smg</span><span class="o">.</span><span class="n">tsa</span><span class="o">.</span><span class="n">plot_acf</span><span class="p">(</span><span class="n">uPrime</span><span class="p">,</span><span class="n">lags</span><span class="o">=</span><span class="mi">999</span><span class="p">,</span><span class="n">fft</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ExperimentalMeasurements_80_0.png" src="../_images/ExperimentalMeasurements_80_0.png" />
+<img alt="../_images/ExperimentalMeasurements_80_1.png" src="../_images/ExperimentalMeasurements_80_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Pr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">rho</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Pr</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ExperimentalMeasurements_81_0.png" src="../_images/ExperimentalMeasurements_81_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">rho</span><span class="o">.</span><span class="n">size</span><span class="p">,</span><span class="mf">0.001</span><span class="p">)</span>
+<span class="n">Pr</span> <span class="o">=</span> <span class="n">E</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Pr</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">freq</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">freq</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">1e6</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span><span class="n">Pr</span><span class="p">)</span>
+<span class="n">f_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">2.7</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">f_ref</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">P_ref</span> <span class="o">=</span> <span class="mi">50000</span>
+<span class="n">P_plot</span> <span class="o">=</span> <span class="n">P_ref</span><span class="o">/</span><span class="n">f_ref</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">f_plot</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">f_plot</span><span class="p">,</span><span class="n">P_plot</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="s1">&#39;-5/3&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ExperimentalMeasurements_83_0.png" src="../_images/ExperimentalMeasurements_83_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./3-Turbulence"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="turbulence.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Turbulent flows. Statistical description and characteristic scales</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Assignment3.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assignment 3 : Computation of length scales and spectrum in space</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Robert Castilla - UPC CATMech Terrassa<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

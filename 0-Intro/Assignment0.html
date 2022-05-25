@@ -145,13 +145,35 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../2-Rheology/rheology.html">
-   Rheology. A very brief Introduction
+   Rheology. A brief introduction
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../2-Rheology/FDMViscoelastic.html">
+   Viscoelastic fluid in a pipe (Maxwell model)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Rheology/Assignment2.html">
+   Assignment 2. Rheological behaviour of cosmetic creams
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../3-Turbulence/turbulence.html">
    Turbulent flows. Statistical description and characteristic scales
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Turbulence/ExperimentalMeasurements.html">
+     Statistical process of experimental measurements
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../4-BoundaryLayer/BoundaryLayer.html">
@@ -284,36 +306,36 @@ const thebe_selector_output = ".output, .cell_output"
 <hr class="docutils" />
 <p>Let’s calculate how long it takes to <a class="reference external" href="https://www.youtube.com/watch?v=2jQ1jA8uJuU">empty a conical tank</a></p>
 <p>The simplification of the continuity equation leads, for a generic <span class="math notranslate nohighlight">\(h\)</span>, to</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
+<div class="math notranslate nohighlight">
+\[
 u_1 D_h^2 = u_1 \left(d + 2h \tan \theta \right)^2 = u_2 d^2 \label{eq_cont}
-\end{equation*}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-21193471-43a4-4120-ace2-3d3c85997bc4">
-<span class="eqno">(1)<a class="headerlink" href="#equation-21193471-43a4-4120-ace2-3d3c85997bc4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 \Rightarrow \; u_2 = u_1\left(1 + 2\frac{h}{d} \tan \theta \right)^2
-\end{equation}\]</div>
+\]</div>
 <p>On the other hand, Bernoulli’s equation, considering quasi-steady flow and without viscosity,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-54786c78-4d45-4bf9-a91d-dd83c27f7ac2">
-<span class="eqno">(2)<a class="headerlink" href="#equation-54786c78-4d45-4bf9-a91d-dd83c27f7ac2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="math notranslate nohighlight">
+\[
 u_1^2 + 2gh = u_2^2 = u_1^2 \left(1 + 2\frac{h}{d} \tan \theta \right)^4
-\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-a1d62f08-8612-4778-909b-ce2bedcce20f">
-<span class="eqno">(3)<a class="headerlink" href="#equation-a1d62f08-8612-4778-909b-ce2bedcce20f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 \Rightarrow \; u_1^2 \left[ \left(1 + 2\frac{h}{d} \tan \theta \right)^4 -1 \right] = 2gh
-\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-fceafd2a-fd73-4193-9e73-7370f9ec0986">
-<span class="eqno">(4)<a class="headerlink" href="#equation-fceafd2a-fd73-4193-9e73-7370f9ec0986" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 \Rightarrow \; u_1 = \left[ \frac{2gh}{\left(1 + 2\frac{h}{d} \tan \theta \right)^4 -1} \right]^\frac{1}{2} = -\frac{\textrm{d} h}{\textrm{d} t}
-\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-4b328d1a-e8d5-4d2f-9586-8768cba8c290">
-<span class="eqno">(5)<a class="headerlink" href="#equation-4b328d1a-e8d5-4d2f-9586-8768cba8c290" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 \Rightarrow \; \boxed{dt = - \left[ \frac{\left(1 + 2\frac{h}{d} \tan \theta \right)^4 -1}{2gh}\right]^\frac{1} {2} \textrm{d} h} \label{eq:int}
-\end{equation}\]</div>
+\]</div>
 <p>This can be written dimensionless with a time characteristic <span class="math notranslate nohighlight">\(\tau = \sqrt{\frac{d}{2g}}\)</span>, a change to dimensionless variable <span class="math notranslate nohighlight">\(\xi = \frac{h}{d}\)</span>, and a parameter <span class="math notranslate nohighlight">\(A = 2\tan \theta\)</span>, becoming</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bd1aa567-b0b9-4a30-912e-91972041fc32">
-<span class="eqno">(6)<a class="headerlink" href="#equation-bd1aa567-b0b9-4a30-912e-91972041fc32" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="math notranslate nohighlight">
+\[
 \frac{\textrm{d} t}{\tau} = - \left[ \frac{\left(1 + A \xi \right)^4 -1}{\xi}\right]^\frac{1 }{2} \textrm{d} \xi
-\end{equation}\]</div>
+\]</div>
 <p>Use sympy to analytically compute this time, making an estimation with  <span class="math notranslate nohighlight">\(d \ll h\)</span> so that it can be supposed that  <span class="math notranslate nohighlight">\(\xi \gg 1\)</span>.</p>
 </div>
 

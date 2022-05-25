@@ -145,13 +145,35 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../2-Rheology/rheology.html">
-   Rheology. A very brief Introduction
+   Rheology. A brief introduction
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../2-Rheology/FDMViscoelastic.html">
+   Viscoelastic fluid in a pipe (Maxwell model)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Rheology/Assignment2.html">
+   Assignment 2. Rheological behaviour of cosmetic creams
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../3-Turbulence/turbulence.html">
    Turbulent flows. Statistical description and characteristic scales
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Turbulence/ExperimentalMeasurements.html">
+     Statistical process of experimental measurements
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../4-BoundaryLayer/BoundaryLayer.html">
@@ -303,7 +325,7 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="meniscus-between-plates-solution">
 <h1>Meniscus between plates. Solution<a class="headerlink" href="#meniscus-between-plates-solution" title="Permalink to this headline">¶</a></h1>
 <p>Find the shape for two parallels walls separated a distance <span class="math notranslate nohighlight">\(L\)</span></p>
-<p>Hint: In the middle point between both walls, curvature is not zero, so there is also there a pressure jump. This pressure jump is related, then, to the height of the column, <span class="math notranslate nohighlight">\(H\)</span>. I suggest to change corrdinate axes, as shown in the picture, and change the first equation as</p>
+<p>Hint: In the middle point between both walls, curvature is not zero, so there is also there a pressure jump. This pressure jump is related, then, to the height of the column, <span class="math notranslate nohighlight">\(H\)</span>. It is suggested to change coordinate axes, as shown in the picture, and change the first equation as</p>
 <div class="math notranslate nohighlight">
 \[ \frac{\rho g (z+H)}{\gamma} - \frac{z''}{\left(1 + {z'}^2\right)^{3/2}} = 0 \]</div>
 <p>Also, there are 2 boundary conditions: the derivative of <span class="math notranslate nohighlight">\(z(x)\)</span> for <span class="math notranslate nohighlight">\(x=-\frac{L}{2}\)</span> and for <span class="math notranslate nohighlight">\(x=\frac{L}{2}\)</span></p>
@@ -316,13 +338,12 @@ plate.</p>
 <h2>Method 1<a class="headerlink" href="#method-1" title="Permalink to this headline">¶</a></h2>
 <p>In this method the origin of <span class="math notranslate nohighlight">\(x\)</span> is at the wall and the numerical integration is done until the middle point between plates. All the variables are normalized with capillary length
 <span class="math notranslate nohighlight">\( l_s = \frac{\rho g}{\gamma} \)</span>. Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ed2ce94c-1e14-454e-9696-3c9e81a0a124">
-<span class="eqno">(7)<a class="headerlink" href="#equation-ed2ce94c-1e14-454e-9696-3c9e81a0a124" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
-\xi &amp;=&amp; \frac{x}{l_s} \\
-\eta &amp;=&amp; \frac{z}{l_s} \\
-\beta &amp;=&amp; \frac{H}{l_s} \\
-\lambda &amp;=&amp; \frac{L}{l_s} 
-\end{eqnarray}\]</div>
+<p>\begin{eqnarray}
+\xi &amp;=&amp; \frac{x}{l_s} \
+\eta &amp;=&amp; \frac{z}{l_s} \
+\beta &amp;=&amp; \frac{H}{l_s} \
+\lambda &amp;=&amp; \frac{L}{l_s}
+\end{eqnarray}</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -368,7 +389,7 @@ plate.</p>
 <img alt="../_images/MeniscusBetweenPlates_10_0.png" src="../_images/MeniscusBetweenPlates_10_0.png" />
 </div>
 </div>
-<p>Again, when <span class="math notranslate nohighlight">\(\eta=0\)</span>, the first derivative is <span class="math notranslate nohighlight">\(0\)</span> too, so, this is again 1. And <span class="math notranslate nohighlight">\(delta\)</span>, the normalized height of water in the wall (above center of meniscus) can be calculated by imposing its derivative.</p>
+<p>Again, when <span class="math notranslate nohighlight">\(\eta=0\)</span>, the first derivative is <span class="math notranslate nohighlight">\(0\)</span> too, so, this is again 1. And <span class="math notranslate nohighlight">\(\delta\)</span>, the normalized height of water in the wall (above center of meniscus) can be calculated by imposing its derivative.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dEq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">exp2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
@@ -452,7 +473,7 @@ plate.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;lambdifygenerated-2&gt;:2: RuntimeWarning: invalid value encountered in sqrt
-  return (-sqrt(-1.0 + 1.0/(0.5*_Dummy_2007**2 + _Dummy_2007*beta - 1)**2))
+  return (-sqrt(-1.0 + 1.0/(0.5*_Dummy_2006**2 + _Dummy_2006*beta - 1)**2))
 </pre></div>
 </div>
 </div>
@@ -496,7 +517,7 @@ estimated value for lambda: 173
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7faf5fae7760&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f5b03d1fd90&gt;
 </pre></div>
 </div>
 <img alt="../_images/MeniscusBetweenPlates_28_1.png" src="../_images/MeniscusBetweenPlates_28_1.png" />
@@ -506,11 +527,10 @@ estimated value for lambda: 173
 <div class="section" id="method-2">
 <h2>Method 2<a class="headerlink" href="#method-2" title="Permalink to this headline">¶</a></h2>
 <p>In this method, we write the second order ODE as a system of two first order ODE’s:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c1081dae-8c09-4fb4-b129-c536c4875546">
-<span class="eqno">(8)<a class="headerlink" href="#equation-c1081dae-8c09-4fb4-b129-c536c4875546" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
-\zeta'(\zeta,\eta,\xi) &amp;=&amp; (\eta(\xi) + \beta)\left(1+\zeta(\xi)^2\right)^\frac{3}{2} \\
-\eta'(\zeta,\eta,\xi) &amp;=&amp; \zeta(\xi)
-\end{eqnarray}\]</div>
+<p>\begin{eqnarray}
+\zeta’(\zeta,\eta,\xi) &amp;=&amp; (\eta(\xi) + \beta)\left(1+\zeta(\xi)^2\right)^\frac{3}{2} \
+\eta’(\zeta,\eta,\xi) &amp;=&amp; \zeta(\xi)
+\end{eqnarray}</p>
 <p>and, if the coordinates are centered in the middle point (as indicated in the figure), the initial conditions are <span class="math notranslate nohighlight">\(\eta(\xi=0)=\zeta(\xi=0)=0\)</span>.</p>
 <p><em>Question:</em> How do we calculate the value of <span class="math notranslate nohighlight">\(\lambda\)</span>?</p>
 </div>

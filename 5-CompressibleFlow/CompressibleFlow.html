@@ -54,11 +54,9 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"Ma": "\\mathrm{Ma}"}}, "tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Boundary Layer. An introduction" href="../4-BoundaryLayer/BoundaryLayer.html" />
+    <link rel="prev" title="Assignment 4. Growth of Turbulent Boundary Layer" href="../4-BoundaryLayer/Assignment4.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -131,11 +129,6 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../1-microFlows/MeniscusBetweenPlates.html">
-     Meniscus between plates. Solution
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../1-microFlows/Assignment1.html">
      Assignment 1. Computation of journal bearing
     </a>
@@ -144,18 +137,57 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../2-Rheology/rheology.html">
-   Rheology. A very brief Introduction
+   Rheology. A brief introduction
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../2-Rheology/FDMViscoelastic.html">
+   Viscoelastic fluid in a pipe (Maxwell model)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Rheology/Assignment2.html">
+   Assignment 2. Rheological behaviour of cosmetic creams
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../3-Turbulence/turbulence.html">
    Turbulent flows. Statistical description and characteristic scales
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Turbulence/ExperimentalMeasurements.html">
+     Statistical process of experimental measurements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Turbulence/Assignment3.html">
+     Assignment 3 : Computation of length scales and spectrum in space
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../4-BoundaryLayer/BoundaryLayer.html">
    Boundary Layer. An introduction
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4-BoundaryLayer/Assignment4.html">
+     Assignment 4. Growth of Turbulent Boundary Layer
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
@@ -252,12 +284,12 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#acoustics-and-velocity-of-sound">
-   Acoustics and velocity of sound
+   1. Acoustics and velocity of sound
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#isentropic-flow">
-   Isentropic flow
+   2. Isentropic flow
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -311,12 +343,12 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#acoustics-and-velocity-of-sound">
-   Acoustics and velocity of sound
+   1. Acoustics and velocity of sound
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#isentropic-flow">
-   Isentropic flow
+   2. Isentropic flow
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -359,51 +391,55 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="compressible-flow-an-introduction">
 <h1>Compressible Flow. An introduction<a class="headerlink" href="#compressible-flow-an-introduction" title="Permalink to this headline">¶</a></h1>
-<hr class="docutils" />
 <div class="section" id="acoustics-and-velocity-of-sound">
-<h2>Acoustics and velocity of sound<a class="headerlink" href="#acoustics-and-velocity-of-sound" title="Permalink to this headline">¶</a></h2>
+<h2>1. Acoustics and velocity of sound<a class="headerlink" href="#acoustics-and-velocity-of-sound" title="Permalink to this headline">¶</a></h2>
 <p>We are going, for the moment, that our flow is 1-D and inviscid. Also gravity or other body forces are ignored. In this case, continuity and Euler equations are written as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-621eef76-827e-4b8b-af70-262b32abd5ae">
-<span class="eqno">(53)<a class="headerlink" href="#equation-621eef76-827e-4b8b-af70-262b32abd5ae" title="Permalink to this equation">¶</a></span>\[\begin{align}
-\frac{\partial \rho}{\partial t} + \frac{\partial }{\partial x}\left(\rho u\right) &amp;=  0 \\
-\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} &amp;= -\frac{1}{\rho}\frac{\partial p}{\partial x}
-\end{align}\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \rho}{\partial t} + \frac{\partial }{\partial x}\left(\rho u\right) =  0 \tag{1}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} = -\frac{1}{\rho}\frac{\partial p}{\partial x} \tag{2}
+\]</div>
 <p>Let’s now consider that a small perturbation affects to velocity, density and pressure, <span class="math notranslate nohighlight">\(u^\prime\)</span>, <span class="math notranslate nohighlight">\(\rho^\prime\)</span>, <span class="math notranslate nohighlight">\(p^\prime\)</span> (do not confuse with fluctuations in turbulent flow), over some equilibrium state <span class="math notranslate nohighlight">\(u_0 (\approx 0)\)</span>, <span class="math notranslate nohighlight">\(\rho_0\)</span>, <span class="math notranslate nohighlight">\(p_0\)</span> that can be assumed  uniform and steady. Then, the equations for the fluctuations evolution, are (neglecting high order terms of convection)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8bb8775c-acab-48e7-a06a-598ee41329bc">
-<span class="eqno">(54)<a class="headerlink" href="#equation-8bb8775c-acab-48e7-a06a-598ee41329bc" title="Permalink to this equation">¶</a></span>\[\begin{align}
-\frac{\partial \rho^\prime}{\partial t} + \rho_0\frac{\partial u^\prime}{\partial x} &amp;= 0 \tag{1}\\
-\frac{\partial u^\prime}{\partial t}  &amp;= -\frac{1}{\rho_0}\frac{\partial p^\prime}{\partial x}
-\end{align}\]</div>
-<p>By deriving (1) with respect time and replacing <span class="math notranslate nohighlight">\(\frac{\partial u^\prime}{\partial t}\)</span> by (2), we get</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1035994e-bce7-40e8-86c4-9b196812331a">
-<span class="eqno">(55)<a class="headerlink" href="#equation-1035994e-bce7-40e8-86c4-9b196812331a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\frac{\partial^2 \rho^\prime}{\partial t^2} - \frac{\partial^2 p^\prime}{\partial x^2} = 0 \tag{3}
-\end{equation}\]</div>
-<p>Since <span class="math notranslate nohighlight">\(d p = d p^\prime\)</span> and <span class="math notranslate nohighlight">\(d \rho = d \rho^\prime\)</span>, we can write <span class="math notranslate nohighlight">\(d p^\prime = \left(\frac{dp}{d\rho}\right)d\rho^\prime\)</span> and, hence</p>
-<div class="amsmath math notranslate nohighlight" id="equation-abf1519b-0fe5-40a6-9b3a-cbcf718a841b">
-<span class="eqno">(56)<a class="headerlink" href="#equation-abf1519b-0fe5-40a6-9b3a-cbcf718a841b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\frac{\partial^2 \rho^\prime}{\partial t^2} - \left(\frac{dp}{d\rho}\right) \frac{\partial^2 \rho^\prime}{\partial x^2} = 0 \tag{4}
-\end{equation}\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \rho^\prime}{\partial t} + \rho_0\frac{\partial u^\prime}{\partial x} = 0 \tag{3}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial u^\prime}{\partial t}  = -\frac{1}{\rho_0}\frac{\partial p^\prime}{\partial x} \tag{4}
+\]</div>
+<p>By deriving (3) with respect time and replacing <span class="math notranslate nohighlight">\(\frac{\partial u^\prime}{\partial t}\)</span> by (4), we get</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial^2 \rho^\prime}{\partial t^2} - \frac{\partial^2 p^\prime}{\partial x^2} = 0 \tag{5}
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\text{d} p = \text{d} p^\prime\)</span> and <span class="math notranslate nohighlight">\(\text{d} \rho = \text{d} \rho^\prime\)</span>, we can write <span class="math notranslate nohighlight">\(\text{d} p^\prime = \left(\frac{\text{d}p}{\text{d}\rho}\right)\text{d}\rho^\prime\)</span> and, hence</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial^2 \rho^\prime}{\partial t^2} - \left(\frac{\text{d}p}{\text{d}\rho}\right) \frac{\partial^2 \rho^\prime}{\partial x^2} = 0 \tag{6}
+\]</div>
 <p>This is the classical <a class="reference external" href="https://en.wikipedia.org/wiki/Wave_equation#Wave_equation_in_one_space_dimension">1-D wave equation</a> with a wave velocity</p>
-<div class="amsmath math notranslate nohighlight" id="equation-453a905c-95b2-4b54-96b4-6129adb7dcba">
-<span class="eqno">(57)<a class="headerlink" href="#equation-453a905c-95b2-4b54-96b4-6129adb7dcba" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-c^2 = \frac{dp}{d\rho}
-\end{equation}\]</div>
+<div class="math notranslate nohighlight">
+\[
+c^2 = \frac{\text{d}p}{\text{d}\rho} \tag{7}
+\]</div>
 <p>Since this process is infinitesimal, adiabatic and <a class="reference external" href="https://en.wikipedia.org/wiki/Isentropic_process#Derivation_of_the_isentropic_relations">isentropic</a>, the relationship between pressure and density is <span class="math notranslate nohighlight">\(p=\text{ct}\rho^\gamma\)</span>, where <span class="math notranslate nohighlight">\(\gamma\)</span> (<span class="math notranslate nohighlight">\(=1.4\)</span> for air at <span class="math notranslate nohighlight">\(20\)</span> C deg) is the <a class="reference external" href="https://en.wikipedia.org/wiki/Heat_capacity_ratio">adiabatic coefficient</a>  and, therefore,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7cc6caf8-67f0-49b8-9ce2-a6ad5c913d52">
-<span class="eqno">(58)<a class="headerlink" href="#equation-7cc6caf8-67f0-49b8-9ce2-a6ad5c913d52" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-c^2 = \frac{dp}{d\rho} = \gamma \frac{p}{\rho} = \gamma r T \tag{5}
-\end{equation}\]</div>
+<div class="math notranslate nohighlight">
+\[
+c^2 = \frac{\text{d}p}{\text{d}\rho} = \gamma \frac{p}{\rho} = \gamma r T \tag{8}
+\]</div>
 <p>if the gas can be considered ideal. <span class="math notranslate nohighlight">\(r\)</span> is the gas constant for the specific gas, <span class="math notranslate nohighlight">\(r = \frac{R}{M}\)</span>, where <span class="math notranslate nohighlight">\(R=8.314 \,\frac{\text{J}}{\text{K mol}}\)</span> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Gas_constant">Universal Gas Constant</a> and <span class="math notranslate nohighlight">\(M\)</span> is the <a class="reference external" href="https://www.engineeringtoolbox.com/molecular-mass-air-d_679.html">molecular mass of air</a>, <span class="math notranslate nohighlight">\(M \approx 29\,\text{g/mol}\)</span>. Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-729c2bb7-08e5-4339-948a-0f4fa13d1554">
-<span class="eqno">(59)<a class="headerlink" href="#equation-729c2bb7-08e5-4339-948a-0f4fa13d1554" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-r = 287 \,\frac{\text{J}}{\text{Kg K}}
-\end{equation}\]</div>
+<div class="math notranslate nohighlight">
+\[
+r = 287 \,\frac{\text{J}}{\text{Kg K}} \tag{9}
+\]</div>
 <p>We can now write a simple function for the computation of the velocity of sound</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Markdown</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
@@ -439,28 +475,32 @@ r = 287 \,\frac{\text{J}}{\text{Kg K}}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span>  <span class="o">=</span> <span class="n">sound_velocity</span><span class="p">()</span>
-<span class="n">Markdown</span><span class="p">(</span><span class="s1">&#39;at 20 Cdeg: c = </span><span class="si">{:.5g}</span><span class="s1"> m/s&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;at 20 Cdeg: c = </span><span class="si">{:.5g}</span><span class="s1"> m/s&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<p>at 20 Cdeg: c = 343.23 m/s</p>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>at 20 Cdeg: c = 343.23 m/s
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span>  <span class="o">=</span> <span class="n">sound_velocity</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="mf">273.15</span><span class="o">+</span><span class="mi">50</span><span class="p">)</span>
-<span class="n">Markdown</span><span class="p">(</span><span class="s1">&#39;at 50 Cdeg: c = </span><span class="si">{:.5g}</span><span class="s1"> m/s&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;at 50 Cdeg: c = </span><span class="si">{:.5g}</span><span class="s1"> m/s&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<p>at 50 Cdeg: c = 360.37 m/s</p>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>at 50 Cdeg: c = 360.37 m/s
+</pre></div>
+</div>
 </div>
 </div>
 <p><a id="Mach-corn"></a>
 When the sound source is moving, the sound wave changes the origin and also wave length changes in function of the movement direction. Acoustic Doppler effect is produced.</p>
-<img src=attachment:52adfdb9-d1cd-4cd3-9884-b7a084a51d48.png width=500>
+<p><img alt="Image" src="../_images/MachCorn.png" /></p>
 <p>The behaviour of this flow is different depending on the value of the dimensionless <a class="reference external" href="https://en.wikipedia.org/wiki/Mach_number">Mach number</a> (check in this page the flow regimes in function of the Mach value). Let’s define a function for the computation of Mach number</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -483,36 +523,35 @@ When the sound source is moving, the sound wave changes the origin and also wave
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ma</span> <span class="o">=</span> <span class="n">MaNumber</span><span class="p">(</span><span class="mi">609</span><span class="p">)</span>
-<span class="n">Markdown</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Ma = </span><span class="si">{:.4g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Ma</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ma = </span><span class="si">{:.4g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Ma</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<p>Ma = 1.774</p>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ma = 1.774
+</pre></div>
+</div>
 </div>
 </div>
 </div>
 <div class="section" id="isentropic-flow">
-<h2>Isentropic flow<a class="headerlink" href="#isentropic-flow" title="Permalink to this headline">¶</a></h2>
+<h2>2. Isentropic flow<a class="headerlink" href="#isentropic-flow" title="Permalink to this headline">¶</a></h2>
 <p><span class="math notranslate nohighlight">\(\newcommand{\Ma}{\mathrm{Ma}}\)</span></p>
 <p>Many cases in Engineering can be considered steady and isentropic (friction can be neglected) and, hence, 1-D, with the flow behavior defined only by the area of the passage. Some examples are nozzles, exhaust gases in gas/steam turbines, diffusera in jet engines…</p>
 <p><img alt="image.png" src="5-CompressibleFlow/attachment:5be2c2d0-0d04-4c55-95bb-71b65d5f78ef.png" /></p>
 <p>In these cases, continuity equation can be simply given as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-41115a87-2029-40d7-b00d-3e8055b177f6">
-<span class="eqno">(60)<a class="headerlink" href="#equation-41115a87-2029-40d7-b00d-3e8055b177f6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 \rho(x)A(x)u(x) = \dot{m} = \text{ct} \tag{6}
-\end{equation}\]</div>
+\end{equation}</p>
 <p>where <span class="math notranslate nohighlight">\(x\)</span> is the axis defined by the center of the channel/pipe.</p>
 <p>The <strong>total temperature</strong> (also known as <strong>stagnation temperature</strong>) is the sum of static and dinamic energies,a ccording to energy banlance, that, for an idela gas, is written as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cf2056e5-e5ee-4129-ab98-07320b995ef7">
-<span class="eqno">(61)<a class="headerlink" href="#equation-cf2056e5-e5ee-4129-ab98-07320b995ef7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 T_0 = T + \frac{u^2}{2 c_p}
-\end{equation}\]</div>
+\end{equation}</p>
 <p>That can be translated to dimensionless way</p>
-<div class="amsmath math notranslate nohighlight" id="equation-56bc9a78-f89d-4e8d-8f2b-239485584013">
-<span class="eqno">(62)<a class="headerlink" href="#equation-56bc9a78-f89d-4e8d-8f2b-239485584013" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 \boxed{\frac{T_0}{T} = 1 + \frac{\gamma-1}{2} \Ma^2} \tag{7}
-\end{equation}\]</div>
+\end{equation}</p>
 <p>We can now define the function for the computation of total temperature - static temperature ratio.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -538,15 +577,22 @@ T_0 = T + \frac{u^2}{2 c_p}
 </div>
 </div>
 <div class="cell_output docutils container">
-<p>$T_0 =$ 1207 K</p>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [8],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">T0</span> <span class="o">=</span> <span class="mi">350</span><span class="o">*</span><span class="n">T0overT</span><span class="p">(</span><span class="mf">3.5</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">Markdown</span><span class="p">(</span><span class="s1">&#39;$T_0 =$ </span><span class="si">{:.4g}</span><span class="s1"> K&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">T0</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;Markdown&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <p>In a similar way, total pressure and density are defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-caf390c1-a871-488b-b7ee-cc67a3a1b4b4">
-<span class="eqno">(63)<a class="headerlink" href="#equation-caf390c1-a871-488b-b7ee-cc67a3a1b4b4" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
-\frac{p_0}{p} &amp; = &amp; \left( \frac{T_0}{T} \right)^\frac{\gamma}{\gamma-1} = \left( 1 + \frac{\gamma - 1}{2}\Ma^2 \right)^\frac{\gamma}{\gamma-1} \tag{8}\\
+<p>\begin{eqnarray}
+\frac{p_0}{p} &amp; = &amp; \left( \frac{T_0}{T} \right)^\frac{\gamma}{\gamma-1} = \left( 1 + \frac{\gamma - 1}{2}\Ma^2 \right)^\frac{\gamma}{\gamma-1} \tag{8}\
 \frac{\rho_0}{\rho} &amp; = &amp; \left( \frac{T_0}{T} \right)^\frac{1}{\gamma-1} = \left( 1 + \frac{\gamma - 1}{2}\Ma^2 \right)^\frac{1}{\gamma-1} \tag{9}
-\end{eqnarray}\]</div>
+\end{eqnarray}</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p0overp</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
@@ -581,6 +627,19 @@ T_0 = T + \frac{u^2}{2 c_p}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span> T0overT<span class=" -Color -Color-Blue">(</span>Ma<span class=" -Color -Color-Blue">,</span> gamma<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Cyan">1.4</span><span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Docstring:</span>
+Returns the ratio total temperature over static temperature.
+
+typical usage:
+
+T0 = T*T0overT(Ma=3.5)
+<span class=" -Color -Color-Red">File:</span>      ~/GDriveUPC/documents/asignaturas/AdvancedFluidMechanics/JupyterNotebooks/5-CompressibleFlow/&lt;ipython-input-7-a76509338379&gt;
+<span class=" -Color -Color-Red">Type:</span>      function
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -600,13 +659,12 @@ T_0 = T + \frac{u^2}{2 c_p}
 <h3>Sonic (or critical values)<a class="headerlink" href="#sonic-or-critical-values" title="Permalink to this headline">¶</a></h3>
 <p>Are important also the values for temperature (and sound velocity), pressure and density, when Ma = 1, known as <strong>sonic values</strong> (also can be named critical values)</p>
 <p>These values are function uniquely of <span class="math notranslate nohighlight">\(\gamma\)</span> and the total values</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6e73bd00-bd98-4e5b-99ba-496acc52a38a">
-<span class="eqno">(64)<a class="headerlink" href="#equation-6e73bd00-bd98-4e5b-99ba-496acc52a38a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-T^{*}=T_{0}\frac{2}{\gamma+1} \\ 
-p^{*}=p_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{\gamma}{\gamma-1}} \\
-\rho^{*}=\rho_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{1}{\gamma-1}}\\ 
-c^{*}(=u^{*})=c_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{1}{2}}
-\end{equation}\]</div>
+<p>\begin{equation}
+T^{<em>}=T_{0}\frac{2}{\gamma+1} \
+p^{</em>}=p_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{\gamma}{\gamma-1}} \
+\rho^{<em>}=\rho_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{1}{\gamma-1}}\
+c^{</em>}(=u^{*})=c_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{1}{2}}
+\end{equation}</p>
 <p>Following the previous examples, for a fluid at temperature <span class="math notranslate nohighlight">\(T = 350\,K\)</span>, <span class="math notranslate nohighlight">\(p = 80\,\text{kPa}\)</span> and Ma <span class="math notranslate nohighlight">\(=3.5\)</span> the sonic magnitudes are</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -633,15 +691,13 @@ c^{*}(=u^{*})=c_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{1}{2}}
 </div>
 </div>
 <p>The definition of a critical speed of sound (from the critical temperature) allow to define also a characteristic, or critical, Mach number</p>
-<div class="amsmath math notranslate nohighlight" id="equation-95db9162-2ac9-49fa-87db-09461ee1b672">
-<span class="eqno">(65)<a class="headerlink" href="#equation-95db9162-2ac9-49fa-87db-09461ee1b672" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 \Ma^* = \frac{u}{c^*}
-\end{equation}\]</div>
+\end{equation}</p>
 <p>Note that, despite being defined for sonic conditions, <span class="math notranslate nohighlight">\(\Ma^*\)</span> does not have to be 1. The relationship between <span class="math notranslate nohighlight">\(\Ma\)</span> and <span class="math notranslate nohighlight">\(\Ma^*\)</span> is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a0db6393-1e47-4675-8b81-893d459bfc60">
-<span class="eqno">(66)<a class="headerlink" href="#equation-a0db6393-1e47-4675-8b81-893d459bfc60" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 {\Ma^*}^2 = \frac{\gamma +1}{\frac{2}{\Ma^2}+\gamma-1} \tag{10}
-\end{equation}\]</div>
+\end{equation}</p>
 <hr class="docutils" />
 <p><strong>Exercise:</strong> Deduce this expression from energy balance between any point with a Mach value <span class="math notranslate nohighlight">\(\Ma\)</span> and the point with sonic conditions.</p>
 <hr class="docutils" />
@@ -667,7 +723,7 @@ c^{*}(=u^{*})=c_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{1}{2}}
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "755b457c5b974f988a6396ddcaa41676"}
+{"model_id": "241a6fd64faa4f1286e7156028e312c4", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>And, also,</p>
@@ -690,7 +746,7 @@ c^{*}(=u^{*})=c_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{1}{2}}
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "e70576cdc3c140df8bb341c549c98a3e"}
+{"model_id": "5d79a0783c9645538000bf9556c392b7", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>Ratios between critical and total magnitudes are only function of gamma. For air at standard conditions, they are</p>
@@ -711,15 +767,13 @@ c^{*}(=u^{*})=c_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{1}{2}}
 </div>
 </div>
 <p>Going back to Equation (6) for continuity, combining with steady Euler equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f827dc47-ae02-4e30-97a3-c9e2ebbf5fcd">
-<span class="eqno">(67)<a class="headerlink" href="#equation-f827dc47-ae02-4e30-97a3-c9e2ebbf5fcd" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 u\frac{\text d u}{\text d x} + \frac{1}{\rho}\frac{\text d p}{\text d x} = 0
-\end{equation}\]</div>
+\end{equation}</p>
 <p>and fluid compressibility <span class="math notranslate nohighlight">\(\text d p = c^2 \text d \rho\)</span>, leads to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fd0116e9-662c-45d9-a47f-8b8937eedd02">
-<span class="eqno">(68)<a class="headerlink" href="#equation-fd0116e9-662c-45d9-a47f-8b8937eedd02" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 \frac{\text d u}{u}=-\frac{\text d p}{\rho u^{2}}=\frac{1}{\Ma^{2}-1}\frac{\text d A}{A} \tag{11}
-\end{equation}\]</div>
+\end{equation}</p>
 <p>and that shows that the behavior of the flow in a nozzle depends on the value of <span class="math notranslate nohighlight">\(\Ma\)</span></p>
 <img src=attachment:302ffd5d-f6a9-490e-beec-820192adf34d.png width=600>
 <p>Under critical or sonic conditions, the mass flow remains the same
@@ -773,7 +827,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "c9f41f1fabc74457bb2f3ab3e391a737"}
+{"model_id": "ed243dec59094d7582686396df934eae", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -814,36 +868,31 @@ $<span class="math notranslate nohighlight">\(
 </ul>
 <p><strong>Flow rate <span class="math notranslate nohighlight">\(\dot m\)</span> remains unchanged from <em>b</em> on</strong></p>
 <p>Naming <span class="math notranslate nohighlight">\(1\)</span> conditions upstream from the shock wave and <span class="math notranslate nohighlight">\(2\)</span> downstream (but just in the shock wave position so that surface section <span class="math notranslate nohighlight">\(A\)</span> are the same), equations that govern normal shock wave behavior are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2e1f2469-2390-4d7e-8bc7-a897db6e3087">
-<span class="eqno">(69)<a class="headerlink" href="#equation-2e1f2469-2390-4d7e-8bc7-a897db6e3087" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
-\rho_1 u_1 &amp; = &amp; \rho_2 u_2 &amp; \; \text{(continuity)} \\
-p_1 + \rho_1 u_1^2 &amp; = &amp; p_2 + \rho_2 u_2^2 &amp; \; \text{(momentum)} \\
-h_1 + \frac{1}{2}u_1^2 &amp; = &amp; h_2 + \frac{1}{2} u_2^2 &amp; \; \text{(energy)}
-\end{eqnarray}\]</div>
+<p>\begin{eqnarray}
+\rho_1 u_1 &amp; = &amp; \rho_2 u_2 &amp; ; \text{(continuity)} \
+p_1 + \rho_1 u_1^2 &amp; = &amp; p_2 + \rho_2 u_2^2 &amp; ; \text{(momentum)} \
+h_1 + \frac{1}{2}u_1^2 &amp; = &amp; h_2 + \frac{1}{2} u_2^2 &amp; ; \text{(energy)}
+\end{eqnarray}</p>
 <p>Note that, unlike energy, entropy is not conserved.</p>
 <p>Also, ideal gas relationships hold:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5bd95553-d077-4e34-bdbe-07b7982fbf6f">
-<span class="eqno">(70)<a class="headerlink" href="#equation-5bd95553-d077-4e34-bdbe-07b7982fbf6f" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
-\frac{p}{\rho} &amp; = &amp; r T \\
-h &amp; = &amp; c_p T 
-\end{eqnarray}\]</div>
+<p>\begin{eqnarray}
+\frac{p}{\rho} &amp; = &amp; r T \
+h &amp; = &amp; c_p T
+\end{eqnarray}</p>
 <p>On the other hand, since flow is adiabatic, <span class="math notranslate nohighlight">\({T_0}_1 = {T_0}_2 = T_0\)</span> (and, consequently, <span class="math notranslate nohighlight">\(T^*_1 = T^*_2 = T^*\)</span>). That does not hold for pressure or density, <span class="math notranslate nohighlight">\({p_0}_1 \neq {p_0}_2\)</span></p>
 <p>Operating these equations (see section 8.6 of <a class="reference external" href="https://discovery.upc.edu/permalink/34CSUC_UPC/19srfpi/cdi_proquest_ebookcentral_EBC5662650">Anderson’s book</a>) we can get the <em>Prandtl relation</em></p>
-<div class="amsmath math notranslate nohighlight" id="equation-ddfc0523-46a5-4a69-8461-efb638671acf">
-<span class="eqno">(71)<a class="headerlink" href="#equation-ddfc0523-46a5-4a69-8461-efb638671acf" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 u_1 u_2 = {c^*}^2 \tag{13}
-\end{equation}\]</div>
+\end{equation}</p>
 <p>that can be expressed in dimensionless way as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bd28dd41-f794-4bf7-931f-32f0433c7069">
-<span class="eqno">(72)<a class="headerlink" href="#equation-bd28dd41-f794-4bf7-931f-32f0433c7069" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\Ma^*_1 \Ma^*_2 = 1
-\end{equation}\]</div>
+<p>\begin{equation}
+\Ma^<em>_1 \Ma^</em>_2 = 1
+\end{equation}</p>
 <p>that implies that if in 1 flow is supersonic and <span class="math notranslate nohighlight">\(\Ma^*_1 &gt; 1\)</span>, in 2 it <em>must</em> be subsonic, <span class="math notranslate nohighlight">\(\Ma^*_2 &lt; 1\)</span></p>
 <p>By substitution of (19) we get the important relationship between Mach numbers before and after the normal shock wave:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3946edc0-ffd8-4a13-bbee-83a132e853cc">
-<span class="eqno">(73)<a class="headerlink" href="#equation-3946edc0-ffd8-4a13-bbee-83a132e853cc" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 \Ma_2^2 = \frac{1+\frac{\gamma -1}{2}\Ma_1^2}{\gamma \Ma_1^2-\frac{\gamma-1}{2}} \tag{14}
-\end{equation}\]</div>
+\end{equation}</p>
 <p>and the reverse, which is exactly the same (obvious from dimensionless form of Prandtl equation (13)). An unique function serves to compute <span class="math notranslate nohighlight">\(\Ma_2\)</span> from <span class="math notranslate nohighlight">\(\Ma_1\)</span> or the reverse. Note that neither value <span class="math notranslate nohighlight">\(\Ma_1\)</span> and <span class="math notranslate nohighlight">\(\Ma_2\)</span> can be lower than <span class="math notranslate nohighlight">\(\sqrt{\frac{\gamma - 1}{2\gamma}} ( \approx 0.378 \; \text{for air})\)</span>. Nevertheless, keep in mind that it only has physical sense for <span class="math notranslate nohighlight">\(\Ma_1 &gt; 1\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -893,25 +942,22 @@ u_1 u_2 = {c^*}^2 \tag{13}
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "f5f9fb30c935479899d29b1ad4a7e1a9"}
+{"model_id": "038c00464ce44beabb94dae995191bce", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p><span class="math notranslate nohighlight">\(\Ma_1\)</span> (and consequently <span class="math notranslate nohighlight">\(\Ma^*_1\)</span>) is an important parameter in normal shock wave. Its value determines, for example, the ratio between densities and velocities</p>
-<div class="amsmath math notranslate nohighlight" id="equation-23e2a4f8-7d5c-4ced-8a51-c086c0612a16">
-<span class="eqno">(74)<a class="headerlink" href="#equation-23e2a4f8-7d5c-4ced-8a51-c086c0612a16" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 \frac{\rho_2}{\rho_1}=\frac{u_1}{u_2} = {\Ma^*_1}^2 = \frac{(\gamma + 1){\Ma_1}^2}{2 + (\gamma - 1){\Ma_1}^2 } \tag{15}
-\end{equation}\]</div>
+\end{equation}</p>
 <p>The ratio between pressures can be derived from momentum balance, giving</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1439a12b-81f5-4ddb-90dc-1299a285032e">
-<span class="eqno">(75)<a class="headerlink" href="#equation-1439a12b-81f5-4ddb-90dc-1299a285032e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 \frac{p_2}{p_1}= 1 + \frac{2 \gamma}{\gamma+1}\left(\Ma_1^2 - 1 \right) \tag{16}
-\end{equation}\]</div>
+\end{equation}</p>
 <p>And the temperatures ratios from the two previous relationships with perfect gas equation,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f4af4217-7107-4c04-9d4a-7e3a70a62d67">
-<span class="eqno">(76)<a class="headerlink" href="#equation-f4af4217-7107-4c04-9d4a-7e3a70a62d67" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 \frac{T_2}{T_1} = \left[1 + \frac{2 \gamma}{\gamma+1}\left(\Ma_1^2 - 1 \right)\right]
-                \left[\frac{2 + (\gamma - 1){\Ma_1}^2 }{(\gamma + 1){\Ma_1}^2}\right] \tag{17}
-\end{equation}\]</div>
+\left[\frac{2 + (\gamma - 1){\Ma_1}^2 }{(\gamma + 1){\Ma_1}^2}\right] \tag{17}
+\end{equation}</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rho2_rho1</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
@@ -968,15 +1014,13 @@ u_1 u_2 = {c^*}^2 \tag{13}
 </div>
 </div>
 <p>The increment of entropy is computed from second law of thermodynamics</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a3ad512c-a9ff-4be9-a632-5497e1fdeca3">
-<span class="eqno">(77)<a class="headerlink" href="#equation-a3ad512c-a9ff-4be9-a632-5497e1fdeca3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 s_2 - s_1 = c_p \ln{\frac{T2}{T1}} - r \ln{\frac{p_2}{p_1}}
-\end{equation}\]</div>
+\end{equation}</p>
 <p>and, in dimensionless way</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bfc23cb7-992e-4142-a2ab-75c94e58b992">
-<span class="eqno">(78)<a class="headerlink" href="#equation-bfc23cb7-992e-4142-a2ab-75c94e58b992" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 \frac{s_2 - s_1}{r} = \frac{\gamma -1}{\gamma} \ln{\frac{T2}{T1}} - \ln{\frac{p_2}{p_1}} \tag{18}
-\end{equation}\]</div>
+\end{equation}</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">DeltaS_r</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
@@ -991,10 +1035,9 @@ s_2 - s_1 = c_p \ln{\frac{T2}{T1}} - r \ln{\frac{p_2}{p_1}}
 </div>
 </div>
 <p>Considering that, by definition, <span class="math notranslate nohighlight">\(p_0\)</span> and <span class="math notranslate nohighlight">\(T_0\)</span> are isentropic process from the state <span class="math notranslate nohighlight">\(p,T\)</span>, that means that for temperatures <span class="math notranslate nohighlight">\({T_0}_1\)</span> and <span class="math notranslate nohighlight">\({T_0}_2\)</span> and for pressures <span class="math notranslate nohighlight">\({p_0}_1\)</span> ad <span class="math notranslate nohighlight">\({p_0}_2\)</span> the increment of entropy would be the same. On the other side, for a shock wave, <span class="math notranslate nohighlight">\({T_0}_1 = {T_0}_2 = T_0\)</span> and, hence, difference of total pressure across a shock wave is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2153c2e4-e67a-4924-9721-614481f7eb84">
-<span class="eqno">(79)<a class="headerlink" href="#equation-2153c2e4-e67a-4924-9721-614481f7eb84" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\frac{s_2 - s_1}{r} =  - \ln{\frac{{p_0}_2}{{p_0}_1} \; \Rightarrow \;\frac{{p_0}_2}{{p_0}_1}} = e^{-\frac{s_2 - s_1}{r}} \tag{19}
-\end{equation}\]</div>
+<p>\begin{equation}
+\frac{s_2 - s_1}{r} =  - \ln{\frac{{p_0}_2}{{p_0}_1} ; \Rightarrow ;\frac{{p_0}_2}{{p_0}_1}} = e^{-\frac{s_2 - s_1}{r}} \tag{19}
+\end{equation}</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p02_p01</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
@@ -1038,7 +1081,7 @@ s_2 - s_1 = c_p \ln{\frac{T2}{T1}} - r \ln{\frac{p_2}{p_1}}
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "16d39a40f7c6411597147b91d17b74fc"}
+{"model_id": "2562421f9fc24feb84cde33167386d74", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <hr class="docutils" />
@@ -1057,41 +1100,35 @@ s_2 - s_1 = c_p \ln{\frac{T2}{T1}} - r \ln{\frac{p_2}{p_1}}
 <ul class="simple">
 <li><p>Tangential velocity is conserved across the oblique shock wave (that also holds for normal shock wave where both components are null)</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-46dc473c-7432-4192-ba6e-b85d28aa6db6">
-<span class="eqno">(80)<a class="headerlink" href="#equation-46dc473c-7432-4192-ba6e-b85d28aa6db6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 {u_t}_1 = {u_t}_2 \tag{20}
-\end{equation}\]</div>
+\end{equation}</p>
 <ul class="simple">
 <li><p>Balance equations are</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-7f68fa38-5969-4440-9802-5a7dd36ab52b">
-<span class="eqno">(81)<a class="headerlink" href="#equation-7f68fa38-5969-4440-9802-5a7dd36ab52b" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
-\rho_1 {u_n}_1 &amp; = &amp; \rho_2 {u_n}_2 &amp; \; \text{(continuity)} \\
-p_1 + \rho_1 {u_n}_1^2 &amp; = &amp; p_2 + \rho_2 {u_n}_2^2 &amp; \; \text{(momentum)} \\
-h_1 + \frac{1}{2}{u_n}_1^2 &amp; = &amp; h_2 + \frac{1}{2} {u_n}_2^2 &amp; \; \text{(energy)}
-\end{eqnarray}\]</div>
+<p>\begin{eqnarray}
+\rho_1 {u_n}_1 &amp; = &amp; \rho_2 {u_n}_2 &amp; ; \text{(continuity)} \
+p_1 + \rho_1 {u_n}_1^2 &amp; = &amp; p_2 + \rho_2 {u_n}_2^2 &amp; ; \text{(momentum)} \
+h_1 + \frac{1}{2}{u_n}_1^2 &amp; = &amp; h_2 + \frac{1}{2} {u_n}_2^2 &amp; ; \text{(energy)}
+\end{eqnarray}</p>
 <p>i.e., exactly the same expressions for normal shock wave applied to only the normal velocity. That means that we van use the above functions to make the computations for oblique shocks just keeping in mind that we are computing only normal component. That also implies that results are referred uniquely to normal Mach number</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a41a9250-0b6d-405f-828f-5c8893db90c7">
-<span class="eqno">(82)<a class="headerlink" href="#equation-a41a9250-0b6d-405f-828f-5c8893db90c7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 \Ma_n = \Ma\sin{\beta} \tag{21}
-\end{equation}\]</div>
+\end{equation}</p>
 <p>From the picture above, is easily shown that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-caa7d4f6-64ff-48ba-99b8-7a4b27d1912e">
-<span class="eqno">(83)<a class="headerlink" href="#equation-caa7d4f6-64ff-48ba-99b8-7a4b27d1912e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 \Ma_2 = \frac{{\Ma_n}_2}{\sin{(\beta-\theta)}}
-\end{equation}\]</div>
+\end{equation}</p>
 <p>which will be useful when we will get <span class="math notranslate nohighlight">\({\Ma_n}_2\)</span> from the functions of normal shock.</p>
 <p>To the functions for normal shock wave, we have now to include a new parameter, <span class="math notranslate nohighlight">\(\beta\)</span>.
 Actually, note that normal shock wave is the particular case of oblique shock form <span class="math notranslate nohighlight">\(\beta = \pi/2\)</span>. The deflection angle <span class="math notranslate nohighlight">\(\theta\)</span> is a unique function of <span class="math notranslate nohighlight">\(\Ma_1\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-08918d08-bd4a-4817-aa72-0a3c1872d5ed">
-<span class="eqno">(84)<a class="headerlink" href="#equation-08918d08-bd4a-4817-aa72-0a3c1872d5ed" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 \frac{\tan{(\beta - \theta)}}{\tan{\beta}} = \frac{u_{n2}}{u_{n1}} = \frac{2+(\gamma-1)\Ma_1^2\sin^2\beta}{(\gamma+1)\Ma_1^2\sin^2\beta}
-\end{equation}\]</div>
+\end{equation}</p>
 <p>that leads to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7d550949-2360-489c-aff4-2274402465b7">
-<span class="eqno">(85)<a class="headerlink" href="#equation-7d550949-2360-489c-aff4-2274402465b7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 \tan \theta = \frac{2}{\tan\beta}\left[\frac{\Ma_1^2\sin^2\beta - 1}{\Ma_1^2(\gamma+\cos2\beta)+2}\right] \tag{22}
-\end{equation}\]</div>
+\end{equation}</p>
 <p>known as the <span class="math notranslate nohighlight">\(\theta-\beta-\Ma\)</span> relation</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1163,8 +1200,8 @@ Actually, note that normal shock wave is the particular case of oblique shock fo
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "0ec1924ed5e84683abf99196423bd839"}
-</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f3f593ac2b0&gt;]
+{"model_id": "b2d3d120527a46bd8dddb3441ad61aac", "version_major": 2, "version_minor": 0}
+</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f0ec3a77850&gt;]
 </pre></div>
 </div>
 </div>
@@ -1177,10 +1214,9 @@ Actually, note that normal shock wave is the particular case of oblique shock fo
 <p>Usually, for typical situations, the weak OSW is the one obtained in the flow, but it will depend mainly on the back pressure. For the strong OSW flow downstream is subsonic. For the weak OSW, it is usually supersonic, except for some conditions.</p>
 <p>If, for a given <span class="math notranslate nohighlight">\(\Ma_1\)</span> the deflection angle is <span class="math notranslate nohighlight">\(\theta &gt; \theta_\mathrm{max}\)</span>, there is no solution for an OSW, the shock wave then detaches and it becomes a normal, or bow, shock wave, like the one in the <a class="reference external" href="#picturesSW">first picture of this notebook</a>.</p>
 <p>The value of <span class="math notranslate nohighlight">\(\beta\)</span> obtained for <span class="math notranslate nohighlight">\(\theta=0\)</span> is related to the OSW when the obstacle is very sharp, or just a point. This is called the <em>Mach angle</em> and the OSW is a <em>Mach wave</em>. This angle is the same as in the <a class="reference external" href="#Mach-cone">Mach cone</a>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d0003fe4-8ce2-4e03-8e22-fd2e04b0c68e">
-<span class="eqno">(86)<a class="headerlink" href="#equation-d0003fe4-8ce2-4e03-8e22-fd2e04b0c68e" title="Permalink to this equation">¶</a></span>\[\begin{equation} 
+<p>\begin{equation}
 \beta_\mathrm{min} = \mu = \arcsin{\frac{1}{\Ma_1}}
-\end{equation}\]</div>
+\end{equation}</p>
 <hr class="docutils" />
 <p><strong>Exercise:</strong></p>
 <p>Use the function of previous exercise to compute the shock wave angle angle of a uniform supersonic stream with <span class="math notranslate nohighlight">\(\Ma_1 = 3.0\)</span>, <span class="math notranslate nohighlight">\(p_1 = 1\,\mathrm{atm}\)</span> and
@@ -1191,11 +1227,10 @@ Actually, note that normal shock wave is the particular case of oblique shock fo
 <h3>Shock Polar<a class="headerlink" href="#shock-polar" title="Permalink to this headline">¶</a></h3>
 <p>In a shock polar (see, for example, the section 6.7.3 in the <a class="reference external" href="https://discovery.upc.edu/iii/encore/record/C__Rb1437643?lang=cat">book by Houghton</a> ) the components of dimensionless velocity behind the OSW are plotted in an <a class="reference external" href="https://en.wikipedia.org/wiki/Hodograph">hodograph</a>. The polar angle of the points of the plot for a given <span class="math notranslate nohighlight">\(\Ma_1\)</span> is the deflection angle. Nevertheless, to represent dimensionless velocity in the plot (not the label for the plot) is more convenient to use <span class="math notranslate nohighlight">\(\Ma_2^*\)</span>, since it has a finite value  (see Eq (10)) even for <span class="math notranslate nohighlight">\(\Ma_1 \rightarrow \infty\)</span>.</p>
 <p>We can plot the shock polar computing velocity components for all the angles <span class="math notranslate nohighlight">\(\theta\)</span> in the range of previous plot, or, also, it can be used the expression (that we are not going to prove)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-833bbb08-3c20-4a18-a77a-4a05677a5b88">
-<span class="eqno">(87)<a class="headerlink" href="#equation-833bbb08-3c20-4a18-a77a-4a05677a5b88" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-{{\Ma_2^*}_y}^2 = \frac{\left(\Ma_1^* - {\Ma_2^*}_x \right)^2\left( {\Ma_2^*}_x \Ma_1^* - 1\right)}
-{\frac{2}{\gamma+1}{\Ma_1^*}^2- \left({\Ma_2^*}_x \Ma_1^* - 1\right)} \tag{23}
-\end{equation}\]</div>
+<p>\begin{equation}
+{{\Ma_2^<em>}_y}^2 = \frac{\left(\Ma_1^</em> - {\Ma_2^<em>}_x \right)^2\left( {\Ma_2^</em>}_x \Ma_1^* - 1\right)}
+{\frac{2}{\gamma+1}{\Ma_1^<em>}^2- \left({\Ma_2^</em>}_x \Ma_1^* - 1\right)} \tag{23}
+\end{equation}</p>
 <hr class="docutils" />
 <p><strong>ASSIGNMENT</strong></p>
 <p>Make a function that computes the shock polar for a given value of <span class="math notranslate nohighlight">\(\Ma_1\)</span> by computing the velocity components behind the OSW, and compare with the value obtained with (23)</p>
@@ -1231,205 +1266,26 @@ Actually, note that normal shock wave is the particular case of oblique shock fo
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex)
- \write18 enabled.
-entering extended mode
-(./tikz.tex
-LaTeX2e &lt;2020-02-02&gt; patch level 2
-L3 programming layer &lt;2020-02-14&gt;
-(/usr/share/texlive/texmf-dist/tex/latex/standalone/standalone.cls
-Document Class: standalone 2018/03/26 v1.3a Class to compile TeX sub-files stan
-dalone
-(/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty)
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/keyval.tex))))
-(/usr/share/texlive/texmf-dist/tex/latex/standalone/standalone.cfg)
-(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex)
- \write18 enabled.
-entering extended mode
-LaTeX2e &lt;2020-02-02&gt; patch level 2
-L3 programming layer &lt;2020-02-14&gt; (./tikz.tex
-(/usr/share/texlive/texmf-dist/tex/latex/standalone/standalone.cls
-Document Class: standalone 2018/03/26 v1.3a Class to compile TeX sub-files stan
-dalone
-(/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty)
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/keyval.tex))))
-(/usr/share/texlive/texmf-dist/tex/latex/standalone/standalone.cfg)
-(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo)))
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
-ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
-ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
-f)))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
-tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
-tex)) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
-.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
-ric.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
-e.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
-.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
-tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
-.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
-tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
-thmetics.code.tex)))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
-x)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
-code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
-.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
-x)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
-ode.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
-s.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
-ex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
-.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
-x)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
-tex))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
-x)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
-ode.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
-tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex))
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
-)
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
-.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
-.sty)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
-.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarytopaths.code.tex)))
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def)
-No file tikz.aux.
-ABD: EveryShipout initializing macros
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./tikz.aux) )&lt;/usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb&gt;&lt;/usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb&gt;&lt;/usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb&gt;
-Output written on tikz.pdf (1 page, 29296 bytes).
-Transcript written on tikz.log.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Class standalone:
-Output written on tikz.png.
- ) )
-No pages of output.
-Transcript written on tikz.log.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>convert-im6.q16: profile &#39;icc&#39;: &#39;RGB &#39;: RGB color space not permitted on grayscale PNG `tikz.png&#39; @ warning/png.c/MagickPNGWarningHandler/1667.
-</pre></div>
-</div>
-<img alt="../_images/CompressibleFlow_72_4.png" src="../_images/CompressibleFlow_72_4.png" />
-</div>
 </div>
 <p>The derivation, from purely geometrical basis, with an infinitesimal deviation produced by a Mach wave, leads to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-71d5e16f-2262-4f9a-816c-daa2064c62ff">
-<span class="eqno">(88)<a class="headerlink" href="#equation-71d5e16f-2262-4f9a-816c-daa2064c62ff" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\frac{u+\mathrm{d}u}{u} = 1 + \frac{\mathrm{d}u}{u} = \frac{\cos \mu}{\cos \mu \cos \mathrm{d}\theta - \sin \mu \sin \mathrm{d}\theta} 
+<p>\begin{equation}
+\frac{u+\mathrm{d}u}{u} = 1 + \frac{\mathrm{d}u}{u} = \frac{\cos \mu}{\cos \mu \cos \mathrm{d}\theta - \sin \mu \sin \mathrm{d}\theta}
 \approx \frac{1}{1-\tan \mu \mathrm{d}\theta} \approx 1 + \tan \mu \mathrm{d} \theta = 1 + \frac{\mathrm{d} \theta}{\sqrt{\Ma^2-1}}
-\end{equation}\]</div>
+\end{equation}</p>
 <p>and, from here,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9c4600aa-4a9f-4ecc-8ff5-3c7c0c834115">
-<span class="eqno">(89)<a class="headerlink" href="#equation-9c4600aa-4a9f-4ecc-8ff5-3c7c0c834115" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 \mathrm{d} \theta = \sqrt{\Ma^2-1} \frac{\mathrm{d}u}{u} = \frac{\sqrt{\Ma^2-1}}{1+\frac{\gamma-1}{2}\Ma^2}\frac{\mathrm{d}\Ma}{\Ma}
-\end{equation}\]</div>
+\end{equation}</p>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-293d0aae-8414-40bc-b880-556cb07ea4f0">
-<span class="eqno">(90)<a class="headerlink" href="#equation-293d0aae-8414-40bc-b880-556cb07ea4f0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\theta_2 - \theta_1 = \int_{\Ma_1}^{\Ma_2}\frac{\sqrt{\Ma^2-1}}{\Ma\left(1+\frac{\gamma-1}{2}\Ma^2\right)} \mathrm{d}\Ma = 
+<p>\begin{equation}
+\theta_2 - \theta_1 = \int_{\Ma_1}^{\Ma_2}\frac{\sqrt{\Ma^2-1}}{\Ma\left(1+\frac{\gamma-1}{2}\Ma^2\right)} \mathrm{d}\Ma =
 \nu\left(\Ma_2\right) - \nu\left(\Ma_1\right)
-\end{equation}\]</div>
+\end{equation}</p>
 <p>where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-80979494-75dd-4541-a145-1a66f1c69780">
-<span class="eqno">(91)<a class="headerlink" href="#equation-80979494-75dd-4541-a145-1a66f1c69780" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\nu\left(\Ma\right) = \int \frac{\sqrt{\Ma^2-1}}{\Ma\left(1+\frac{\gamma-1}{2}\Ma^2\right)} \mathrm{d}\Ma = 
+<p>\begin{equation}
+\nu\left(\Ma\right) = \int \frac{\sqrt{\Ma^2-1}}{\Ma\left(1+\frac{\gamma-1}{2}\Ma^2\right)} \mathrm{d}\Ma =
 \sqrt{\frac{\gamma+1}{\gamma-1}}\arctan \sqrt{\frac{\gamma-1}{\gamma+1}\left(\Ma^2-1\right)} - \arctan \sqrt{\Ma^2-1}
-\end{equation}\]</div>
+\end{equation}</p>
 <p>is the <a class="reference external" href="https://en.wikipedia.org/wiki/Prandtl%E2%80%93Meyer_function">Prandtl-Meyer function</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1460,19 +1316,9 @@ Transcript written on tikz.log.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "4c0616507b574946bd731aff70219b91"}
-</script></div>
 </div>
 </div>
 </div>
-
-
-<script type="application/vnd.jupyter.widget-state+json">
-{"state": {"a0446ce8181947318bf29b74ba646376": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "755b457c5b974f988a6396ddcaa41676": {"model_name": "MPLCanvasModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_cursor": "pointer", "_dom_classes": [], "_figure_label": "Figure", "_height": 0, "_image_mode": "full", "_message": "", "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "MPLCanvasModel", "_rubberband_height": 0, "_rubberband_width": 0, "_rubberband_x": 0, "_rubberband_y": 0, "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "MPLCanvasView", "_width": 0, "capture_scroll": false, "footer_visible": true, "header_visible": true, "layout": "IPY_MODEL_a0446ce8181947318bf29b74ba646376", "resizable": true, "toolbar": "IPY_MODEL_f93e332300884dfaa399bbbd86d0b7dc", "toolbar_position": "left", "toolbar_visible": true}}, "1993047b86664d7fbd17df906f2b165f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f93e332300884dfaa399bbbd86d0b7dc": {"model_name": "ToolbarModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_current_action": "", "_dom_classes": [], "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "ToolbarModel", "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "ToolbarView", "button_style": "", "collapsed": true, "layout": "IPY_MODEL_1993047b86664d7fbd17df906f2b165f", "orientation": "vertical", "toolitems": [["Home", "Reset original view", "home", "home"], ["Back", "Back to previous view", "arrow-left", "back"], ["Forward", "Forward to next view", "arrow-right", "forward"], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "arrows", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis, CTRL fixes aspect", "square-o", "zoom"], ["Download", "Download plot", "floppy-o", "save_figure"]]}}, "79e520a72bb84a6c8d978654c607bbd8": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e70576cdc3c140df8bb341c549c98a3e": {"model_name": "MPLCanvasModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_cursor": "pointer", "_dom_classes": [], "_figure_label": "Figure", "_height": 0, "_image_mode": "full", "_message": "", "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "MPLCanvasModel", "_rubberband_height": 0, "_rubberband_width": 0, "_rubberband_x": 0, "_rubberband_y": 0, "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "MPLCanvasView", "_width": 0, "capture_scroll": false, "footer_visible": true, "header_visible": true, "layout": "IPY_MODEL_79e520a72bb84a6c8d978654c607bbd8", "resizable": true, "toolbar": "IPY_MODEL_062ce42610b641af869ef668c713dae3", "toolbar_position": "left", "toolbar_visible": true}}, "d0455c1c2b4d41368479f50ac424f529": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "062ce42610b641af869ef668c713dae3": {"model_name": "ToolbarModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_current_action": "", "_dom_classes": [], "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "ToolbarModel", "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "ToolbarView", "button_style": "", "collapsed": true, "layout": "IPY_MODEL_d0455c1c2b4d41368479f50ac424f529", "orientation": "vertical", "toolitems": [["Home", "Reset original view", "home", "home"], ["Back", "Back to previous view", "arrow-left", "back"], ["Forward", "Forward to next view", "arrow-right", "forward"], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "arrows", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis, CTRL fixes aspect", "square-o", "zoom"], ["Download", "Download plot", "floppy-o", "save_figure"]]}}, "721014c355514736b05743e928ecb2b8": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "c9f41f1fabc74457bb2f3ab3e391a737": {"model_name": "MPLCanvasModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_cursor": "pointer", "_dom_classes": [], "_figure_label": "Figure", "_height": 0, "_image_mode": "full", "_message": "", "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "MPLCanvasModel", "_rubberband_height": 0, "_rubberband_width": 0, "_rubberband_x": 0, "_rubberband_y": 0, "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "MPLCanvasView", "_width": 0, "capture_scroll": false, "footer_visible": true, "header_visible": true, "layout": "IPY_MODEL_721014c355514736b05743e928ecb2b8", "resizable": true, "toolbar": "IPY_MODEL_176b3024c2db4a539d2584f51e692076", "toolbar_position": "left", "toolbar_visible": true}}, "a0dad06b30924293836bfb16a8a5c612": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "176b3024c2db4a539d2584f51e692076": {"model_name": "ToolbarModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_current_action": "", "_dom_classes": [], "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "ToolbarModel", "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "ToolbarView", "button_style": "", "collapsed": true, "layout": "IPY_MODEL_a0dad06b30924293836bfb16a8a5c612", "orientation": "vertical", "toolitems": [["Home", "Reset original view", "home", "home"], ["Back", "Back to previous view", "arrow-left", "back"], ["Forward", "Forward to next view", "arrow-right", "forward"], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "arrows", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis, CTRL fixes aspect", "square-o", "zoom"], ["Download", "Download plot", "floppy-o", "save_figure"]]}}, "2bfb08bf647b40078e7e8eb4352ae2b4": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f5f9fb30c935479899d29b1ad4a7e1a9": {"model_name": "MPLCanvasModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_cursor": "pointer", "_dom_classes": [], "_figure_label": "Figure", "_height": 0, "_image_mode": "full", "_message": "", "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "MPLCanvasModel", "_rubberband_height": 0, "_rubberband_width": 0, "_rubberband_x": 0, "_rubberband_y": 0, "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "MPLCanvasView", "_width": 0, "capture_scroll": false, "footer_visible": true, "header_visible": true, "layout": "IPY_MODEL_2bfb08bf647b40078e7e8eb4352ae2b4", "resizable": true, "toolbar": "IPY_MODEL_e34244568ddc4dc9b644079d644851c2", "toolbar_position": "left", "toolbar_visible": true}}, "4f23248d026a454a9678857762d5490e": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e34244568ddc4dc9b644079d644851c2": {"model_name": "ToolbarModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_current_action": "", "_dom_classes": [], "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "ToolbarModel", "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "ToolbarView", "button_style": "", "collapsed": true, "layout": "IPY_MODEL_4f23248d026a454a9678857762d5490e", "orientation": "vertical", "toolitems": [["Home", "Reset original view", "home", "home"], ["Back", "Back to previous view", "arrow-left", "back"], ["Forward", "Forward to next view", "arrow-right", "forward"], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "arrows", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis, CTRL fixes aspect", "square-o", "zoom"], ["Download", "Download plot", "floppy-o", "save_figure"]]}}, "cf2e448a671047a298e1db4afb59feb4": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "16d39a40f7c6411597147b91d17b74fc": {"model_name": "MPLCanvasModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_cursor": "pointer", "_dom_classes": [], "_figure_label": "Figure", "_height": 0, "_image_mode": "full", "_message": "", "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "MPLCanvasModel", "_rubberband_height": 0, "_rubberband_width": 0, "_rubberband_x": 0, "_rubberband_y": 0, "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "MPLCanvasView", "_width": 0, "capture_scroll": false, "footer_visible": true, "header_visible": true, "layout": "IPY_MODEL_cf2e448a671047a298e1db4afb59feb4", "resizable": true, "toolbar": "IPY_MODEL_6d951658a9334439be5c05fa5af6b419", "toolbar_position": "left", "toolbar_visible": true}}, "b2df544d575c40a38977fd0efa99d3ce": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6d951658a9334439be5c05fa5af6b419": {"model_name": "ToolbarModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_current_action": "", "_dom_classes": [], "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "ToolbarModel", "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "ToolbarView", "button_style": "", "collapsed": true, "layout": "IPY_MODEL_b2df544d575c40a38977fd0efa99d3ce", "orientation": "vertical", "toolitems": [["Home", "Reset original view", "home", "home"], ["Back", "Back to previous view", "arrow-left", "back"], ["Forward", "Forward to next view", "arrow-right", "forward"], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "arrows", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis, CTRL fixes aspect", "square-o", "zoom"], ["Download", "Download plot", "floppy-o", "save_figure"]]}}, "e5398b342e5d42ecb1df821ce9caeb20": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0ec1924ed5e84683abf99196423bd839": {"model_name": "MPLCanvasModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_cursor": "pointer", "_dom_classes": [], "_figure_label": "Figure", "_height": 0, "_image_mode": "full", "_message": "", "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "MPLCanvasModel", "_rubberband_height": 0, "_rubberband_width": 0, "_rubberband_x": 0, "_rubberband_y": 0, "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "MPLCanvasView", "_width": 0, "capture_scroll": false, "footer_visible": true, "header_visible": true, "layout": "IPY_MODEL_e5398b342e5d42ecb1df821ce9caeb20", "resizable": true, "toolbar": "IPY_MODEL_1b6ef64054d04121bc02b39c880e51af", "toolbar_position": "left", "toolbar_visible": true}}, "6e4d3c5b53204fe9a99442011c7637c6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "1b6ef64054d04121bc02b39c880e51af": {"model_name": "ToolbarModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_current_action": "", "_dom_classes": [], "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "ToolbarModel", "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "ToolbarView", "button_style": "", "collapsed": true, "layout": "IPY_MODEL_6e4d3c5b53204fe9a99442011c7637c6", "orientation": "vertical", "toolitems": [["Home", "Reset original view", "home", "home"], ["Back", "Back to previous view", "arrow-left", "back"], ["Forward", "Forward to next view", "arrow-right", "forward"], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "arrows", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis, CTRL fixes aspect", "square-o", "zoom"], ["Download", "Download plot", "floppy-o", "save_figure"]]}}, "8b4548286ba441fc9f83cb9e07a73b80": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "4c0616507b574946bd731aff70219b91": {"model_name": "MPLCanvasModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_cursor": "pointer", "_dom_classes": [], "_figure_label": "Figure", "_height": 0, "_image_mode": "full", "_message": "", "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "MPLCanvasModel", "_rubberband_height": 0, "_rubberband_width": 0, "_rubberband_x": 0, "_rubberband_y": 0, "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "MPLCanvasView", "_width": 0, "capture_scroll": false, "footer_visible": true, "header_visible": true, "layout": "IPY_MODEL_8b4548286ba441fc9f83cb9e07a73b80", "resizable": true, "toolbar": "IPY_MODEL_ea0c0655a8b644ea9fe34435bcc030e1", "toolbar_position": "left", "toolbar_visible": true}}, "e70e9b1487ff423da19847ee4d3d88d4": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ea0c0655a8b644ea9fe34435bcc030e1": {"model_name": "ToolbarModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_current_action": "", "_dom_classes": [], "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "ToolbarModel", "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "ToolbarView", "button_style": "", "collapsed": true, "layout": "IPY_MODEL_e70e9b1487ff423da19847ee4d3d88d4", "orientation": "vertical", "toolitems": [["Home", "Reset original view", "home", "home"], ["Back", "Back to previous view", "arrow-left", "back"], ["Forward", "Forward to next view", "arrow-right", "forward"], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "arrows", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis, CTRL fixes aspect", "square-o", "zoom"], ["Download", "Download plot", "floppy-o", "save_figure"]]}}}, "version_major": 2, "version_minor": 0}
-</script>
-
 
     <script type="text/x-thebe-config">
     {
@@ -1499,11 +1345,11 @@ Transcript written on tikz.log.
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../4-BoundaryLayer/BoundaryLayer.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../4-BoundaryLayer/Assignment4.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Boundary Layer. An introduction</p>
+            <p class="prev-next-title">Assignment 4. Growth of Turbulent Boundary Layer</p>
         </div>
     </a>
 </div>

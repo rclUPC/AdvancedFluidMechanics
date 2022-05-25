@@ -58,6 +58,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignment 2. Rheological behaviour of cosmetic creams" href="Assignment2.html" />
+    <link rel="prev" title="Rheology. A brief introduction" href="rheology.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -101,7 +103,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../0-Intro/IntroPython.html">
    Introduction to scientific computation with Python
@@ -130,11 +132,6 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../1-microFlows/MeniscusBetweenPlates.html">
-     Meniscus between plates. Solution
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../1-microFlows/Assignment1.html">
      Assignment 1. Computation of journal bearing
     </a>
@@ -143,13 +140,35 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="rheology.html">
-   Rheology. A very brief Introduction
+   Rheology. A brief introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Viscoelastic fluid in a pipe (Maxwell model)
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Assignment2.html">
+   Assignment 2. Rheological behaviour of cosmetic creams
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../3-Turbulence/turbulence.html">
    Turbulent flows. Statistical description and characteristic scales
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Turbulence/ExperimentalMeasurements.html">
+     Statistical process of experimental measurements
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../4-BoundaryLayer/BoundaryLayer.html">
@@ -244,6 +263,19 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -256,6 +288,19 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -267,30 +312,33 @@ const thebe_selector_output = ".output, .cell_output"
 <p>We are going to consider the problem of transient flow of viscoelastic flow in a pipe.</p>
 <p>The transient equation for laminar flow, with velocity only in radial equation is</p>
 <div class="math notranslate nohighlight">
-\[ \rho \frac{\partial u}{\partial t} = P + \frac{1}{r}\frac{\partial r\tau}{\partial r} \]</div>
+\[ \rho \frac{\partial u}{\partial t} = P + \frac{1}{r}\frac{\partial r\tau}{\partial r} \tag{1}\]</div>
 <p>where we denote <span class="math notranslate nohighlight">\(P = -\frac{\partial p}{\partial z}\)</span>, where <span class="math notranslate nohighlight">\(z\)</span> is the axis of the pipe.</p>
 <p>For a <strong>Newtonian flow</strong>, stress tensor is computed with</p>
 <div class="math notranslate nohighlight">
-\[ \tau = \eta \frac{\partial u}{\partial r}\]</div>
-<p>and the solution is the well known <a class="reference external" href="https://en.wikipedia.org/wiki/Hagen%E2%80%93Poiseuille_equation">Hagen-Poiseuille flow</a>. However, if a <strong>viscoelastic fluid</strong> is considered, the stress is computed with</p>
+\[ \tau = \eta \frac{\partial u}{\partial r} \tag{2}\]</div>
+<p>and the solution is the well known <a class="reference external" href="https://en.wikipedia.org/wiki/Hagen%E2%80%93Poiseuille_equation">Hagen-Poiseuille flow</a>. However, if a <strong>viscoelastic fluid</strong> is considered, with the <em>Maxwell model</em> the stress is computed with</p>
 <div class="math notranslate nohighlight">
-\[ \tau + \lambda \frac{\partial \tau}{\partial t} = \eta \frac{\partial u}{\partial r} \]</div>
+\[ \tau + \lambda \frac{\partial \tau}{\partial t} = \eta \frac{\partial u}{\partial r} \tag{3}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the relaxation time.</p>
 <p>We can write this equations with dimensionless variables, by defining</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f6b276cf-bd80-4f62-a979-962d08324840">
-<span class="eqno">()<a class="headerlink" href="#equation-f6b276cf-bd80-4f62-a979-962d08324840" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
-r^* &amp;=&amp; \frac{r}{R} \\
-t^* &amp;=&amp; \frac{\eta}{\rho R^2}t \\
-u^* &amp;=&amp; \frac{4\eta}{R^2P}u \\
-\tau^* &amp;=&amp; \frac{4}{RP}\tau \\
-\xi &amp;=&amp; \frac{\eta}{\rho R^2}\lambda
-\end{eqnarray}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+r^* = \frac{r}{R} \\
+t^* = \frac{\eta}{\rho R^2}t \\
+u^* = \frac{4\eta}{R^2P}u \\
+\tau^* = \frac{4}{RP}\tau \\
+\xi = \frac{\eta}{\rho R^2}\lambda
+\end{split}\]</div>
 <p>With these variables, the dimensionless equations are (we drop the “*” for the sake of simplicity):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7b716712-267f-4b8d-99c8-279012e1ff37">
-<span class="eqno">()<a class="headerlink" href="#equation-7b716712-267f-4b8d-99c8-279012e1ff37" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
-\frac{\partial u}{\partial t} &amp;=&amp; 4 + \frac{\partial \tau}{\partial r} + \frac{\tau}{r} \\
-\tau + \xi\frac{\partial \tau}{\partial t} &amp;=&amp; \frac{\partial u}{\partial r}
-\end{eqnarray}\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial u}{\partial t} = 4 + \frac{\partial \tau}{\partial r} + \frac{\tau}{r} \tag{4}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\tau + \xi\frac{\partial \tau}{\partial t} = \frac{\partial u}{\partial r} \tag{5}
+\]</div>
 <p>The boundary conditions are:</p>
 <div class="math notranslate nohighlight">
 \[ u(r=1) = 0 \;\forall t \]</div>
@@ -300,22 +348,28 @@ u^* &amp;=&amp; \frac{4\eta}{R^2P}u \\
 <div class="math notranslate nohighlight">
 \[ u(r) = \tau(r) = 0 \;\text{for}\,t=0\]</div>
 <p>This is a system of PDE that cannot be solved analytically (at least, not easily).</p>
-<p>The more easier method is to use the <a class="reference external" href="https://en.wikipedia.org/wiki/Finite_difference_method">Finite Difference Method</a> (FD) Method</p>
+<p>The easiest (for me, at least…) method is to use the <a class="reference external" href="https://en.wikipedia.org/wiki/Finite_difference_method">Finite Difference Method</a> (FD) Method</p>
 <p>Translating the previous equations to FD language, with explicit scheme, with central difference in space and forward in time, we get</p>
-<div class="amsmath math notranslate nohighlight" id="equation-10c3e905-43e6-4808-aa77-f88f44ecced9">
-<span class="eqno">()<a class="headerlink" href="#equation-10c3e905-43e6-4808-aa77-f88f44ecced9" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
-\frac{u_i^{n+1} - u_i^n}{\Delta t} &amp;=&amp; 4 + \frac{\tau_{i+1}^n - \tau_{i-1}^n}{2\Delta r} + \frac{\tau_i^n}{r_i} \\
-\tau_i^n + \xi\frac{\tau_i^{n+1} - \tau_i^n}{\Delta t} &amp;=&amp; \frac{u_{i+1}^n-u_{i-1}^n}{2\Delta r}
-\end{eqnarray}\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{u_i^{n+1} - u_i^n}{\Delta t} = 4 + \frac{\tau_{i+1}^n - \tau_{i-1}^n}{2\Delta r} + \frac{\tau_i^n}{r_i} \tag{6}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\tau_i^n + \xi\frac{\tau_i^{n+1} - \tau_i^n}{\Delta t} = \frac{u_{i+1}^n-u_{i-1}^n}{2\Delta r} \tag{7}
+\]</div>
 <p>and, in terms of previous time step,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aa947953-d090-432d-9c44-51b926996a19">
-<span class="eqno">()<a class="headerlink" href="#equation-aa947953-d090-432d-9c44-51b926996a19" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
-u_i^{n+1} &amp;=&amp; u_i^n + \Delta t\left( 4 + \frac{\tau_{i+1}^n - \tau_{i-1}^n}{2\Delta r} + \frac{\tau_i^n}{r_i} \right) \\
-\tau_i^{n+1} &amp;=&amp; \tau_i^n + \frac{\Delta t}{\xi}\left(\frac{u_{i+1}^n-u_{i-1}^n}{2\Delta r} - \tau_i^n  \right) 
-\end{eqnarray}\]</div>
+<div class="math notranslate nohighlight">
+\[
+u_i^{n+1} = u_i^n + \Delta t\left( 4 + \frac{\tau_{i+1}^n - \tau_{i-1}^n}{2\Delta r} + \frac{\tau_i^n}{r_i} \right) \tag{8}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\tau_i^{n+1} = \tau_i^n + \frac{\Delta t}{\xi}\left(\frac{u_{i+1}^n-u_{i-1}^n}{2\Delta r} - \tau_i^n  \right) \tag{9}
+\]</div>
 <p>For Newtonian:</p>
 <div class="math notranslate nohighlight">
-\[ \tau_i^{n+1} = \frac{u_{i+1}^n - u_{i-1}^n}{2\Delta r} \]</div>
+\[ \tau_i^{n+1} = \frac{u_{i+1}^n - u_{i-1}^n}{2\Delta r} \tag{10}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">uNew</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">tau</span><span class="p">,</span><span class="n">tauS</span><span class="p">,</span><span class="n">tauN</span><span class="p">,</span><span class="n">r</span><span class="p">):</span>
@@ -345,7 +399,7 @@ u_i^{n+1} &amp;=&amp; u_i^n + \Delta t\left( 4 + \frac{\tau_{i+1}^n - \tau_{i-1}
 <span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.001</span> <span class="c1"># parameter for stability</span>
 <span class="n">deltat</span> <span class="o">=</span> <span class="n">sigma</span><span class="o">*</span><span class="n">deltar</span>
 <span class="n">T</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#dimensionless</span>
-<span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">(</span><span class="n">T</span><span class="o">/</span><span class="n">deltat</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">K</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">T</span><span class="o">/</span><span class="n">deltat</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
@@ -393,8 +447,12 @@ u_i^{n+1} &amp;=&amp; u_i^n + \Delta t\left( 4 + \frac{\tau_{i+1}^n - \tau_{i-1}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/FDMViscoelastic_9_0.png" src="../_images/FDMViscoelastic_9_0.png" />
+<img alt="../_images/FDMViscoelastic_6_0.png" src="../_images/FDMViscoelastic_6_0.png" />
 </div>
+</div>
+<div class="section" id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<p>Change the Maxwell model by the Voigth-Kelvin model and discuss the result</p>
 </div>
 </div>
 
@@ -422,7 +480,21 @@ u_i^{n+1} &amp;=&amp; u_i^n + \Delta t\left( 4 + \frac{\tau_{i+1}^n - \tau_{i-1}
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="rheology.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Rheology. A brief introduction</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Assignment2.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assignment 2. Rheological behaviour of cosmetic creams</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
