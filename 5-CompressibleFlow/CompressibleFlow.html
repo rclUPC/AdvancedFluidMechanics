@@ -53,9 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"Ma": "\\mathrm{Ma}"}}, "tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Assignment 5. A function to compute the flow after a deflection angle" href="Assignment5.html" />
@@ -192,15 +190,22 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active">
+ <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
    Compressible Flow. An introduction
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Assignment5.html">
-   Assignment 5. A function to compute the flow after a deflection angle
-  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Assignment5.html">
+     Assignment 5. A function to compute the flow after a deflection angle
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -606,7 +611,7 @@ T_0 = T + \frac{u^2}{2 c_p} \tag{11}
 <p>That can be translated to dimensionless way</p>
 <div class="math notranslate nohighlight">
 \[
-\boxed{\frac{T_0}{T} = 1 + \frac{\gamma-1}{2} \Ma^2} \tag{12}
+\boxed{\frac{T_0}{T} = 1 + \frac{\gamma-1}{2} \textrm{Ma}^2} \tag{12}
 \]</div>
 <p>We can now define the function for the computation of total temperature - static temperature ratio.</p>
 <div class="cell docutils container">
@@ -640,11 +645,11 @@ T_0 = T + \frac{u^2}{2 c_p} \tag{11}
 <p>In a similar way, total pressure and density are defined as</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{p_0}{p}  =  \left( \frac{T_0}{T} \right)^\frac{\gamma}{\gamma-1} = \left( 1 + \frac{\gamma - 1}{2}\Ma^2 \right)^\frac{\gamma}{\gamma-1} \tag{12}
+\frac{p_0}{p}  =  \left( \frac{T_0}{T} \right)^\frac{\gamma}{\gamma-1} = \left( 1 + \frac{\gamma - 1}{2}\textrm{Ma}^2 \right)^\frac{\gamma}{\gamma-1} \tag{12}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\frac{\rho_0}{\rho}  =  \left( \frac{T_0}{T} \right)^\frac{1}{\gamma-1} = \left( 1 + \frac{\gamma - 1}{2}\Ma^2 \right)^\frac{1}{\gamma-1} \tag{13}
+\frac{\rho_0}{\rho}  =  \left( \frac{T_0}{T} \right)^\frac{1}{\gamma-1} = \left( 1 + \frac{\gamma - 1}{2}\textrm{Ma}^2 \right)^\frac{1}{\gamma-1} \tag{13}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -754,15 +759,15 @@ c^{*}(=u^{*})=c_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{1}{2}} \tag{17}
 \[
 \text{Ma}^* = \frac{u}{c^*} \tag{18}
 \]</div>
-<p>Note that, despite being defined for sonic conditions, <span class="math notranslate nohighlight">\(\Ma^*\)</span> does not have to be 1. The relationship between <span class="math notranslate nohighlight">\(\Ma\)</span> and <span class="math notranslate nohighlight">\(\Ma^*\)</span> is</p>
+<p>Note that, despite being defined for sonic conditions, <span class="math notranslate nohighlight">\(\textrm{Ma}^*\)</span> does not have to be 1. The relationship between <span class="math notranslate nohighlight">\(\textrm{Ma}\)</span> and <span class="math notranslate nohighlight">\(\textrm{Ma}^*\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[
-{\Ma^*}^2 = \frac{\gamma +1}{\frac{2}{\Ma^2}+\gamma-1} \tag{19}
+{\textrm{Ma}^*}^2 = \frac{\gamma +1}{\frac{2}{\textrm{Ma}^2}+\gamma-1} \tag{19}
 \]</div>
 </div>
 <div class="section" id="id1">
 <h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>Deduce this expression from energy balance between any point with a Mach value <span class="math notranslate nohighlight">\(\Ma\)</span> and the point with sonic conditions.</p>
+<p>Deduce this expression from energy balance between any point with a Mach value <span class="math notranslate nohighlight">\(\textrm{Ma}\)</span> and the point with sonic conditions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MaStar</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
@@ -772,11 +777,11 @@ c^{*}(=u^{*})=c_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{1}{2}} \tag{17}
 </div>
 </div>
 </div>
-<p><span class="math notranslate nohighlight">\({\Ma^*}^2\)</span> tends to <span class="math notranslate nohighlight">\(\frac{\gamma+1}{\gamma -1} (=6 \,\text{for air)}\)</span> when <span class="math notranslate nohighlight">\(\Ma \rightarrow \infty\)</span>.</p>
+<p><span class="math notranslate nohighlight">\({\textrm{Ma}^*}^2\)</span> tends to <span class="math notranslate nohighlight">\(\frac{\gamma+1}{\gamma -1} (=6 \,\text{for air)}\)</span> when <span class="math notranslate nohighlight">\(\textrm{Ma} \rightarrow \infty\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
-<span class="n">Ma_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ma_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$Ma$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$</span><span class="si">{Ma}</span><span class="s1">^*$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">,</span><span class="n">MaStar</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">));</span>
@@ -784,22 +789,21 @@ c^{*}(=u^{*})=c_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{1}{2}} \tag{17}
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "fcc4b033d88b402789e6de4f9ba93034"}
-</script></div>
+<img alt="../_images/CompressibleFlow_23_0.png" src="../_images/CompressibleFlow_23_0.png" />
+</div>
 </div>
 <p>And, also,</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\Ma^* = 1\)</span> when  <span class="math notranslate nohighlight">\(\Ma = 1\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\Ma^* &gt; 1\)</span> when  <span class="math notranslate nohighlight">\(\Ma &gt; 1\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\Ma^* &lt; 1\)</span> when  <span class="math notranslate nohighlight">\(\Ma &lt; 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\textrm{Ma}^* = 1\)</span> when  <span class="math notranslate nohighlight">\(\textrm{Ma} = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\textrm{Ma}^* &gt; 1\)</span> when  <span class="math notranslate nohighlight">\(\textrm{Ma} &gt; 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\textrm{Ma}^* &lt; 1\)</span> when  <span class="math notranslate nohighlight">\(\textrm{Ma} &lt; 1\)</span></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
-<span class="n">Ma_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$Ma$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$</span><span class="si">{Ma}</span><span class="s1">^*$&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ma_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{Ma}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{Ma}</span><span class="s1">^*$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">,</span><span class="n">MaStar</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">));</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">);</span>
@@ -807,9 +811,8 @@ c^{*}(=u^{*})=c_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{1}{2}} \tag{17}
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "450c8bcf678d4beaa7666c8c95347763"}
-</script></div>
+<img alt="../_images/CompressibleFlow_25_0.png" src="../_images/CompressibleFlow_25_0.png" />
+</div>
 </div>
 <p>Ratios between critical and total magnitudes are only function of gamma. For air at standard conditions, they are</p>
 <div class="cell docutils container">
@@ -817,16 +820,19 @@ c^{*}(=u^{*})=c_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{1}{2}} \tag{17}
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Tstar_T0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">T0overT</span><span class="p">(</span><span class="n">Ma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">pstar_p0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">p0overp</span><span class="p">(</span><span class="n">Ma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">rhostar_rho0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">rho0overrho</span><span class="p">(</span><span class="n">Ma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">Latex</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$$\frac{{T^*}}{{T_0}} = </span><span class="si">{:.5g}</span><span class="s1"> $$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Tstar_T0</span><span class="p">)</span>
-                 <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;$$\frac{{p^*}}{{p_0}} = </span><span class="si">{:.5g}</span><span class="s1"> $$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pstar_p0</span><span class="p">)</span>
-                 <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;$$\frac{{\rho^*}}{{\rho_0}} = </span><span class="si">{:.5g}</span><span class="s1"> $$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rhostar_rho0</span><span class="p">)</span>
-                <span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Latex</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$$\frac{{T^*}}{{T_0}} = </span><span class="si">{:.5g}</span><span class="s1"> $$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Tstar_T0</span><span class="p">)))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Latex</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$$\frac{{p^*}}{{p_0}} = </span><span class="si">{:.5g}</span><span class="s1"> $$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pstar_p0</span><span class="p">)))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Latex</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$$\frac{{\rho^*}}{{\rho_0}} = </span><span class="si">{:.5g}</span><span class="s1"> $$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rhostar_rho0</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\frac{T^*}{T_0} = 0.83333 $$$$\frac{p^*}{p_0} = 0.52828 $$$$\frac{\rho^*}{\rho_0} = 0.63394 \]</div>
+\[\frac{T^*}{T_0} = 0.83333 \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\frac{p^*}{p_0} = 0.52828 \]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\frac{\rho^*}{\rho_0} = 0.63394 \]</div>
 </div>
 </div>
 <p>Going back to Equation (10) for continuity, combining with steady Euler equation</p>
@@ -837,18 +843,20 @@ u\frac{\text d u}{\text d x} + \frac{1}{\rho}\frac{\text d p}{\text d x} = 0 \ta
 <p>and fluid compressibility <span class="math notranslate nohighlight">\(\text d p = c^2 \text d \rho\)</span>, leads to</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{\text d u}{u}=-\frac{\text d p}{\rho u^{2}}=\frac{1}{\Ma^{2}-1}\frac{\text d A}{A} \tag{21}
+\frac{\text d u}{u}=-\frac{\text d p}{\rho u^{2}}=\frac{1}{\textrm{Ma}^{2}-1}\frac{\text d A}{A} \tag{21}
 \]</div>
-<p>and that shows that the behavior of the flow in a nozzle depends on the value of <span class="math notranslate nohighlight">\(\Ma\)</span></p>
+<p>and that shows that the behavior of the flow in a nozzle depends on the value of <span class="math notranslate nohighlight">\(\textrm{Ma}\)</span></p>
 <p><img alt="Image" src="../_images/injector_diffuser.png" /></p>
-<p>Under critical or sonic conditions, the mass flow remains the same
-$<span class="math notranslate nohighlight">\(
+<p>Under critical or sonic conditions, the mass flow remains the same</p>
+<div class="math notranslate nohighlight">
+\[
 \rho^{*}u^{*}A^{*}=\rho uA=\dot{m}\,\Rightarrow\frac{A}{A^{*}}=\frac{\rho^{*}u^{*}}{\rho u}, \tag{22}
-\)</span>$</p>
-<p>and this leads to an expression for the relationship between the area of a duct and the critical area as a function of <span class="math notranslate nohighlight">\(\Ma\)</span>
-$<span class="math notranslate nohighlight">\(
-\boxed{\frac{A}{A^{*}}=\frac{1}{\Ma}\left[\frac{2+(\gamma-1)\Ma^{2}}{\gamma+1}\right]^{\frac{1}{2}\frac{(\gamma+1)}{(\gamma-1)}}} \tag{23}
-\)</span>$</p>
+\]</div>
+<p>and this leads to an expression for the relationship between the area of a duct and the critical area as a function of <span class="math notranslate nohighlight">\(\textrm{Ma}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{A}{A^{*}}=\frac{1}{\textrm{Ma}}\left[\frac{2+(\gamma-1)\textrm{Ma}^{2}}{\gamma+1}\right]^{\frac{1}{2}\frac{(\gamma+1)}{(\gamma-1)}}} \tag{23}
+\]</div>
 <p>It is useful to have a function for this operation (and the reverse)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -878,9 +886,9 @@ $<span class="math notranslate nohighlight">\(
 <p>Let’s plot this function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
-<span class="n">Ma_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">num</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ma_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">num</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
 <span class="n">A_Astar_plot</span><span class="o">=</span><span class="n">A_Astar</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">,</span><span class="n">A_Astar_plot</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">);</span>
@@ -891,9 +899,8 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "775d5bd8ebb94c6fb9c030c4a84e6905"}
-</script></div>
+<img alt="../_images/CompressibleFlow_31_0.png" src="../_images/CompressibleFlow_31_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -930,18 +937,21 @@ $<span class="math notranslate nohighlight">\(
 </ul>
 <p><strong>Flow rate <span class="math notranslate nohighlight">\(\dot m\)</span> remains unchanged from <em>b</em> on</strong></p>
 <p>Naming <span class="math notranslate nohighlight">\(1\)</span> conditions upstream from the shock wave and <span class="math notranslate nohighlight">\(2\)</span> downstream (but just in the shock wave position so that surface section <span class="math notranslate nohighlight">\(A\)</span> are the same), equations that govern normal shock wave behavior are:</p>
-<p>Continuity:
-$<span class="math notranslate nohighlight">\(
+<p>Continuity:</p>
+<div class="math notranslate nohighlight">
+\[
 \rho_1 u_1  =  \rho_2 u_2 \tag{24}
-\)</span>$</p>
-<p>Momentum:
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p>Momentum:</p>
+<div class="math notranslate nohighlight">
+\[
 p_1 + \rho_1 u_1^2  =  p_2 + \rho_2 u_2^2 \tag{25}
-\)</span>$</p>
-<p>Energy:
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p>Energy:</p>
+<div class="math notranslate nohighlight">
+\[
 h_1 + \frac{1}{2}u_1^2  = h_2 + \frac{1}{2} u_2^2 \tag{26}
-\)</span>$</p>
+\]</div>
 <p>Note that, unlike energy, entropy is not conserved.</p>
 <p>Also, ideal gas relationships hold:</p>
 <div class="math notranslate nohighlight">
@@ -958,15 +968,15 @@ u_1 u_2 = {c^*}^2 \tag{27}
 <p>that can be expressed in dimensionless way as</p>
 <div class="math notranslate nohighlight">
 \[
-\Ma^*_1 \Ma^*_2 = 1 \tag{28}
+\textrm{Ma}^*_1 \textrm{Ma}^*_2 = 1 \tag{28}
 \]</div>
-<p>that implies that if in 1 flow is supersonic and <span class="math notranslate nohighlight">\(\Ma^*_1 &gt; 1\)</span>, in 2 it <em>must</em> be subsonic, <span class="math notranslate nohighlight">\(\Ma^*_2 &lt; 1\)</span></p>
+<p>that implies that if in 1 flow is supersonic and <span class="math notranslate nohighlight">\(\textrm{Ma}^*_1 &gt; 1\)</span>, in 2 it <em>must</em> be subsonic, <span class="math notranslate nohighlight">\(\textrm{Ma}^*_2 &lt; 1\)</span></p>
 <p>By substitution of (19) we get the important relationship between Mach numbers before and after the normal shock wave:</p>
 <div class="math notranslate nohighlight">
 \[
-\Ma_2^2 = \frac{1+\frac{\gamma -1}{2}\Ma_1^2}{\gamma \Ma_1^2-\frac{\gamma-1}{2}} \tag{29}
+\textrm{Ma}_2^2 = \frac{1+\frac{\gamma -1}{2}\textrm{Ma}_1^2}{\gamma \textrm{Ma}_1^2-\frac{\gamma-1}{2}} \tag{29}
 \]</div>
-<p>and the reverse, which is exactly the same (obvious from dimensionless form of Prandtl equation (13)). An unique function serves to compute <span class="math notranslate nohighlight">\(\Ma_2\)</span> from <span class="math notranslate nohighlight">\(\Ma_1\)</span> or the reverse. Note that neither value <span class="math notranslate nohighlight">\(\Ma_1\)</span> and <span class="math notranslate nohighlight">\(\Ma_2\)</span> can be lower than <span class="math notranslate nohighlight">\(\sqrt{\frac{\gamma - 1}{2\gamma}} ( \approx 0.378 \; \text{for air})\)</span>. Nevertheless, keep in mind that it only has physical sense for <span class="math notranslate nohighlight">\(\Ma_1 &gt; 1\)</span></p>
+<p>and the reverse, which is exactly the same (obvious from dimensionless form of Prandtl equation (13)). An unique function serves to compute <span class="math notranslate nohighlight">\(\textrm{Ma}_2\)</span> from <span class="math notranslate nohighlight">\(\textrm{Ma}_1\)</span> or the reverse. Note that neither value <span class="math notranslate nohighlight">\(\textrm{Ma}_1\)</span> and <span class="math notranslate nohighlight">\(\textrm{Ma}_2\)</span> can be lower than <span class="math notranslate nohighlight">\(\sqrt{\frac{\gamma - 1}{2\gamma}} ( \approx 0.378 \; \text{for air})\)</span>. Nevertheless, keep in mind that it only has physical sense for <span class="math notranslate nohighlight">\(\textrm{Ma}_1 &gt; 1\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MaShockwave</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
@@ -988,25 +998,25 @@ u_1 u_2 = {c^*}^2 \tag{27}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ma1</span> <span class="o">=</span> <span class="mf">1e6</span>
-<span class="n">display</span><span class="p">(</span><span class="n">Latex</span><span class="p">(</span><span class="s1">&#39;$\mathrm{{Ma}}_1 = </span><span class="si">{:.4g}</span><span class="s1"> \; </span><span class="se">\\</span><span class="s1">rightarrow \; \mathrm{{Ma}}_2 = </span><span class="si">{:.4g}</span><span class="s1">$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Ma1</span><span class="p">,</span><span class="n">MaShockwave</span><span class="p">(</span><span class="n">Ma1</span><span class="p">))))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Latex</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">textrm{{Ma}}_1 = </span><span class="si">{:.4g}</span><span class="s1"> </span><span class="se">\\</span><span class="s1">; </span><span class="se">\\</span><span class="s1">rightarrow </span><span class="se">\\</span><span class="s1">; </span><span class="se">\\</span><span class="s1">textrm{{Ma}}_2 = </span><span class="si">{:.4g}</span><span class="s1">$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Ma1</span><span class="p">,</span><span class="n">MaShockwave</span><span class="p">(</span><span class="n">Ma1</span><span class="p">))))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\mathrm{Ma}_1 = 1e+06 \; \rightarrow \; \mathrm{Ma}_2 = 0.378\]</div>
+\[\textrm{Ma}_1 = 1e+06 \; \rightarrow \; \textrm{Ma}_2 = 0.378\]</div>
 </div>
 </div>
 <p>We can plot this relationship.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We do not call MaShockWave to plot the function because we want to avoid the Ma_1 &lt; 1 restriction</span>
-<span class="o">%</span><span class="k">matplotlib</span> widget
 <span class="n">Ma_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
 <span class="n">Ma_plot2</span> <span class="o">=</span> <span class="n">Ma_plot</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">gamma</span> <span class="o">=</span> <span class="mf">1.4</span>
 <span class="n">beta</span> <span class="o">=</span> <span class="p">(</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
 <span class="n">Ma_plot22</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">beta</span><span class="o">*</span><span class="n">Ma_plot2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">gamma</span><span class="o">*</span><span class="n">Ma_plot2</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{Ma}</span><span class="s1">_1$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{Ma}</span><span class="s1">_2$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Ma_plot22</span><span class="p">))</span>
@@ -1016,25 +1026,24 @@ u_1 u_2 = {c^*}^2 \tag{27}
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "73af0f3db5b94654b4a5e6d9bd8e3a63"}
-</script></div>
+<img alt="../_images/CompressibleFlow_38_0.png" src="../_images/CompressibleFlow_38_0.png" />
 </div>
-<p><span class="math notranslate nohighlight">\(\Ma_1\)</span> (and consequently <span class="math notranslate nohighlight">\(\Ma^*_1\)</span>) is an important parameter in normal shock wave. Its value determines, for example, the ratio between densities and velocities</p>
+</div>
+<p><span class="math notranslate nohighlight">\(\textrm{Ma}_1\)</span> (and consequently <span class="math notranslate nohighlight">\(\textrm{Ma}^*_1\)</span>) is an important parameter in normal shock wave. Its value determines, for example, the ratio between densities and velocities</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{\rho_2}{\rho_1}=\frac{u_1}{u_2} = {\Ma^*_1}^2 = \frac{(\gamma + 1){\Ma_1}^2}{2 + (\gamma - 1){\Ma_1}^2 } \tag{30}
+\frac{\rho_2}{\rho_1}=\frac{u_1}{u_2} = {\textrm{Ma}^*_1}^2 = \frac{(\gamma + 1){\textrm{Ma}_1}^2}{2 + (\gamma - 1){\textrm{Ma}_1}^2 } \tag{30}
 \]</div>
 <p>The ratio between pressures can be derived from momentum balance, giving</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{p_2}{p_1}= 1 + \frac{2 \gamma}{\gamma+1}\left(\Ma_1^2 - 1 \right) \tag{31}
+\frac{p_2}{p_1}= 1 + \frac{2 \gamma}{\gamma+1}\left(\textrm{Ma}_1^2 - 1 \right) \tag{31}
 \]</div>
 <p>And the temperatures ratios from the two previous relationships with perfect gas equation,</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{T_2}{T_1} = \left[1 + \frac{2 \gamma}{\gamma+1}\left(\Ma_1^2 - 1 \right)\right]
-                \left[\frac{2 + (\gamma - 1){\Ma_1}^2 }{(\gamma + 1){\Ma_1}^2}\right] \tag{32}
+\frac{T_2}{T_1} = \left[1 + \frac{2 \gamma}{\gamma+1}\left(\textrm{Ma}_1^2 - 1 \right)\right]
+                \left[\frac{2 + (\gamma - 1){\textrm{Ma}_1}^2 }{(\gamma + 1){\textrm{Ma}_1}^2}\right] \tag{32}
 \]</div>
 <p>We define all this expressions in python functions</p>
 <div class="cell docutils container">
@@ -1077,20 +1086,25 @@ u_1 u_2 = {c^*}^2 \tag{27}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ma1</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="n">display</span><span class="p">(</span><span class="n">Latex</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm{{Ma}}_1 = </span><span class="si">{:.4g}</span><span class="s1">$:&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Ma1</span><span class="p">)</span> 
-                 <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;$$\frac{{\rho_2}}{{\rho_1}} = </span><span class="si">{:.4g}</span><span class="s1">$$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rho2_rho1</span><span class="p">(</span><span class="n">Ma1</span><span class="p">))</span>
-                 <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;$$\frac{{u_2}}{{u_1}} = </span><span class="si">{:.4g}</span><span class="s1">$$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u2_u1</span><span class="p">(</span><span class="n">Ma1</span><span class="p">))</span>
-                 <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;$$\frac{{p_2}}{{p_1}} = </span><span class="si">{:.4g}</span><span class="s1">$$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p2_p1</span><span class="p">(</span><span class="n">Ma1</span><span class="p">))</span>
-                 <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;$$\frac{{T_2}}{{T_1}} = </span><span class="si">{:.4g}</span><span class="s1">$$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">T2_T1</span><span class="p">(</span><span class="n">Ma1</span><span class="p">))</span>
-                <span class="p">))</span>
-                 
-                 
+<span class="n">display</span><span class="p">(</span><span class="n">Latex</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$$\textrm{{Ma}}_1 = </span><span class="si">{:.4g}</span><span class="s1">:$$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Ma1</span><span class="p">)))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Latex</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$$\qquad \frac{{\rho_2}}{{\rho_1}} = </span><span class="si">{:.4g}</span><span class="s1">$$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rho2_rho1</span><span class="p">(</span><span class="n">Ma1</span><span class="p">))))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Latex</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$$\qquad \frac{{u_2}}{{u_1}} = </span><span class="si">{:.4g}</span><span class="s1">$$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u2_u1</span><span class="p">(</span><span class="n">Ma1</span><span class="p">))))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Latex</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$$\qquad \frac{{p_2}}{{p_1}} = </span><span class="si">{:.4g}</span><span class="s1">$$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p2_p1</span><span class="p">(</span><span class="n">Ma1</span><span class="p">))))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Latex</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$$\qquad \frac{{T_2}}{{T_1}} = </span><span class="si">{:.4g}</span><span class="s1">$$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">T2_T1</span><span class="p">(</span><span class="n">Ma1</span><span class="p">))))</span>          
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\mathrm{Ma}_1 = 6$:$$\frac{\rho_2}{\rho_1} = 5.268$$$$\frac{u_2}{u_1} = 0.1898$$$$\frac{p_2}{p_1} = 41.83$$$$\frac{T_2}{T_1} = 7.941$\]</div>
+\[\textrm{Ma}_1 = 6:\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\qquad \frac{\rho_2}{\rho_1} = 5.268\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\qquad \frac{u_2}{u_1} = 0.1898\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\qquad \frac{p_2}{p_1} = 41.83\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\qquad \frac{T_2}{T_1} = 7.941\]</div>
 </div>
 </div>
 <p>The increment of entropy is computed from second law of thermodynamics</p>
@@ -1137,9 +1151,8 @@ s_2 - s_1 = c_p \ln{\frac{T2}{T1}} - r \ln{\frac{p_2}{p_1}} \tag{33}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
-<span class="n">Ma_plot</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span><span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ma_plot</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Ratio of properties across a normal shock wave&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{Ma}</span><span class="s1">_1$&#39;</span><span class="p">)</span>
@@ -1164,9 +1177,8 @@ s_2 - s_1 = c_p \ln{\frac{T2}{T1}} - r \ln{\frac{p_2}{p_1}} \tag{33}
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "90001b0c3e274d0db9bc2fa97f7e9961"}
-</script></div>
+<img alt="../_images/CompressibleFlow_46_0.png" src="../_images/CompressibleFlow_46_0.png" />
+</div>
 </div>
 <div class="section" id="id2">
 <h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
@@ -1189,46 +1201,46 @@ s_2 - s_1 = c_p \ln{\frac{T2}{T1}} - r \ln{\frac{p_2}{p_1}} \tag{33}
 {u_t}_1 = {u_t}_2 \tag{36}
 \]</div>
 <ul class="simple">
-<li><p>Balance equations are</p>
-<ul>
-<li><p>Continuity:
-$<span class="math notranslate nohighlight">\(
+<li><p>Balance equations are</p></li>
+</ul>
+<p>Continuity:</p>
+<div class="math notranslate nohighlight">
+\[
 \rho_1 {u_n}_1  =  \rho_2 {u_n}_2 \tag{37}
-\)</span>$</p></li>
-<li><p>Momentum:
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p>Momentum:</p>
+<div class="math notranslate nohighlight">
+\[
 p_1 + \rho_1 {u_n}_1^2  =  p_2 + \rho_2 {u_n}_2^2 \tag{38}
-\)</span>$</p></li>
-<li><p>Energy:
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p>Energy:</p>
+<div class="math notranslate nohighlight">
+\[
 h_1 + \frac{1}{2}{u_n}_1^2  =  h_2 + \frac{1}{2} {u_n}_2^2 \tag{39}
-\)</span>$</p></li>
-</ul>
-</li>
-</ul>
+\]</div>
 <p>i.e., exactly the same expressions for normal shock wave applied to only the normal velocity. That means that we van use the above functions to make the computations for oblique shocks just keeping in mind that we are computing only normal component. That also implies that results are referred uniquely to normal Mach number</p>
 <div class="math notranslate nohighlight">
 \[
-\Ma_n = \Ma\sin{\beta} \tag{40}
+\textrm{Ma}_n = \textrm{Ma}\sin{\beta} \tag{40}
 \]</div>
 <p>From the picture above, is easily shown that</p>
 <div class="math notranslate nohighlight">
 \[
-\Ma_2 = \frac{{\Ma_n}_2}{\sin{(\beta-\theta)}} \tag{41}
+\textrm{Ma}_2 = \frac{{\textrm{Ma}_n}_2}{\sin{(\beta-\theta)}} \tag{41}
 \]</div>
-<p>which will be useful when we will get <span class="math notranslate nohighlight">\({\Ma_n}_2\)</span> from the functions of normal shock.</p>
+<p>which will be useful when we will get <span class="math notranslate nohighlight">\({\textrm{Ma}_n}_2\)</span> from the functions of normal shock.</p>
 <p>To the functions for normal shock wave, we have now to include a new parameter, <span class="math notranslate nohighlight">\(\beta\)</span>.
-Actually, note that normal shock wave is the particular case of oblique shock form <span class="math notranslate nohighlight">\(\beta = \pi/2\)</span>. The deflection angle <span class="math notranslate nohighlight">\(\theta\)</span> is a unique function of <span class="math notranslate nohighlight">\(\Ma_1\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>:</p>
+Actually, note that normal shock wave is the particular case of oblique shock form <span class="math notranslate nohighlight">\(\beta = \pi/2\)</span>. The deflection angle <span class="math notranslate nohighlight">\(\theta\)</span> is a unique function of <span class="math notranslate nohighlight">\(\textrm{Ma}_1\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{\tan{(\beta - \theta)}}{\tan{\beta}} = \frac{u_{n2}}{u_{n1}} = \frac{2+(\gamma-1)\Ma_1^2\sin^2\beta}{(\gamma+1)\Ma_1^2\sin^2\beta} \tag{42}
+\frac{\tan{(\beta - \theta)}}{\tan{\beta}} = \frac{u_{n2}}{u_{n1}} = \frac{2+(\gamma-1)\textrm{Ma}_1^2\sin^2\beta}{(\gamma+1)\textrm{Ma}_1^2\sin^2\beta} \tag{42}
 \]</div>
 <p>that leads to</p>
 <div class="math notranslate nohighlight">
 \[
-\tan \theta = \frac{2}{\tan\beta}\left[\frac{\Ma_1^2\sin^2\beta - 1}{\Ma_1^2(\gamma+\cos2\beta)+2}\right] \tag{43} 
+\tan \theta = \frac{2}{\tan\beta}\left[\frac{\textrm{Ma}_1^2\sin^2\beta - 1}{\textrm{Ma}_1^2(\gamma+\cos2\beta)+2}\right] \tag{43} 
 \]</div>
-<p>known as the <span class="math notranslate nohighlight">\(\theta-\beta-\Ma\)</span> relation. Let’s write it as a python function</p>
+<p>known as the <span class="math notranslate nohighlight">\(\theta-\beta-\textrm{Ma}\)</span> relation. Let’s write it as a python function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ThetaOSW</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">beta</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
@@ -1241,7 +1253,7 @@ Actually, note that normal shock wave is the particular case of oblique shock fo
 </div>
 </div>
 </div>
-<p>This functions has a maximum value for a given value of <span class="math notranslate nohighlight">\(\Ma_1\)</span>. Let’s make a function that determines this maximum value given the incident Mach number</p>
+<p>This functions has a maximum value for a given value of <span class="math notranslate nohighlight">\(\textrm{Ma}_1\)</span>. Let’s make a function that determines this maximum value given the incident Mach number</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MaxThetaOSW</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
@@ -1270,8 +1282,7 @@ Actually, note that normal shock wave is the particular case of oblique shock fo
 <p>and we make a plot for the deflection angle as a function of the inlet Mach number and the shock wave angle.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
-<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">beta_plot_deg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
 <span class="n">beta_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">beta_plot_deg</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Deflection angle $\theta$ as function of $\beta$ and $\mathrm</span><span class="si">{Ma}</span><span class="s1">$&#39;</span><span class="p">)</span>
@@ -1294,73 +1305,63 @@ Actually, note that normal shock wave is the particular case of oblique shock fo
 <span class="n">MaxTheta_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Ma_plot</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
     <span class="n">MaxBeta_plot</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">MaxTheta_plot</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">MaxThetaOSW</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">MaxBeta_plot</span><span class="p">,</span><span class="n">MaxTheta_plot</span><span class="p">,</span><span class="s1">&#39;k--&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">MaxBeta_plot</span><span class="p">,</span><span class="n">MaxTheta_plot</span><span class="p">,</span><span class="s1">&#39;k--&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "a421b9ac44d34ea3ba02e505418723ed"}
-</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa3bcea1c40&gt;]
-</pre></div>
+<img alt="../_images/CompressibleFlow_54_0.png" src="../_images/CompressibleFlow_54_0.png" />
 </div>
 </div>
-</div>
-<p>Note that for given values of <span class="math notranslate nohighlight">\(\Ma_1\)</span> and <span class="math notranslate nohighlight">\(\theta &lt; \theta_\mathrm{max}\)</span> there are two possible values of <span class="math notranslate nohighlight">\(\beta\)</span>. The smaller value is related to a <strong>weak shock wave</strong> whereas the larger value is for a <strong>strong shock wave</strong></p>
+<p>Note that for given values of <span class="math notranslate nohighlight">\(\textrm{Ma}_1\)</span> and <span class="math notranslate nohighlight">\(\theta &lt; \theta_\mathrm{max}\)</span> there are two possible values of <span class="math notranslate nohighlight">\(\beta\)</span>. The smaller value is related to a <strong>weak shock wave</strong> whereas the larger value is for a <strong>strong shock wave</strong></p>
 <div class="section" id="id3">
 <h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>Write a function <code class="docutils literal notranslate"><span class="pre">betaOSW(Ma,theta,gamma=1.4)</span></code> that returns these two values.</p>
 <p>Usually, for typical situations, the weak OSW is the one obtained in the flow, but it will depend mainly on the back pressure. For the strong OSW flow downstream is subsonic. For the weak OSW, it is usually supersonic, except for some conditions.</p>
-<p>If, for a given <span class="math notranslate nohighlight">\(\Ma_1\)</span> the deflection angle is <span class="math notranslate nohighlight">\(\theta &gt; \theta_\mathrm{max}\)</span>, there is no solution for an OSW, the shock wave then detaches and it becomes a normal, or bow, shock wave, like the one in the <a class="reference external" href="#picturesSW">first picture of this notebook</a>.</p>
+<p>If, for a given <span class="math notranslate nohighlight">\(\textrm{Ma}_1\)</span> the deflection angle is <span class="math notranslate nohighlight">\(\theta &gt; \theta_\mathrm{max}\)</span>, there is no solution for an OSW, the shock wave then detaches and it becomes a normal, or bow, shock wave, like the one in the <a class="reference external" href="#picturesSW">first picture of this notebook</a>.</p>
 <p>The value of <span class="math notranslate nohighlight">\(\beta\)</span> obtained for <span class="math notranslate nohighlight">\(\theta=0\)</span> is related to the OSW when the obstacle is very sharp, or just a point. This is called the <em>Mach angle</em> and the OSW is a <em>Mach wave</em>. This angle is the same as in the <a class="reference external" href="#Mach-cone">Mach cone</a>.</p>
 <div class="math notranslate nohighlight">
 \[
-\beta_\mathrm{min} = \mu = \arcsin{\frac{1}{\Ma_1}} \tag{44}
+\beta_\mathrm{min} = \mu = \arcsin{\frac{1}{\textrm{Ma}_1}} \tag{44}
 \]</div>
-<hr class="docutils" />
-<p><strong>Exercise:</strong></p>
-<p>Use the function of previous exercise to compute the shock wave angle angle of a uniform supersonic stream with <span class="math notranslate nohighlight">\(\Ma_1 = 3.0\)</span>, <span class="math notranslate nohighlight">\(p_1 = 1\,\mathrm{atm}\)</span> and
-<span class="math notranslate nohighlight">\(T_1 = 288\,\mathrm{K}\)</span> when it encounters a compression angle with a deflection angle <span class="math notranslate nohighlight">\(\theta = 20^\circ\)</span>. Compute also all the flow characteristics behind the shock wave.</p>
-<p>Analyze the results when <span class="math notranslate nohighlight">\(\theta\)</span> is raised (to <span class="math notranslate nohighlight">\(30^\circ\)</span> for instance) keeping <span class="math notranslate nohighlight">\(\Ma_1\)</span>, and when <span class="math notranslate nohighlight">\(\Ma_1\)</span> is increased (to 5, for instance) keeping the angle <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
 </div>
-<hr class="docutils" />
 <div class="section" id="shock-polar">
 <h3>Shock Polar<a class="headerlink" href="#shock-polar" title="Permalink to this headline">¶</a></h3>
-<p>In a shock polar (see, for example, the section 6.7.3 in the <a class="reference external" href="https://discovery.upc.edu/iii/encore/record/C__Rb1437643?lang=cat">book by Houghton</a> ) the components of dimensionless velocity behind the OSW are plotted in an <a class="reference external" href="https://en.wikipedia.org/wiki/Hodograph">hodograph</a>. The polar angle of the points of the plot for a given <span class="math notranslate nohighlight">\(\Ma_1\)</span> is the deflection angle. Nevertheless, to represent dimensionless velocity in the plot (not the label for the plot) is more convenient to use <span class="math notranslate nohighlight">\(\Ma_2^*\)</span>, since it has a finite value  (see Eq (10)) even for <span class="math notranslate nohighlight">\(\Ma_1 \rightarrow \infty\)</span>.</p>
+<p>In a shock polar (see, for example, the section 6.7.3 in the <a class="reference external" href="https://discovery.upc.edu/iii/encore/record/C__Rb1437643?lang=cat">book by Houghton</a> ) the components of dimensionless velocity behind the OSW are plotted in an <a class="reference external" href="https://en.wikipedia.org/wiki/Hodograph">hodograph</a>. The polar angle of the points of the plot for a given <span class="math notranslate nohighlight">\(\textrm{Ma}_1\)</span> is the deflection angle. Nevertheless, to represent dimensionless velocity in the plot (not the label for the plot) is more convenient to use <span class="math notranslate nohighlight">\(\textrm{Ma}_2^*\)</span>, since it has a finite value  (see Eq (10)) even for <span class="math notranslate nohighlight">\(\textrm{Ma}_1 \rightarrow \infty\)</span>.</p>
 <p>We can plot the shock polar computing velocity components for all the angles <span class="math notranslate nohighlight">\(\theta\)</span> in the range of previous plot, or, also, it can be used the expression (that we are not going to prove)</p>
 <div class="math notranslate nohighlight">
 \[
-{{\Ma_2^*}_y}^2 = \frac{\left(\Ma_1^* - {\Ma_2^*}_x \right)^2\left( {\Ma_2^*}_x \Ma_1^* - 1\right)}
-{\frac{2}{\gamma+1}{\Ma_1^*}^2- \left({\Ma_2^*}_x \Ma_1^* - 1\right)} \tag{45}
+{{\textrm{Ma}_2^*}_y}^2 = \frac{\left(\textrm{Ma}_1^* - {\textrm{Ma}_2^*}_x \right)^2\left( {\textrm{Ma}_2^*}_x \textrm{Ma}_1^* - 1\right)}
+{\frac{2}{\gamma+1}{\textrm{Ma}_1^*}^2- \left({\textrm{Ma}_2^*}_x \textrm{Ma}_1^* - 1\right)} \tag{45}
 \]</div>
 </div>
 </div>
 <div class="section" id="prandtl-meyer-expansion-fan">
 <h2>5. Prandtl-Meyer expansion fan<a class="headerlink" href="#prandtl-meyer-expansion-fan" title="Permalink to this headline">¶</a></h2>
-<p>In the <a class="reference external" href="https://en.wikipedia.org/wiki/Prandtl%E2%80%93Meyer_expansion_fan">Prandtl-Meyer expansion fan</a> the behavior of the flow is just the opposite of with OSW. In this case, Mach number increases, and all temperature, pressure and density decrease. This expansion can be considered isentropic, and it can be interpreted as composed of infinite number of Mach waves, bounded by the angles <span class="math notranslate nohighlight">\(\mu_1 = \arcsin\left({\frac{1}{\Ma_1}}\right)\)</span> and <span class="math notranslate nohighlight">\(\mu_2 = \arcsin\left({\frac{1}{\Ma_2}}\right)\)</span></p>
+<p>In the <a class="reference external" href="https://en.wikipedia.org/wiki/Prandtl%E2%80%93Meyer_expansion_fan">Prandtl-Meyer expansion fan</a> the behavior of the flow is just the opposite of with OSW. In this case, Mach number increases, and all temperature, pressure and density decrease. This expansion can be considered isentropic, and it can be interpreted as composed of infinite number of Mach waves, bounded by the angles <span class="math notranslate nohighlight">\(\mu_1 = \arcsin\left({\frac{1}{\textrm{Ma}_1}}\right)\)</span> and <span class="math notranslate nohighlight">\(\mu_2 = \arcsin\left({\frac{1}{\textrm{Ma}_2}}\right)\)</span></p>
 <p><img alt="Image" src="../_images/PrandtlMeyer.png" /></p>
 <p>The derivation, from purely geometrical basis, with an infinitesimal deviation produced by a Mach wave, leads to</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{u+\mathrm{d}u}{u} = 1 + \frac{\mathrm{d}u}{u} = \frac{\cos \mu}{\cos \mu \cos \mathrm{d}\theta - \sin \mu \sin \mathrm{d}\theta} 
-\approx \frac{1}{1-\tan \mu \mathrm{d}\theta} \approx 1 + \tan \mu \mathrm{d} \theta = 1 + \frac{\mathrm{d} \theta}{\sqrt{\Ma^2-1}} \tag{46}
+\approx \frac{1}{1-\tan \mu \mathrm{d}\theta} \approx 1 + \tan \mu \mathrm{d} \theta = 1 + \frac{\mathrm{d} \theta}{\sqrt{\textrm{Ma}^2-1}} \tag{46}
 \]</div>
 <p>and, from here,</p>
 <div class="math notranslate nohighlight">
 \[
-\mathrm{d} \theta = \sqrt{\Ma^2-1} \frac{\mathrm{d}u}{u} = \frac{\sqrt{\Ma^2-1}}{1+\frac{\gamma-1}{2}\Ma^2}\frac{\mathrm{d}\Ma}{\Ma} \tag{47}
+\mathrm{d} \theta = \sqrt{\textrm{Ma}^2-1} \frac{\mathrm{d}u}{u} = \frac{\sqrt{\textrm{Ma}^2-1}}{1+\frac{\gamma-1}{2}\textrm{Ma}^2}\frac{\mathrm{d}\textrm{Ma}}{\textrm{Ma}} \tag{47}
 \]</div>
 <p>and</p>
 <div class="math notranslate nohighlight">
 \[
-\theta_2 - \theta_1 = \int_{\Ma_1}^{\Ma_2}\frac{\sqrt{\Ma^2-1}}{\Ma\left(1+\frac{\gamma-1}{2}\Ma^2\right)} \mathrm{d}\Ma = 
-\nu\left(\Ma_2\right) - \nu\left(\Ma_1\right) \tag{48}
+\theta_2 - \theta_1 = \int_{\textrm{Ma}_1}^{\textrm{Ma}_2}\frac{\sqrt{\textrm{Ma}^2-1}}{\textrm{Ma}\left(1+\frac{\gamma-1}{2}\textrm{Ma}^2\right)} \mathrm{d}\textrm{Ma} = 
+\nu\left(\textrm{Ma}_2\right) - \nu\left(\textrm{Ma}_1\right) \tag{48}
 \]</div>
 <p>where</p>
 <div class="math notranslate nohighlight">
 \[
-\nu\left(\Ma\right) = \int \frac{\sqrt{\Ma^2-1}}{\Ma\left(1+\frac{\gamma-1}{2}\Ma^2\right)} \mathrm{d}\Ma = 
-\sqrt{\frac{\gamma+1}{\gamma-1}}\arctan \sqrt{\frac{\gamma-1}{\gamma+1}\left(\Ma^2-1\right)} - \arctan \sqrt{\Ma^2-1} \tag{49}
+\nu\left(\textrm{Ma}\right) = \int \frac{\sqrt{\textrm{Ma}^2-1}}{\textrm{Ma}\left(1+\frac{\gamma-1}{2}\textrm{Ma}^2\right)} \mathrm{d}\textrm{Ma} = 
+\sqrt{\frac{\gamma+1}{\gamma-1}}\arctan \sqrt{\frac{\gamma-1}{\gamma+1}\left(\textrm{Ma}^2-1\right)} - \arctan \sqrt{\textrm{Ma}^2-1} \tag{49}
 \]</div>
 <p>is the <a class="reference external" href="https://en.wikipedia.org/wiki/Prandtl%E2%80%93Meyer_function">Prandtl-Meyer function</a></p>
 <div class="cell docutils container">
@@ -1380,7 +1381,7 @@ Actually, note that normal shock wave is the particular case of oblique shock fo
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">Ma_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.001</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
 <span class="n">nu_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">PrandtlMeyer</span><span class="p">(</span><span class="n">Ma_plot</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
@@ -1393,18 +1394,13 @@ Actually, note that normal shock wave is the particular case of oblique shock fo
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "85fe7874ba144995860225a109af6458"}
-</script></div>
+<img alt="../_images/CompressibleFlow_61_0.png" src="../_images/CompressibleFlow_61_0.png" />
 </div>
 </div>
 </div>
-
-
-<script type="application/vnd.jupyter.widget-state+json">
-{"state": {"3daf405f8443486099bbae2689b3382e": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "fcc4b033d88b402789e6de4f9ba93034": {"model_name": "MPLCanvasModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_cursor": "pointer", "_dom_classes": [], "_figure_label": "Figure", "_height": 0, "_image_mode": "full", "_message": "", "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "MPLCanvasModel", "_rubberband_height": 0, "_rubberband_width": 0, "_rubberband_x": 0, "_rubberband_y": 0, "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "MPLCanvasView", "_width": 0, "capture_scroll": false, "footer_visible": true, "header_visible": true, "layout": "IPY_MODEL_3daf405f8443486099bbae2689b3382e", "resizable": true, "toolbar": "IPY_MODEL_6117cac1660a49219a1668066b3299a4", "toolbar_position": "left", "toolbar_visible": true}}, "2aa7c17420d746c4bf3b8ebdc60113ae": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6117cac1660a49219a1668066b3299a4": {"model_name": "ToolbarModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_current_action": "", "_dom_classes": [], "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "ToolbarModel", "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "ToolbarView", "button_style": "", "collapsed": true, "layout": "IPY_MODEL_2aa7c17420d746c4bf3b8ebdc60113ae", "orientation": "vertical", "toolitems": [["Home", "Reset original view", "home", "home"], ["Back", "Back to previous view", "arrow-left", "back"], ["Forward", "Forward to next view", "arrow-right", "forward"], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "arrows", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis, CTRL fixes aspect", "square-o", "zoom"], ["Download", "Download plot", "floppy-o", "save_figure"]]}}, "bddc9b957e0f4ac6be7f17d99a7a8649": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "450c8bcf678d4beaa7666c8c95347763": {"model_name": "MPLCanvasModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_cursor": "pointer", "_dom_classes": [], "_figure_label": "Figure", "_height": 0, "_image_mode": "full", "_message": "", "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "MPLCanvasModel", "_rubberband_height": 0, "_rubberband_width": 0, "_rubberband_x": 0, "_rubberband_y": 0, "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "MPLCanvasView", "_width": 0, "capture_scroll": false, "footer_visible": true, "header_visible": true, "layout": "IPY_MODEL_bddc9b957e0f4ac6be7f17d99a7a8649", "resizable": true, "toolbar": "IPY_MODEL_ecd886beccc949e78edd33a7234283c1", "toolbar_position": "left", "toolbar_visible": true}}, "21ce64298b614bdb9c00be5769373443": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ecd886beccc949e78edd33a7234283c1": {"model_name": "ToolbarModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_current_action": "", "_dom_classes": [], "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "ToolbarModel", "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "ToolbarView", "button_style": "", "collapsed": true, "layout": "IPY_MODEL_21ce64298b614bdb9c00be5769373443", "orientation": "vertical", "toolitems": [["Home", "Reset original view", "home", "home"], ["Back", "Back to previous view", "arrow-left", "back"], ["Forward", "Forward to next view", "arrow-right", "forward"], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "arrows", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis, CTRL fixes aspect", "square-o", "zoom"], ["Download", "Download plot", "floppy-o", "save_figure"]]}}, "7c4cfd0fa09749a7aee9092b001fae0a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "775d5bd8ebb94c6fb9c030c4a84e6905": {"model_name": "MPLCanvasModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_cursor": "pointer", "_dom_classes": [], "_figure_label": "Figure", "_height": 0, "_image_mode": "full", "_message": "", "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "MPLCanvasModel", "_rubberband_height": 0, "_rubberband_width": 0, "_rubberband_x": 0, "_rubberband_y": 0, "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "MPLCanvasView", "_width": 0, "capture_scroll": false, "footer_visible": true, "header_visible": true, "layout": "IPY_MODEL_7c4cfd0fa09749a7aee9092b001fae0a", "resizable": true, "toolbar": "IPY_MODEL_24ff8c299c2a4081801ee1be6465c4ef", "toolbar_position": "left", "toolbar_visible": true}}, "58d6bf50ce9d4a62b07fc92503337690": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "24ff8c299c2a4081801ee1be6465c4ef": {"model_name": "ToolbarModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_current_action": "", "_dom_classes": [], "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "ToolbarModel", "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "ToolbarView", "button_style": "", "collapsed": true, "layout": "IPY_MODEL_58d6bf50ce9d4a62b07fc92503337690", "orientation": "vertical", "toolitems": [["Home", "Reset original view", "home", "home"], ["Back", "Back to previous view", "arrow-left", "back"], ["Forward", "Forward to next view", "arrow-right", "forward"], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "arrows", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis, CTRL fixes aspect", "square-o", "zoom"], ["Download", "Download plot", "floppy-o", "save_figure"]]}}, "ca14d1fa2df74606834043ac84a7bd7a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "73af0f3db5b94654b4a5e6d9bd8e3a63": {"model_name": "MPLCanvasModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_cursor": "pointer", "_dom_classes": [], "_figure_label": "Figure", "_height": 0, "_image_mode": "full", "_message": "", "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "MPLCanvasModel", "_rubberband_height": 0, "_rubberband_width": 0, "_rubberband_x": 0, "_rubberband_y": 0, "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "MPLCanvasView", "_width": 0, "capture_scroll": false, "footer_visible": true, "header_visible": true, "layout": "IPY_MODEL_ca14d1fa2df74606834043ac84a7bd7a", "resizable": true, "toolbar": "IPY_MODEL_35da65f9accc4e94ba67efb48a986213", "toolbar_position": "left", "toolbar_visible": true}}, "1e984bb274394e9f8b7bcd5ae29e597f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "35da65f9accc4e94ba67efb48a986213": {"model_name": "ToolbarModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_current_action": "", "_dom_classes": [], "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "ToolbarModel", "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "ToolbarView", "button_style": "", "collapsed": true, "layout": "IPY_MODEL_1e984bb274394e9f8b7bcd5ae29e597f", "orientation": "vertical", "toolitems": [["Home", "Reset original view", "home", "home"], ["Back", "Back to previous view", "arrow-left", "back"], ["Forward", "Forward to next view", "arrow-right", "forward"], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "arrows", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis, CTRL fixes aspect", "square-o", "zoom"], ["Download", "Download plot", "floppy-o", "save_figure"]]}}, "102e1efa602f488684d71fb622f0ce55": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "90001b0c3e274d0db9bc2fa97f7e9961": {"model_name": "MPLCanvasModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_cursor": "pointer", "_dom_classes": [], "_figure_label": "Figure", "_height": 0, "_image_mode": "full", "_message": "", "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "MPLCanvasModel", "_rubberband_height": 0, "_rubberband_width": 0, "_rubberband_x": 0, "_rubberband_y": 0, "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "MPLCanvasView", "_width": 0, "capture_scroll": false, "footer_visible": true, "header_visible": true, "layout": "IPY_MODEL_102e1efa602f488684d71fb622f0ce55", "resizable": true, "toolbar": "IPY_MODEL_d3d82b241ac1495eaefc46867b258f5b", "toolbar_position": "left", "toolbar_visible": true}}, "f142296331d544b4a2258d2ec07da0ef": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d3d82b241ac1495eaefc46867b258f5b": {"model_name": "ToolbarModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_current_action": "", "_dom_classes": [], "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "ToolbarModel", "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "ToolbarView", "button_style": "", "collapsed": true, "layout": "IPY_MODEL_f142296331d544b4a2258d2ec07da0ef", "orientation": "vertical", "toolitems": [["Home", "Reset original view", "home", "home"], ["Back", "Back to previous view", "arrow-left", "back"], ["Forward", "Forward to next view", "arrow-right", "forward"], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "arrows", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis, CTRL fixes aspect", "square-o", "zoom"], ["Download", "Download plot", "floppy-o", "save_figure"]]}}, "1ba015dac40a4c7b940c70b48a5f9f31": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "a421b9ac44d34ea3ba02e505418723ed": {"model_name": "MPLCanvasModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_cursor": "pointer", "_dom_classes": [], "_figure_label": "Figure", "_height": 0, "_image_mode": "full", "_message": "", "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "MPLCanvasModel", "_rubberband_height": 0, "_rubberband_width": 0, "_rubberband_x": 0, "_rubberband_y": 0, "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "MPLCanvasView", "_width": 0, "capture_scroll": false, "footer_visible": true, "header_visible": true, "layout": "IPY_MODEL_1ba015dac40a4c7b940c70b48a5f9f31", "resizable": true, "toolbar": "IPY_MODEL_8c96e776e073494aadfc30b60fd17b41", "toolbar_position": "left", "toolbar_visible": true}}, "dc3a468e78fe44d087b4301d31c6df06": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "8c96e776e073494aadfc30b60fd17b41": {"model_name": "ToolbarModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_current_action": "", "_dom_classes": [], "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "ToolbarModel", "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "ToolbarView", "button_style": "", "collapsed": true, "layout": "IPY_MODEL_dc3a468e78fe44d087b4301d31c6df06", "orientation": "vertical", "toolitems": [["Home", "Reset original view", "home", "home"], ["Back", "Back to previous view", "arrow-left", "back"], ["Forward", "Forward to next view", "arrow-right", "forward"], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "arrows", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis, CTRL fixes aspect", "square-o", "zoom"], ["Download", "Download plot", "floppy-o", "save_figure"]]}}, "d65d432df72b4a588c38ae9daa78f30f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "85fe7874ba144995860225a109af6458": {"model_name": "MPLCanvasModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_cursor": "pointer", "_dom_classes": [], "_figure_label": "Figure", "_height": 0, "_image_mode": "full", "_message": "", "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "MPLCanvasModel", "_rubberband_height": 0, "_rubberband_width": 0, "_rubberband_x": 0, "_rubberband_y": 0, "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "MPLCanvasView", "_width": 0, "capture_scroll": false, "footer_visible": true, "header_visible": true, "layout": "IPY_MODEL_d65d432df72b4a588c38ae9daa78f30f", "resizable": true, "toolbar": "IPY_MODEL_b902a92be7d64c9298d592e1bbe7c916", "toolbar_position": "left", "toolbar_visible": true}}, "bd1cbe8bc93b457a9b7da58736decb3d": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b902a92be7d64c9298d592e1bbe7c916": {"model_name": "ToolbarModel", "model_module": "jupyter-matplotlib", "model_module_version": "^0.9.0", "state": {"_current_action": "", "_dom_classes": [], "_model_module": "jupyter-matplotlib", "_model_module_version": "^0.9.0", "_model_name": "ToolbarModel", "_view_count": null, "_view_module": "jupyter-matplotlib", "_view_module_version": "^0.9.0", "_view_name": "ToolbarView", "button_style": "", "collapsed": true, "layout": "IPY_MODEL_bd1cbe8bc93b457a9b7da58736decb3d", "orientation": "vertical", "toolitems": [["Home", "Reset original view", "home", "home"], ["Back", "Back to previous view", "arrow-left", "back"], ["Forward", "Forward to next view", "arrow-right", "forward"], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "arrows", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis, CTRL fixes aspect", "square-o", "zoom"], ["Download", "Download plot", "floppy-o", "save_figure"]]}}}, "version_major": 2, "version_minor": 0}
-</script>
-
+<div class="toctree-wrapper compound">
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
