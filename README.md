@@ -21,3 +21,4 @@ pip install sympy==1.7.1
 The notebooks are quite interactive. The student can download them from GitHub and play with them in Jupyterlab, Google Colab or any other IDE that supports Python Jupyter Notebooks. Also there are some exercices for practicing and some Assignments that my students had to deliver in groups fro grading. 
 
 It is advisable to have basic knowledge of Fluid Mechanics before using the Notebooks. In the beginning of each Notebook a basic lecture on the subject is suggested.
+
