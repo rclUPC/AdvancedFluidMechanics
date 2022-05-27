@@ -1,0 +1,11 @@
+﻿\begin{tikzpicture}
+\draw[-stealth](-1,0)--(5,0) node[above]{$x$};
+\draw[thick](-0.5,1)--(4.5,1.5);
+\draw[thick](-0.5,-1)--(4.5,-1.5);
+\foreach \y in {-1,-0.8,...,1}
+{
+\draw [->](0.5,\y)--(2,\y);
+} 
+\draw(2,0)node[above right]{$u(x)$};
+\draw(0.5,1.1)node[above]{$A(x)$};
+\end{tikzpicture}
