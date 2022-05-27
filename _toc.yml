@@ -6,10 +6,18 @@ chapters:
   - file: 0-Intro/Assignment0
 - file: 1-microFlows/Microflows
   sections:
-  - file: 1-microFlows/MeniscusBetweenPlates
   - file: 1-microFlows/Assignment1
 - file: 2-Rheology/rheology
+  sections:
+  - file: 2-Rheology/FDMViscoelastic
+  - file: 2-Rheology/Assignment2
 - file: 3-Turbulence/turbulence
+  sections:
+  - file: 3-Turbulence/ExperimentalMeasurements
+  - file: 3-Turbulence/Assignment3
 - file: 4-BoundaryLayer/BoundaryLayer
+  sections:
+  - file: 4-BoundaryLayer/Assignment4
 - file: 5-CompressibleFlow/CompressibleFlow
-
+  sections:
+  - file: 5-CompressibleFlow/Assignment5

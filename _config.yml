@@ -2,13 +2,16 @@
 title: UPC-205237 Advanced Fluid Mechanics
 author: Robert Castilla - UPC CATMech Terrassa
 logo: eseiaat-positiu-p3005-interior-blanc.png
+copyright: "2022"
+repository:
+  url: https://github.com/rclUPC/AdvancedFluidMechanics
 execute:
   execute_notebooks: force
 parse:
   myst_enable_extensions:
     # don't forget to list any other extensions you want enabled,
     # including those that are enabled by default!
-    - amsmath
+    #- amsmath
     - dollarmath
     - colon_fence
 sphinx:
@@ -23,3 +26,6 @@ sphinx:
 # Add a bibtex file so that we can create citations
 #bibtex_bibfiles:
 #  - references.bib
+latex:
+  latex_engine: pdflatex
+
