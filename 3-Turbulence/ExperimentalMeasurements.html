@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"Ma": "\\mathrm{Ma}"}}, "tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -175,14 +175,31 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../4-BoundaryLayer/BoundaryLayer.html">
    Boundary Layer. An introduction
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4-BoundaryLayer/Assignment4.html">
+     Assignment 4. Growth of Turbulent Boundary Layer
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../5-CompressibleFlow/CompressibleFlow.html">
    Compressible Flow. An introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5-CompressibleFlow/Assignment5.html">
+   Assignment 5. A function to compute the flow after a deflection angle
   </a>
  </li>
 </ul>
@@ -1353,14 +1370,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">Input In [27],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">T</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">autocorr</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">autocorr</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">T</span>
-
-<span class="ne">AttributeError</span>: module &#39;scipy.integrate&#39; has no attribute &#39;trapezoid&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.0009022706750520019
 </pre></div>
 </div>
 </div>
@@ -1374,7 +1384,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0038772428514055016
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0038772428514055038
 </pre></div>
 </div>
 </div>
@@ -1428,7 +1438,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.004771435414182847
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.004771435414182849
 </pre></div>
 </div>
 </div>
@@ -1486,7 +1496,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.00034572943202194895
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.0003457294319943352
 </pre></div>
 </div>
 </div>
@@ -1502,7 +1512,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2646119129824565
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2646119129824571
 </pre></div>
 </div>
 </div>
@@ -1515,7 +1525,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2646066292139868
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2646066292139877
 </pre></div>
 </div>
 </div>
@@ -1534,7 +1544,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.9216881739274576
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.921688173927354
 </pre></div>
 </div>
 </div>
@@ -1547,7 +1557,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.351285182374243
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.3512851823741692
 </pre></div>
 </div>
 </div>
@@ -1567,7 +1577,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.337551070336596
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.337551070336389
 </pre></div>
 </div>
 </div>
@@ -1580,7 +1590,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.21343507900745
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.213435079007315
 </pre></div>
 </div>
 </div>
@@ -1634,7 +1644,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7faffa619670&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f10ec2ddd30&gt;]
 </pre></div>
 </div>
 <img alt="../_images/ExperimentalMeasurements_76_1.png" src="../_images/ExperimentalMeasurements_76_1.png" />
@@ -1761,7 +1771,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
     
       By Robert Castilla - UPC CATMech Terrassa<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>

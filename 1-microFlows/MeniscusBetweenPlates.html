@@ -53,13 +53,11 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"Ma": "\\mathrm{Ma}"}}, "tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Assignment 1. Computation of journal bearing" href="Assignment1.html" />
-    <link rel="prev" title="Microflows. A very brief introduction with lubrication and capillarity" href="Microflows.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -103,7 +101,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../0-Intro/IntroPython.html">
    Introduction to scientific computation with Python
@@ -121,21 +119,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="Microflows.html">
    Microflows. A very brief introduction with lubrication and capillarity
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Meniscus between plates. Solution
-    </a>
-   </li>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="Assignment1.html">
      Assignment 1. Computation of journal bearing
@@ -173,16 +166,38 @@ const thebe_selector_output = ".output, .cell_output"
      Statistical process of experimental measurements
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Turbulence/Assignment3.html">
+     Assignment 3 : Computation of length scales and spectrum in space
+    </a>
+   </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../4-BoundaryLayer/BoundaryLayer.html">
    Boundary Layer. An introduction
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4-BoundaryLayer/Assignment4.html">
+     Assignment 4. Growth of Turbulent Boundary Layer
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../5-CompressibleFlow/CompressibleFlow.html">
    Compressible Flow. An introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5-CompressibleFlow/Assignment5.html">
+   Assignment 5. A function to compute the flow after a deflection angle
   </a>
  </li>
 </ul>
@@ -279,8 +294,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#method-2">
-   Method 2
+  <a class="reference internal nav-link" href="#method-2-still-an-exercise-for-the-student">
+   Method 2 (still an exercise for the student)
   </a>
  </li>
 </ul>
@@ -309,8 +324,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#method-2">
-   Method 2
+  <a class="reference internal nav-link" href="#method-2-still-an-exercise-for-the-student">
+   Method 2 (still an exercise for the student)
   </a>
  </li>
 </ul>
@@ -363,7 +378,7 @@ plate.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/MeniscusBetweenPlates_7_0.png" src="../_images/MeniscusBetweenPlates_7_0.png" />
+<img alt="../_images/MeniscusBetweenPlates_2_0.png" src="../_images/MeniscusBetweenPlates_2_0.png" />
 </div>
 </div>
 <p>As in the case of one plate, this equation can be integrated with an integration factor <span class="math notranslate nohighlight">\(\eta'\)</span>.</p>
@@ -375,7 +390,7 @@ plate.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/MeniscusBetweenPlates_9_0.png" src="../_images/MeniscusBetweenPlates_9_0.png" />
+<img alt="../_images/MeniscusBetweenPlates_4_0.png" src="../_images/MeniscusBetweenPlates_4_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -386,7 +401,7 @@ plate.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/MeniscusBetweenPlates_10_0.png" src="../_images/MeniscusBetweenPlates_10_0.png" />
+<img alt="../_images/MeniscusBetweenPlates_5_0.png" src="../_images/MeniscusBetweenPlates_5_0.png" />
 </div>
 </div>
 <p>Again, when <span class="math notranslate nohighlight">\(\eta=0\)</span>, the first derivative is <span class="math notranslate nohighlight">\(0\)</span> too, so, this is again 1. And <span class="math notranslate nohighlight">\(\delta\)</span>, the normalized height of water in the wall (above center of meniscus) can be calculated by imposing its derivative.</p>
@@ -401,8 +416,8 @@ plate.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/MeniscusBetweenPlates_12_0.png" src="../_images/MeniscusBetweenPlates_12_0.png" />
-<img alt="../_images/MeniscusBetweenPlates_12_1.png" src="../_images/MeniscusBetweenPlates_12_1.png" />
+<img alt="../_images/MeniscusBetweenPlates_7_0.png" src="../_images/MeniscusBetweenPlates_7_0.png" />
+<img alt="../_images/MeniscusBetweenPlates_7_1.png" src="../_images/MeniscusBetweenPlates_7_1.png" />
 </div>
 </div>
 <p>We keep the second solution, which is the positive one</p>
@@ -415,7 +430,7 @@ plate.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/MeniscusBetweenPlates_14_0.png" src="../_images/MeniscusBetweenPlates_14_0.png" />
+<img alt="../_images/MeniscusBetweenPlates_9_0.png" src="../_images/MeniscusBetweenPlates_9_0.png" />
 </div>
 </div>
 <p>This is function of the contact angle (<span class="math notranslate nohighlight">\(\theta\)</span>) but also of the height of the column, <span class="math notranslate nohighlight">\(\beta\)</span>. The higher is <span class="math notranslate nohighlight">\(\beta\)</span>, the lower is <span class="math notranslate nohighlight">\(\delta\)</span>. This is because also <span class="math notranslate nohighlight">\(\lambda\)</span> will be lower, and the meniscus is narrower.</p>
@@ -436,7 +451,7 @@ plate.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/MeniscusBetweenPlates_18_0.png" src="../_images/MeniscusBetweenPlates_18_0.png" />
+<img alt="../_images/MeniscusBetweenPlates_13_0.png" src="../_images/MeniscusBetweenPlates_13_0.png" />
 </div>
 </div>
 <p>and its numerical version</p>
@@ -459,7 +474,7 @@ plate.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/MeniscusBetweenPlates_22_0.png" src="../_images/MeniscusBetweenPlates_22_0.png" />
+<img alt="../_images/MeniscusBetweenPlates_17_0.png" src="../_images/MeniscusBetweenPlates_17_0.png" />
 </div>
 </div>
 <p>An estimation of distance between plates can be done easily with the circular approximation, yielding <span class="math notranslate nohighlight">\(\lambda = \frac{2\cos{\theta}}{\beta}\)</span>. So, the distance to the middle point will be around <span class="math notranslate nohighlight">\(\frac{\cos{\theta}}{\beta}\)</span>. We use a slightly larger value for the limit of numerical integration</p>
@@ -473,9 +488,13 @@ plate.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;lambdifygenerated-2&gt;:2: RuntimeWarning: invalid value encountered in sqrt
-  return (-sqrt(-1.0 + 1.0/(0.5*_Dummy_2006**2 + _Dummy_2006*beta - 1)**2))
+  return (-sqrt(-1.0 + 1.0/(0.5*_Dummy_2007**2 + _Dummy_2007*beta - 1)**2))
+/home/robert/anaconda3/lib/python3.8/site-packages/scipy/integrate/_odepack_py.py:247: ODEintWarning: Excess accuracy requested (tolerances too small). Run with full_output = 1 to get quantitative information.
+  warnings.warn(warning_msg, ODEintWarning)
 </pre></div>
 </div>
+<pre class="output stream literal-block"> lsoda--  at t (=r1), too much accuracy requested         for precision of machine..  see tolsf (=r2)       in above,  r1 =  0.5148195504208D+01   r2 =                  NaN
+</pre>
 </div>
 </div>
 <p>It gives a warning because beyond the middle point of meniscus the derivative gives imaginary values (negative argument in the root square of <code class="docutils literal notranslate"><span class="pre">f</span></code>. A trick is to detect this <code class="docutils literal notranslate"><span class="pre">NaN</span></code>
@@ -491,7 +510,7 @@ and drop them from <code class="docutils literal notranslate"><span class="pre">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numerical value for lambda: 9.92
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numerical value for lambda: 191
 estimated value for lambda: 173
 </pre></div>
 </div>
@@ -517,20 +536,24 @@ estimated value for lambda: 173
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f5b03d1fd90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f8443082ee0&gt;
 </pre></div>
 </div>
-<img alt="../_images/MeniscusBetweenPlates_28_1.png" src="../_images/MeniscusBetweenPlates_28_1.png" />
+<img alt="../_images/MeniscusBetweenPlates_23_1.png" src="../_images/MeniscusBetweenPlates_23_1.png" />
 </div>
 </div>
 </div>
-<div class="section" id="method-2">
-<h2>Method 2<a class="headerlink" href="#method-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-2-still-an-exercise-for-the-student">
+<h2>Method 2 (still an exercise for the student)<a class="headerlink" href="#method-2-still-an-exercise-for-the-student" title="Permalink to this headline">¶</a></h2>
 <p>In this method, we write the second order ODE as a system of two first order ODE’s:</p>
-<p>\begin{eqnarray}
-\zeta’(\zeta,\eta,\xi) &amp;=&amp; (\eta(\xi) + \beta)\left(1+\zeta(\xi)^2\right)^\frac{3}{2} \
-\eta’(\zeta,\eta,\xi) &amp;=&amp; \zeta(\xi)
-\end{eqnarray}</p>
+<div class="math notranslate nohighlight">
+\[
+\zeta'(\zeta,\eta,\xi) = (\eta(\xi) + \beta)\left(1+\zeta(\xi)^2\right)^\frac{3}{2}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\eta'(\zeta,\eta,\xi) = \zeta(\xi)
+\]</div>
 <p>and, if the coordinates are centered in the middle point (as indicated in the figure), the initial conditions are <span class="math notranslate nohighlight">\(\eta(\xi=0)=\zeta(\xi=0)=0\)</span>.</p>
 <p><em>Question:</em> How do we calculate the value of <span class="math notranslate nohighlight">\(\lambda\)</span>?</p>
 </div>
@@ -560,21 +583,7 @@ estimated value for lambda: 173
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Microflows.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Microflows. A very brief introduction with lubrication and capillarity</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="Assignment1.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Assignment 1. Computation of journal bearing</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>
@@ -584,7 +593,7 @@ estimated value for lambda: 173
     
       By Robert Castilla - UPC CATMech Terrassa<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>

@@ -53,13 +53,13 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"Ma": "\\mathrm{Ma}"}}, "tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Assignment 1. Computation of journal bearing" href="Assignment1.html" />
-    <link rel="prev" title="Assignment 2. Rheological behaviour of cosmetic creams" href="../2-Rheology/Assignment2.html" />
+    <link rel="prev" title="Assignment 0: Conical tank emptying time" href="../0-Intro/Assignment0.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -121,34 +121,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../2-Rheology/FDMViscoelastic.html">
-   Viscoelastic fluid in a pipe (Maxwell model)
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-Rheology/rheology.html">
-     Rheology. A brief introduction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-Rheology/Assignment2.html">
-     Assignment 2. Rheological behaviour of cosmetic creams
-    </a>
-   </li>
-  </ul>
- </li>
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
    Microflows. A very brief introduction with lubrication and capillarity
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -160,12 +138,27 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Rheology/rheology.html">
+   Rheology. A brief introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Rheology/FDMViscoelastic.html">
+   Viscoelastic fluid in a pipe (Maxwell model)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Rheology/Assignment2.html">
+   Assignment 2. Rheological behaviour of cosmetic creams
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../3-Turbulence/turbulence.html">
    Turbulent flows. Statistical description and characteristic scales
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -175,16 +168,38 @@ const thebe_selector_output = ".output, .cell_output"
      Statistical process of experimental measurements
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Turbulence/Assignment3.html">
+     Assignment 3 : Computation of length scales and spectrum in space
+    </a>
+   </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../4-BoundaryLayer/BoundaryLayer.html">
    Boundary Layer. An introduction
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4-BoundaryLayer/Assignment4.html">
+     Assignment 4. Growth of Turbulent Boundary Layer
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../5-CompressibleFlow/CompressibleFlow.html">
    Compressible Flow. An introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5-CompressibleFlow/Assignment5.html">
+   Assignment 5. A function to compute the flow after a deflection angle
   </a>
  </li>
 </ul>
@@ -448,7 +463,6 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="microflows-a-very-brief-introduction-with-lubrication-and-capillarity">
 <h1>Microflows. A very brief introduction with lubrication and capillarity<a class="headerlink" href="#microflows-a-very-brief-introduction-with-lubrication-and-capillarity" title="Permalink to this headline">¶</a></h1>
-<hr class="docutils" />
 <div class="section" id="laminar-flows-and-fundamentals-of-lubrication">
 <h2>1. Laminar flows and fundamentals of lubrication<a class="headerlink" href="#laminar-flows-and-fundamentals-of-lubrication" title="Permalink to this headline">¶</a></h2>
 <p>For a correct development of this lecture, a review of viscous flows (Couette and Hagen-Poiseullie flows and similar) studied in previous courses of Introductory Fluid Mechanics is advised.</p>
@@ -487,12 +501,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>For more viscous fluid, or smaller devices, Reynolds number can be much lower than 1.</p>
-<hr class="docutils" />
 <div class="section" id="activity">
 <h3>Activity<a class="headerlink" href="#activity" title="Permalink to this headline">¶</a></h3>
 <p>Think on some device with fluid flow at very low Reynolds number. Estimate the value of this Reynolds number. Try to think on something with <span class="math notranslate nohighlight">\(\text{Re} &lt; 1\)</span>.</p>
 </div>
-<hr class="docutils" />
 <div class="section" id="the-velocity-profile">
 <h3>The velocity profile<a class="headerlink" href="#the-velocity-profile" title="Permalink to this headline">¶</a></h3>
 <p>In previous introductory Fluid Mechanics courses, this kind of flows have been studied with very simple geometries. Examples are flow between two parallel planes with relative velocity (Couette flow) or with pressure gradient (Poisueille flow) or viscous flow inside a pipe with pressure gradient (Hagen-Poiseuille flow). For details, see sections 4.11 and 6.4 in White’s book.</p>
@@ -516,16 +528,31 @@ const thebe_selector_output = ".output, .cell_output"
 \frac{\partial u_i}{\partial t} + u_j\frac{\partial u_i}{\partial x_j} = -\frac{1}{\rho}\frac{\partial p}{\partial x_i} + \nu \frac{\partial^2 u_i}{\partial u_j \partial u_j} \tag{4}
 \]</div>
 <p>The boundary conditions are <span class="math notranslate nohighlight">\(u\left(y=0,t\right)=U_b(t)\)</span> and <span class="math notranslate nohighlight">\(u\left(y=h(x,t),t \right)=U_t(t)\)</span> and also <span class="math notranslate nohighlight">\(p=p(t)\)</span></p>
-<p>As it is usually done in Fluid Mechanics, let’s study which scales are important by writing the  dimensionless equations. First, we consider the aspect ratio of the geometry, <span class="math notranslate nohighlight">\(\varepsilon = \frac{h}{L}\)</span>, a characteristic velocity of the flow (it can be, for example, the velocity of any of the surfaces) <span class="math notranslate nohighlight">\(U\)</span> and a characteristic pressure <span class="math notranslate nohighlight">\(p_c\)</span> (it is usually the atmospheric pressure). Then the variables of the problema can be normalized as</p>
+<p>As it is usually done in Fluid Mechanics, let’s study which scales are important by writing the  dimensionless equations. First, we consider the aspect ratio of the geometry, <span class="math notranslate nohighlight">\(\varepsilon = \frac{h}{L}\)</span>, a characteristic velocity of the flow (it can be, for example, the velocity of any of the surfaces) <span class="math notranslate nohighlight">\(U\)</span> and a characteristic pressure <span class="math notranslate nohighlight">\(p_c\)</span> (it is usually the atmospheric pressure). Then the variables of the problem can be normalized as</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} 
-x^* = \frac{x}{L} \\
-y^* = \frac{y}{h} = \frac{y}{\varepsilon L} \\
-t^* = t \frac{L}{U} \\
-u^* = \frac{u}{U} \\
-v^* = \frac{v}{V} = \frac{v}{\varepsilon U} \\
+\[ 
+x^* = \frac{x}{L}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y^* = \frac{y}{h} = \frac{y}{\varepsilon L}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+t^* = t \frac{L}{U}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+u^* = \frac{u}{U}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v^* = \frac{v}{V} = \frac{v}{\varepsilon U}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 p^* = \frac{p}{p_c} \tag{5}
-\end{split}\]</div>
+\]</div>
 <p>Then continuity equation leads to</p>
 <div class="math notranslate nohighlight">
 \[
@@ -623,7 +650,7 @@ p^* = \frac{p}{p_c} \tag{5}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_16_0.png" src="../_images/Microflows_16_0.png" />
+<img alt="../_images/Microflows_10_0.png" src="../_images/Microflows_10_0.png" />
 </div>
 </div>
 <p>We define the top and bottom velocities and the boundary conditions, by means of a dictionary</p>
@@ -651,7 +678,7 @@ p^* = \frac{p}{p_c} \tag{5}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_22_0.png" src="../_images/Microflows_22_0.png" />
+<img alt="../_images/Microflows_16_0.png" src="../_images/Microflows_16_0.png" />
 </div>
 </div>
 <p>That can be a little bit simplified</p>
@@ -663,7 +690,7 @@ p^* = \frac{p}{p_c} \tag{5}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_24_0.png" src="../_images/Microflows_24_0.png" />
+<img alt="../_images/Microflows_18_0.png" src="../_images/Microflows_18_0.png" />
 </div>
 </div>
 <p>Let’s consider, for the shake of simplicity, the case with <span class="math notranslate nohighlight">\(U_t(t) = U; U_b(t)=0\)</span></p>
@@ -676,7 +703,7 @@ p^* = \frac{p}{p_c} \tag{5}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_26_0.png" src="../_images/Microflows_26_0.png" />
+<img alt="../_images/Microflows_20_0.png" src="../_images/Microflows_20_0.png" />
 </div>
 </div>
 <p>In order to calculate the pressure distribution, we need another condition for the velocity. This condition is the <strong>mass balance</strong>. The flow rate in any section <span class="math notranslate nohighlight">\(x\)</span> must be
@@ -689,7 +716,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_28_0.png" src="../_images/Microflows_28_0.png" />
+<img alt="../_images/Microflows_22_0.png" src="../_images/Microflows_22_0.png" />
 </div>
 </div>
 </div>
@@ -705,7 +732,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_30_0.png" src="../_images/Microflows_30_0.png" />
+<img alt="../_images/Microflows_24_0.png" src="../_images/Microflows_24_0.png" />
 </div>
 </div>
 </div>
@@ -724,7 +751,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_32_0.png" src="../_images/Microflows_32_0.png" />
+<img alt="../_images/Microflows_26_0.png" src="../_images/Microflows_26_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -735,7 +762,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_33_0.png" src="../_images/Microflows_33_0.png" />
+<img alt="../_images/Microflows_27_0.png" src="../_images/Microflows_27_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -745,7 +772,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_34_0.png" src="../_images/Microflows_34_0.png" />
+<img alt="../_images/Microflows_28_0.png" src="../_images/Microflows_28_0.png" />
 </div>
 </div>
 <p>This is the general soluction for any shape for <span class="math notranslate nohighlight">\(h(x)\)</span>. The values for <span class="math notranslate nohighlight">\(q\)</span> and the integration constant are obtained from suitable boundary conditions</p>
@@ -771,7 +798,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_39_0.png" src="../_images/Microflows_39_0.png" />
+<img alt="../_images/Microflows_31_0.png" src="../_images/Microflows_31_0.png" />
 </div>
 </div>
 <p>Next, we integrate the pressure distribution with the proper boundary condition for <span class="math notranslate nohighlight">\(p(x=0)=p_a\)</span></p>
@@ -790,7 +817,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_42_0.png" src="../_images/Microflows_42_0.png" />
+<img alt="../_images/Microflows_34_0.png" src="../_images/Microflows_34_0.png" />
 </div>
 </div>
 <p>The flow rate in this moving pad can be calulated with the other boundary condition, <span class="math notranslate nohighlight">\(p(x=L)=p_a\)</span></p>
@@ -802,7 +829,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_44_0.png" src="../_images/Microflows_44_0.png" />
+<img alt="../_images/Microflows_36_0.png" src="../_images/Microflows_36_0.png" />
 </div>
 </div>
 <p>and we replace again this result in the pressure distribution</p>
@@ -814,7 +841,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_46_0.png" src="../_images/Microflows_46_0.png" />
+<img alt="../_images/Microflows_38_0.png" src="../_images/Microflows_38_0.png" />
 </div>
 </div>
 <p>Let’s rearrange the terms to get it it nicer</p>
@@ -826,7 +853,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_48_0.png" src="../_images/Microflows_48_0.png" />
+<img alt="../_images/Microflows_40_0.png" src="../_images/Microflows_40_0.png" />
 </div>
 </div>
 <p>This solution is complex, since it is considering all the values of <span class="math notranslate nohighlight">\(\alpha\)</span>. We can take advantage of the assumption <span class="math notranslate nohighlight">\(\alpha \ll 1\)</span> in order to expand the right hand side in
@@ -840,7 +867,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_50_0.png" src="../_images/Microflows_50_0.png" />
+<img alt="../_images/Microflows_42_0.png" src="../_images/Microflows_42_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -851,7 +878,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_51_0.png" src="../_images/Microflows_51_0.png" />
+<img alt="../_images/Microflows_43_0.png" src="../_images/Microflows_43_0.png" />
 </div>
 </div>
 <p>Remember that it is for unit lenght in the <span class="math notranslate nohighlight">\(z\)</span> direction, so the mean (relative) pressure in this fluid film is</p>
@@ -864,22 +891,19 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_53_0.png" src="../_images/Microflows_53_0.png" />
+<img alt="../_images/Microflows_45_0.png" src="../_images/Microflows_45_0.png" />
 </div>
 </div>
 </div>
-<hr class="docutils" />
 <div class="section" id="activity-very-easy">
 <h3>Activity (very easy)<a class="headerlink" href="#activity-very-easy" title="Permalink to this headline">¶</a></h3>
 <p>Estimate the value of the bearing number <span class="math notranslate nohighlight">\(\Lambda\)</span> for this tilting pad</p>
 </div>
-<hr class="docutils" />
 <div class="section" id="exercise">
 <h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
 <p>What happens when slope of pad is not increasing, but decreasing?</p>
 </div>
 </div>
-<hr class="docutils" />
 <div class="section" id="pressure-driven-microflow-hele-shaw-flow">
 <h2>2. Pressure driven microflow. Hele-Shaw flow<a class="headerlink" href="#pressure-driven-microflow-hele-shaw-flow" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Henry_Selby_Hele-Shaw">Henry Hele-Shaw</a> was a British engineer in the late 19th and the early 20th centuries. He published a paper in 1898 about the Stokes flow between to close plates. This kind of flow are now know as <a class="reference external" href="https://en.wikipedia.org/wiki/Hele-Shaw_flow">Hele-Shaw flows</a>.</p>
@@ -906,8 +930,8 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_56_0.png" src="../_images/Microflows_56_0.png" />
-<img alt="../_images/Microflows_56_1.png" src="../_images/Microflows_56_1.png" />
+<img alt="../_images/Microflows_47_0.png" src="../_images/Microflows_47_0.png" />
+<img alt="../_images/Microflows_47_1.png" src="../_images/Microflows_47_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -922,8 +946,8 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_57_0.png" src="../_images/Microflows_57_0.png" />
-<img alt="../_images/Microflows_57_1.png" src="../_images/Microflows_57_1.png" />
+<img alt="../_images/Microflows_48_0.png" src="../_images/Microflows_48_0.png" />
+<img alt="../_images/Microflows_48_1.png" src="../_images/Microflows_48_1.png" />
 </div>
 </div>
 <p>Remember the definition of <a class="reference external" href="https://en.wikipedia.org/wiki/Velocity_potential">velocity potential</a>. In this case, the solution is very easy</p>
@@ -939,8 +963,8 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_59_0.png" src="../_images/Microflows_59_0.png" />
-<img alt="../_images/Microflows_59_1.png" src="../_images/Microflows_59_1.png" />
+<img alt="../_images/Microflows_50_0.png" src="../_images/Microflows_50_0.png" />
+<img alt="../_images/Microflows_50_1.png" src="../_images/Microflows_50_1.png" />
 </div>
 </div>
 <p>Both solutions are the same and, so, we can just define the velocity potential al</p>
@@ -953,7 +977,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_61_0.png" src="../_images/Microflows_61_0.png" />
+<img alt="../_images/Microflows_52_0.png" src="../_images/Microflows_52_0.png" />
 </div>
 </div>
 <p>Asuming that there is no vertical velocity, <span class="math notranslate nohighlight">\(w = 0\)</span>, the continuity equation for 2D flow is just</p>
@@ -975,9 +999,9 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_64_0.png" src="../_images/Microflows_64_0.png" />
-<img alt="../_images/Microflows_64_1.png" src="../_images/Microflows_64_1.png" />
-<img alt="../_images/Microflows_64_2.png" src="../_images/Microflows_64_2.png" />
+<img alt="../_images/Microflows_54_0.png" src="../_images/Microflows_54_0.png" />
+<img alt="../_images/Microflows_54_1.png" src="../_images/Microflows_54_1.png" />
+<img alt="../_images/Microflows_54_2.png" src="../_images/Microflows_54_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -988,7 +1012,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_65_0.png" src="../_images/Microflows_65_0.png" />
+<img alt="../_images/Microflows_55_0.png" src="../_images/Microflows_55_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -999,7 +1023,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_66_0.png" src="../_images/Microflows_66_0.png" />
+<img alt="../_images/Microflows_56_0.png" src="../_images/Microflows_56_0.png" />
 </div>
 </div>
 <p>In this video some experimental flows are presented to show the potential-like Hele-Shaw flows</p>
@@ -1115,7 +1139,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_73_0.png" src="../_images/Microflows_73_0.png" />
+<img alt="../_images/Microflows_62_0.png" src="../_images/Microflows_62_0.png" />
 </div>
 </div>
 <p>This expression is not directly integrable</p>
@@ -1126,7 +1150,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_75_0.png" src="../_images/Microflows_75_0.png" />
+<img alt="../_images/Microflows_64_0.png" src="../_images/Microflows_64_0.png" />
 </div>
 </div>
 <p>But if we use the integration factor <span class="math notranslate nohighlight">\(\eta'\)</span>, it becomes integrable</p>
@@ -1138,7 +1162,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_77_0.png" src="../_images/Microflows_77_0.png" />
+<img alt="../_images/Microflows_66_0.png" src="../_images/Microflows_66_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1149,7 +1173,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_78_0.png" src="../_images/Microflows_78_0.png" />
+<img alt="../_images/Microflows_67_0.png" src="../_images/Microflows_67_0.png" />
 </div>
 </div>
 <p>Since when <span class="math notranslate nohighlight">\(\eta(\xi) = 0\)</span> (i.e. for <span class="math notranslate nohighlight">\(\xi\rightarrow \infty\)</span>), <span class="math notranslate nohighlight">\(\eta'(\xi)=0\)</span>, that gives that this expression has to be 1.</p>
@@ -1161,7 +1185,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_80_0.png" src="../_images/Microflows_80_0.png" />
+<img alt="../_images/Microflows_69_0.png" src="../_images/Microflows_69_0.png" />
 </div>
 </div>
 <p>This equation can be analitically solved (see the book by <a class="reference external" href="https://discovery.upc.edu/iii/encore/record/C__Rb1437689?lang=cat">Kundu</a>, example 4.7) but it is not staightforward. Let us  solve it here numerically with <a class="reference external" href="https://www.scipy.org/">scipy</a>.</p>
@@ -1175,7 +1199,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_82_0.png" src="../_images/Microflows_82_0.png" />
+<img alt="../_images/Microflows_71_0.png" src="../_images/Microflows_71_0.png" />
 </div>
 </div>
 <p>There are two solutions. We keep the second one, positive.</p>
@@ -1187,7 +1211,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_84_0.png" src="../_images/Microflows_84_0.png" />
+<img alt="../_images/Microflows_73_0.png" src="../_images/Microflows_73_0.png" />
 </div>
 </div>
 <p>and we try to simplify it a little bit</p>
@@ -1199,7 +1223,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_86_0.png" src="../_images/Microflows_86_0.png" />
+<img alt="../_images/Microflows_75_0.png" src="../_images/Microflows_75_0.png" />
 </div>
 </div>
 <p>In order to solve dEq we have to isolate the derivative of <span class="math notranslate nohighlight">\(\eta\)</span></p>
@@ -1211,7 +1235,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_88_0.png" src="../_images/Microflows_88_0.png" />
+<img alt="../_images/Microflows_77_0.png" src="../_images/Microflows_77_0.png" />
 </div>
 </div>
 <p>and we generate a function for this derivative</p>
@@ -1246,7 +1270,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_94_0.png" src="../_images/Microflows_94_0.png" />
+<img alt="../_images/Microflows_83_0.png" src="../_images/Microflows_83_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1268,14 +1292,13 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f4dc821f220&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7efdb06590a0&gt;]
 </pre></div>
 </div>
-<img alt="../_images/Microflows_97_1.png" src="../_images/Microflows_97_1.png" />
+<img alt="../_images/Microflows_86_1.png" src="../_images/Microflows_86_1.png" />
 </div>
 </div>
 </div>
-<hr class="docutils" />
 <div class="section" id="exercise-shape-of-meniscus-between-two-plates">
 <h3>Exercise. Shape of meniscus between two plates<a class="headerlink" href="#exercise-shape-of-meniscus-between-two-plates" title="Permalink to this headline">¶</a></h3>
 <p>Find the shape for two parallels walls separated a distance <span class="math notranslate nohighlight">\(L\)</span></p>
@@ -1287,7 +1310,6 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 <p>When you have tried to solve the problem, you can check a solution <a class="reference internal" href="MeniscusBetweenPlates.html"><span class="doc">here</span></a>.</p>
 </div>
 </div>
-<hr class="docutils" />
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -1317,11 +1339,11 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../2-Rheology/Assignment2.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../0-Intro/Assignment0.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Assignment 2. Rheological behaviour of cosmetic creams</p>
+            <p class="prev-next-title">Assignment 0: Conical tank emptying time</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Assignment1.html" title="next page">
@@ -1340,7 +1362,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
     
       By Robert Castilla - UPC CATMech Terrassa<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>

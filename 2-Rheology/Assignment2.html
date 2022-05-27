@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"Ma": "\\mathrm{Ma}"}}, "tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -132,11 +132,6 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../1-microFlows/MeniscusBetweenPlates.html">
-     Meniscus between plates. Solution
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../1-microFlows/Assignment1.html">
      Assignment 1. Computation of journal bearing
     </a>
@@ -173,16 +168,38 @@ const thebe_selector_output = ".output, .cell_output"
      Statistical process of experimental measurements
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Turbulence/Assignment3.html">
+     Assignment 3 : Computation of length scales and spectrum in space
+    </a>
+   </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../4-BoundaryLayer/BoundaryLayer.html">
    Boundary Layer. An introduction
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4-BoundaryLayer/Assignment4.html">
+     Assignment 4. Growth of Turbulent Boundary Layer
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../5-CompressibleFlow/CompressibleFlow.html">
    Compressible Flow. An introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5-CompressibleFlow/Assignment5.html">
+   Assignment 5. A function to compute the flow after a deflection angle
   </a>
  </li>
 </ul>
@@ -342,7 +359,7 @@ const thebe_selector_output = ".output, .cell_output"
     
       By Robert Castilla - UPC CATMech Terrassa<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>

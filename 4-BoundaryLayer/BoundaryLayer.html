@@ -53,7 +53,9 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"Ma": "\\mathrm{Ma}"}}, "tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Assignment 4. Growth of Turbulent Boundary Layer" href="Assignment4.html" />
@@ -193,6 +195,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../5-CompressibleFlow/CompressibleFlow.html">
    Compressible Flow. An introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5-CompressibleFlow/Assignment5.html">
+   Assignment 5. A function to compute the flow after a deflection angle
   </a>
  </li>
 </ul>
@@ -1052,7 +1059,7 @@ c_f = \frac{\tau_w}{\frac{1}{2}\rho U^2} = 2\left(\frac{u_\tau}{U}\right)^2 \tag
     
       By Robert Castilla - UPC CATMech Terrassa<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>
