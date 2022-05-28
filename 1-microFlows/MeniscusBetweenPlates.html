@@ -54,8 +54,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"Ma": "\\mathrm{Ma}"}}, "tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -273,13 +271,18 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/rclUPC/AdvancedFluidMechanics/master?urlpath=tree/1-microFlows/MeniscusBetweenPlates.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rclUPC/AdvancedFluidMechanics/main?urlpath=lab/tree/1-microFlows/MeniscusBetweenPlates.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rclUPC/AdvancedFluidMechanics/blob/main/1-microFlows/MeniscusBetweenPlates.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
         
         
     </div>
@@ -494,14 +497,14 @@ plate.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<pre class="output stream literal-block"> lsoda--  at t (=r1), too much accuracy requested         for precision of machine..  see tolsf (=r2)       in above,  r1 =  0.5148195504208D+01   r2 =                  NaN
+</pre>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;lambdifygenerated-2&gt;:2: RuntimeWarning: invalid value encountered in sqrt
   return (-sqrt(-1.0 + 1.0/(0.5*_Dummy_2006**2 + _Dummy_2006*beta - 1)**2))
 /home/robert/anaconda3/lib/python3.8/site-packages/scipy/integrate/_odepack_py.py:247: ODEintWarning: Excess accuracy requested (tolerances too small). Run with full_output = 1 to get quantitative information.
   warnings.warn(warning_msg, ODEintWarning)
 </pre></div>
 </div>
-<pre class="output stream literal-block"> lsoda--  at t (=r1), too much accuracy requested         for precision of machine..  see tolsf (=r2)       in above,  r1 =  0.5148195504208D+01   r2 =                  NaN
-</pre>
 </div>
 </div>
 <p>It gives a warning because beyond the middle point of meniscus the derivative gives imaginary values (negative argument in the root square of <code class="docutils literal notranslate"><span class="pre">f</span></code>. A trick is to detect this <code class="docutils literal notranslate"><span class="pre">NaN</span></code>
@@ -543,7 +546,7 @@ estimated value for lambda: 173
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fcbb988cdf0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f6ec86c3e20&gt;
 </pre></div>
 </div>
 <img alt="../_images/MeniscusBetweenPlates_23_1.png" src="../_images/MeniscusBetweenPlates_23_1.png" />
