@@ -7,7 +7,7 @@ repository:
   url: https://github.com/rclUPC/AdvancedFluidMechanics
 
 execute:
-  execute_notebooks: force
+  execute_notebooks: "off"
 parse:
   myst_enable_extensions:
     # don't forget to list any other extensions you want enabled,
