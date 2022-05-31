@@ -528,6 +528,126 @@ allow to solve a large variety of problems.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Call signature:</span>  np<span class=" -Color -Color-Blue">.</span>log<span class=" -Color -Color-Blue">(*</span>args<span class=" -Color -Color-Blue">,</span> <span class=" -Color -Color-Blue">**</span>kwargs<span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Type:</span>            ufunc
+<span class=" -Color -Color-Red">String form:</span>     &lt;ufunc &#39;log&#39;&gt;
+<span class=" -Color -Color-Red">File:</span>            ~/.config/jupyterlab-desktop/jlab_server/lib/python3.8/site-packages/numpy/__init__.py
+<span class=" -Color -Color-Red">Docstring:</span>      
+log(x, /, out=None, *, where=True, casting=&#39;same_kind&#39;, order=&#39;K&#39;, dtype=None, subok=True[, signature, extobj])
+
+Natural logarithm, element-wise.
+
+The natural logarithm `log` is the inverse of the exponential function,
+so that `log(exp(x)) = x`. The natural logarithm is logarithm in base
+`e`.
+
+Parameters
+----------
+x : array_like
+    Input value.
+out : ndarray, None, or tuple of ndarray and None, optional
+    A location into which the result is stored. If provided, it must have
+    a shape that the inputs broadcast to. If not provided or None,
+    a freshly-allocated array is returned. A tuple (possible only as a
+    keyword argument) must have length equal to the number of outputs.
+where : array_like, optional
+    This condition is broadcast over the input. At locations where the
+    condition is True, the `out` array will be set to the ufunc result.
+    Elsewhere, the `out` array will retain its original value.
+    Note that if an uninitialized `out` array is created via the default
+    ``out=None``, locations within it where the condition is False will
+    remain uninitialized.
+**kwargs
+    For other keyword-only arguments, see the
+    :ref:`ufunc docs &lt;ufuncs.kwargs&gt;`.
+
+Returns
+-------
+y : ndarray
+    The natural logarithm of `x`, element-wise.
+    This is a scalar if `x` is a scalar.
+
+See Also
+--------
+log10, log2, log1p, emath.log
+
+Notes
+-----
+Logarithm is a multivalued function: for each `x` there is an infinite
+number of `z` such that `exp(z) = x`. The convention is to return the
+`z` whose imaginary part lies in `[-pi, pi]`.
+
+For real-valued input data types, `log` always returns real output. For
+each value that cannot be expressed as a real number or infinity, it
+yields ``nan`` and sets the `invalid` floating point error flag.
+
+For complex-valued input, `log` is a complex analytical function that
+has a branch cut `[-inf, 0]` and is continuous from above on it. `log`
+handles the floating-point negative zero as an infinitesimal negative
+number, conforming to the C99 standard.
+
+References
+----------
+.. [1] M. Abramowitz and I.A. Stegun, &quot;Handbook of Mathematical Functions&quot;,
+       10th printing, 1964, pp. 67.
+       https://personal.math.ubc.ca/~cbm/aands/page_67.htm
+.. [2] Wikipedia, &quot;Logarithm&quot;. https://en.wikipedia.org/wiki/Logarithm
+
+Examples
+--------
+&gt;&gt;&gt; np.log([1, np.e, np.e**2, 0])
+array([  0.,   1.,   2., -Inf])
+<span class=" -Color -Color-Red">Class docstring:</span>
+Functions that operate element by element on whole arrays.
+
+To see the documentation for a specific ufunc, use `info`.  For
+example, ``np.info(np.sin)``.  Because ufuncs are written in C
+(for speed) and linked into Python with NumPy&#39;s ufunc facility,
+Python&#39;s help() function finds this page whenever help() is called
+on a ufunc.
+
+A detailed explanation of ufuncs can be found in the docs for :ref:`ufuncs`.
+
+**Calling ufuncs:** ``op(*x[, out], where=True, **kwargs)``
+
+Apply `op` to the arguments `*x` elementwise, broadcasting the arguments.
+
+The broadcasting rules are:
+
+* Dimensions of length 1 may be prepended to either array.
+* Arrays may be repeated along dimensions of length 1.
+
+Parameters
+----------
+*x : array_like
+    Input arrays.
+out : ndarray, None, or tuple of ndarray and None, optional
+    Alternate array object(s) in which to put the result; if provided, it
+    must have a shape that the inputs broadcast to. A tuple of arrays
+    (possible only as a keyword argument) must have length equal to the
+    number of outputs; use None for uninitialized outputs to be
+    allocated by the ufunc.
+where : array_like, optional
+    This condition is broadcast over the input. At locations where the
+    condition is True, the `out` array will be set to the ufunc result.
+    Elsewhere, the `out` array will retain its original value.
+    Note that if an uninitialized `out` array is created via the default
+    ``out=None``, locations within it where the condition is False will
+    remain uninitialized.
+**kwargs
+    For other keyword-only arguments, see the :ref:`ufunc docs &lt;ufuncs.kwargs&gt;`.
+
+Returns
+-------
+r : ndarray or tuple of ndarray
+    `r` will have the shape that the arrays in `x` broadcast to; if `out` is
+    provided, it will be returned. If not, `r` will be allocated and
+    may contain uninitialized values. If the function has more than one
+    output, then the result will be a tuple of arrays.
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="sympy">
@@ -1011,7 +1131,8 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_86_0.png" src="../_images/IntroPython_86_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left(\dot{m} t + m_{0}\right) \frac{d}{d t} v{\left(t \right)} = - \dot{m} v_{g}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1023,7 +1144,8 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_87_0.png" src="../_images/IntroPython_87_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle v{\left(t \right)} = v_{g} \log{\left(m_{0} \right)} - v_{g} \log{\left(\dot{m} t + m_{0} \right)}\]</div>
 </div>
 </div>
 <p>We test and plot the solutions with some random values:</p>
@@ -1066,7 +1188,8 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_91_0.png" src="../_images/IntroPython_91_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - t v_{g} \log{\left(\dot{m} t + m_{0} \right)} + t \left(v_{g} \log{\left(m_{0} \right)} + v_{g}\right) + \frac{m_{0} v_{g} \log{\left(m_{0} \right)}}{\dot{m}} - \frac{m_{0} v_{g} \log{\left(\dot{m} t + m_{0} \right)}}{\dot{m}}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1556,7 +1679,7 @@ Name: Teacher, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fe64cf9c0a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f75dc8197f0&gt;
 </pre></div>
 </div>
 <img alt="../_images/IntroPython_134_1.png" src="../_images/IntroPython_134_1.png" />
@@ -1598,10 +1721,10 @@ Name: Teacher, dtype: object
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   139.8</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 31 May 2022</td> <th>  Prob (F-statistic):</th> <td>3.34e-17</td>
+  <th>Date:</th>             <td>Tue, 03 May 2022</td> <th>  Prob (F-statistic):</th> <td>3.34e-17</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>09:47:11</td>     <th>  Log-Likelihood:    </th> <td> -102.79</td>
+  <th>Time:</th>                 <td>19:08:33</td>     <th>  Log-Likelihood:    </th> <td> -102.79</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    61</td>      <th>  AIC:               </th> <td>   209.6</td>
@@ -1863,10 +1986,10 @@ Name: Teacher, dtype: object
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   69.69</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 31 May 2022</td> <th>  Prob (F-statistic):</th> <td>3.76e-16</td>
+  <th>Date:</th>             <td>Tue, 03 May 2022</td> <th>  Prob (F-statistic):</th> <td>3.76e-16</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>09:47:12</td>     <th>  Log-Likelihood:    </th> <td> -102.49</td>
+  <th>Time:</th>                 <td>19:14:12</td>     <th>  Log-Likelihood:    </th> <td> -102.49</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    61</td>      <th>  AIC:               </th> <td>   211.0</td>
@@ -2083,7 +2206,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fe64c593c70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f75d3a16850&gt;
 </pre></div>
 </div>
 <img alt="../_images/IntroPython_167_1.png" src="../_images/IntroPython_167_1.png" />

@@ -22,7 +22,7 @@ Sol = sp.dsolve(exp,u(y),ics=ics)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mTypeError[0m                                 Traceback (most recent call last)
-Input [0;32mIn [9][0m, in [0;36m<cell line: 1>[0;34m()[0m
+Input [0;32mIn [11][0m, in [0;36m<cell line: 1>[0;34m()[0m
 [0;32m----> 1[0m Sol [38;5;241m=[39m [43msp[49m[38;5;241;43m.[39;49m[43mdsolve[49m[43m([49m[43mexp[49m[43m,[49m[43mu[49m[43m([49m[43my[49m[43m)[49m[43m,[49m[43mics[49m[38;5;241;43m=[39;49m[43mics[49m[43m)[49m
 
 File [0;32m~/anaconda3/lib/python3.9/site-packages/sympy/solvers/ode/ode.py:640[0m, in [0;36mdsolve[0;34m(eq, func, hint, simplify, ics, xi, eta, x0, n, **kwargs)[0m

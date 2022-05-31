@@ -660,13 +660,30 @@ p^* = \frac{p}{p_c} \tag{5}
 <span class="n">u</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">)</span>
 <span class="n">p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
 <span class="n">h</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>
-<span class="n">exp</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">mu</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="n">y</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">p_</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Derivative</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_11_0.png" src="../_images/Microflows_11_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span> <span class="o">=</span> <span class="o">-</span><span class="n">p_</span><span class="o">/</span><span class="n">mu</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="n">y</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_10_0.png" src="../_images/Microflows_10_0.png" />
+<img alt="../_images/Microflows_12_0.png" src="../_images/Microflows_12_0.png" />
 </div>
 </div>
 <p>We define the top and bottom velocities and the boundary conditions, by means of a dictionary</p>
@@ -688,7 +705,7 @@ p^* = \frac{p}{p_c} \tag{5}
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [9],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="nn">Input In [22],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">Sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span><span class="n">u</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="n">ics</span><span class="o">=</span><span class="n">ics</span><span class="p">)</span>
 
 <span class="nn">File ~/anaconda3/lib/python3.9/site-packages/sympy/solvers/ode/ode.py:640,</span> in <span class="ni">dsolve</span><span class="nt">(eq, func, hint, simplify, ics, xi, eta, x0, n, **kwargs)</span>
@@ -833,7 +850,7 @@ p^* = \frac{p}{p_c} \tag{5}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_16_0.png" src="../_images/Microflows_16_0.png" />
+<img alt="../_images/Microflows_19_0.png" src="../_images/Microflows_19_0.png" />
 </div>
 </div>
 <p>That can be a little bit simplified</p>
@@ -845,7 +862,7 @@ p^* = \frac{p}{p_c} \tag{5}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_18_0.png" src="../_images/Microflows_18_0.png" />
+<img alt="../_images/Microflows_21_0.png" src="../_images/Microflows_21_0.png" />
 </div>
 </div>
 <p>Let’s consider, for the shake of simplicity, the case with <span class="math notranslate nohighlight">\(U_t(t) = U; U_b(t)=0\)</span></p>
@@ -858,7 +875,7 @@ p^* = \frac{p}{p_c} \tag{5}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_20_0.png" src="../_images/Microflows_20_0.png" />
+<img alt="../_images/Microflows_23_0.png" src="../_images/Microflows_23_0.png" />
 </div>
 </div>
 <p>In order to calculate the pressure distribution, we need another condition for the velocity. This condition is the <strong>mass balance</strong>. The flow rate in any section <span class="math notranslate nohighlight">\(x\)</span> must be
@@ -871,7 +888,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_22_0.png" src="../_images/Microflows_22_0.png" />
+<img alt="../_images/Microflows_25_0.png" src="../_images/Microflows_25_0.png" />
 </div>
 </div>
 </div>
@@ -887,7 +904,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_24_0.png" src="../_images/Microflows_24_0.png" />
+<img alt="../_images/Microflows_27_0.png" src="../_images/Microflows_27_0.png" />
 </div>
 </div>
 </div>
@@ -906,7 +923,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_26_0.png" src="../_images/Microflows_26_0.png" />
+<img alt="../_images/Microflows_29_0.png" src="../_images/Microflows_29_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -917,7 +934,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_27_0.png" src="../_images/Microflows_27_0.png" />
+<img alt="../_images/Microflows_30_0.png" src="../_images/Microflows_30_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -927,7 +944,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_28_0.png" src="../_images/Microflows_28_0.png" />
+<img alt="../_images/Microflows_31_0.png" src="../_images/Microflows_31_0.png" />
 </div>
 </div>
 <p>This is the general soluction for any shape for <span class="math notranslate nohighlight">\(h(x)\)</span>. The values for <span class="math notranslate nohighlight">\(q\)</span> and the integration constant are obtained from suitable boundary conditions</p>
@@ -953,7 +970,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_31_0.png" src="../_images/Microflows_31_0.png" />
+<img alt="../_images/Microflows_34_0.png" src="../_images/Microflows_34_0.png" />
 </div>
 </div>
 <p>Next, we integrate the pressure distribution with the proper boundary condition for <span class="math notranslate nohighlight">\(p(x=0)=p_a\)</span></p>
@@ -972,7 +989,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_34_0.png" src="../_images/Microflows_34_0.png" />
+<img alt="../_images/Microflows_37_0.png" src="../_images/Microflows_37_0.png" />
 </div>
 </div>
 <p>The flow rate in this moving pad can be calulated with the other boundary condition, <span class="math notranslate nohighlight">\(p(x=L)=p_a\)</span></p>
@@ -984,7 +1001,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_36_0.png" src="../_images/Microflows_36_0.png" />
+<img alt="../_images/Microflows_39_0.png" src="../_images/Microflows_39_0.png" />
 </div>
 </div>
 <p>and we replace again this result in the pressure distribution</p>
@@ -996,7 +1013,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_38_0.png" src="../_images/Microflows_38_0.png" />
+<img alt="../_images/Microflows_41_0.png" src="../_images/Microflows_41_0.png" />
 </div>
 </div>
 <p>Let’s rearrange the terms to get it it nicer</p>
@@ -1008,7 +1025,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_40_0.png" src="../_images/Microflows_40_0.png" />
+<img alt="../_images/Microflows_43_0.png" src="../_images/Microflows_43_0.png" />
 </div>
 </div>
 <p>This solution is complex, since it is considering all the values of <span class="math notranslate nohighlight">\(\alpha\)</span>. We can take advantage of the assumption <span class="math notranslate nohighlight">\(\alpha \ll 1\)</span> in order to expand the right hand side in
@@ -1022,7 +1039,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_42_0.png" src="../_images/Microflows_42_0.png" />
+<img alt="../_images/Microflows_45_0.png" src="../_images/Microflows_45_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1033,7 +1050,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_43_0.png" src="../_images/Microflows_43_0.png" />
+<img alt="../_images/Microflows_46_0.png" src="../_images/Microflows_46_0.png" />
 </div>
 </div>
 <p>Remember that it is for unit lenght in the <span class="math notranslate nohighlight">\(z\)</span> direction, so the mean (relative) pressure in this fluid film is</p>
@@ -1046,7 +1063,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_45_0.png" src="../_images/Microflows_45_0.png" />
+<img alt="../_images/Microflows_48_0.png" src="../_images/Microflows_48_0.png" />
 </div>
 </div>
 </div>
@@ -1085,8 +1102,8 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_47_0.png" src="../_images/Microflows_47_0.png" />
-<img alt="../_images/Microflows_47_1.png" src="../_images/Microflows_47_1.png" />
+<img alt="../_images/Microflows_50_0.png" src="../_images/Microflows_50_0.png" />
+<img alt="../_images/Microflows_50_1.png" src="../_images/Microflows_50_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1101,8 +1118,8 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_48_0.png" src="../_images/Microflows_48_0.png" />
-<img alt="../_images/Microflows_48_1.png" src="../_images/Microflows_48_1.png" />
+<img alt="../_images/Microflows_51_0.png" src="../_images/Microflows_51_0.png" />
+<img alt="../_images/Microflows_51_1.png" src="../_images/Microflows_51_1.png" />
 </div>
 </div>
 <p>Remember the definition of <a class="reference external" href="https://en.wikipedia.org/wiki/Velocity_potential">velocity potential</a>. In this case, the solution is very easy</p>
@@ -1118,8 +1135,8 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_50_0.png" src="../_images/Microflows_50_0.png" />
-<img alt="../_images/Microflows_50_1.png" src="../_images/Microflows_50_1.png" />
+<img alt="../_images/Microflows_53_0.png" src="../_images/Microflows_53_0.png" />
+<img alt="../_images/Microflows_53_1.png" src="../_images/Microflows_53_1.png" />
 </div>
 </div>
 <p>Both solutions are the same and, so, we can just define the velocity potential al</p>
@@ -1132,7 +1149,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_52_0.png" src="../_images/Microflows_52_0.png" />
+<img alt="../_images/Microflows_55_0.png" src="../_images/Microflows_55_0.png" />
 </div>
 </div>
 <p>Asuming that there is no vertical velocity, <span class="math notranslate nohighlight">\(w = 0\)</span>, the continuity equation for 2D flow is just</p>
@@ -1154,9 +1171,9 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_54_0.png" src="../_images/Microflows_54_0.png" />
-<img alt="../_images/Microflows_54_1.png" src="../_images/Microflows_54_1.png" />
-<img alt="../_images/Microflows_54_2.png" src="../_images/Microflows_54_2.png" />
+<img alt="../_images/Microflows_57_0.png" src="../_images/Microflows_57_0.png" />
+<img alt="../_images/Microflows_57_1.png" src="../_images/Microflows_57_1.png" />
+<img alt="../_images/Microflows_57_2.png" src="../_images/Microflows_57_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1167,7 +1184,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_55_0.png" src="../_images/Microflows_55_0.png" />
+<img alt="../_images/Microflows_58_0.png" src="../_images/Microflows_58_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1178,7 +1195,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_56_0.png" src="../_images/Microflows_56_0.png" />
+<img alt="../_images/Microflows_59_0.png" src="../_images/Microflows_59_0.png" />
 </div>
 </div>
 <p>In this video some experimental flows are presented to show the potential-like Hele-Shaw flows</p>
@@ -1294,7 +1311,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_62_0.png" src="../_images/Microflows_62_0.png" />
+<img alt="../_images/Microflows_65_0.png" src="../_images/Microflows_65_0.png" />
 </div>
 </div>
 <p>This expression is not directly integrable</p>
@@ -1305,7 +1322,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_64_0.png" src="../_images/Microflows_64_0.png" />
+<img alt="../_images/Microflows_67_0.png" src="../_images/Microflows_67_0.png" />
 </div>
 </div>
 <p>But if we use the integration factor <span class="math notranslate nohighlight">\(\eta'\)</span>, it becomes integrable</p>
@@ -1317,7 +1334,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_66_0.png" src="../_images/Microflows_66_0.png" />
+<img alt="../_images/Microflows_69_0.png" src="../_images/Microflows_69_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1328,7 +1345,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_67_0.png" src="../_images/Microflows_67_0.png" />
+<img alt="../_images/Microflows_70_0.png" src="../_images/Microflows_70_0.png" />
 </div>
 </div>
 <p>Since when <span class="math notranslate nohighlight">\(\eta(\xi) = 0\)</span> (i.e. for <span class="math notranslate nohighlight">\(\xi\rightarrow \infty\)</span>), <span class="math notranslate nohighlight">\(\eta'(\xi)=0\)</span>, that gives that this expression has to be 1.</p>
@@ -1340,7 +1357,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_69_0.png" src="../_images/Microflows_69_0.png" />
+<img alt="../_images/Microflows_72_0.png" src="../_images/Microflows_72_0.png" />
 </div>
 </div>
 <p>This equation can be analitically solved (see the book by <a class="reference external" href="https://discovery.upc.edu/iii/encore/record/C__Rb1437689?lang=cat">Kundu</a>, example 4.7) but it is not staightforward. Let us  solve it here numerically with <a class="reference external" href="https://www.scipy.org/">scipy</a>.</p>
@@ -1354,7 +1371,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_71_0.png" src="../_images/Microflows_71_0.png" />
+<img alt="../_images/Microflows_74_0.png" src="../_images/Microflows_74_0.png" />
 </div>
 </div>
 <p>There are two solutions. We keep the second one, positive.</p>
@@ -1366,7 +1383,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_73_0.png" src="../_images/Microflows_73_0.png" />
+<img alt="../_images/Microflows_76_0.png" src="../_images/Microflows_76_0.png" />
 </div>
 </div>
 <p>and we try to simplify it a little bit</p>
@@ -1378,7 +1395,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_75_0.png" src="../_images/Microflows_75_0.png" />
+<img alt="../_images/Microflows_78_0.png" src="../_images/Microflows_78_0.png" />
 </div>
 </div>
 <p>In order to solve dEq we have to isolate the derivative of <span class="math notranslate nohighlight">\(\eta\)</span></p>
@@ -1390,7 +1407,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_77_0.png" src="../_images/Microflows_77_0.png" />
+<img alt="../_images/Microflows_80_0.png" src="../_images/Microflows_80_0.png" />
 </div>
 </div>
 <p>and we generate a function for this derivative</p>
@@ -1425,7 +1442,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_83_0.png" src="../_images/Microflows_83_0.png" />
+<img alt="../_images/Microflows_86_0.png" src="../_images/Microflows_86_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1450,7 +1467,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f096c7ee940&gt;]
 </pre></div>
 </div>
-<img alt="../_images/Microflows_86_1.png" src="../_images/Microflows_86_1.png" />
+<img alt="../_images/Microflows_89_1.png" src="../_images/Microflows_89_1.png" />
 </div>
 </div>
 </div>

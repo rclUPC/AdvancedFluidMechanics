@@ -1,0 +1,161 @@
+Traceback (most recent call last):
+  File "/home/robert/anaconda3/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/home/robert/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/robert/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/robert/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/home/robert/anaconda3/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/home/robert/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/home/robert/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/robert/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+sp.dsolve(sp.diff(f(x),x)+sp.diff(g(y),y),f(x))
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+Input [0;32mIn [4][0m, in [0;36m<cell line: 1>[0;34m()[0m
+[0;32m----> 1[0m [43msp[49m[38;5;241;43m.[39;49m[43mdsolve[49m[43m([49m[43msp[49m[38;5;241;43m.[39;49m[43mdiff[49m[43m([49m[43mf[49m[43m([49m[43mx[49m[43m)[49m[43m,[49m[43mx[49m[43m)[49m[38;5;241;43m+[39;49m[43msp[49m[38;5;241;43m.[39;49m[43mdiff[49m[43m([49m[43mg[49m[43m([49m[43my[49m[43m)[49m[43m,[49m[43my[49m[43m)[49m[43m,[49m[43mf[49m[43m([49m[43mx[49m[43m)[49m[43m)[49m
+
+File [0;32m~/anaconda3/lib/python3.9/site-packages/sympy/solvers/ode/ode.py:640[0m, in [0;36mdsolve[0;34m(eq, func, hint, simplify, ics, xi, eta, x0, n, **kwargs)[0m
+[1;32m    637[0m [38;5;28;01melse[39;00m:
+[1;32m    638[0m     [38;5;66;03m# The key 'hint' stores the hint needed to be solved for.[39;00m
+[1;32m    639[0m     hint [38;5;241m=[39m hints[[38;5;124m'[39m[38;5;124mhint[39m[38;5;124m'[39m]
+[0;32m--> 640[0m     [38;5;28;01mreturn[39;00m [43m_helper_simplify[49m[43m([49m[43meq[49m[43m,[49m[43m [49m[43mhint[49m[43m,[49m[43m [49m[43mhints[49m[43m,[49m[43m [49m[43msimplify[49m[43m,[49m[43m [49m[43mics[49m[38;5;241;43m=[39;49m[43mics[49m[43m)[49m
+
+File [0;32m~/anaconda3/lib/python3.9/site-packages/sympy/solvers/ode/ode.py:669[0m, in [0;36m_helper_simplify[0;34m(eq, hint, match, simplify, ics, **kwargs)[0m
+[1;32m    664[0m [38;5;28;01mif[39;00m simplify:
+[1;32m    665[0m     [38;5;66;03m# odesimp() will attempt to integrate, if necessary, apply constantsimp(),[39;00m
+[1;32m    666[0m     [38;5;66;03m# attempt to solve for func, and apply any other hint specific[39;00m
+[1;32m    667[0m     [38;5;66;03m# simplifications[39;00m
+[1;32m    668[0m     [38;5;28;01mif[39;00m [38;5;28misinstance[39m(solvefunc, SingleODESolver):
+[0;32m--> 669[0m         sols [38;5;241m=[39m [43msolvefunc[49m[38;5;241;43m.[39;49m[43mget_general_solution[49m[43m([49m[43m)[49m
+[1;32m    670[0m     [38;5;28;01melse[39;00m:
+[1;32m    671[0m         sols [38;5;241m=[39m solvefunc(eq, func, order, match)
+
+File [0;32m~/anaconda3/lib/python3.9/site-packages/sympy/solvers/ode/single.py:296[0m, in [0;36mSingleODESolver.get_general_solution[0;34m(self, simplify)[0m
+[1;32m    294[0m     msg [38;5;241m=[39m [38;5;124m"[39m[38;5;132;01m%s[39;00m[38;5;124m solver cannot solve:[39m[38;5;130;01m\n[39;00m[38;5;132;01m%s[39;00m[38;5;124m"[39m
+[1;32m    295[0m     [38;5;28;01mraise[39;00m ODEMatchError(msg [38;5;241m%[39m ([38;5;28mself[39m[38;5;241m.[39mhint, [38;5;28mself[39m[38;5;241m.[39mode_problem[38;5;241m.[39meq))
+[0;32m--> 296[0m [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_get_general_solution[49m[43m([49m[43msimplify_flag[49m[38;5;241;43m=[39;49m[43msimplify[49m[43m)[49m
+
+File [0;32m~/anaconda3/lib/python3.9/site-packages/sympy/solvers/ode/single.py:2398[0m, in [0;36mNthLinearConstantCoeffUndeterminedCoefficients._get_general_solution[0;34m(self, simplify_flag)[0m
+[1;32m   2396[0m gsol [38;5;241m=[39m _solve_undetermined_coefficients(eq, f(x), order, [38;5;28mself[39m[38;5;241m.[39mr, [38;5;28mself[39m[38;5;241m.[39mtrialset)
+[1;32m   2397[0m [38;5;28;01mif[39;00m simplify_flag:
+[0;32m-> 2398[0m     gsol [38;5;241m=[39m [43m_get_simplified_sol[49m[43m([49m[43m[[49m[43mgsol[49m[43m][49m[43m,[49m[43m [49m[43mf[49m[43m([49m[43mx[49m[43m)[49m[43m,[49m[43m [49m[43mcollectterms[49m[43m)[49m
+[1;32m   2399[0m [38;5;28;01mreturn[39;00m [gsol]
+
+File [0;32m~/anaconda3/lib/python3.9/site-packages/sympy/solvers/ode/nonhomogeneous.py:271[0m, in [0;36m_get_simplified_sol[0;34m(sol, func, collectterms)[0m
+[1;32m    269[0m [38;5;28;01mfor[39;00m i, reroot, imroot [38;5;129;01min[39;00m collectterms:
+[1;32m    270[0m     sol [38;5;241m=[39m collect(sol, x[38;5;241m*[39m[38;5;241m*[39mi[38;5;241m*[39mexp(reroot[38;5;241m*[39mx)[38;5;241m*[39msin([38;5;28mabs[39m(imroot)[38;5;241m*[39mx))
+[0;32m--> 271[0m     sol [38;5;241m=[39m [43mcollect[49m[43m([49m[43msol[49m[43m,[49m[43m [49m[43mx[49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mi[49m[38;5;241;43m*[39;49m[43mexp[49m[43m([49m[43mreroot[49m[38;5;241;43m*[39;49m[43mx[49m[43m)[49m[38;5;241;43m*[39;49m[43mcos[49m[43m([49m[43mimroot[49m[38;5;241;43m*[39;49m[43mx[49m[43m)[49m[43m)[49m
+[1;32m    272[0m [38;5;28;01mfor[39;00m i, reroot, imroot [38;5;129;01min[39;00m collectterms:
+[1;32m    273[0m     sol [38;5;241m=[39m collect(sol, x[38;5;241m*[39m[38;5;241m*[39mi[38;5;241m*[39mexp(reroot[38;5;241m*[39mx))
+
+File [0;32m~/anaconda3/lib/python3.9/site-packages/sympy/simplify/radsimp.py:175[0m, in [0;36mcollect[0;34m(expr, syms, func, evaluate, exact, distribute_order_term)[0m
+[1;32m    173[0m reps [38;5;241m=[39m [38;5;28mdict[39m([38;5;28mzip[39m(nonsyms, [Dummy([38;5;241m*[39m[38;5;241m*[39massumptions(i)) [38;5;28;01mfor[39;00m i [38;5;129;01min[39;00m nonsyms]))
+[1;32m    174[0m syms [38;5;241m=[39m [reps[38;5;241m.[39mget(s, s) [38;5;28;01mfor[39;00m s [38;5;129;01min[39;00m syms]
+[0;32m--> 175[0m rv [38;5;241m=[39m [43mcollect[49m[43m([49m[43mexpr[49m[38;5;241;43m.[39;49m[43msubs[49m[43m([49m[43mreps[49m[43m)[49m[43m,[49m[43m [49m[43msyms[49m[43m,[49m
+[1;32m    176[0m [43m    [49m[43mfunc[49m[38;5;241;43m=[39;49m[43mfunc[49m[43m,[49m[43m [49m[43mevaluate[49m[38;5;241;43m=[39;49m[43mevaluate[49m[43m,[49m[43m [49m[43mexact[49m[38;5;241;43m=[39;49m[43mexact[49m[43m,[49m
+[1;32m    177[0m [43m    [49m[43mdistribute_order_term[49m[38;5;241;43m=[39;49m[43mdistribute_order_term[49m[43m)[49m
+[1;32m    178[0m urep [38;5;241m=[39m {v: k [38;5;28;01mfor[39;00m k, v [38;5;129;01min[39;00m reps[38;5;241m.[39mitems()}
+[1;32m    179[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(rv, [38;5;28mdict[39m):
+
+File [0;32m~/anaconda3/lib/python3.9/site-packages/sympy/simplify/radsimp.py:360[0m, in [0;36mcollect[0;34m(expr, syms, func, evaluate, exact, distribute_order_term)[0m
+[1;32m    358[0m [38;5;28;01mif[39;00m expr[38;5;241m.[39mis_Add:
+[1;32m    359[0m     o [38;5;241m=[39m expr[38;5;241m.[39mgetO() [38;5;129;01mor[39;00m [38;5;241m0[39m
+[0;32m--> 360[0m     expr [38;5;241m=[39m expr[38;5;241m.[39mfunc([38;5;241m*[39m[
+[1;32m    361[0m             collect(a, syms, func, [38;5;28;01mTrue[39;00m, exact, distribute_order_term)
+[1;32m    362[0m             [38;5;28;01mfor[39;00m a [38;5;129;01min[39;00m expr[38;5;241m.[39margs [38;5;28;01mif[39;00m a [38;5;241m!=[39m o]) [38;5;241m+[39m o
+[1;32m    363[0m [38;5;28;01melif[39;00m expr[38;5;241m.[39mis_Mul:
+[1;32m    364[0m     [38;5;28;01mreturn[39;00m expr[38;5;241m.[39mfunc([38;5;241m*[39m[
+[1;32m    365[0m         collect(term, syms, func, [38;5;28;01mTrue[39;00m, exact, distribute_order_term)
+[1;32m    366[0m         [38;5;28;01mfor[39;00m term [38;5;129;01min[39;00m expr[38;5;241m.[39margs])
+
+File [0;32m~/anaconda3/lib/python3.9/site-packages/sympy/simplify/radsimp.py:361[0m, in [0;36m<listcomp>[0;34m(.0)[0m
+[1;32m    358[0m [38;5;28;01mif[39;00m expr[38;5;241m.[39mis_Add:
+[1;32m    359[0m     o [38;5;241m=[39m expr[38;5;241m.[39mgetO() [38;5;129;01mor[39;00m [38;5;241m0[39m
+[1;32m    360[0m     expr [38;5;241m=[39m expr[38;5;241m.[39mfunc([38;5;241m*[39m[
+[0;32m--> 361[0m             [43mcollect[49m[43m([49m[43ma[49m[43m,[49m[43m [49m[43msyms[49m[43m,[49m[43m [49m[43mfunc[49m[43m,[49m[43m [49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m[43m [49m[43mexact[49m[43m,[49m[43m [49m[43mdistribute_order_term[49m[43m)[49m
+[1;32m    362[0m             [38;5;28;01mfor[39;00m a [38;5;129;01min[39;00m expr[38;5;241m.[39margs [38;5;28;01mif[39;00m a [38;5;241m!=[39m o]) [38;5;241m+[39m o
+[1;32m    363[0m [38;5;28;01melif[39;00m expr[38;5;241m.[39mis_Mul:
+[1;32m    364[0m     [38;5;28;01mreturn[39;00m expr[38;5;241m.[39mfunc([38;5;241m*[39m[
+[1;32m    365[0m         collect(term, syms, func, [38;5;28;01mTrue[39;00m, exact, distribute_order_term)
+[1;32m    366[0m         [38;5;28;01mfor[39;00m term [38;5;129;01min[39;00m expr[38;5;241m.[39margs])
+
+File [0;32m~/anaconda3/lib/python3.9/site-packages/sympy/simplify/radsimp.py:364[0m, in [0;36mcollect[0;34m(expr, syms, func, evaluate, exact, distribute_order_term)[0m
+[1;32m    360[0m     expr [38;5;241m=[39m expr[38;5;241m.[39mfunc([38;5;241m*[39m[
+[1;32m    361[0m             collect(a, syms, func, [38;5;28;01mTrue[39;00m, exact, distribute_order_term)
+[1;32m    362[0m             [38;5;28;01mfor[39;00m a [38;5;129;01min[39;00m expr[38;5;241m.[39margs [38;5;28;01mif[39;00m a [38;5;241m!=[39m o]) [38;5;241m+[39m o
+[1;32m    363[0m [38;5;28;01melif[39;00m expr[38;5;241m.[39mis_Mul:
+[0;32m--> 364[0m     [38;5;28;01mreturn[39;00m expr[38;5;241m.[39mfunc([38;5;241m*[39m[
+[1;32m    365[0m         collect(term, syms, func, [38;5;28;01mTrue[39;00m, exact, distribute_order_term)
+[1;32m    366[0m         [38;5;28;01mfor[39;00m term [38;5;129;01min[39;00m expr[38;5;241m.[39margs])
+[1;32m    367[0m [38;5;28;01melif[39;00m expr[38;5;241m.[39mis_Pow:
+[1;32m    368[0m     b [38;5;241m=[39m collect(
+[1;32m    369[0m         expr[38;5;241m.[39mbase, syms, func, [38;5;28;01mTrue[39;00m, exact, distribute_order_term)
+
+File [0;32m~/anaconda3/lib/python3.9/site-packages/sympy/simplify/radsimp.py:365[0m, in [0;36m<listcomp>[0;34m(.0)[0m
+[1;32m    360[0m     expr [38;5;241m=[39m expr[38;5;241m.[39mfunc([38;5;241m*[39m[
+[1;32m    361[0m             collect(a, syms, func, [38;5;28;01mTrue[39;00m, exact, distribute_order_term)
+[1;32m    362[0m             [38;5;28;01mfor[39;00m a [38;5;129;01min[39;00m expr[38;5;241m.[39margs [38;5;28;01mif[39;00m a [38;5;241m!=[39m o]) [38;5;241m+[39m o
+[1;32m    363[0m [38;5;28;01melif[39;00m expr[38;5;241m.[39mis_Mul:
+[1;32m    364[0m     [38;5;28;01mreturn[39;00m expr[38;5;241m.[39mfunc([38;5;241m*[39m[
+[0;32m--> 365[0m         [43mcollect[49m[43m([49m[43mterm[49m[43m,[49m[43m [49m[43msyms[49m[43m,[49m[43m [49m[43mfunc[49m[43m,[49m[43m [49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m[43m [49m[43mexact[49m[43m,[49m[43m [49m[43mdistribute_order_term[49m[43m)[49m
+[1;32m    366[0m         [38;5;28;01mfor[39;00m term [38;5;129;01min[39;00m expr[38;5;241m.[39margs])
+[1;32m    367[0m [38;5;28;01melif[39;00m expr[38;5;241m.[39mis_Pow:
+[1;32m    368[0m     b [38;5;241m=[39m collect(
+[1;32m    369[0m         expr[38;5;241m.[39mbase, syms, func, [38;5;28;01mTrue[39;00m, exact, distribute_order_term)
+
+File [0;32m~/anaconda3/lib/python3.9/site-packages/sympy/simplify/radsimp.py:391[0m, in [0;36mcollect[0;34m(expr, syms, func, evaluate, exact, distribute_order_term)[0m
+[1;32m    389[0m c, nc [38;5;241m=[39m product[38;5;241m.[39margs_cnc(split_1[38;5;241m=[39m[38;5;28;01mFalse[39;00m)
+[1;32m    390[0m args [38;5;241m=[39m [38;5;28mlist[39m(ordered(c)) [38;5;241m+[39m nc
+[0;32m--> 391[0m terms [38;5;241m=[39m [parse_term(i) [38;5;28;01mfor[39;00m i [38;5;129;01min[39;00m args]
+[1;32m    392[0m small_first [38;5;241m=[39m [38;5;28;01mTrue[39;00m
+[1;32m    394[0m [38;5;28;01mfor[39;00m symbol [38;5;129;01min[39;00m syms:
+
+File [0;32m~/anaconda3/lib/python3.9/site-packages/sympy/simplify/radsimp.py:391[0m, in [0;36m<listcomp>[0;34m(.0)[0m
+[1;32m    389[0m c, nc [38;5;241m=[39m product[38;5;241m.[39margs_cnc(split_1[38;5;241m=[39m[38;5;28;01mFalse[39;00m)
+[1;32m    390[0m args [38;5;241m=[39m [38;5;28mlist[39m(ordered(c)) [38;5;241m+[39m nc
+[0;32m--> 391[0m terms [38;5;241m=[39m [[43mparse_term[49m[43m([49m[43mi[49m[43m)[49m [38;5;28;01mfor[39;00m i [38;5;129;01min[39;00m args]
+[1;32m    392[0m small_first [38;5;241m=[39m [38;5;28;01mTrue[39;00m
+[1;32m    394[0m [38;5;28;01mfor[39;00m symbol [38;5;129;01min[39;00m syms:
+
+File [0;32m~/anaconda3/lib/python3.9/site-packages/sympy/simplify/radsimp.py:281[0m, in [0;36mcollect.<locals>.parse_term[0;34m(expr)[0m
+[1;32m    279[0m         sexpr, rat_expo [38;5;241m=[39m exp(tail), coeff
+[1;32m    280[0m [38;5;28;01melif[39;00m [38;5;28misinstance[39m(expr, Derivative):
+[0;32m--> 281[0m     sexpr, deriv [38;5;241m=[39m [43mparse_derivative[49m[43m([49m[43mexpr[49m[43m)[49m
+[1;32m    283[0m [38;5;28;01mreturn[39;00m sexpr, rat_expo, sym_expo, deriv
+
+File [0;32m~/anaconda3/lib/python3.9/site-packages/sympy/simplify/radsimp.py:211[0m, in [0;36mcollect.<locals>.parse_derivative[0;34m(deriv)[0m
+[1;32m    208[0m [38;5;28;01mdef[39;00m [38;5;21mparse_derivative[39m(deriv):
+[1;32m    209[0m     [38;5;66;03m# scan derivatives tower in the input expression and return[39;00m
+[1;32m    210[0m     [38;5;66;03m# underlying function and maximal differentiation order[39;00m
+[0;32m--> 211[0m     expr, sym, order [38;5;241m=[39m deriv[38;5;241m.[39mexpr, [43mderiv[49m[38;5;241;43m.[39;49m[43mvariables[49m[[38;5;241m0[39m], [38;5;241m1[39m
+[1;32m    213[0m     [38;5;28;01mfor[39;00m s [38;5;129;01min[39;00m deriv[38;5;241m.[39mvariables[[38;5;241m1[39m:]:
+[1;32m    214[0m         [38;5;28;01mif[39;00m s [38;5;241m==[39m sym:
+
+File [0;32m~/anaconda3/lib/python3.9/site-packages/sympy/core/function.py:1664[0m, in [0;36mDerivative.variables[0;34m(self)[0m
+[1;32m   1662[0m [38;5;28;01mfor[39;00m v, count [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39mvariable_count:
+[1;32m   1663[0m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m count[38;5;241m.[39mis_Integer:
+[0;32m-> 1664[0m         [38;5;28;01mraise[39;00m [38;5;167;01mTypeError[39;00m(filldedent([38;5;124m'''[39m
+[1;32m   1665[0m [38;5;124m        Cannot give expansion for symbolic count. If you just[39m
+[1;32m   1666[0m [38;5;124m        want a list of all variables of differentiation, use[39m
+[1;32m   1667[0m [38;5;124m        _wrt_variables.[39m[38;5;124m'''[39m))
+[1;32m   1668[0m     rv[38;5;241m.[39mextend([v][38;5;241m*[39mcount)
+[1;32m   1669[0m [38;5;28;01mreturn[39;00m [38;5;28mtuple[39m(rv)
+
+[0;31mTypeError[0m: 
+Cannot give expansion for symbolic count. If you just want a list of
+all variables of differentiation, use _wrt_variables.
+TypeError: 
+Cannot give expansion for symbolic count. If you just want a list of
+all variables of differentiation, use _wrt_variables.
+

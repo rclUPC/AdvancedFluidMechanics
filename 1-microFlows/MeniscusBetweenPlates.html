@@ -503,8 +503,12 @@ plate.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<pre class="output stream literal-block"> lsoda--  at t (=r1), too much accuracy requested         for precision of machine..  see tolsf (=r2)       in above,  r1 =  0.5148195504208D+01   r2 =                  NaN
+</pre>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;lambdifygenerated-2&gt;:2: RuntimeWarning: invalid value encountered in sqrt
-  return -sqrt(-1.0 + 1.0/(0.5*_Dummy_1990**2 + _Dummy_1990*beta - 1)**2)
+  return (-sqrt(-1.0 + 1.0/(0.5*_Dummy_2006**2 + _Dummy_2006*beta - 1)**2))
+/home/robert/.local/lib/python3.8/site-packages/scipy/integrate/_odepack_py.py:247: ODEintWarning: Excess accuracy requested (tolerances too small). Run with full_output = 1 to get quantitative information.
+  warnings.warn(warning_msg, ODEintWarning)
 </pre></div>
 </div>
 </div>
@@ -522,7 +526,7 @@ and drop them from <code class="docutils literal notranslate"><span class="pre">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numerical value for lambda: 9.92
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numerical value for lambda: 191
 estimated value for lambda: 173
 </pre></div>
 </div>
@@ -548,7 +552,7 @@ estimated value for lambda: 173
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fdd213e4e80&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f3d4fa2de20&gt;
 </pre></div>
 </div>
 <img alt="../_images/MeniscusBetweenPlates_23_1.png" src="../_images/MeniscusBetweenPlates_23_1.png" />
