@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,27 +33,26 @@
     
   <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >let toggleHintShow = 'Click to show';</script>
-    <script >let toggleHintHide = 'Click to hide';</script>
-    <script >let toggleOpenOnPrint = 'true';</script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"Ma": "\\mathrm{Ma}"}}, "tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script>window.MathJax = {"TeX": {"Macros": {"Ma": "\\mathrm{Ma}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Assignment 1. Computation of journal bearing" href="Assignment1.html" />
@@ -136,27 +135,34 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../2-Rheology/rheology.html">
    Rheology. A brief introduction
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../2-Rheology/FDMViscoelastic.html">
-   Viscoelastic fluid in a pipe (Maxwell model)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../2-Rheology/Assignment2.html">
-   Assignment 2. Rheological behaviour of cosmetic creams
-  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-Rheology/FDMViscoelastic.html">
+     Viscoelastic fluid in a pipe (Maxwell model)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-Rheology/Assignment2.html">
+     Assignment 2. Rheological behaviour of cosmetic creams
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../3-Turbulence/turbulence.html">
    Turbulent flows. Statistical description and characteristic scales
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -177,8 +183,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../4-BoundaryLayer/BoundaryLayer.html">
    Boundary Layer. An introduction
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -194,8 +200,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../5-CompressibleFlow/CompressibleFlow.html">
    Compressible Flow. An introduction
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -676,6 +682,145 @@ p^* = \frac{p}{p_c} \tag{5}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span><span class="n">u</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="n">ics</span><span class="o">=</span><span class="n">ics</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [9],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">Sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span><span class="n">u</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="n">ics</span><span class="o">=</span><span class="n">ics</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/sympy/solvers/ode/ode.py:640,</span> in <span class="ni">dsolve</span><span class="nt">(eq, func, hint, simplify, ics, xi, eta, x0, n, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">637</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">638</span>     <span class="c1"># The key &#39;hint&#39; stores the hint needed to be solved for.</span>
+<span class="g g-Whitespace">    </span><span class="mi">639</span>     <span class="n">hint</span> <span class="o">=</span> <span class="n">hints</span><span class="p">[</span><span class="s1">&#39;hint&#39;</span><span class="p">]</span>
+<span class="ne">--&gt; </span><span class="mi">640</span>     <span class="k">return</span> <span class="n">_helper_simplify</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">hint</span><span class="p">,</span> <span class="n">hints</span><span class="p">,</span> <span class="n">simplify</span><span class="p">,</span> <span class="n">ics</span><span class="o">=</span><span class="n">ics</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/sympy/solvers/ode/ode.py:669,</span> in <span class="ni">_helper_simplify</span><span class="nt">(eq, hint, match, simplify, ics, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">664</span> <span class="k">if</span> <span class="n">simplify</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">665</span>     <span class="c1"># odesimp() will attempt to integrate, if necessary, apply constantsimp(),</span>
+<span class="g g-Whitespace">    </span><span class="mi">666</span>     <span class="c1"># attempt to solve for func, and apply any other hint specific</span>
+<span class="g g-Whitespace">    </span><span class="mi">667</span>     <span class="c1"># simplifications</span>
+<span class="g g-Whitespace">    </span><span class="mi">668</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">solvefunc</span><span class="p">,</span> <span class="n">SingleODESolver</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">669</span>         <span class="n">sols</span> <span class="o">=</span> <span class="n">solvefunc</span><span class="o">.</span><span class="n">get_general_solution</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">670</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">671</span>         <span class="n">sols</span> <span class="o">=</span> <span class="n">solvefunc</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">match</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/sympy/solvers/ode/single.py:296,</span> in <span class="ni">SingleODESolver.get_general_solution</span><span class="nt">(self, simplify)</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> solver cannot solve:</span><span class="se">\n</span><span class="si">%s</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>     <span class="k">raise</span> <span class="n">ODEMatchError</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hint</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ode_problem</span><span class="o">.</span><span class="n">eq</span><span class="p">))</span>
+<span class="ne">--&gt; </span><span class="mi">296</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_general_solution</span><span class="p">(</span><span class="n">simplify_flag</span><span class="o">=</span><span class="n">simplify</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/sympy/solvers/ode/single.py:2398,</span> in <span class="ni">NthLinearConstantCoeffUndeterminedCoefficients._get_general_solution</span><span class="nt">(self, simplify_flag)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2396</span> <span class="n">gsol</span> <span class="o">=</span> <span class="n">_solve_undetermined_coefficients</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">order</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">trialset</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2397</span> <span class="k">if</span> <span class="n">simplify_flag</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2398</span>     <span class="n">gsol</span> <span class="o">=</span> <span class="n">_get_simplified_sol</span><span class="p">([</span><span class="n">gsol</span><span class="p">],</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">collectterms</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2399</span> <span class="k">return</span> <span class="p">[</span><span class="n">gsol</span><span class="p">]</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/sympy/solvers/ode/nonhomogeneous.py:271,</span> in <span class="ni">_get_simplified_sol</span><span class="nt">(sol, func, collectterms)</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">reroot</span><span class="p">,</span> <span class="n">imroot</span> <span class="ow">in</span> <span class="n">collectterms</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span>     <span class="n">sol</span> <span class="o">=</span> <span class="n">collect</span><span class="p">(</span><span class="n">sol</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="n">i</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">reroot</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">imroot</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+<span class="ne">--&gt; </span><span class="mi">271</span>     <span class="n">sol</span> <span class="o">=</span> <span class="n">collect</span><span class="p">(</span><span class="n">sol</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="n">i</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">reroot</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">imroot</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">272</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">reroot</span><span class="p">,</span> <span class="n">imroot</span> <span class="ow">in</span> <span class="n">collectterms</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">273</span>     <span class="n">sol</span> <span class="o">=</span> <span class="n">collect</span><span class="p">(</span><span class="n">sol</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="n">i</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">reroot</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/sympy/simplify/radsimp.py:175,</span> in <span class="ni">collect</span><span class="nt">(expr, syms, func, evaluate, exact, distribute_order_term)</span>
+<span class="g g-Whitespace">    </span><span class="mi">173</span> <span class="n">reps</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">nonsyms</span><span class="p">,</span> <span class="p">[</span><span class="n">Dummy</span><span class="p">(</span><span class="o">**</span><span class="n">assumptions</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">nonsyms</span><span class="p">]))</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="n">syms</span> <span class="o">=</span> <span class="p">[</span><span class="n">reps</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">syms</span><span class="p">]</span>
+<span class="ne">--&gt; </span><span class="mi">175</span> <span class="n">rv</span> <span class="o">=</span> <span class="n">collect</span><span class="p">(</span><span class="n">expr</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">reps</span><span class="p">),</span> <span class="n">syms</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">176</span>     <span class="n">func</span><span class="o">=</span><span class="n">func</span><span class="p">,</span> <span class="n">evaluate</span><span class="o">=</span><span class="n">evaluate</span><span class="p">,</span> <span class="n">exact</span><span class="o">=</span><span class="n">exact</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">177</span>     <span class="n">distribute_order_term</span><span class="o">=</span><span class="n">distribute_order_term</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span> <span class="n">urep</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">reps</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rv</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/sympy/simplify/radsimp.py:360,</span> in <span class="ni">collect</span><span class="nt">(expr, syms, func, evaluate, exact, distribute_order_term)</span>
+<span class="g g-Whitespace">    </span><span class="mi">358</span> <span class="k">if</span> <span class="n">expr</span><span class="o">.</span><span class="n">is_Add</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">359</span>     <span class="n">o</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">getO</span><span class="p">()</span> <span class="ow">or</span> <span class="mi">0</span>
+<span class="ne">--&gt; </span><span class="mi">360</span>     <span class="n">expr</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span>             <span class="n">collect</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">syms</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">exact</span><span class="p">,</span> <span class="n">distribute_order_term</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span>             <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">expr</span><span class="o">.</span><span class="n">args</span> <span class="k">if</span> <span class="n">a</span> <span class="o">!=</span> <span class="n">o</span><span class="p">])</span> <span class="o">+</span> <span class="n">o</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span> <span class="k">elif</span> <span class="n">expr</span><span class="o">.</span><span class="n">is_Mul</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span>     <span class="k">return</span> <span class="n">expr</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span>         <span class="n">collect</span><span class="p">(</span><span class="n">term</span><span class="p">,</span> <span class="n">syms</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">exact</span><span class="p">,</span> <span class="n">distribute_order_term</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span>         <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">expr</span><span class="o">.</span><span class="n">args</span><span class="p">])</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/sympy/simplify/radsimp.py:361,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">358</span> <span class="k">if</span> <span class="n">expr</span><span class="o">.</span><span class="n">is_Add</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">359</span>     <span class="n">o</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">getO</span><span class="p">()</span> <span class="ow">or</span> <span class="mi">0</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span>     <span class="n">expr</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+<span class="ne">--&gt; </span><span class="mi">361</span>             <span class="n">collect</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">syms</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">exact</span><span class="p">,</span> <span class="n">distribute_order_term</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span>             <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">expr</span><span class="o">.</span><span class="n">args</span> <span class="k">if</span> <span class="n">a</span> <span class="o">!=</span> <span class="n">o</span><span class="p">])</span> <span class="o">+</span> <span class="n">o</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span> <span class="k">elif</span> <span class="n">expr</span><span class="o">.</span><span class="n">is_Mul</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span>     <span class="k">return</span> <span class="n">expr</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span>         <span class="n">collect</span><span class="p">(</span><span class="n">term</span><span class="p">,</span> <span class="n">syms</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">exact</span><span class="p">,</span> <span class="n">distribute_order_term</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span>         <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">expr</span><span class="o">.</span><span class="n">args</span><span class="p">])</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/sympy/simplify/radsimp.py:364,</span> in <span class="ni">collect</span><span class="nt">(expr, syms, func, evaluate, exact, distribute_order_term)</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span>     <span class="n">expr</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span>             <span class="n">collect</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">syms</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">exact</span><span class="p">,</span> <span class="n">distribute_order_term</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span>             <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">expr</span><span class="o">.</span><span class="n">args</span> <span class="k">if</span> <span class="n">a</span> <span class="o">!=</span> <span class="n">o</span><span class="p">])</span> <span class="o">+</span> <span class="n">o</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span> <span class="k">elif</span> <span class="n">expr</span><span class="o">.</span><span class="n">is_Mul</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">364</span>     <span class="k">return</span> <span class="n">expr</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span>         <span class="n">collect</span><span class="p">(</span><span class="n">term</span><span class="p">,</span> <span class="n">syms</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">exact</span><span class="p">,</span> <span class="n">distribute_order_term</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span>         <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">expr</span><span class="o">.</span><span class="n">args</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">367</span> <span class="k">elif</span> <span class="n">expr</span><span class="o">.</span><span class="n">is_Pow</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">368</span>     <span class="n">b</span> <span class="o">=</span> <span class="n">collect</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">369</span>         <span class="n">expr</span><span class="o">.</span><span class="n">base</span><span class="p">,</span> <span class="n">syms</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">exact</span><span class="p">,</span> <span class="n">distribute_order_term</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/sympy/simplify/radsimp.py:365,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span>     <span class="n">expr</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span>             <span class="n">collect</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">syms</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">exact</span><span class="p">,</span> <span class="n">distribute_order_term</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span>             <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">expr</span><span class="o">.</span><span class="n">args</span> <span class="k">if</span> <span class="n">a</span> <span class="o">!=</span> <span class="n">o</span><span class="p">])</span> <span class="o">+</span> <span class="n">o</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span> <span class="k">elif</span> <span class="n">expr</span><span class="o">.</span><span class="n">is_Mul</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span>     <span class="k">return</span> <span class="n">expr</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+<span class="ne">--&gt; </span><span class="mi">365</span>         <span class="n">collect</span><span class="p">(</span><span class="n">term</span><span class="p">,</span> <span class="n">syms</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">exact</span><span class="p">,</span> <span class="n">distribute_order_term</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span>         <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">expr</span><span class="o">.</span><span class="n">args</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">367</span> <span class="k">elif</span> <span class="n">expr</span><span class="o">.</span><span class="n">is_Pow</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">368</span>     <span class="n">b</span> <span class="o">=</span> <span class="n">collect</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">369</span>         <span class="n">expr</span><span class="o">.</span><span class="n">base</span><span class="p">,</span> <span class="n">syms</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">exact</span><span class="p">,</span> <span class="n">distribute_order_term</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/sympy/simplify/radsimp.py:391,</span> in <span class="ni">collect</span><span class="nt">(expr, syms, func, evaluate, exact, distribute_order_term)</span>
+<span class="g g-Whitespace">    </span><span class="mi">389</span> <span class="n">c</span><span class="p">,</span> <span class="n">nc</span> <span class="o">=</span> <span class="n">product</span><span class="o">.</span><span class="n">args_cnc</span><span class="p">(</span><span class="n">split_1</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">390</span> <span class="n">args</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ordered</span><span class="p">(</span><span class="n">c</span><span class="p">))</span> <span class="o">+</span> <span class="n">nc</span>
+<span class="ne">--&gt; </span><span class="mi">391</span> <span class="n">terms</span> <span class="o">=</span> <span class="p">[</span><span class="n">parse_term</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">392</span> <span class="n">small_first</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">394</span> <span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="n">syms</span><span class="p">:</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/sympy/simplify/radsimp.py:391,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">389</span> <span class="n">c</span><span class="p">,</span> <span class="n">nc</span> <span class="o">=</span> <span class="n">product</span><span class="o">.</span><span class="n">args_cnc</span><span class="p">(</span><span class="n">split_1</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">390</span> <span class="n">args</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ordered</span><span class="p">(</span><span class="n">c</span><span class="p">))</span> <span class="o">+</span> <span class="n">nc</span>
+<span class="ne">--&gt; </span><span class="mi">391</span> <span class="n">terms</span> <span class="o">=</span> <span class="p">[</span><span class="n">parse_term</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">392</span> <span class="n">small_first</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">394</span> <span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="n">syms</span><span class="p">:</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/sympy/simplify/radsimp.py:281,</span> in <span class="ni">collect.&lt;locals&gt;.parse_term</span><span class="nt">(expr)</span>
+<span class="g g-Whitespace">    </span><span class="mi">279</span>         <span class="n">sexpr</span><span class="p">,</span> <span class="n">rat_expo</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">tail</span><span class="p">),</span> <span class="n">coeff</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">Derivative</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">281</span>     <span class="n">sexpr</span><span class="p">,</span> <span class="n">deriv</span> <span class="o">=</span> <span class="n">parse_derivative</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">283</span> <span class="k">return</span> <span class="n">sexpr</span><span class="p">,</span> <span class="n">rat_expo</span><span class="p">,</span> <span class="n">sym_expo</span><span class="p">,</span> <span class="n">deriv</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/sympy/simplify/radsimp.py:211,</span> in <span class="ni">collect.&lt;locals&gt;.parse_derivative</span><span class="nt">(deriv)</span>
+<span class="g g-Whitespace">    </span><span class="mi">208</span> <span class="k">def</span> <span class="nf">parse_derivative</span><span class="p">(</span><span class="n">deriv</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="c1"># scan derivatives tower in the input expression and return</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>     <span class="c1"># underlying function and maximal differentiation order</span>
+<span class="ne">--&gt; </span><span class="mi">211</span>     <span class="n">expr</span><span class="p">,</span> <span class="n">sym</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="n">deriv</span><span class="o">.</span><span class="n">expr</span><span class="p">,</span> <span class="n">deriv</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">deriv</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>         <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="n">sym</span><span class="p">:</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/sympy/core/function.py:1664,</span> in <span class="ni">Derivative.variables</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1662</span> <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">variable_count</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1663</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">count</span><span class="o">.</span><span class="n">is_Integer</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1664</span>         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">filldedent</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1665</span><span class="s1">         Cannot give expansion for symbolic count. If you just</span>
+<span class="g g-Whitespace">   </span><span class="mi">1666</span><span class="s1">         want a list of all variables of differentiation, use</span>
+<span class="g g-Whitespace">   </span><span class="mi">1667</span><span class="s1">         _wrt_variables.&#39;&#39;&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1668</span>     <span class="n">rv</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">v</span><span class="p">]</span><span class="o">*</span><span class="n">count</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1669</span> <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">rv</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: 
+<span class="n">Cannot</span> <span class="n">give</span> <span class="n">expansion</span> <span class="k">for</span> <span class="n">symbolic</span> <span class="n">count</span><span class="o">.</span> <span class="n">If</span> <span class="n">you</span> <span class="n">just</span> <span class="n">want</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span>
+<span class="nb">all</span> <span class="n">variables</span> <span class="n">of</span> <span class="n">differentiation</span><span class="p">,</span> <span class="n">use</span> <span class="n">_wrt_variables</span><span class="o">.</span>
 </pre></div>
 </div>
 </div>
@@ -1302,7 +1447,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff4cd457c70&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f096c7ee940&gt;]
 </pre></div>
 </div>
 <img alt="../_images/Microflows_86_1.png" src="../_images/Microflows_86_1.png" />
