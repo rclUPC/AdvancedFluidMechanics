@@ -18,4 +18,4 @@ $$
 
 This is know as the power-law for the turbulent boundary layer. It is, as the log-law, valid only for $y^+ \gtrapprox 30$
 
-4. Finally use the von Kármén equation for steady uniform flow, equation (27), to find how a turbulent boundary layer grows, $\delta(x)$.
+4. Finally use the von Kármán equation for steady uniform flow, equation (27), to find how a turbulent boundary layer grows, $\delta(x)$.
