@@ -692,7 +692,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "8b799f2969ef440fb29a6577c6177ac1", "version_major": 2, "version_minor": 0}
+{"model_id": "91deb2516b32471eab37f6b05ec31441", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 </div>
@@ -946,7 +946,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fc0928b39d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe856bf60a0&gt;
 </pre></div>
 </div>
 <img alt="../_images/rheology_53_1.png" src="../_images/rheology_53_1.png" />
@@ -1101,7 +1101,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fc092582c70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe856928610&gt;
 </pre></div>
 </div>
 <img alt="../_images/rheology_71_1.png" src="../_images/rheology_71_1.png" />
@@ -1186,9 +1186,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#tauInf = sp.symbols(&#39;\\tau_{-\infty}&#39;)</span>
-<span class="c1">#tauSol = sp.dsolve(eq,tau(t),ics={tau(-sp.oo):tauInf})</span>
-<span class="n">tauSol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span><span class="n">tau</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tauSol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span><span class="n">tau</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1229,6 +1227,35 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="math notranslate nohighlight">
 \[ \boldsymbol{\tau} + \lambda_1 \stackrel{\triangledown}{\boldsymbol{\tau}} = \eta \left( \boldsymbol{\dot\gamma} + \lambda_2 \stackrel{\triangledown}{\boldsymbol{\dot\gamma}}\right) \]</div>
 <p>known as the <a class="reference external" href="https://en.wikipedia.org/wiki/Oldroyd-B_model"><strong>Oldroyd-B</strong> model</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="o">%</span><span class="k">load_ext</span> watermark
+<span class="k">except</span><span class="p">:</span>
+    <span class="o">!</span>pip install watermark
+<span class="o">%</span><span class="k">watermark</span> -v -m -iv
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python implementation: CPython
+Python version       : 3.9.12
+IPython version      : 8.2.0
+
+Compiler    : GCC 7.5.0
+OS          : Linux
+Release     : 5.4.0-113-generic
+Machine     : x86_64
+Processor   : x86_64
+CPU cores   : 8
+Architecture: 64bit
+
+sympy: 1.7.1
+numpy: 1.21.5
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="toctree-wrapper compound">

@@ -532,7 +532,7 @@ allow to solve a large variety of problems.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Call signature:</span>  np<span class=" -Color -Color-Blue">.</span>log<span class=" -Color -Color-Blue">(*</span>args<span class=" -Color -Color-Blue">,</span> <span class=" -Color -Color-Blue">**</span>kwargs<span class=" -Color -Color-Blue">)</span>
 <span class=" -Color -Color-Red">Type:</span>            ufunc
 <span class=" -Color -Color-Red">String form:</span>     &lt;ufunc &#39;log&#39;&gt;
-<span class=" -Color -Color-Red">File:</span>            ~/.config/jupyterlab-desktop/jlab_server/lib/python3.8/site-packages/numpy/__init__.py
+<span class=" -Color -Color-Red">File:</span>            ~/anaconda3/lib/python3.9/site-packages/numpy/__init__.py
 <span class=" -Color -Color-Red">Docstring:</span>      
 log(x, /, out=None, *, where=True, casting=&#39;same_kind&#39;, order=&#39;K&#39;, dtype=None, subok=True[, signature, extobj])
 
@@ -590,8 +590,7 @@ number, conforming to the C99 standard.
 References
 ----------
 .. [1] M. Abramowitz and I.A. Stegun, &quot;Handbook of Mathematical Functions&quot;,
-       10th printing, 1964, pp. 67.
-       https://personal.math.ubc.ca/~cbm/aands/page_67.htm
+       10th printing, 1964, pp. 67. http://www.math.sfu.ca/~cbm/aands/
 .. [2] Wikipedia, &quot;Logarithm&quot;. https://en.wikipedia.org/wiki/Logarithm
 
 Examples
@@ -653,11 +652,29 @@ r : ndarray or tuple of ndarray
 <div class="section" id="sympy">
 <h2>2. Sympy<a class="headerlink" href="#sympy" title="Permalink to this headline">¶</a></h2>
 <p>With the library <a class="reference external" href="https://peerj.com/articles/cs-103/"><em>sympy</em></a> symbolic manipulation of mathematical equations can be performed, in a similar way as with Maple, Mathematica or Wolfram Alpha.</p>
+<p>The command</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="o">...</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>tries to execute something (in this case, it tries to import <code class="docutils literal notranslate"><span class="pre">sympy</span></code>) and, if it fails, run the command in <code class="docutils literal notranslate"><span class="pre">except:</span></code>, in this case, it install
+the version 1.7.1 of <code class="docutils literal notranslate"><span class="pre">sympy</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="o">!</span>pip install <span class="nv">sympy</span><span class="o">=</span><span class="m">1</span>.7.1
+</pre></div>
+</div>
+</div>
+</div>
 <p>The first step to perform symbolic computation is to declare the <em>symbols</em> that are going to used</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-<span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,y&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,y&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -678,7 +695,7 @@ r : ndarray or tuple of ndarray
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_25_0.png" src="../_images/IntroPython_25_0.png" />
+<img alt="../_images/IntroPython_27_0.png" src="../_images/IntroPython_27_0.png" />
 </div>
 </div>
 <p>An expression can be build with our symbols</p>
@@ -690,7 +707,7 @@ r : ndarray or tuple of ndarray
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_27_0.png" src="../_images/IntroPython_27_0.png" />
+<img alt="../_images/IntroPython_29_0.png" src="../_images/IntroPython_29_0.png" />
 </div>
 </div>
 <p>and it can be simplified, either with</p>
@@ -701,7 +718,7 @@ r : ndarray or tuple of ndarray
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_29_0.png" src="../_images/IntroPython_29_0.png" />
+<img alt="../_images/IntroPython_31_0.png" src="../_images/IntroPython_31_0.png" />
 </div>
 </div>
 <p>or with</p>
@@ -712,7 +729,7 @@ r : ndarray or tuple of ndarray
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_31_0.png" src="../_images/IntroPython_31_0.png" />
+<img alt="../_images/IntroPython_33_0.png" src="../_images/IntroPython_33_0.png" />
 </div>
 </div>
 <p>Expressions can be factorized</p>
@@ -724,7 +741,7 @@ r : ndarray or tuple of ndarray
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_33_0.png" src="../_images/IntroPython_33_0.png" />
+<img alt="../_images/IntroPython_35_0.png" src="../_images/IntroPython_35_0.png" />
 </div>
 </div>
 <p>or expanded again</p>
@@ -736,7 +753,7 @@ r : ndarray or tuple of ndarray
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_35_0.png" src="../_images/IntroPython_35_0.png" />
+<img alt="../_images/IntroPython_37_0.png" src="../_images/IntroPython_37_0.png" />
 </div>
 </div>
 <p>We can <strong>solve equations</strong>, by defining an equality of two expressions with the <em>sympy.Eq()</em> class</p>
@@ -748,7 +765,7 @@ r : ndarray or tuple of ndarray
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_37_0.png" src="../_images/IntroPython_37_0.png" />
+<img alt="../_images/IntroPython_39_0.png" src="../_images/IntroPython_39_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -759,7 +776,7 @@ r : ndarray or tuple of ndarray
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_38_0.png" src="../_images/IntroPython_38_0.png" />
+<img alt="../_images/IntroPython_40_0.png" src="../_images/IntroPython_40_0.png" />
 </div>
 </div>
 <p>It gives 3 complex solutions. We can access to each of them as member of an array</p>
@@ -770,7 +787,7 @@ r : ndarray or tuple of ndarray
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_40_0.png" src="../_images/IntroPython_40_0.png" />
+<img alt="../_images/IntroPython_42_0.png" src="../_images/IntroPython_42_0.png" />
 </div>
 </div>
 <p>Or we can solve systems of equations</p>
@@ -786,9 +803,9 @@ r : ndarray or tuple of ndarray
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_42_0.png" src="../_images/IntroPython_42_0.png" />
-<img alt="../_images/IntroPython_42_1.png" src="../_images/IntroPython_42_1.png" />
-<img alt="../_images/IntroPython_42_2.png" src="../_images/IntroPython_42_2.png" />
+<img alt="../_images/IntroPython_44_0.png" src="../_images/IntroPython_44_0.png" />
+<img alt="../_images/IntroPython_44_1.png" src="../_images/IntroPython_44_1.png" />
+<img alt="../_images/IntroPython_44_2.png" src="../_images/IntroPython_44_2.png" />
 </div>
 </div>
 <p>We can make substitutions in an expression, with <em>subs()</em></p>
@@ -800,7 +817,7 @@ r : ndarray or tuple of ndarray
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_44_0.png" src="../_images/IntroPython_44_0.png" />
+<img alt="../_images/IntroPython_46_0.png" src="../_images/IntroPython_46_0.png" />
 </div>
 </div>
 <p>or with <em>replace()</em> that is often more powerful</p>
@@ -812,7 +829,7 @@ r : ndarray or tuple of ndarray
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_46_0.png" src="../_images/IntroPython_46_0.png" />
+<img alt="../_images/IntroPython_48_0.png" src="../_images/IntroPython_48_0.png" />
 </div>
 </div>
 <p>Several substitutions can be performed by means of a <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">dictionary</a></p>
@@ -825,7 +842,7 @@ r : ndarray or tuple of ndarray
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_48_0.png" src="../_images/IntroPython_48_0.png" />
+<img alt="../_images/IntroPython_50_0.png" src="../_images/IntroPython_50_0.png" />
 </div>
 </div>
 <p>We can also perform <strong>numerical evaluations</strong>.</p>
@@ -838,7 +855,7 @@ r : ndarray or tuple of ndarray
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_50_0.png" src="../_images/IntroPython_50_0.png" />
+<img alt="../_images/IntroPython_52_0.png" src="../_images/IntroPython_52_0.png" />
 </div>
 </div>
 <div class="section" id="manipulating-algebraic-functions-and-solvind-odes">
@@ -854,9 +871,9 @@ r : ndarray or tuple of ndarray
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_52_0.png" src="../_images/IntroPython_52_0.png" />
-<img alt="../_images/IntroPython_52_1.png" src="../_images/IntroPython_52_1.png" />
-<img alt="../_images/IntroPython_52_2.png" src="../_images/IntroPython_52_2.png" />
+<img alt="../_images/IntroPython_54_0.png" src="../_images/IntroPython_54_0.png" />
+<img alt="../_images/IntroPython_54_1.png" src="../_images/IntroPython_54_1.png" />
+<img alt="../_images/IntroPython_54_2.png" src="../_images/IntroPython_54_2.png" />
 </div>
 </div>
 <p>In this case, the function <span class="math notranslate nohighlight">\(f(x)\)</span> is not defined and <code class="docutils literal notranslate"><span class="pre">sympy</span></code> can just represents symbolicaly its derivative. But we can
@@ -868,7 +885,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_54_0.png" src="../_images/IntroPython_54_0.png" />
+<img alt="../_images/IntroPython_56_0.png" src="../_images/IntroPython_56_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -878,7 +895,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_55_0.png" src="../_images/IntroPython_55_0.png" />
+<img alt="../_images/IntroPython_57_0.png" src="../_images/IntroPython_57_0.png" />
 </div>
 </div>
 <p>Also we can, of course, integrate a function</p>
@@ -889,7 +906,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_57_0.png" src="../_images/IntroPython_57_0.png" />
+<img alt="../_images/IntroPython_59_0.png" src="../_images/IntroPython_59_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -899,7 +916,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_58_0.png" src="../_images/IntroPython_58_0.png" />
+<img alt="../_images/IntroPython_60_0.png" src="../_images/IntroPython_60_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -909,7 +926,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_59_0.png" src="../_images/IntroPython_59_0.png" />
+<img alt="../_images/IntroPython_61_0.png" src="../_images/IntroPython_61_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -919,7 +936,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_60_0.png" src="../_images/IntroPython_60_0.png" />
+<img alt="../_images/IntroPython_62_0.png" src="../_images/IntroPython_62_0.png" />
 </div>
 </div>
 <p>We can calculate series expansion, both symbolicaly</p>
@@ -930,7 +947,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_62_0.png" src="../_images/IntroPython_62_0.png" />
+<img alt="../_images/IntroPython_64_0.png" src="../_images/IntroPython_64_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -940,7 +957,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_63_0.png" src="../_images/IntroPython_63_0.png" />
+<img alt="../_images/IntroPython_65_0.png" src="../_images/IntroPython_65_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -950,7 +967,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_64_0.png" src="../_images/IntroPython_64_0.png" />
+<img alt="../_images/IntroPython_66_0.png" src="../_images/IntroPython_66_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -960,7 +977,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_65_0.png" src="../_images/IntroPython_65_0.png" />
+<img alt="../_images/IntroPython_67_0.png" src="../_images/IntroPython_67_0.png" />
 </div>
 </div>
 <p>or explicitely</p>
@@ -972,7 +989,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_67_0.png" src="../_images/IntroPython_67_0.png" />
+<img alt="../_images/IntroPython_69_0.png" src="../_images/IntroPython_69_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -982,7 +999,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_68_0.png" src="../_images/IntroPython_68_0.png" />
+<img alt="../_images/IntroPython_70_0.png" src="../_images/IntroPython_70_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -992,7 +1009,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_69_0.png" src="../_images/IntroPython_69_0.png" />
+<img alt="../_images/IntroPython_71_0.png" src="../_images/IntroPython_71_0.png" />
 </div>
 </div>
 <hr class="docutils" />
@@ -1017,7 +1034,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_72_0.png" src="../_images/IntroPython_72_0.png" />
+<img alt="../_images/IntroPython_74_0.png" src="../_images/IntroPython_74_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1028,7 +1045,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_73_0.png" src="../_images/IntroPython_73_0.png" />
+<img alt="../_images/IntroPython_75_0.png" src="../_images/IntroPython_75_0.png" />
 </div>
 </div>
 <p>and it can be done directly with the initial condition</p>
@@ -1040,7 +1057,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_75_0.png" src="../_images/IntroPython_75_0.png" />
+<img alt="../_images/IntroPython_77_0.png" src="../_images/IntroPython_77_0.png" />
 </div>
 </div>
 <hr class="docutils" />
@@ -1055,7 +1072,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_77_0.png" src="../_images/IntroPython_77_0.png" />
+<img alt="../_images/IntroPython_79_0.png" src="../_images/IntroPython_79_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1066,7 +1083,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_78_0.png" src="../_images/IntroPython_78_0.png" />
+<img alt="../_images/IntroPython_80_0.png" src="../_images/IntroPython_80_0.png" />
 </div>
 </div>
 <p>The boundary conditions are that <span class="math notranslate nohighlight">\(x=1\)</span> and its derivative is 0 for <span class="math notranslate nohighlight">\(t=0\)</span>.</p>
@@ -1079,7 +1096,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_80_0.png" src="../_images/IntroPython_80_0.png" />
+<img alt="../_images/IntroPython_82_0.png" src="../_images/IntroPython_82_0.png" />
 </div>
 </div>
 <hr class="docutils" />
@@ -1107,7 +1124,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_83_0.png" src="../_images/IntroPython_83_0.png" />
+<img alt="../_images/IntroPython_85_0.png" src="../_images/IntroPython_85_0.png" />
 </div>
 </div>
 </div>
@@ -1131,8 +1148,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \left(\dot{m} t + m_{0}\right) \frac{d}{d t} v{\left(t \right)} = - \dot{m} v_{g}\]</div>
+<img alt="../_images/IntroPython_88_0.png" src="../_images/IntroPython_88_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1144,8 +1160,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle v{\left(t \right)} = v_{g} \log{\left(m_{0} \right)} - v_{g} \log{\left(\dot{m} t + m_{0} \right)}\]</div>
+<img alt="../_images/IntroPython_89_0.png" src="../_images/IntroPython_89_0.png" />
 </div>
 </div>
 <p>We test and plot the solutions with some random values:</p>
@@ -1177,7 +1192,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_90_0.png" src="../_images/IntroPython_90_0.png" />
+<img alt="../_images/IntroPython_92_0.png" src="../_images/IntroPython_92_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1188,8 +1203,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle - t v_{g} \log{\left(\dot{m} t + m_{0} \right)} + t \left(v_{g} \log{\left(m_{0} \right)} + v_{g}\right) + \frac{m_{0} v_{g} \log{\left(m_{0} \right)}}{\dot{m}} - \frac{m_{0} v_{g} \log{\left(\dot{m} t + m_{0} \right)}}{\dot{m}}\]</div>
+<img alt="../_images/IntroPython_93_0.png" src="../_images/IntroPython_93_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1204,7 +1218,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_92_0.png" src="../_images/IntroPython_92_0.png" />
+<img alt="../_images/IntroPython_94_0.png" src="../_images/IntroPython_94_0.png" />
 </div>
 </div>
 </div>
@@ -1297,7 +1311,7 @@ Name: Grades, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_106_0.png" src="../_images/IntroPython_106_0.png" />
+<img alt="../_images/IntroPython_108_0.png" src="../_images/IntroPython_108_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1378,7 +1392,7 @@ Name: Grades, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../_images/IntroPython_114_1.png" src="../_images/IntroPython_114_1.png" />
+<img alt="../_images/IntroPython_116_1.png" src="../_images/IntroPython_116_1.png" />
 </div>
 </div>
 </div>
@@ -1537,7 +1551,7 @@ Name: Grades, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_122_0.png" src="../_images/IntroPython_122_0.png" />
+<img alt="../_images/IntroPython_124_0.png" src="../_images/IntroPython_124_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1595,7 +1609,10 @@ Name: Teacher, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="o">!</span>pip install statsmodel
 <span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
 <span class="kn">import</span> <span class="nn">statsmodels.graphics.api</span> <span class="k">as</span> <span class="nn">smg</span>
 <span class="kn">import</span> <span class="nn">patsy</span>
@@ -1679,10 +1696,10 @@ Name: Teacher, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f75dc8197f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd944941df0&gt;
 </pre></div>
 </div>
-<img alt="../_images/IntroPython_134_1.png" src="../_images/IntroPython_134_1.png" />
+<img alt="../_images/IntroPython_136_1.png" src="../_images/IntroPython_136_1.png" />
 </div>
 </div>
 <p>The third step is to create a model. We are using a formula for the model. Actually, it is just a linear regression, made with <a class="reference external" href="https://en.wikipedia.org/wiki/Ordinary_least_squares">ordinary least square</a> estimation. Check <a class="reference external" href="https://patsy.readthedocs.io/en/latest/formulas.html">here</a> how is the syntax for the formulae in patsy.</p>
@@ -1721,10 +1738,10 @@ Name: Teacher, dtype: object
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   139.8</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 03 May 2022</td> <th>  Prob (F-statistic):</th> <td>3.34e-17</td>
+  <th>Date:</th>             <td>Fri, 03 Jun 2022</td> <th>  Prob (F-statistic):</th> <td>3.34e-17</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>19:08:33</td>     <th>  Log-Likelihood:    </th> <td> -102.79</td>
+  <th>Time:</th>                 <td>11:11:55</td>     <th>  Log-Likelihood:    </th> <td> -102.79</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    61</td>      <th>  AIC:               </th> <td>   209.6</td>
@@ -1774,8 +1791,8 @@ Name: Teacher, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_142_0.png" src="../_images/IntroPython_142_0.png" />
-<img alt="../_images/IntroPython_142_1.png" src="../_images/IntroPython_142_1.png" />
+<img alt="../_images/IntroPython_144_0.png" src="../_images/IntroPython_144_0.png" />
+<img alt="../_images/IntroPython_144_1.png" src="../_images/IntroPython_144_1.png" />
 </div>
 </div>
 <p>In the last step, let’s now plot it to see how it looks like.</p>
@@ -1888,7 +1905,7 @@ Name: Teacher, dtype: object
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(9.0, 101, &#39;$y = 101.09 -0.34x$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/IntroPython_149_1.png" src="../_images/IntroPython_149_1.png" />
+<img alt="../_images/IntroPython_151_1.png" src="../_images/IntroPython_151_1.png" />
 </div>
 </div>
 <p>If we want to make another fit, for example, with a quadratic expression, we have to create another column in the DataFrame with the new data (in this case, with <span class="math notranslate nohighlight">\(x^2\)</span>). This is still considered a linear regression, since it can be written as linear combination of polynomical terms <span class="math notranslate nohighlight">\( y = \sum_{n=0}^{N} a_n x^n\)</span>. Note also that a model as <span class="math notranslate nohighlight">\(y=a_0x^{a_1}\)</span>, or <span class="math notranslate nohighlight">\(y=a_0\exp(a_1x)\)</span>, can be tranformed into a linear model just calculating logarithm of both sides.</p>
@@ -1986,10 +2003,10 @@ Name: Teacher, dtype: object
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   69.69</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 03 May 2022</td> <th>  Prob (F-statistic):</th> <td>3.76e-16</td>
+  <th>Date:</th>             <td>Fri, 03 Jun 2022</td> <th>  Prob (F-statistic):</th> <td>3.76e-16</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>19:14:12</td>     <th>  Log-Likelihood:    </th> <td> -102.49</td>
+  <th>Time:</th>                 <td>11:11:56</td>     <th>  Log-Likelihood:    </th> <td> -102.49</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    61</td>      <th>  AIC:               </th> <td>   211.0</td>
@@ -2174,7 +2191,7 @@ dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(9.0, 100, &#39;$y = 101.37 -0.43x +0.0042x^2$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/IntroPython_161_1.png" src="../_images/IntroPython_161_1.png" />
+<img alt="../_images/IntroPython_163_1.png" src="../_images/IntroPython_163_1.png" />
 </div>
 </div>
 </div>
@@ -2206,10 +2223,10 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f75d3a16850&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd943f4d5e0&gt;
 </pre></div>
 </div>
-<img alt="../_images/IntroPython_167_1.png" src="../_images/IntroPython_167_1.png" />
+<img alt="../_images/IntroPython_169_1.png" src="../_images/IntroPython_169_1.png" />
 </div>
 </div>
 <p>We define the fitting function (our model) with the independent variable <span class="math notranslate nohighlight">\(x\)</span>, and the set of parameters (the parameters name is free)</p>
@@ -2261,7 +2278,7 @@ dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(9.0, 100, &#39;$y = 84.38 +17e^{a2 x}$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/IntroPython_176_1.png" src="../_images/IntroPython_176_1.png" />
+<img alt="../_images/IntroPython_178_1.png" src="../_images/IntroPython_178_1.png" />
 </div>
 </div>
 <p>The statsmodel ols gives the R-squared as part of the results.</p>
@@ -2272,7 +2289,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_178_0.png" src="../_images/IntroPython_178_0.png" />
+<img alt="../_images/IntroPython_180_0.png" src="../_images/IntroPython_180_0.png" />
 </div>
 </div>
 <p>The scipy optimize doesn’t do this computation, but it is easy to perform by hand, as stated in this <a class="reference external" href="https://stackoverflow.com/questions/19189362/getting-the-r-squared-value-using-curve-fit">stackoverflow</a> answer, according to <a class="reference external" href="https://en.wikipedia.org/wiki/Coefficient_of_determination#Definitions">wikipedia page</a>.</p>
@@ -2293,7 +2310,41 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_181_0.png" src="../_images/IntroPython_181_0.png" />
+<img alt="../_images/IntroPython_183_0.png" src="../_images/IntroPython_183_0.png" />
+</div>
+</div>
+<p>In the next command, the <a class="reference external" href="https://github.com/rasbt/watermark/blob/master/README.md">watermark</a> extension is used in order to register the version of the libraries used in the Notebook. This is useful for the reproductibility.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="o">%</span><span class="k">load_ext</span> watermark
+<span class="k">except</span><span class="p">:</span>
+    <span class="o">!</span>pip install watermark
+<span class="o">%</span><span class="k">watermark</span> -v -m -iv
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python implementation: CPython
+Python version       : 3.9.12
+IPython version      : 8.2.0
+
+Compiler    : GCC 7.5.0
+OS          : Linux
+Release     : 5.4.0-113-generic
+Machine     : x86_64
+Processor   : x86_64
+CPU cores   : 8
+Architecture: 64bit
+
+numpy      : 1.21.5
+pandas     : 1.4.2
+patsy      : 0.5.2
+scipy      : 1.7.1
+matplotlib : 3.5.1
+statsmodels: 0.13.2
+</pre></div>
+</div>
 </div>
 </div>
 </div>

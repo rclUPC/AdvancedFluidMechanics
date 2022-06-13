@@ -531,18 +531,30 @@ f = \frac{d f}{d \eta} = 0 \;\text{for}\,\eta = 0 \\
 <p>This equation cannot be solved with <code class="docutils literal notranslate"><span class="pre">odeint</span></code>, since it is not an initial value problem, but a <a class="reference external" href="https://en.wikipedia.org/wiki/Boundary_value_problem">boundary value problem</a>. We are going to solve it with the <code class="docutils literal notranslate"><span class="pre">solve_bvp</span></code> method in the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_bvp.html">scipy.ode package</a>.</p>
 <p>First, we decompose the 3rd order ODE in a system of 3 first-order ODE’s, as</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-f_0'  =  f_1 \\
-f_1'  =  f_2 \\
+\[
+f_0'  =  f_1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+f_1'  =  f_2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 f_2'  =  -\frac{1}{2}f_0f_2
-\end{split}\]</div>
+\]</div>
 <p>with <span class="math notranslate nohighlight">\(f_0=f\)</span> and the boundary conditions</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-f_0(\eta=0)  =  0 \\
-f_1(\eta=0)  =  0 \\
+\[
+f_0(\eta=0)  =  0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+f_1(\eta=0)  =  0 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 f_1(\eta \rightarrow \infty)  =  1 
-\end{split}\]</div>
+\]</div>
 <p>First, we import the needed modules</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -634,7 +646,7 @@ f_1(\eta \rightarrow \infty)  =  1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.910933508124787
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.910933508107021
 </pre></div>
 </div>
 </div>
@@ -1018,6 +1030,36 @@ c_f = \frac{\tau_w}{\frac{1}{2}\rho U^2} = 2\left(\frac{u_\tau}{U}\right)^2 \tag
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.3892288855272373]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="o">%</span><span class="k">load_ext</span> watermark
+<span class="k">except</span><span class="p">:</span>
+    <span class="o">!</span>pip install watermark
+<span class="o">%</span><span class="k">watermark</span> -v -m -iv
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python implementation: CPython
+Python version       : 3.9.12
+IPython version      : 8.2.0
+
+Compiler    : GCC 7.5.0
+OS          : Linux
+Release     : 5.4.0-113-generic
+Machine     : x86_64
+Processor   : x86_64
+CPU cores   : 8
+Architecture: 64bit
+
+numpy     : 1.21.5
+sympy     : 1.7.1
+matplotlib: 3.5.1
 </pre></div>
 </div>
 </div>
