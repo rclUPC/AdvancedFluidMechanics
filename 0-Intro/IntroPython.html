@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Introduction to scientific computation with Python &#8212; UPC-205237 Advanced Fluid Mechanics</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +19,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +36,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -64,7 +62,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -73,9 +85,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -93,14 +106,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   Advanced Fluid Mechanics
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Advanced Fluid Mechanics
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
    Introduction to scientific computation with Python
@@ -216,96 +230,182 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/0-Intro/IntroPython.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/rclUPC/AdvancedFluidMechanics/main?urlpath=lab/tree/0-Intro/IntroPython.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/rclUPC/AdvancedFluidMechanics/blob/main/0-Intro/IntroPython.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/rclUPC/AdvancedFluidMechanics/main?urlpath=lab/tree/0-Intro/IntroPython.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/rclUPC/AdvancedFluidMechanics/blob/main/0-Intro/IntroPython.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/0-Intro/IntroPython.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#numpy">
    1. Numpy
@@ -364,12 +464,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Introduction to scientific computation with Python</h1>
@@ -444,19 +543,20 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-scientific-computation-with-python">
-<h1>Introduction to scientific computation with Python<a class="headerlink" href="#introduction-to-scientific-computation-with-python" title="Permalink to this headline">¶</a></h1>
+<h1>Introduction to scientific computation with Python<a class="headerlink" href="#introduction-to-scientific-computation-with-python" title="Permalink to this headline">#</a></h1>
 <hr class="docutils" />
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> is a high level computational language. It is quite similar to Matlab, but with the advantage that is is open source, free and internet is <a class="reference external" href="https://pypi.org/">plenty of libraries</a> that
 allow to solve a large variety of problems.</p>
-<p>The main labraries used in scientific computations are <strong><a class="reference external" href="https://numpy.org/">numpy</a></strong> for numerical computation, <strong><a class="reference external" href="https://www.sympy.org/en/index.html">sympy</a></strong> for Computer Albegra System (CAS), <strong><a class="reference external" href="https://matplotlib.org/">matplotlib</a></strong> for plotting, and <strong><a class="reference external" href="https://pandas.pydata.org/">pandas</a></strong> for data analysis. All this packages are collected in the <strong><a class="reference external" href="https://www.scipy.org/">scipy</a></strong> ecosystem.</p>
+<p>The main libraries used in scientific computations are <strong><a class="reference external" href="https://numpy.org/">numpy</a></strong> for numerical computation, <strong><a class="reference external" href="https://www.sympy.org/en/index.html">sympy</a></strong> for Computer Albegra System (CAS), <strong><a class="reference external" href="https://matplotlib.org/">matplotlib</a></strong> for plotting, and <strong><a class="reference external" href="https://pandas.pydata.org/">pandas</a></strong> for data analysis. All this packages are collected in the <strong><a class="reference external" href="https://www.scipy.org/">scipy</a></strong> ecosystem.</p>
 <p>One practical way to compute with python is a <a class="reference external" href="https://jupyter.org/">Jupyter</a> notebook, like the present one. It allows to combine text, equations, graphs and pictures with code. One of the most interesting features of a Jupyter Notebook is that it is interactive. That means that the user can download, open and play with it.</p>
-<p>All that can be installed in any system (Windows, Mac, Linux,…) (and even in an android!) but it is highly recommended to install through an special distribution. The most popular is now <a class="reference external" href="https://en.wikipedia.org/wiki/Anaconda_(Python_distribution)">Anaconda</a> that has free and paid versions. However, recently it has been launched an small multi-platform application called <a class="reference external" href="https://github.com/jupyterlab/jupyterlab-desktop">Jupyterlab Desktop</a> that is very recommended because of its size and practicality.</p>
+<p>All that can be installed in any system (Windows, Mac, Linux,…) (and even in an android phone!) but it is highly recommended to install through an special distribution. The most popular is now <a class="reference external" href="https://en.wikipedia.org/wiki/Anaconda_(Python_distribution)">Anaconda</a> that has free and paid versions. However, recently it has been launched an small multi-platform application called <a class="reference external" href="https://github.com/jupyterlab/jupyterlab-desktop">Jupyterlab Desktop</a> that is very recommended because of its size and practicality.</p>
 <div class="section" id="numpy">
-<h2>1. Numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h2>
+<h2>1. Numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h2>
 <p>Python is a powerful language. Its power lies mainly in its modulability. With naked python few interesting things can be done. But modules of libraries can be easily imported and used to perform almost everything we need.</p>
 <p>In maths and science, one of the main modules is numpy, which gives acces to numerical computations with arrays, matrix, functions, … with optimized performance.</p>
 <p>To import a module in python is very easy (as long as it is installed in the system…). Just type</p>
@@ -510,13 +610,11 @@ allow to solve a large variety of problems.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0986122886681098
-</pre></div>
-</div>
+<img alt="../_images/IntroPython_11_0.png" src="../_images/IntroPython_11_0.png" />
 </div>
 </div>
 <p>This last is my favorite, but you can use whichever you prefer.</p>
-<p>If the module is not installed in just system it can be easily downloaded and installed with a <code class="docutils literal notranslate"><span class="pre">pip</span></code> (Package Installer for Python)  command in a python cell:</p>
+<p>If the module is not installed in the system it can be easily downloaded and installed with a <code class="docutils literal notranslate"><span class="pre">pip</span></code> (Package Installer for Python)  command in a python cell:</p>
 <blockquote>
 <div><p>!pip install numpy</p>
 </div></blockquote>
@@ -532,7 +630,7 @@ allow to solve a large variety of problems.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Call signature:</span>  np<span class=" -Color -Color-Blue">.</span>log<span class=" -Color -Color-Blue">(*</span>args<span class=" -Color -Color-Blue">,</span> <span class=" -Color -Color-Blue">**</span>kwargs<span class=" -Color -Color-Blue">)</span>
 <span class=" -Color -Color-Red">Type:</span>            ufunc
 <span class=" -Color -Color-Red">String form:</span>     &lt;ufunc &#39;log&#39;&gt;
-<span class=" -Color -Color-Red">File:</span>            ~/anaconda3/lib/python3.9/site-packages/numpy/__init__.py
+<span class=" -Color -Color-Red">File:</span>            ~/.config/jupyterlab-desktop/jlab_server/lib/python3.8/site-packages/numpy/__init__.py
 <span class=" -Color -Color-Red">Docstring:</span>      
 log(x, /, out=None, *, where=True, casting=&#39;same_kind&#39;, order=&#39;K&#39;, dtype=None, subok=True[, signature, extobj])
 
@@ -590,7 +688,8 @@ number, conforming to the C99 standard.
 References
 ----------
 .. [1] M. Abramowitz and I.A. Stegun, &quot;Handbook of Mathematical Functions&quot;,
-       10th printing, 1964, pp. 67. http://www.math.sfu.ca/~cbm/aands/
+       10th printing, 1964, pp. 67.
+       https://personal.math.ubc.ca/~cbm/aands/page_67.htm
 .. [2] Wikipedia, &quot;Logarithm&quot;. https://en.wikipedia.org/wiki/Logarithm
 
 Examples
@@ -650,7 +749,7 @@ r : ndarray or tuple of ndarray
 </div>
 </div>
 <div class="section" id="sympy">
-<h2>2. Sympy<a class="headerlink" href="#sympy" title="Permalink to this headline">¶</a></h2>
+<h2>2. Sympy<a class="headerlink" href="#sympy" title="Permalink to this headline">#</a></h2>
 <p>With the library <a class="reference external" href="https://peerj.com/articles/cs-103/"><em>sympy</em></a> symbolic manipulation of mathematical equations can be performed, in a similar way as with Maple, Mathematica or Wolfram Alpha.</p>
 <p>The command</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -666,7 +765,7 @@ the version 1.7.1 of <code class="docutils literal notranslate"><span class="pre
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
 <span class="k">except</span><span class="p">:</span>
-    <span class="o">!</span>pip install <span class="nv">sympy</span><span class="o">=</span><span class="m">1</span>.7.1
+    <span class="o">!</span>pip install <span class="nv">sympy</span><span class="o">==</span><span class="m">1</span>.7.1
 </pre></div>
 </div>
 </div>
@@ -695,7 +794,7 @@ the version 1.7.1 of <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_27_0.png" src="../_images/IntroPython_27_0.png" />
+<img alt="../_images/IntroPython_21_0.png" src="../_images/IntroPython_21_0.png" />
 </div>
 </div>
 <p>An expression can be build with our symbols</p>
@@ -707,7 +806,7 @@ the version 1.7.1 of <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_29_0.png" src="../_images/IntroPython_29_0.png" />
+<img alt="../_images/IntroPython_23_0.png" src="../_images/IntroPython_23_0.png" />
 </div>
 </div>
 <p>and it can be simplified, either with</p>
@@ -718,7 +817,7 @@ the version 1.7.1 of <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_31_0.png" src="../_images/IntroPython_31_0.png" />
+<img alt="../_images/IntroPython_25_0.png" src="../_images/IntroPython_25_0.png" />
 </div>
 </div>
 <p>or with</p>
@@ -729,7 +828,7 @@ the version 1.7.1 of <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_33_0.png" src="../_images/IntroPython_33_0.png" />
+<img alt="../_images/IntroPython_27_0.png" src="../_images/IntroPython_27_0.png" />
 </div>
 </div>
 <p>Expressions can be factorized</p>
@@ -741,7 +840,7 @@ the version 1.7.1 of <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_35_0.png" src="../_images/IntroPython_35_0.png" />
+<img alt="../_images/IntroPython_29_0.png" src="../_images/IntroPython_29_0.png" />
 </div>
 </div>
 <p>or expanded again</p>
@@ -753,7 +852,7 @@ the version 1.7.1 of <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_37_0.png" src="../_images/IntroPython_37_0.png" />
+<img alt="../_images/IntroPython_31_0.png" src="../_images/IntroPython_31_0.png" />
 </div>
 </div>
 <p>We can <strong>solve equations</strong>, by defining an equality of two expressions with the <em>sympy.Eq()</em> class</p>
@@ -765,7 +864,7 @@ the version 1.7.1 of <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_39_0.png" src="../_images/IntroPython_39_0.png" />
+<img alt="../_images/IntroPython_33_0.png" src="../_images/IntroPython_33_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -776,7 +875,7 @@ the version 1.7.1 of <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_40_0.png" src="../_images/IntroPython_40_0.png" />
+<img alt="../_images/IntroPython_34_0.png" src="../_images/IntroPython_34_0.png" />
 </div>
 </div>
 <p>It gives 3 complex solutions. We can access to each of them as member of an array</p>
@@ -787,7 +886,7 @@ the version 1.7.1 of <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_42_0.png" src="../_images/IntroPython_42_0.png" />
+<img alt="../_images/IntroPython_36_0.png" src="../_images/IntroPython_36_0.png" />
 </div>
 </div>
 <p>Or we can solve systems of equations</p>
@@ -803,9 +902,9 @@ the version 1.7.1 of <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_44_0.png" src="../_images/IntroPython_44_0.png" />
-<img alt="../_images/IntroPython_44_1.png" src="../_images/IntroPython_44_1.png" />
-<img alt="../_images/IntroPython_44_2.png" src="../_images/IntroPython_44_2.png" />
+<img alt="../_images/IntroPython_38_0.png" src="../_images/IntroPython_38_0.png" />
+<img alt="../_images/IntroPython_38_1.png" src="../_images/IntroPython_38_1.png" />
+<img alt="../_images/IntroPython_38_2.png" src="../_images/IntroPython_38_2.png" />
 </div>
 </div>
 <p>We can make substitutions in an expression, with <em>subs()</em></p>
@@ -817,7 +916,7 @@ the version 1.7.1 of <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_46_0.png" src="../_images/IntroPython_46_0.png" />
+<img alt="../_images/IntroPython_40_0.png" src="../_images/IntroPython_40_0.png" />
 </div>
 </div>
 <p>or with <em>replace()</em> that is often more powerful</p>
@@ -829,7 +928,7 @@ the version 1.7.1 of <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_48_0.png" src="../_images/IntroPython_48_0.png" />
+<img alt="../_images/IntroPython_42_0.png" src="../_images/IntroPython_42_0.png" />
 </div>
 </div>
 <p>Several substitutions can be performed by means of a <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">dictionary</a></p>
@@ -842,7 +941,7 @@ the version 1.7.1 of <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_50_0.png" src="../_images/IntroPython_50_0.png" />
+<img alt="../_images/IntroPython_44_0.png" src="../_images/IntroPython_44_0.png" />
 </div>
 </div>
 <p>We can also perform <strong>numerical evaluations</strong>.</p>
@@ -855,11 +954,11 @@ the version 1.7.1 of <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_52_0.png" src="../_images/IntroPython_52_0.png" />
+<img alt="../_images/IntroPython_46_0.png" src="../_images/IntroPython_46_0.png" />
 </div>
 </div>
 <div class="section" id="manipulating-algebraic-functions-and-solvind-odes">
-<h3>Manipulating algebraic functions and solvind ODEs<a class="headerlink" href="#manipulating-algebraic-functions-and-solvind-odes" title="Permalink to this headline">¶</a></h3>
+<h3>Manipulating algebraic functions and solvind ODEs<a class="headerlink" href="#manipulating-algebraic-functions-and-solvind-odes" title="Permalink to this headline">#</a></h3>
 <p>Besides symbols, we can define functions, and its derivatives</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -871,9 +970,9 @@ the version 1.7.1 of <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_54_0.png" src="../_images/IntroPython_54_0.png" />
-<img alt="../_images/IntroPython_54_1.png" src="../_images/IntroPython_54_1.png" />
-<img alt="../_images/IntroPython_54_2.png" src="../_images/IntroPython_54_2.png" />
+<img alt="../_images/IntroPython_48_0.png" src="../_images/IntroPython_48_0.png" />
+<img alt="../_images/IntroPython_48_1.png" src="../_images/IntroPython_48_1.png" />
+<img alt="../_images/IntroPython_48_2.png" src="../_images/IntroPython_48_2.png" />
 </div>
 </div>
 <p>In this case, the function <span class="math notranslate nohighlight">\(f(x)\)</span> is not defined and <code class="docutils literal notranslate"><span class="pre">sympy</span></code> can just represents symbolicaly its derivative. But we can
@@ -885,7 +984,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_56_0.png" src="../_images/IntroPython_56_0.png" />
+<img alt="../_images/IntroPython_50_0.png" src="../_images/IntroPython_50_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -895,7 +994,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_57_0.png" src="../_images/IntroPython_57_0.png" />
+<img alt="../_images/IntroPython_51_0.png" src="../_images/IntroPython_51_0.png" />
 </div>
 </div>
 <p>Also we can, of course, integrate a function</p>
@@ -906,7 +1005,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_59_0.png" src="../_images/IntroPython_59_0.png" />
+<img alt="../_images/IntroPython_53_0.png" src="../_images/IntroPython_53_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -916,7 +1015,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_60_0.png" src="../_images/IntroPython_60_0.png" />
+<img alt="../_images/IntroPython_54_0.png" src="../_images/IntroPython_54_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -926,7 +1025,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_61_0.png" src="../_images/IntroPython_61_0.png" />
+<img alt="../_images/IntroPython_55_0.png" src="../_images/IntroPython_55_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -936,7 +1035,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_62_0.png" src="../_images/IntroPython_62_0.png" />
+<img alt="../_images/IntroPython_56_0.png" src="../_images/IntroPython_56_0.png" />
 </div>
 </div>
 <p>We can calculate series expansion, both symbolicaly</p>
@@ -947,7 +1046,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_64_0.png" src="../_images/IntroPython_64_0.png" />
+<img alt="../_images/IntroPython_58_0.png" src="../_images/IntroPython_58_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -957,7 +1056,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_65_0.png" src="../_images/IntroPython_65_0.png" />
+<img alt="../_images/IntroPython_59_0.png" src="../_images/IntroPython_59_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -967,7 +1066,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_66_0.png" src="../_images/IntroPython_66_0.png" />
+<img alt="../_images/IntroPython_60_0.png" src="../_images/IntroPython_60_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -977,7 +1076,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_67_0.png" src="../_images/IntroPython_67_0.png" />
+<img alt="../_images/IntroPython_61_0.png" src="../_images/IntroPython_61_0.png" />
 </div>
 </div>
 <p>or explicitely</p>
@@ -989,7 +1088,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_69_0.png" src="../_images/IntroPython_69_0.png" />
+<img alt="../_images/IntroPython_63_0.png" src="../_images/IntroPython_63_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -999,7 +1098,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_70_0.png" src="../_images/IntroPython_70_0.png" />
+<img alt="../_images/IntroPython_64_0.png" src="../_images/IntroPython_64_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1009,7 +1108,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_71_0.png" src="../_images/IntroPython_71_0.png" />
+<img alt="../_images/IntroPython_65_0.png" src="../_images/IntroPython_65_0.png" />
 </div>
 </div>
 <hr class="docutils" />
@@ -1034,7 +1133,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_74_0.png" src="../_images/IntroPython_74_0.png" />
+<img alt="../_images/IntroPython_68_0.png" src="../_images/IntroPython_68_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1045,7 +1144,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_75_0.png" src="../_images/IntroPython_75_0.png" />
+<img alt="../_images/IntroPython_69_0.png" src="../_images/IntroPython_69_0.png" />
 </div>
 </div>
 <p>and it can be done directly with the initial condition</p>
@@ -1057,7 +1156,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_77_0.png" src="../_images/IntroPython_77_0.png" />
+<img alt="../_images/IntroPython_71_0.png" src="../_images/IntroPython_71_0.png" />
 </div>
 </div>
 <hr class="docutils" />
@@ -1072,7 +1171,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_79_0.png" src="../_images/IntroPython_79_0.png" />
+<img alt="../_images/IntroPython_73_0.png" src="../_images/IntroPython_73_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1083,7 +1182,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_80_0.png" src="../_images/IntroPython_80_0.png" />
+<img alt="../_images/IntroPython_74_0.png" src="../_images/IntroPython_74_0.png" />
 </div>
 </div>
 <p>The boundary conditions are that <span class="math notranslate nohighlight">\(x=1\)</span> and its derivative is 0 for <span class="math notranslate nohighlight">\(t=0\)</span>.</p>
@@ -1096,7 +1195,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_82_0.png" src="../_images/IntroPython_82_0.png" />
+<img alt="../_images/IntroPython_76_0.png" src="../_images/IntroPython_76_0.png" />
 </div>
 </div>
 <hr class="docutils" />
@@ -1124,12 +1223,12 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_85_0.png" src="../_images/IntroPython_85_0.png" />
+<img alt="../_images/IntroPython_79_0.png" src="../_images/IntroPython_79_0.png" />
 </div>
 </div>
 </div>
 <div class="section" id="example-solving-the-equation-of-motion-of-a-roquet">
-<h3>Example: Solving the equation of motion of a roquet<a class="headerlink" href="#example-solving-the-equation-of-motion-of-a-roquet" title="Permalink to this headline">¶</a></h3>
+<h3>Example: Solving the equation of motion of a roquet<a class="headerlink" href="#example-solving-the-equation-of-motion-of-a-roquet" title="Permalink to this headline">#</a></h3>
 <p>In this example we are going to use <code class="docutils literal notranslate"><span class="pre">sympy</span></code> to solve the equation of motion of a roquet, as described in many basic Fluid Mechanics textbook. See, for instance, example 3.12 of <a class="reference external" href="https://discovery.upc.edu/permalink/34CSUC_UPC/11q3oqt/alma991004874831006711">White’s book</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1148,7 +1247,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_88_0.png" src="../_images/IntroPython_88_0.png" />
+<img alt="../_images/IntroPython_82_0.png" src="../_images/IntroPython_82_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1160,7 +1259,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_89_0.png" src="../_images/IntroPython_89_0.png" />
+<img alt="../_images/IntroPython_83_0.png" src="../_images/IntroPython_83_0.png" />
 </div>
 </div>
 <p>We test and plot the solutions with some random values:</p>
@@ -1192,7 +1291,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_92_0.png" src="../_images/IntroPython_92_0.png" />
+<img alt="../_images/IntroPython_86_0.png" src="../_images/IntroPython_86_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1203,7 +1302,7 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_93_0.png" src="../_images/IntroPython_93_0.png" />
+<img alt="../_images/IntroPython_87_0.png" src="../_images/IntroPython_87_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1218,18 +1317,18 @@ make the derivative of any expression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_94_0.png" src="../_images/IntroPython_94_0.png" />
+<img alt="../_images/IntroPython_88_0.png" src="../_images/IntroPython_88_0.png" />
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="pandas">
-<h2>3. Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h2>
+<h2>3. Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">#</a></h2>
 <p>Pandas is a library for data analysis. Is some kind of powerful datasheet.
 Documentation is <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/index.html">here</a>.</p>
 <p>The two main data structures are <em>Series</em> and <em>DataFrame</em></p>
 <div class="section" id="series">
-<h3>Series<a class="headerlink" href="#series" title="Permalink to this headline">¶</a></h3>
+<h3>Series<a class="headerlink" href="#series" title="Permalink to this headline">#</a></h3>
 <p>A Series is an array that can be indexed with labels instead of integers</p>
 <p>For example, we can make a Series with grades in some subjects</p>
 <div class="cell docutils container">
@@ -1311,7 +1410,7 @@ Name: Grades, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_108_0.png" src="../_images/IntroPython_108_0.png" />
+<img alt="../_images/IntroPython_100_0.png" src="../_images/IntroPython_100_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1392,12 +1491,12 @@ Name: Grades, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../_images/IntroPython_116_1.png" src="../_images/IntroPython_116_1.png" />
+<img alt="../_images/IntroPython_108_1.png" src="../_images/IntroPython_108_1.png" />
 </div>
 </div>
 </div>
 <div class="section" id="dataframe">
-<h3>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h3>
+<h3>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">#</a></h3>
 <p>It is like a multidimensional Series. Typically, a table</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1551,7 +1650,7 @@ Name: Grades, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_124_0.png" src="../_images/IntroPython_124_0.png" />
+<img alt="../_images/IntroPython_116_0.png" src="../_images/IntroPython_116_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1588,9 +1687,9 @@ Name: Teacher, dtype: object
 </div>
 </div>
 <div class="section" id="data-fitting">
-<h2>4. Data fitting<a class="headerlink" href="#data-fitting" title="Permalink to this headline">¶</a></h2>
+<h2>4. Data fitting<a class="headerlink" href="#data-fitting" title="Permalink to this headline">#</a></h2>
 <div class="section" id="linear-regression">
-<h3>Linear regression<a class="headerlink" href="#linear-regression" title="Permalink to this headline">¶</a></h3>
+<h3>Linear regression<a class="headerlink" href="#linear-regression" title="Permalink to this headline">#</a></h3>
 <p>Some times we need to fit experimental data in order to create a model (a math expression). There are two main python modules to make it: <a class="reference external" href="https://www.statsmodels.org/stable/index.html">statsmodels</a> and <a class="reference external" href="https://patsy.readthedocs.io/en/latest/">patsy</a>. Actually, statsmodel calls internally to patsy, and it is ususlly not necessary to explicitely import it, but we are doing it for the sake of clarity</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1696,10 +1795,10 @@ Name: Teacher, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd944941df0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd454665fa0&gt;
 </pre></div>
 </div>
-<img alt="../_images/IntroPython_136_1.png" src="../_images/IntroPython_136_1.png" />
+<img alt="../_images/IntroPython_128_1.png" src="../_images/IntroPython_128_1.png" />
 </div>
 </div>
 <p>The third step is to create a model. We are using a formula for the model. Actually, it is just a linear regression, made with <a class="reference external" href="https://en.wikipedia.org/wiki/Ordinary_least_squares">ordinary least square</a> estimation. Check <a class="reference external" href="https://patsy.readthedocs.io/en/latest/formulas.html">here</a> how is the syntax for the formulae in patsy.</p>
@@ -1738,10 +1837,10 @@ Name: Teacher, dtype: object
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   139.8</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Fri, 03 Jun 2022</td> <th>  Prob (F-statistic):</th> <td>3.34e-17</td>
+  <th>Date:</th>             <td>Sun, 05 Feb 2023</td> <th>  Prob (F-statistic):</th> <td>3.34e-17</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>11:11:55</td>     <th>  Log-Likelihood:    </th> <td> -102.79</td>
+  <th>Time:</th>                 <td>08:37:09</td>     <th>  Log-Likelihood:    </th> <td> -102.79</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    61</td>      <th>  AIC:               </th> <td>   209.6</td>
@@ -1791,8 +1890,8 @@ Name: Teacher, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_144_0.png" src="../_images/IntroPython_144_0.png" />
-<img alt="../_images/IntroPython_144_1.png" src="../_images/IntroPython_144_1.png" />
+<img alt="../_images/IntroPython_136_0.png" src="../_images/IntroPython_136_0.png" />
+<img alt="../_images/IntroPython_136_1.png" src="../_images/IntroPython_136_1.png" />
 </div>
 </div>
 <p>In the last step, let’s now plot it to see how it looks like.</p>
@@ -1905,7 +2004,7 @@ Name: Teacher, dtype: object
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(9.0, 101, &#39;$y = 101.09 -0.34x$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/IntroPython_151_1.png" src="../_images/IntroPython_151_1.png" />
+<img alt="../_images/IntroPython_143_1.png" src="../_images/IntroPython_143_1.png" />
 </div>
 </div>
 <p>If we want to make another fit, for example, with a quadratic expression, we have to create another column in the DataFrame with the new data (in this case, with <span class="math notranslate nohighlight">\(x^2\)</span>). This is still considered a linear regression, since it can be written as linear combination of polynomical terms <span class="math notranslate nohighlight">\( y = \sum_{n=0}^{N} a_n x^n\)</span>. Note also that a model as <span class="math notranslate nohighlight">\(y=a_0x^{a_1}\)</span>, or <span class="math notranslate nohighlight">\(y=a_0\exp(a_1x)\)</span>, can be tranformed into a linear model just calculating logarithm of both sides.</p>
@@ -2003,10 +2102,10 @@ Name: Teacher, dtype: object
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   69.69</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Fri, 03 Jun 2022</td> <th>  Prob (F-statistic):</th> <td>3.76e-16</td>
+  <th>Date:</th>             <td>Sun, 05 Feb 2023</td> <th>  Prob (F-statistic):</th> <td>3.76e-16</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>11:11:56</td>     <th>  Log-Likelihood:    </th> <td> -102.49</td>
+  <th>Time:</th>                 <td>08:37:29</td>     <th>  Log-Likelihood:    </th> <td> -102.49</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    61</td>      <th>  AIC:               </th> <td>   211.0</td>
@@ -2191,12 +2290,12 @@ dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(9.0, 100, &#39;$y = 101.37 -0.43x +0.0042x^2$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/IntroPython_163_1.png" src="../_images/IntroPython_163_1.png" />
+<img alt="../_images/IntroPython_155_1.png" src="../_images/IntroPython_155_1.png" />
 </div>
 </div>
 </div>
 <div class="section" id="non-linear-regression">
-<h3>Non linear regression<a class="headerlink" href="#non-linear-regression" title="Permalink to this headline">¶</a></h3>
+<h3>Non linear regression<a class="headerlink" href="#non-linear-regression" title="Permalink to this headline">#</a></h3>
 <p>When we want to make a non linear regression, for instance to fit with a model as <span class="math notranslate nohighlight">\(y=a_0+a_1*\exp{a_2*x}\)</span>, an optimization method to compute mininum squares has to be performed. We use then the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/tutorial/optimize.html"><em>optimize</em></a> module of scipy, and, in particular, the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html#scipy.optimize.curve_fit">curve_fit</a> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2223,10 +2322,10 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd943f4d5e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd464c6e550&gt;
 </pre></div>
 </div>
-<img alt="../_images/IntroPython_169_1.png" src="../_images/IntroPython_169_1.png" />
+<img alt="../_images/IntroPython_161_1.png" src="../_images/IntroPython_161_1.png" />
 </div>
 </div>
 <p>We define the fitting function (our model) with the independent variable <span class="math notranslate nohighlight">\(x\)</span>, and the set of parameters (the parameters name is free)</p>
@@ -2278,7 +2377,7 @@ dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(9.0, 100, &#39;$y = 84.38 +17e^{a2 x}$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/IntroPython_178_1.png" src="../_images/IntroPython_178_1.png" />
+<img alt="../_images/IntroPython_170_1.png" src="../_images/IntroPython_170_1.png" />
 </div>
 </div>
 <p>The statsmodel ols gives the R-squared as part of the results.</p>
@@ -2289,7 +2388,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_180_0.png" src="../_images/IntroPython_180_0.png" />
+<img alt="../_images/IntroPython_172_0.png" src="../_images/IntroPython_172_0.png" />
 </div>
 </div>
 <p>The scipy optimize doesn’t do this computation, but it is easy to perform by hand, as stated in this <a class="reference external" href="https://stackoverflow.com/questions/19189362/getting-the-r-squared-value-using-curve-fit">stackoverflow</a> answer, according to <a class="reference external" href="https://en.wikipedia.org/wiki/Coefficient_of_determination#Definitions">wikipedia page</a>.</p>
@@ -2310,7 +2409,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/IntroPython_183_0.png" src="../_images/IntroPython_183_0.png" />
+<img alt="../_images/IntroPython_175_0.png" src="../_images/IntroPython_175_0.png" />
 </div>
 </div>
 <p>In the next command, the <a class="reference external" href="https://github.com/rasbt/watermark/blob/master/README.md">watermark</a> extension is used in order to register the version of the libraries used in the Notebook. This is useful for the reproductibility.</p>
@@ -2326,23 +2425,23 @@ dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python implementation: CPython
-Python version       : 3.9.12
+Python version       : 3.8.13
 IPython version      : 8.2.0
 
-Compiler    : GCC 7.5.0
+Compiler    : GCC 10.3.0
 OS          : Linux
-Release     : 5.4.0-113-generic
+Release     : 5.4.0-137-generic
 Machine     : x86_64
 Processor   : x86_64
 CPU cores   : 8
 Architecture: 64bit
 
-numpy      : 1.21.5
-pandas     : 1.4.2
-patsy      : 0.5.2
-scipy      : 1.7.1
+scipy      : 1.8.0
+numpy      : 1.22.3
 matplotlib : 3.5.1
+patsy      : 0.5.2
 statsmodels: 0.13.2
+pandas     : 1.4.2
 </pre></div>
 </div>
 </div>
@@ -2365,7 +2464,7 @@ statsmodels: 0.13.2
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./0-Intro"
         },
         predefinedOutput: true
@@ -2375,9 +2474,11 @@ statsmodels: 0.13.2
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../README.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2393,24 +2494,28 @@ statsmodels: 0.13.2
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Robert Castilla - UPC CATMech Terrassa<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Robert Castilla - UPC CATMech Terrassa<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

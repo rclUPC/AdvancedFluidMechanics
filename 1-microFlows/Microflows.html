@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Microflows. A very brief introduction with lubrication and capillarity &#8212; UPC-205237 Advanced Fluid Mechanics</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +19,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +36,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -64,7 +62,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -73,9 +85,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -93,14 +106,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   Advanced Fluid Mechanics
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Advanced Fluid Mechanics
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../0-Intro/IntroPython.html">
    Introduction to scientific computation with Python
@@ -216,96 +230,182 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/1-microFlows/Microflows.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/rclUPC/AdvancedFluidMechanics/main?urlpath=lab/tree/1-microFlows/Microflows.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/rclUPC/AdvancedFluidMechanics/blob/main/1-microFlows/Microflows.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/rclUPC/AdvancedFluidMechanics/main?urlpath=lab/tree/1-microFlows/Microflows.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/rclUPC/AdvancedFluidMechanics/blob/main/1-microFlows/Microflows.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/1-microFlows/Microflows.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#laminar-flows-and-fundamentals-of-lubrication">
    1. Laminar flows and fundamentals of lubrication
@@ -379,12 +479,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Microflows. A very brief introduction with lubrication and capillarity</h1>
@@ -474,13 +573,14 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="microflows-a-very-brief-introduction-with-lubrication-and-capillarity">
-<h1>Microflows. A very brief introduction with lubrication and capillarity<a class="headerlink" href="#microflows-a-very-brief-introduction-with-lubrication-and-capillarity" title="Permalink to this headline">¶</a></h1>
+<h1>Microflows. A very brief introduction with lubrication and capillarity<a class="headerlink" href="#microflows-a-very-brief-introduction-with-lubrication-and-capillarity" title="Permalink to this headline">#</a></h1>
 <div class="section" id="laminar-flows-and-fundamentals-of-lubrication">
-<h2>1. Laminar flows and fundamentals of lubrication<a class="headerlink" href="#laminar-flows-and-fundamentals-of-lubrication" title="Permalink to this headline">¶</a></h2>
+<h2>1. Laminar flows and fundamentals of lubrication<a class="headerlink" href="#laminar-flows-and-fundamentals-of-lubrication" title="Permalink to this headline">#</a></h2>
 <p>For a correct development of this lecture, a review of viscous flows (Couette and Hagen-Poiseullie flows and similar) studied in previous courses of Introductory Fluid Mechanics is advised.</p>
 <p>This section is focused on fluid flows at very small scales. This is the basis of the technological field known as <a class="reference external" href="https://en.wikipedia.org/wiki/Microfluidics">Microfluidics</a>.</p>
 <p>At very small scales, with confined or semi-confined flows, Reynolds number is commonly very small even with high velocities or low viscosities. For example, for a small journal bearing, say 5mm diameter, spinning at 1500 rpm, with a clearance of 0.1 mm, even with water, Reynolds number is</p>
@@ -518,11 +618,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>For more viscous fluid, or smaller devices, Reynolds number can be much lower than 1.</p>
 <div class="section" id="activity">
-<h3>Activity<a class="headerlink" href="#activity" title="Permalink to this headline">¶</a></h3>
+<h3>Activity<a class="headerlink" href="#activity" title="Permalink to this headline">#</a></h3>
 <p>Think on some device with fluid flow at very low Reynolds number. Estimate the value of this Reynolds number. Try to think on something with <span class="math notranslate nohighlight">\(\text{Re} &lt; 1\)</span>.</p>
 </div>
 <div class="section" id="the-velocity-profile">
-<h3>The velocity profile<a class="headerlink" href="#the-velocity-profile" title="Permalink to this headline">¶</a></h3>
+<h3>The velocity profile<a class="headerlink" href="#the-velocity-profile" title="Permalink to this headline">#</a></h3>
 <p>In previous introductory Fluid Mechanics courses, this kind of flows have been studied with very simple geometries. Examples are flow between two parallel planes with relative velocity (Couette flow) or with pressure gradient (Poisueille flow) or viscous flow inside a pipe with pressure gradient (Hagen-Poiseuille flow). For details, see sections 4.11 and 6.4 in White’s book.</p>
 <p>Here we are going to generalise this kind of flows, when pressure difference and relative velocity are combined, and planes are not parallels (but quasi-parallels). This kind of flows are very important in lubrication, which has a principal role in all the industrial processes. The technology branch that studies lubrication and wear is known as <em><a class="reference external" href="https://en.wikipedia.org/wiki/Tribology">Tribology</a></em>.</p>
 <p>Let’s consider a 2D flow in the <span class="math notranslate nohighlight">\(x-y\)</span> plane, confined by two surfaces (we consider as unity the length in the <span class="math notranslate nohighlight">\(z\)</span> direction). The lower surface is plane and it lies on the <span class="math notranslate nohighlight">\(y\)</span>-normal plane, and the upper is separated by a distance <span class="math notranslate nohighlight">\(h(x,t)\)</span>.</p>
@@ -644,7 +744,7 @@ p^* = \frac{p}{p_c} \tag{5}
 \[
 \frac{\partial p}{\partial y} = 0
 \]</div>
-<p>Note that in (7a) there is no explicit dependence on time. But time is still an independent variable through <span class="math notranslate nohighlight">\(p(x,t)\)</span> an boundary conditions, which can be unesteady.</p>
+<p>Note that in (7a) there is no explicit dependence on time. But time is still an independent variable through <span class="math notranslate nohighlight">\(p(x,t)\)</span> and boundary conditions, which can be unesteady.</p>
 <p>Now we integrate the linear equation</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -660,14 +760,14 @@ p^* = \frac{p}{p_c} \tag{5}
 <span class="n">u</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">)</span>
 <span class="n">p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
 <span class="n">h</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>
-<span class="n">p_</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Derivative</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>
+<span class="n">p_x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;p_x&#39;</span><span class="p">)</span> <span class="c1"># This function is the gradient of pressure in x direction</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span> <span class="o">=</span> <span class="o">-</span><span class="n">p_</span><span class="o">/</span><span class="n">mu</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="n">y</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span> <span class="o">=</span> <span class="o">-</span><span class="n">p_x</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">mu</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="n">y</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -744,7 +844,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="section" id="reynolds-equation">
-<h3>Reynolds equation<a class="headerlink" href="#reynolds-equation" title="Permalink to this headline">¶</a></h3>
+<h3>Reynolds equation<a class="headerlink" href="#reynolds-equation" title="Permalink to this headline">#</a></h3>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Reynolds_equation">Reynolds equation</a> for lubrications yields when we impose that this flow rate cannot be function of <span class="math notranslate nohighlight">\(x\)</span> (that is continuity condition)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -760,7 +860,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="section" id="pressure-distribution">
-<h3>Pressure distribution<a class="headerlink" href="#pressure-distribution" title="Permalink to this headline">¶</a></h3>
+<h3>Pressure distribution<a class="headerlink" href="#pressure-distribution" title="Permalink to this headline">#</a></h3>
 <p>To calculate the pressure distribution, we consider the solution of</p>
 <div class="math notranslate nohighlight">
 \[ q = \int_0^h u(y) \text{d} y \tag{8}\]</div>
@@ -768,7 +868,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">)</span>
-<span class="n">exp_dpdx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">intU</span><span class="o">-</span><span class="n">q</span><span class="p">,</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">exp_dpdx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">intU</span><span class="o">-</span><span class="n">q</span><span class="p">,</span><span class="n">p_x</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="n">display</span><span class="p">(</span><span class="n">exp_dpdx</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -779,13 +879,25 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">p_</span><span class="p">,</span> <span class="n">exp_dpdx</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">p_x</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">exp_dpdx</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">display</span><span class="p">(</span><span class="n">p_eq</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/Microflows_28_0.png" src="../_images/Microflows_28_0.png" />
+</div>
+</div>
+<p>We now replace <span class="math notranslate nohighlight">\(p_x(x)\)</span> with its definition, <span class="math notranslate nohighlight">\(p_x(x) = \frac{d p}{d x}\)</span>, and we solve it</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_eq</span> <span class="o">=</span> <span class="n">p_eq</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">p_x</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">p_eq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_30_0.png" src="../_images/Microflows_30_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -795,13 +907,13 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_29_0.png" src="../_images/Microflows_29_0.png" />
+<img alt="../_images/Microflows_31_0.png" src="../_images/Microflows_31_0.png" />
 </div>
 </div>
-<p>This is the general soluction for any shape for <span class="math notranslate nohighlight">\(h(x)\)</span>. The values for <span class="math notranslate nohighlight">\(q\)</span> and the integration constant are obtained from suitable boundary conditions</p>
+<p>This is the general solution for any shape for <span class="math notranslate nohighlight">\(h(x)\)</span>. The values for <span class="math notranslate nohighlight">\(q\)</span> and the integration constant are obtained from suitable boundary conditions</p>
 </div>
 <div class="section" id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
 <p>Let’s apply that for the linear case <span class="math notranslate nohighlight">\(h(x)=h_0(1+\alpha x/L)\)</span>, with <span class="math notranslate nohighlight">\(\alpha \ll 1\)</span>. It is the working principle of a <a class="reference external" href="https://en.wikipedia.org/wiki/Fluid_bearing#Michell.2FKingsbury_tilting-pad_fluid_bearings">tilting-pad bearing</a></p>
 <p><img alt="image.png" src="../_images/tiltingPad1.png" /></p>
 <p><img alt="image.png" src="../_images/tiltingPad2.png" /></p>
@@ -821,7 +933,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_32_0.png" src="../_images/Microflows_32_0.png" />
+<img alt="../_images/Microflows_34_0.png" src="../_images/Microflows_34_0.png" />
 </div>
 </div>
 <p>Next, we integrate the pressure distribution with the proper boundary condition for <span class="math notranslate nohighlight">\(p(x=0)=p_a\)</span></p>
@@ -840,10 +952,10 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_35_0.png" src="../_images/Microflows_35_0.png" />
+<img alt="../_images/Microflows_37_0.png" src="../_images/Microflows_37_0.png" />
 </div>
 </div>
-<p>The flow rate in this moving pad can be calulated with the other boundary condition, <span class="math notranslate nohighlight">\(p(x=L)=p_a\)</span></p>
+<p>The flow rate in this moving pad can be calculated with the other boundary condition, <span class="math notranslate nohighlight">\(p(x=L)=p_a\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q_sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">p_sol</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">L</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">L</span><span class="p">),</span><span class="n">pa</span><span class="p">),</span><span class="n">q</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -852,7 +964,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_37_0.png" src="../_images/Microflows_37_0.png" />
+<img alt="../_images/Microflows_39_0.png" src="../_images/Microflows_39_0.png" />
 </div>
 </div>
 <p>and we replace again this result in the pressure distribution</p>
@@ -864,7 +976,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_39_0.png" src="../_images/Microflows_39_0.png" />
+<img alt="../_images/Microflows_41_0.png" src="../_images/Microflows_41_0.png" />
 </div>
 </div>
 <p>Let’s rearrange the terms to get it it nicer</p>
@@ -876,7 +988,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_41_0.png" src="../_images/Microflows_41_0.png" />
+<img alt="../_images/Microflows_43_0.png" src="../_images/Microflows_43_0.png" />
 </div>
 </div>
 <p>This solution is complex, since it is considering all the values of <span class="math notranslate nohighlight">\(\alpha\)</span>. We can take advantage of the assumption <span class="math notranslate nohighlight">\(\alpha \ll 1\)</span> in order to expand the right hand side in
@@ -890,7 +1002,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_43_0.png" src="../_images/Microflows_43_0.png" />
+<img alt="../_images/Microflows_45_0.png" src="../_images/Microflows_45_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -901,7 +1013,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_44_0.png" src="../_images/Microflows_44_0.png" />
+<img alt="../_images/Microflows_46_0.png" src="../_images/Microflows_46_0.png" />
 </div>
 </div>
 <p>Remember that it is for unit lenght in the <span class="math notranslate nohighlight">\(z\)</span> direction, so the mean (relative) pressure in this fluid film is</p>
@@ -914,21 +1026,21 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_46_0.png" src="../_images/Microflows_46_0.png" />
+<img alt="../_images/Microflows_48_0.png" src="../_images/Microflows_48_0.png" />
 </div>
 </div>
 </div>
 <div class="section" id="activity-very-easy">
-<h3>Activity (very easy)<a class="headerlink" href="#activity-very-easy" title="Permalink to this headline">¶</a></h3>
+<h3>Activity (very easy)<a class="headerlink" href="#activity-very-easy" title="Permalink to this headline">#</a></h3>
 <p>Estimate the value of the bearing number <span class="math notranslate nohighlight">\(\Lambda\)</span> for this tilting pad</p>
 </div>
 <div class="section" id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h3>
 <p>What happens when slope of pad is not increasing, but decreasing?</p>
 </div>
 </div>
 <div class="section" id="pressure-driven-microflow-hele-shaw-flow">
-<h2>2. Pressure driven microflow. Hele-Shaw flow<a class="headerlink" href="#pressure-driven-microflow-hele-shaw-flow" title="Permalink to this headline">¶</a></h2>
+<h2>2. Pressure driven microflow. Hele-Shaw flow<a class="headerlink" href="#pressure-driven-microflow-hele-shaw-flow" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Henry_Selby_Hele-Shaw">Henry Hele-Shaw</a> was a British engineer in the late 19th and the early 20th centuries. He published a paper in 1898 about the Stokes flow between to close plates. This kind of flow are now know as <a class="reference external" href="https://en.wikipedia.org/wiki/Hele-Shaw_flow">Hele-Shaw flows</a>.</p>
 <p>The interest of this flow is that, although being highly influence by viscosity, the flow shape in presence of an obstacle (large in comparison with plates distance) is actually a potential flow. This has a hide range of applications in present microdevices design and manufacturing (see, for example, this <a class="reference external" href="https://repository.tudelft.nl/islandora/object/uuid:eacb9fa0-401b-4b17-97b6-f0eed6744bdf">MSc thesis from Delft University</a>).</p>
 <p>This flow is very similar to a <a class="reference external" href="https://en.wikipedia.org/wiki/Hagen%E2%80%93Poiseuille_equation#Plane_Poiseuille_flow">Poiseuille flow</a>, in the sense of quasi-2D flow driven by a pressure gradient.  Let’s consider that the flow is parallel to the <span class="math notranslate nohighlight">\(x-y\)</span> plane, and normal to the <span class="math notranslate nohighlight">\(z\)</span> axis and pressure gradient is given also only in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions.</p>
@@ -945,16 +1057,19 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span><span class="p">,</span><span class="n">h</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;z,h&#39;</span><span class="p">)</span> <span class="c1"># now h is not a function. It is constant</span>
 <span class="n">u</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">)</span>
 <span class="n">v</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
-<span class="n">uEq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">mu</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="n">z</span><span class="p">),</span><span class="n">z</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">vEq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">mu</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span><span class="n">y</span><span class="p">)</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">v</span><span class="p">(</span><span class="n">z</span><span class="p">),</span><span class="n">z</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+<span class="n">p_x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;p_x&#39;</span><span class="p">)</span>
+<span class="n">p_y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;p_y&#39;</span><span class="p">)</span>
+<span class="n">uEq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">mu</span><span class="o">*</span><span class="n">p_x</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="n">z</span><span class="p">),</span><span class="n">z</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">vEq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">mu</span><span class="o">*</span><span class="n">p_y</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">v</span><span class="p">(</span><span class="n">z</span><span class="p">),</span><span class="n">z</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">uEq</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">vEq</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_48_0.png" src="../_images/Microflows_48_0.png" />
-<img alt="../_images/Microflows_48_1.png" src="../_images/Microflows_48_1.png" />
+<img alt="../_images/Microflows_50_0.png" src="../_images/Microflows_50_0.png" />
+<img alt="../_images/Microflows_50_1.png" src="../_images/Microflows_50_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -969,8 +1084,22 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_49_0.png" src="../_images/Microflows_49_0.png" />
-<img alt="../_images/Microflows_49_1.png" src="../_images/Microflows_49_1.png" />
+<img alt="../_images/Microflows_51_0.png" src="../_images/Microflows_51_0.png" />
+<img alt="../_images/Microflows_51_1.png" src="../_images/Microflows_51_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uSol</span> <span class="o">=</span> <span class="n">uSol</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">p_x</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">vSol</span> <span class="o">=</span> <span class="n">vSol</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">p_y</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">uSol</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">vSol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Microflows_52_0.png" src="../_images/Microflows_52_0.png" />
+<img alt="../_images/Microflows_52_1.png" src="../_images/Microflows_52_1.png" />
 </div>
 </div>
 <p>Remember the definition of <a class="reference external" href="https://en.wikipedia.org/wiki/Velocity_potential">velocity potential</a>. In this case, the solution is very easy</p>
@@ -986,8 +1115,8 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_51_0.png" src="../_images/Microflows_51_0.png" />
-<img alt="../_images/Microflows_51_1.png" src="../_images/Microflows_51_1.png" />
+<img alt="../_images/Microflows_54_0.png" src="../_images/Microflows_54_0.png" />
+<img alt="../_images/Microflows_54_1.png" src="../_images/Microflows_54_1.png" />
 </div>
 </div>
 <p>Both solutions are the same and, so, we can just define the velocity potential al</p>
@@ -1000,14 +1129,14 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_53_0.png" src="../_images/Microflows_53_0.png" />
+<img alt="../_images/Microflows_56_0.png" src="../_images/Microflows_56_0.png" />
 </div>
 </div>
 <p>Asuming that there is no vertical velocity, <span class="math notranslate nohighlight">\(w = 0\)</span>, the continuity equation for 2D flow is just</p>
 <div class="math notranslate nohighlight">
 \[ \nabla_{2D} \cdot \mathbf{u} = \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = \Delta \phi = \Delta p = \frac{\partial^2 p}{\partial x^2} + \frac{\partial^2 p}{\partial y^2} = 0 \tag{10}\]</div>
 <div class="section" id="for-example">
-<h3>For example…<a class="headerlink" href="#for-example" title="Permalink to this headline">¶</a></h3>
+<h3>For example…<a class="headerlink" href="#for-example" title="Permalink to this headline">#</a></h3>
 <p>Let’s consider a flow in the <span class="math notranslate nohighlight">\(x\)</span> direction with</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1022,9 +1151,9 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_55_0.png" src="../_images/Microflows_55_0.png" />
-<img alt="../_images/Microflows_55_1.png" src="../_images/Microflows_55_1.png" />
-<img alt="../_images/Microflows_55_2.png" src="../_images/Microflows_55_2.png" />
+<img alt="../_images/Microflows_58_0.png" src="../_images/Microflows_58_0.png" />
+<img alt="../_images/Microflows_58_1.png" src="../_images/Microflows_58_1.png" />
+<img alt="../_images/Microflows_58_2.png" src="../_images/Microflows_58_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1035,7 +1164,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_56_0.png" src="../_images/Microflows_56_0.png" />
+<img alt="../_images/Microflows_59_0.png" src="../_images/Microflows_59_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1046,7 +1175,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_57_0.png" src="../_images/Microflows_57_0.png" />
+<img alt="../_images/Microflows_60_0.png" src="../_images/Microflows_60_0.png" />
 </div>
 </div>
 <p>In this video some experimental flows are presented to show the potential-like Hele-Shaw flows</p>
@@ -1078,7 +1207,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="section" id="surface-tension-driven-flows">
-<h2>3. Surface Tension driven flows<a class="headerlink" href="#surface-tension-driven-flows" title="Permalink to this headline">¶</a></h2>
+<h2>3. Surface Tension driven flows<a class="headerlink" href="#surface-tension-driven-flows" title="Permalink to this headline">#</a></h2>
 <p>The third kind of microflow that we considering is surface tension driven flows. <a class="reference external" href="https://en.wikipedia.org/wiki/Surface_tension">Surface tension</a> is the property of liquids responsible of the surface stability.</p>
 <p>The surface tension coefficient (or just surface tension), <span class="math notranslate nohighlight">\(\gamma\)</span>, has units of force per lenght unit (N/m) and in the particular case of water in air at 20 Celsius degrees its value is <span class="math notranslate nohighlight">\(\gamma = 72.8\, \text{mN/m}\)</span>. This value is very small compared with inertial forces, or pressure forces, for usual liquid volumes. But it can becomes very important when the liquid volume is of micrometers (or even milimeters) scale.</p>
 <p>We have seen in previous courses some basic concepts related to surface tension, as pressure inside bubbles or capillary rise, which are governed by the <a class="reference external" href="https://en.wikipedia.org/wiki/Young%E2%80%93Laplace_equation">Laplace-Young equation</a> for spherical surfaces. Here we are going to develope a little bit the subject.</p>
@@ -1121,7 +1250,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 \[ \text{Bo} = \left( \frac{L}{l_s} \right)^2 \tag{19}\]</div>
 <p>Under action of gravity, surface tension is only important if <span class="math notranslate nohighlight">\(\text{Bo} \lesssim 1\)</span>, that is <span class="math notranslate nohighlight">\(L \lesssim 3\,\text{mm}\)</span> for water.</p>
 <div class="section" id="example-shape-of-fluid-interface-near-a-wall">
-<h3>Example : Shape of fluid interface near a wall<a class="headerlink" href="#example-shape-of-fluid-interface-near-a-wall" title="Permalink to this headline">¶</a></h3>
+<h3>Example : Shape of fluid interface near a wall<a class="headerlink" href="#example-shape-of-fluid-interface-near-a-wall" title="Permalink to this headline">#</a></h3>
 <p>Let’s consider the calculation of the shape of the interface of water with a hidrophilic surface, with a known contact angle <span class="math notranslate nohighlight">\(\theta &lt; 90^\circ\)</span>. The wall is vertical and plane, so there will be curvature in only one direction (say <span class="math notranslate nohighlight">\(y\)</span>)</p>
 <p><img alt="image.png" src="../_images/fluidWallInterface.png" /></p>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Curvature#Graph_of_a_function">local curvature</a> of a line is given by</p>
@@ -1162,7 +1291,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_63_0.png" src="../_images/Microflows_63_0.png" />
+<img alt="../_images/Microflows_66_0.png" src="../_images/Microflows_66_0.png" />
 </div>
 </div>
 <p>This expression is not directly integrable</p>
@@ -1173,7 +1302,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_65_0.png" src="../_images/Microflows_65_0.png" />
+<img alt="../_images/Microflows_68_0.png" src="../_images/Microflows_68_0.png" />
 </div>
 </div>
 <p>But if we use the integration factor <span class="math notranslate nohighlight">\(\eta'\)</span>, it becomes integrable</p>
@@ -1185,7 +1314,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_67_0.png" src="../_images/Microflows_67_0.png" />
+<img alt="../_images/Microflows_70_0.png" src="../_images/Microflows_70_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1196,7 +1325,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_68_0.png" src="../_images/Microflows_68_0.png" />
+<img alt="../_images/Microflows_71_0.png" src="../_images/Microflows_71_0.png" />
 </div>
 </div>
 <p>Since when <span class="math notranslate nohighlight">\(\eta(\xi) = 0\)</span> (i.e. for <span class="math notranslate nohighlight">\(\xi\rightarrow \infty\)</span>), <span class="math notranslate nohighlight">\(\eta'(\xi)=0\)</span>, that gives that this expression has to be 1.</p>
@@ -1208,7 +1337,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_70_0.png" src="../_images/Microflows_70_0.png" />
+<img alt="../_images/Microflows_73_0.png" src="../_images/Microflows_73_0.png" />
 </div>
 </div>
 <p>This equation can be analitically solved (see the book by <a class="reference external" href="https://discovery.upc.edu/iii/encore/record/C__Rb1437689?lang=cat">Kundu</a>, example 4.7) but it is not staightforward. Let us  solve it here numerically with <a class="reference external" href="https://www.scipy.org/">scipy</a>.</p>
@@ -1222,7 +1351,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_72_0.png" src="../_images/Microflows_72_0.png" />
+<img alt="../_images/Microflows_75_0.png" src="../_images/Microflows_75_0.png" />
 </div>
 </div>
 <p>There are two solutions. We keep the second one, positive.</p>
@@ -1234,7 +1363,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_74_0.png" src="../_images/Microflows_74_0.png" />
+<img alt="../_images/Microflows_77_0.png" src="../_images/Microflows_77_0.png" />
 </div>
 </div>
 <p>and we try to simplify it a little bit</p>
@@ -1246,7 +1375,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_76_0.png" src="../_images/Microflows_76_0.png" />
+<img alt="../_images/Microflows_79_0.png" src="../_images/Microflows_79_0.png" />
 </div>
 </div>
 <p>In order to solve dEq we have to isolate the derivative of <span class="math notranslate nohighlight">\(\eta\)</span></p>
@@ -1258,7 +1387,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_78_0.png" src="../_images/Microflows_78_0.png" />
+<img alt="../_images/Microflows_81_0.png" src="../_images/Microflows_81_0.png" />
 </div>
 </div>
 <p>and we generate a function for this derivative</p>
@@ -1293,7 +1422,7 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Microflows_84_0.png" src="../_images/Microflows_84_0.png" />
+<img alt="../_images/Microflows_87_0.png" src="../_images/Microflows_87_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1315,15 +1444,15 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f2b3a317550&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f18de575580&gt;]
 </pre></div>
 </div>
-<img alt="../_images/Microflows_87_1.png" src="../_images/Microflows_87_1.png" />
+<img alt="../_images/Microflows_90_1.png" src="../_images/Microflows_90_1.png" />
 </div>
 </div>
 </div>
 <div class="section" id="exercise-shape-of-meniscus-between-two-plates">
-<h3>Exercise. Shape of meniscus between two plates<a class="headerlink" href="#exercise-shape-of-meniscus-between-two-plates" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise. Shape of meniscus between two plates<a class="headerlink" href="#exercise-shape-of-meniscus-between-two-plates" title="Permalink to this headline">#</a></h3>
 <p>Find the shape for two parallels walls separated a distance <span class="math notranslate nohighlight">\(L\)</span></p>
 <p>Hint: In the middle point between both walls, curvature is not zero, so there is also there a pressure jump. This pressure jump is related, then, to the height of the column, <span class="math notranslate nohighlight">\(H\)</span>. It suggested to change coordinate axes, as shown in the picture, and change the first equation as</p>
 <div class="math notranslate nohighlight">
@@ -1342,23 +1471,21 @@ independent of <span class="math notranslate nohighlight">\(x\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The watermark extension is already loaded. To reload it, use:
-  %reload_ext watermark
-Python implementation: CPython
-Python version       : 3.9.12
-IPython version      : 8.2.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python implementation: CPython
+Python version       : 3.8.15
+IPython version      : 8.7.0
 
-Compiler    : GCC 7.5.0
+Compiler    : GCC 10.4.0
 OS          : Linux
-Release     : 5.4.0-113-generic
+Release     : 5.4.0-139-generic
 Machine     : x86_64
 Processor   : x86_64
 CPU cores   : 8
 Architecture: 64bit
 
-sympy     : 1.7.1
-numpy     : 1.21.5
-matplotlib: 3.5.1
+matplotlib: 3.6.2
+numpy     : 1.23.5
+sympy     : 1.11.1
 </pre></div>
 </div>
 </div>
@@ -1381,7 +1508,7 @@ matplotlib: 3.5.1
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./1-microFlows"
         },
         predefinedOutput: true
@@ -1391,9 +1518,11 @@ matplotlib: 3.5.1
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../0-Intro/Assignment0.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1409,24 +1538,28 @@ matplotlib: 3.5.1
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Robert Castilla - UPC CATMech Terrassa<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Robert Castilla - UPC CATMech Terrassa<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
