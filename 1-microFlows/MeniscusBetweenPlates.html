@@ -479,6 +479,7 @@ plate.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span><span class="n">Math</span>
 <span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -489,35 +490,38 @@ plate.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xi</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;xi,theta,beta&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">eta</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;eta&#39;</span><span class="p">)</span>
 <span class="n">exp</span> <span class="o">=</span> <span class="p">(</span><span class="n">eta</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span><span class="o">+</span><span class="n">beta</span><span class="p">)</span><span class="o">-</span><span class="n">eta</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">eta</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Math</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;= 0&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/MeniscusBetweenPlates_2_0.png" src="../_images/MeniscusBetweenPlates_2_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \beta - \frac{\frac{d^{2}}{d \xi^{2}} \eta{\left(\xi \right)}}{\left(\left(\frac{d}{d \xi} \eta{\left(\xi \right)}\right)^{2} + 1\right)^{1.5}} + \eta{\left(\xi \right)}= 0\]</div>
 </div>
 </div>
 <p>As in the case of one plate, this equation can be integrated with an integration factor <span class="math notranslate nohighlight">\(\eta'\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span> <span class="o">=</span> <span class="n">exp</span><span class="o">*</span><span class="n">eta</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Math</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;= 0&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/MeniscusBetweenPlates_4_0.png" src="../_images/MeniscusBetweenPlates_4_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left(\beta - \frac{\frac{d^{2}}{d \xi^{2}} \eta{\left(\xi \right)}}{\left(\left(\frac{d}{d \xi} \eta{\left(\xi \right)}\right)^{2} + 1\right)^{1.5}} + \eta{\left(\xi \right)}\right) \frac{d}{d \xi} \eta{\left(\xi \right)}= 0\]</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exp2</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">exp2</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Math</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">exp2</span><span class="p">)</span><span class="o">+</span><span class="sa">r</span><span class="s1">&#39;= \text</span><span class="si">{constant}</span><span class="s1">&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/MeniscusBetweenPlates_5_0.png" src="../_images/MeniscusBetweenPlates_5_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \beta \eta{\left(\xi \right)} + \frac{1.0}{\left(\left(\frac{d}{d \xi} \eta{\left(\xi \right)}\right)^{2} + 1\right)^{0.5}} + \frac{\eta^{2}{\left(\xi \right)}}{2}= \text{constant}\]</div>
 </div>
 </div>
 <p>Again, when <span class="math notranslate nohighlight">\(\eta=0\)</span>, the first derivative is <span class="math notranslate nohighlight">\(0\)</span> too, so, this is again 1. And <span class="math notranslate nohighlight">\(\delta\)</span>, the normalized height of water in the wall (above center of meniscus) can be calculated by imposing its derivative.</p>
@@ -541,12 +545,13 @@ plate.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deltaSol</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">deltaEq</span><span class="p">,</span><span class="n">delta</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">deltaSol</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span><span class="o">.</span><span class="n">trigsimp</span><span class="p">()</span>
-<span class="n">display</span><span class="p">(</span><span class="n">deltaSol</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Math</span><span class="p">(</span><span class="s1">&#39;\delta =&#39;</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">deltaSol</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/MeniscusBetweenPlates_9_0.png" src="../_images/MeniscusBetweenPlates_9_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \delta =- \beta + \frac{1.4142135623731 \sqrt{0.5 \beta^{2} \left|{\cos{\left(\theta \right)}}\right| - \cos^{2}{\left(\theta \right)} \left|{\tan{\left(\theta \right)}}\right| + \left|{\cos{\left(\theta \right)}}\right|} \left|{\tan{\left(\theta \right)}}\right|}{\tan{\left(\theta \right)} \left|{\sqrt{\cos{\left(\theta \right)}}}\right|}\]</div>
 </div>
 </div>
 <p>This is function of the contact angle (<span class="math notranslate nohighlight">\(\theta\)</span>) but also of the height of the column, <span class="math notranslate nohighlight">\(\beta\)</span>. The higher is <span class="math notranslate nohighlight">\(\beta\)</span>, the lower is <span class="math notranslate nohighlight">\(\delta\)</span>. This is because also <span class="math notranslate nohighlight">\(\lambda\)</span> will be lower, and the meniscus is narrower.</p>
@@ -562,28 +567,29 @@ plate.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">dEq</span><span class="p">,</span><span class="n">eta</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">xi</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">display</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Math</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\frac{\text</span><span class="si">{d}</span><span class="s1">\eta}{\text</span><span class="si">{d}</span><span class="s1">\xi} =&#39;</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">f</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/MeniscusBetweenPlates_13_0.png" src="../_images/MeniscusBetweenPlates_13_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\text{d}\eta}{\text{d}\xi} =- \sqrt{-1.0 + \frac{1.0}{\left(\beta \eta{\left(\xi \right)} + 0.5 \eta^{2}{\left(\xi \right)} - 1\right)^{2}}}\]</div>
 </div>
 </div>
 <p>and its numerical version</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_np</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">((</span><span class="n">eta</span><span class="p">(</span><span class="n">xi</span><span class="p">),</span><span class="n">xi</span><span class="p">,</span><span class="n">beta</span><span class="p">),</span><span class="n">f</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deta_dxi</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">((</span><span class="n">xi</span><span class="p">,</span><span class="n">eta</span><span class="p">(</span><span class="n">xi</span><span class="p">),</span><span class="n">beta</span><span class="p">),</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>and now we can integrate it, choosing input values for contact angle <span class="math notranslate nohighlight">\(\theta\)</span> and for <span class="math notranslate nohighlight">\(\beta\)</span> (height of column).</p>
+<p>and now we can integrate it, choosing input values for contact angle <span class="math notranslate nohighlight">\(\theta\)</span> and for <span class="math notranslate nohighlight">\(\beta\)</span> (height of column). The function used to numerically the EDO is <code class="docutils literal notranslate"><span class="pre">scipy.integrate.solve_ivp</span></code> (for <em>Initial Value Problem</em>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 <span class="n">theta_n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
-<span class="n">beta_n</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">beta_n</span> <span class="o">=</span> <span class="mf">0.1</span>
 <span class="n">eta0</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">N</span><span class="p">(</span><span class="n">eta0_n</span><span class="p">(</span><span class="n">beta_n</span><span class="p">,</span><span class="n">theta_n</span><span class="p">),</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">eta0</span><span class="p">)</span>
 </pre></div>
@@ -593,41 +599,64 @@ plate.</p>
 <img alt="../_images/MeniscusBetweenPlates_17_0.png" src="../_images/MeniscusBetweenPlates_17_0.png" />
 </div>
 </div>
-<p>An estimation of distance between plates can be done easily with the circular approximation, yielding <span class="math notranslate nohighlight">\(\lambda = \frac{2\cos{\theta}}{\beta}\)</span>. So, the distance to the middle point will be around <span class="math notranslate nohighlight">\(\frac{\cos{\theta}}{\beta}\)</span>. We use a slightly larger value for the limit of numerical integration</p>
+<p>An estimation of distance between plates can be done easily with the circular approximation, yielding <span class="math notranslate nohighlight">\(\lambda = \frac{2\cos{\theta}}{\beta}\)</span>. So, the distance to the middle point will be less than <span class="math notranslate nohighlight">\(\frac{\cos{\theta}}{\beta}\)</span>. This distance can also be computed assuimint that <span class="math notranslate nohighlight">\(\eta(\xi) = 0 \; \forall \; \xi\)</span> and the weigth of the column is only due to the liquid mass below <span class="math notranslate nohighlight">\(z=0\)</span>.</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> takes 3 main arguments:</p>
+<ul class="simple">
+<li><p>The function defining the derivative of <span class="math notranslate nohighlight">\(\eta\)</span> (in our case, deta_dxi) that has to be as f(t,x(t)) (Note the the first argument as to be the independent variable, <span class="math notranslate nohighlight">\(t\)</span> or <span class="math notranslate nohighlight">\(\xi\)</span> and the second the function to be computed, <span class="math notranslate nohighlight">\(y(t)\)</span>, or <span class="math notranslate nohighlight">\(\eta(\xi)\)</span>.</p></li>
+<li><p>The interval of computation.</p></li>
+<li><p>The initial value or values.</p></li>
+</ul>
+<p>The other arguments are the points where we want the function to be evaluated and the extra parameter that has to be passed to the function deta_dxi.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l_2_est</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta_n</span><span class="p">)</span><span class="o">/</span><span class="n">beta_n</span>
-<span class="n">xi_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.1</span><span class="o">*</span><span class="n">l_2_est</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># long enough for our case</span>
-<span class="n">eta_np</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">f_np</span><span class="p">,</span><span class="n">eta0</span><span class="p">,</span><span class="n">xi_p</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">beta_n</span><span class="p">,))[:,</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#odeint returns an 2-D array (one for each equation of the system) with only one row. We only need the 1-D array.</span>
+<span class="n">xi_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">l_2_est</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># long enough for our case</span>
+<span class="n">sol_eta</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">deta_dxi</span><span class="p">,(</span><span class="n">xi_p</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xi_p</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]),[</span><span class="n">eta0</span><span class="p">],</span><span class="n">t_eval</span><span class="o">=</span><span class="n">xi_p</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">beta_n</span><span class="p">,))</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<pre class="output stream literal-block"> lsoda--  at t (=r1), too much accuracy requested         for precision of machine..  see tolsf (=r2)       in above,  r1 =  0.5148195504208D+01   r2 =                  NaN
-</pre>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;lambdifygenerated-2&gt;:2: RuntimeWarning: invalid value encountered in sqrt
-  return -sqrt(-1.0 + 1.0/(0.5*_Dummy_2603**2 + _Dummy_2603*beta - 1)**2)
-/home/robert/.config/jupyterlab-desktop/jlab_server/lib/python3.8/site-packages/scipy/integrate/_odepack_py.py:247: ODEintWarning: Excess accuracy requested (tolerances too small). Run with full_output = 1 to get quantitative information.
-  warnings.warn(warning_msg, ODEintWarning)
+  return -sqrt(-1.0 + 1.0/(0.5*_Dummy_2602**2 + _Dummy_2602*beta - 1)**2)
 </pre></div>
 </div>
 </div>
 </div>
-<p>It gives a warning because beyond the middle point of meniscus the derivative gives imaginary values (negative argument in the root square of <code class="docutils literal notranslate"><span class="pre">f</span></code>. A trick is to detect this <code class="docutils literal notranslate"><span class="pre">NaN</span></code>
-and drop them from <code class="docutils literal notranslate"><span class="pre">eta_np</span></code> and <code class="docutils literal notranslate"><span class="pre">xi_p</span></code>. Then, the last value of <code class="docutils literal notranslate"><span class="pre">xi_p</span></code> is the numerical result for <span class="math notranslate nohighlight">\(\lambda/2\)</span>.</p>
+<p>It can ouput a warning because the derivative can gives imaginary values (negative argument in the root square) but it is not important.</p>
+<p>The real value of <span class="math notranslate nohighlight">\(\lambda\)</span> is obtained by computing the real weigth of the column and equating it to the surface tension. In dimensionless form, it is written as
+$<span class="math notranslate nohighlight">\(  \int_0^{\lambda/2}\eta(\xi)\text{d}\xi + \beta \frac{\lambda}{2} = \cos(\theta) \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( \Rightarrow \; \frac{\lambda}{2} = \frac{1}{\beta}\left(\cos(\theta) - \int_0^{\lambda/2}\eta(\xi)\text{d}\xi \right) \)</span>$</p>
+<p>Don’t worry about the limit of integration in <span class="math notranslate nohighlight">\(\eta(\xi)\)</span>, since <span class="math notranslate nohighlight">\(\eta(\xi) = 0\)</span> for <span class="math notranslate nohighlight">\(\xi&gt;\lambda/2\)</span>. So, the integration can be done in all the computed interval.</p>
+<p><code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> outputs more information than just the solution</p>
+<p>The evaluation points are stored in <code class="docutils literal notranslate"><span class="pre">sol_eta.t</span></code>, and the solution in <code class="docutils literal notranslate"><span class="pre">sol_eta.y</span></code> that is, actually an array of arrays and, in our case, we have only one.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xi_p</span> <span class="o">=</span> <span class="n">xi_p</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">eta_np</span><span class="p">)]</span>
-<span class="n">eta_np</span> <span class="o">=</span> <span class="n">eta_np</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">eta_np</span><span class="p">)]</span>
-<span class="n">l_2</span> <span class="o">=</span> <span class="n">xi_p</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eta_np</span> <span class="o">=</span> <span class="n">sol_eta</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">xi_np</span> <span class="o">=</span> <span class="n">sol_eta</span><span class="o">.</span><span class="n">t</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta_n</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">eta_np</span><span class="p">,</span><span class="n">xi_np</span><span class="p">))</span><span class="o">/</span><span class="n">beta_n</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;numerical value for lambda: </span><span class="si">{:.3g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">l_2</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;estimated value for lambda: </span><span class="si">{:.3g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">l_2_est</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numerical value for lambda: 191
-estimated value for lambda: 173
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numerical value for lambda: 5.59
+estimated value for lambda: 17.3
+</pre></div>
+</div>
+</div>
+</div>
+<p>We keep only the values corresponding to <span class="math notranslate nohighlight">\(\xi &lt; \lambda/2\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xi_np</span> <span class="o">=</span> <span class="n">xi_np</span><span class="p">[</span><span class="n">sol_eta</span><span class="o">.</span><span class="n">t</span> <span class="o">&lt;</span> <span class="n">l_2</span><span class="p">]</span> <span class="c1"># [xi_np &lt; l_2] indentifies the indexes where the condition is fulfilled</span>
+<span class="n">eta_np</span> <span class="o">=</span> <span class="n">eta_np</span><span class="p">[</span><span class="n">sol_eta</span><span class="o">.</span><span class="n">t</span> <span class="o">&lt;</span> <span class="n">l_2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -635,7 +664,7 @@ estimated value for lambda: 173
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="n">l_2</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta_n</span><span class="p">)</span>
-<span class="n">eta_circ</span> <span class="o">=</span> <span class="n">R</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="n">l_2</span><span class="o">-</span><span class="n">xi_p</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">eta_circ</span> <span class="o">=</span> <span class="n">R</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="n">l_2</span><span class="o">-</span><span class="n">xi_np</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -645,17 +674,17 @@ estimated value for lambda: 173
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xi_p</span><span class="p">,</span><span class="n">eta_np</span><span class="p">,</span><span class="n">scaley</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;numerical&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xi_p</span><span class="p">,</span><span class="n">eta_circ</span><span class="p">,</span><span class="n">scaley</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span><span class="s1">&#39;cercle&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xi_np</span><span class="p">,</span><span class="n">eta_np</span><span class="p">,</span><span class="n">scaley</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;numerical&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xi_np</span><span class="p">,</span><span class="n">eta_circ</span><span class="p">,</span><span class="n">scaley</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span><span class="s1">&#39;cercle&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f8039ce54c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f4a082a7ac0&gt;
 </pre></div>
 </div>
-<img alt="../_images/MeniscusBetweenPlates_23_1.png" src="../_images/MeniscusBetweenPlates_23_1.png" />
+<img alt="../_images/MeniscusBetweenPlates_30_1.png" src="../_images/MeniscusBetweenPlates_30_1.png" />
 </div>
 </div>
 </div>
