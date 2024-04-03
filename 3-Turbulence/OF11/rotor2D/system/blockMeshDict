@@ -1,0 +1,30 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  11
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+nBlades         4;
+
+rHub            0.005;
+rTip            0.02;
+rFreestream     0.1;
+
+halfDepth       0.005;
+
+nCellsHubTip    6;
+nCellsTipFreestream 24;
+nCellsBladeBlade 24;
+
+#include "$FOAM_TUTORIALS/resources/blockMesh/rotor2D"
+
+// ************************************************************************* //
