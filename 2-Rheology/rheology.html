@@ -1,111 +1,175 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Rheology. A brief introduction &#8212; UPC-205237 Advanced Fluid Mechanics</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"TeX": {"Macros": {"Ma": "\\mathrm{Ma}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2-Rheology/rheology';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Viscoelastic fluid in a pipe (Maxwell model)" href="FDMViscoelastic.html" />
     <link rel="prev" title="Assignment 1. Computation of journal bearing" href="../1-microFlows/Assignment1.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/eseiaat-positiu-p3005-interior-blanc.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">UPC-205237 Advanced Fluid Mechanics</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/eseiaat-positiu-p3005-interior-blanc.png" class="logo__image only-light" alt="UPC-205237 Advanced Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../_static/eseiaat-positiu-p3005-interior-blanc.png" class="logo__image only-dark" alt="UPC-205237 Advanced Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -115,459 +179,260 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../0-Intro/IntroPython.html">
-   Introduction to scientific computation with Python
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../0-Intro/Assignment0.html">
-     Assignment 0: Conical tank emptying time
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../1-microFlows/Microflows.html">
-   Microflows. A very brief introduction with lubrication and capillarity
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../1-microFlows/Assignment1.html">
-     Assignment 1. Computation of journal bearing
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
-   Rheology. A brief introduction
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="FDMViscoelastic.html">
-     Viscoelastic fluid in a pipe (Maxwell model)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Assignment2.html">
-     Assignment 2. Rheological behaviour of cosmetic creams
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../3-Turbulence/turbulence.html">
-   Turbulent flows. Statistical description and characteristic scales
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-Turbulence/ExperimentalMeasurements.html">
-     Statistical process of experimental measurements
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-Turbulence/Assignment3.html">
-     Assignment 3 : Computation of length scales and spectrum in space
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../4-BoundaryLayer/BoundaryLayer.html">
-   Boundary Layer. An introduction
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../4-BoundaryLayer/Assignment4.html">
-     Assignment 4. Growth of Turbulent Boundary Layer
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../5-CompressibleFlow/CompressibleFlow.html">
-   Compressible Flow. An introduction
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5-CompressibleFlow/Assignment5.html">
-     Assignment 5. A function to compute the flow after a deflection angle
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../0-Intro/IntroPython.html">Introduction to scientific computation with Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../0-Intro/Assignment0.html">Assignment 0: Conical tank emptying time</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1-microFlows/Microflows.html">Microflows. A very brief introduction with lubrication and capillarity</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1-microFlows/Assignment1.html">Assignment 1. Computation of journal bearing</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Rheology. A brief introduction</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="FDMViscoelastic.html">Viscoelastic fluid in a pipe (Maxwell model)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Assignment2.html">Assignment 2. Rheological behaviour of cosmetic creams</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-Turbulence/turbulence.html">Turbulent flows. Statistical description and characteristic scales</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3-Turbulence/ExperimentalMeasurements.html">Statistical process of experimental measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3-Turbulence/Assignment3.html">Assignment 3 : Computation of length scales and spectrum in space</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4-BoundaryLayer/BoundaryLayer.html">Boundary Layer. An introduction</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../5-CompressibleFlow/CompressibleFlow.html">Compressible Flow. An introduction</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../5-CompressibleFlow/Assignment5.html">Assignment 5. A function to compute the flow after a deflection angle</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/rclUPC/AdvancedFluidMechanics/main?urlpath=lab/tree/2-Rheology/rheology.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rclUPC/AdvancedFluidMechanics/main?urlpath=lab/tree/2-Rheology/rheology.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://colab.research.google.com/github/rclUPC/AdvancedFluidMechanics/blob/main/2-Rheology/rheology.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/rclUPC/AdvancedFluidMechanics/blob/main/2-Rheology/rheology.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/2-Rheology/rheology.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/2-Rheology/rheology.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
 
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#classification-of-fluids">
-   1. Classification of fluids
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#generalized-newtonian-fluids">
-   2. Generalized Newtonian Fluids
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#power-law-fluid-in-a-pipe">
-     Power Law Fluid in a pipe
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plot-of-the-velocity-profile">
-     Plot of the velocity profile
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1">
-     Exercise 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2">
-     Exercise 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3">
-     Exercise 3
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#viscoelastic-fluids">
-   3. Viscoelastic fluids
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#maxwell-element">
-     Maxwell element
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#voigth-kelvin-element">
-     Voigth-Kelvin element
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jeffreys-burger-element">
-     Jeffreys-Burger element
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extension-to-vectorial-notation">
-     Extension to vectorial notation
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Rheology. A brief introduction</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#classification-of-fluids">
-   1. Classification of fluids
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#generalized-newtonian-fluids">
-   2. Generalized Newtonian Fluids
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#power-law-fluid-in-a-pipe">
-     Power Law Fluid in a pipe
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plot-of-the-velocity-profile">
-     Plot of the velocity profile
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1">
-     Exercise 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2">
-     Exercise 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3">
-     Exercise 3
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#viscoelastic-fluids">
-   3. Viscoelastic fluids
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#maxwell-element">
-     Maxwell element
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#voigth-kelvin-element">
-     Voigth-Kelvin element
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jeffreys-burger-element">
-     Jeffreys-Burger element
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extension-to-vectorial-notation">
-     Extension to vectorial notation
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Rheology. A brief introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-of-fluids">1. Classification of fluids</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalized-newtonian-fluids">2. Generalized Newtonian Fluids</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-law-fluid-in-a-pipe">Power Law Fluid in a pipe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-of-the-velocity-profile">Plot of the velocity profile</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viscoelastic-fluids">3. Viscoelastic fluids</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxwell-element">Maxwell element</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voigth-kelvin-element">Voigth-Kelvin element</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jeffreys-burger-element">Jeffreys-Burger element</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extension-to-vectorial-notation">Extension to vectorial notation</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="rheology-a-brief-introduction">
-<h1>Rheology. A brief introduction<a class="headerlink" href="#rheology-a-brief-introduction" title="Permalink to this headline">#</a></h1>
-<div class="section" id="classification-of-fluids">
-<h2>1. Classification of fluids<a class="headerlink" href="#classification-of-fluids" title="Permalink to this headline">#</a></h2>
-<p>This notebook is based principally on the <a class="reference external" href="https://discovery.upc.edu/permalink/34CSUC_UPC/rdgucl/alma991001402139706711">book by Irgens</a> and also on the classical <a class="reference external" href="https://discovery.upc.edu/iii/encore/record/C__Rb1230696?lang=cat">book by Bird</a>. Also chapter chapter 7 in the book of <a class="reference external" href="https://discovery.upc.edu/permalink/34CSUC_UPC/19srfpi/cdi_askewsholts_vlebooks_9781402067426">Engineerign Fluid Mechanics, by H. Yamaguchi</a> has been used.</p>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="rheology-a-brief-introduction">
+<h1>Rheology. A brief introduction<a class="headerlink" href="#rheology-a-brief-introduction" title="Link to this heading">#</a></h1>
+<section id="classification-of-fluids">
+<h2>1. Classification of fluids<a class="headerlink" href="#classification-of-fluids" title="Link to this heading">#</a></h2>
+<p>This notebook is based principally on the <a class="reference external" href="https://discovery.upc.edu/permalink/34CSUC_UPC/rdgucl/alma991004877454506711">book by Irgens</a> and also on the classical <a class="reference external" href="https://discovery.upc.edu/permalink/34CSUC_UPC/rdgucl/alma991000497999706711">book by Bird</a>. Also chapter chapter 7 in the book of <a class="reference external" href="https://discovery.upc.edu/permalink/34CSUC_UPC/rdgucl/alma991004878455306711">Engineerign Fluid Mechanics, by H. Yamaguchi</a> has been used.</p>
 <p>Very briefly, when we have studied Fluid Mechanics, we have focused on fluids that meet Newton’s law for shear stress,</p>
 <div class="math notranslate nohighlight">
 \[ \tau = \mu \dot\gamma \tag{1}\]</div>
@@ -599,11 +464,11 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[ \tau(\dot\gamma) = \tau_y + \mu \dot\gamma \tag{6}\]</div>
 <p>There are also some <strong>Time Dependent</strong> models as <a class="reference external" href="https://en.wikipedia.org/wiki/Thixotropy"><em>Thixotropic fluids</em></a> when shear stress decreases in time for a constant shear rate, and <a class="reference external" href="https://en.wikipedia.org/wiki/Rheopecty"><em>Rheopectic fluids</em></a> otherwise. These kind of fluids are beyond the scope of this course</p>
-</div>
-<div class="section" id="generalized-newtonian-fluids">
-<h2>2. Generalized Newtonian Fluids<a class="headerlink" href="#generalized-newtonian-fluids" title="Permalink to this headline">#</a></h2>
-<div class="section" id="power-law-fluid-in-a-pipe">
-<h3>Power Law Fluid in a pipe<a class="headerlink" href="#power-law-fluid-in-a-pipe" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="generalized-newtonian-fluids">
+<h2>2. Generalized Newtonian Fluids<a class="headerlink" href="#generalized-newtonian-fluids" title="Link to this heading">#</a></h2>
+<section id="power-law-fluid-in-a-pipe">
+<h3>Power Law Fluid in a pipe<a class="headerlink" href="#power-law-fluid-in-a-pipe" title="Link to this heading">#</a></h3>
 <p>Let’s consider a very slow flow and/or very small, so that inertial and time terms can be neglected.</p>
 <p>We have seen in Fluid Mechanics that for a Newtonian Fluid, <a class="reference external" href="https://en.wikipedia.org/wiki/Hagen%E2%80%93Poiseuille_equation#Derivation">Hagen-Poiseuille law</a> holds, according to the Navier Stokes equation for a laminar, viscous flow</p>
 <div class="math notranslate nohighlight">
@@ -622,6 +487,7 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
 <span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Math</span>
 </pre></div>
 </div>
 </div>
@@ -629,7 +495,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K</span><span class="p">,</span><span class="n">Deltap</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">R</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;K {\Delta}p L r n R&#39;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">uz</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;uz&#39;</span><span class="p">)</span>
+<span class="n">uz</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;u_z&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -642,7 +508,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_3_0.png" src="../_images/rheology_3_0.png" />
+<img alt="../_images/e00d4a6d254facd74e815da74c754ed3bb066d8b5f95ead9125e6b801198bd41.png" src="../_images/e00d4a6d254facd74e815da74c754ed3bb066d8b5f95ead9125e6b801198bd41.png" />
 </div>
 </div>
 <p>First, we integrate it and try to simplify it a little bit …</p>
@@ -656,93 +522,95 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uz</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">exp</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="p">))</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uz</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+<span class="n">uz</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Math</span><span class="p">(</span><span class="s1">&#39;u_z(r) =&#39;</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">uz</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_7_0.png" src="../_images/rheology_7_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle u_z(r) =\frac{2 K L n \left(\frac{1}{2 K L}\right)^{\frac{n + 1}{n}} \left(- \left(- R {\Delta}p\right)^{\frac{n + 1}{n}} + \left(- r {\Delta}p\right)^{\frac{n + 1}{n}}\right)}{{\Delta}p \left(n + 1\right)}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uz</span> <span class="o">=</span> <span class="n">uz</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">powsimp</span><span class="p">()</span>
-<span class="n">display</span><span class="p">(</span><span class="n">uz</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Math</span><span class="p">(</span><span class="s1">&#39;u_z(r) =&#39;</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">uz</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_8_0.png" src="../_images/rheology_8_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle u_z(r) =\frac{\left(-1\right)^{\frac{n + 1}{n}} n \left(\frac{{\Delta}p}{2 K L}\right)^{\frac{1}{n}} \left(- R^{1 + \frac{1}{n}} + r^{1 + \frac{1}{n}}\right)}{n + 1}\]</div>
 </div>
 </div>
 <p>… just to integrate it again and obtain the flow rate in the pipe.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">uz</span><span class="o">*</span><span class="n">r</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">R</span><span class="p">))</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span><span class="o">.</span><span class="n">powsimp</span><span class="p">()</span>
-<span class="n">display</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Math</span><span class="p">(</span><span class="s1">&#39;Q =&#39;</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">Q</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_10_0.png" src="../_images/rheology_10_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle Q =\frac{\pi R^{3 + \frac{1}{n}} n \left(- \frac{{\Delta}p}{2 K L}\right)^{\frac{1}{n}}}{3 n + 1}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span> <span class="o">=</span> <span class="n">Q</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
-<span class="n">display</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Math</span><span class="p">(</span><span class="s1">&#39;Q =&#39;</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">Q</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_11_0.png" src="../_images/rheology_11_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle Q =\frac{\pi R^{\frac{3 n + 1}{n}} n \left(- \frac{{\Delta}p}{2 K L}\right)^{\frac{1}{n}}}{3 n + 1}\]</div>
 </div>
 </div>
 <p>and, from here, the average velocity, so that we can normalize velocity profile</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u_avg</span> <span class="o">=</span> <span class="n">Q</span><span class="o">/</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">u_avg</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Math</span><span class="p">(</span><span class="s1">&#39;\overline</span><span class="si">{u}</span><span class="s1"> = &#39;</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">u_avg</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_13_0.png" src="../_images/rheology_13_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \overline{u} = \frac{R^{\frac{3 n + 1}{n}} n \left(- \frac{{\Delta}p}{2 K L}\right)^{\frac{1}{n}}}{R^{2} \left(3 n + 1\right)}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u_dimless</span> <span class="o">=</span> <span class="n">uz</span><span class="o">/</span><span class="n">u_avg</span>
 <span class="n">u_dimless</span> <span class="o">=</span> <span class="n">u_dimless</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
-<span class="n">display</span><span class="p">(</span><span class="n">u_dimless</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Math</span><span class="p">(</span><span class="s1">&#39;u^* = &#39;</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">u_dimless</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_14_0.png" src="../_images/rheology_14_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle u^* = \frac{R^{- \frac{n + 1}{n}} \left(R^{\frac{n + 1}{n}} - r^{\frac{n + 1}{n}}\right) \left(3 n + 1\right)}{n + 1}\]</div>
 </div>
 </div>
 <p>In order to get it in dimensionless form, we just impose <span class="math notranslate nohighlight">\(R=1\)</span> so that now <span class="math notranslate nohighlight">\(r\)</span> is the dimensionless radius <span class="math notranslate nohighlight">\(0&lt;r/R&lt;1\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u_dimless</span> <span class="o">=</span> <span class="n">u_dimless</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">R</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">u_dimless</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Math</span><span class="p">(</span><span class="s1">&#39;u^* = &#39;</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">u_dimless</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_16_0.png" src="../_images/rheology_16_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle u^* = \frac{\left(1 - r^{\frac{n + 1}{n}}\right) \left(3 n + 1\right)}{n + 1}\]</div>
 </div>
 </div>
-</div>
-<div class="section" id="plot-of-the-velocity-profile">
-<h3>Plot of the velocity profile<a class="headerlink" href="#plot-of-the-velocity-profile" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="plot-of-the-velocity-profile">
+<h3>Plot of the velocity profile<a class="headerlink" href="#plot-of-the-velocity-profile" title="Link to this heading">#</a></h3>
 <p>We are now plotting this dimensionless profile in order to see the effect of the parameter <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>First we <em>lambdify</em> the expression (that is, remember, to convert it to a numerical function of two variables in this case)</p>
 <div class="cell docutils container">
@@ -759,7 +627,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_19_0.png" src="../_images/rheology_19_0.png" />
+<img alt="../_images/8b13ca8f714f573e8389ee82aedf7621745ee8f7436e6837d2472a50feac2548.png" src="../_images/8b13ca8f714f573e8389ee82aedf7621745ee8f7436e6837d2472a50feac2548.png" />
 </div>
 </div>
 <p>Now the <a class="reference external" href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets</a> module is used. It is very useful to make interactive widgets. It only works in a dynamic environment, with a kernel; so you have to download the notebook and run it in Jupyterlab or Google Colaborative.</p>
@@ -791,37 +659,35 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "a9e3e36b879f41f48ef49df0920352c7", "version_major": 2, "version_minor": 0}
-</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "5146aa53129046bab562a4bd50a062f9", "version_major": 2, "version_minor": 0}</script></div>
 </div>
-</div>
-<div class="section" id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Link to this heading">#</a></h3>
 <p>Check that dimensionless flowrate is independent of <span class="math notranslate nohighlight">\(n\)</span>. What is its value?</p>
-</div>
-<div class="section" id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h3>
 <p>Reynolds number for power law fluids is defined differently than for a Newtonian fluid. Provided that the dimensionless stress <span class="math notranslate nohighlight">\(\tau^*\)</span> should be written in terms of a dimensionless strain rate <span class="math notranslate nohighlight">\(\gamma^*\)</span> as</p>
 <div class="math notranslate nohighlight">
 \[ \tau^* = \frac{1}{\text{Re}_n}\left(\gamma^*\right)^n \]</div>
 <p>Find the definition of <span class="math notranslate nohighlight">\(\text{Re}_n\)</span></p>
 <p>This number defines the similarity when experiments with two different power law fluids are performed.</p>
-</div>
-<div class="section" id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Link to this heading">#</a></h3>
 <p>As an exercise for this topic, it is proposed to make a similar study: the laminar velocity profile in a pipe for a Bingham plastic</p>
-</div>
-</div>
-<div class="section" id="viscoelastic-fluids">
-<h2>3. Viscoelastic fluids<a class="headerlink" href="#viscoelastic-fluids" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="viscoelastic-fluids">
+<h2>3. Viscoelastic fluids<a class="headerlink" href="#viscoelastic-fluids" title="Link to this heading">#</a></h2>
 <p>This is a complicated topic. Several constitutive equations have been proposed according to experimental results. Viscoelastic materials have both viscous and elastic behavior. Some examples are rubbers, melted glass and also some complex biofluids, as cytoplasm.</p>
 <p>Most of the cases in engineering can only be solved with CFD, due to the high non-linearity between constitutive equations, continuity and momentum balance. Here we are only focusing in simple cases with linear viscoelastic flows.</p>
 <p>In general, constitutive equations for linear viscoelastic material are linear relationship between shear stress, shear rate and its time derivative.</p>
 <div class="math notranslate nohighlight">
 \[ f(\tau, \frac{\text{d}^n \tau}{\text{d}t^n},\gamma, \frac{\text{d}^n \gamma}{\text{d}t^n}) = \sum_{n=0}^{N} \left( a_n \frac{\text{d}^n \tau}{\text{d}t^n} + b_n \frac{\text{d}^n \gamma}{\text{d}t^n}\right)= 0\]</div>
-<div class="section" id="maxwell-element">
-<h3>Maxwell element<a class="headerlink" href="#maxwell-element" title="Permalink to this headline">#</a></h3>
+<section id="maxwell-element">
+<h3>Maxwell element<a class="headerlink" href="#maxwell-element" title="Link to this heading">#</a></h3>
 <p>The most fundamental model is the so-called <strong>Maxwell element</strong>, composed of a combination in series of a viscous element, with viscosity <span class="math notranslate nohighlight">\(\eta\)</span> and a spring, with constant <span class="math notranslate nohighlight">\(G\)</span>.</p>
 <p><img alt="Image" src="../_images/Maxwell.png" /></p>
 <p>In this case, both stresses are the same, <span class="math notranslate nohighlight">\(\tau_1= \tau_2\)</span>, and the displacements<span class="math notranslate nohighlight">\(\gamma\)</span> are additive, <span class="math notranslate nohighlight">\(\gamma = \gamma_1 +\gamma_2\)</span>. By deriving this last expression an arranging terms, we get</p>
@@ -868,7 +734,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_28_0.png" src="../_images/rheology_28_0.png" />
+<img alt="../_images/a8615ab93491958d014772e849e70440571ecf2b27e236a229172a7cb21f94fd.png" src="../_images/a8615ab93491958d014772e849e70440571ecf2b27e236a229172a7cb21f94fd.png" />
 </div>
 </div>
 <p>In order to properly solve this equation, the hint that it is an <a class="reference external" href="https://en.wikipedia.org/wiki/Bernoulli_differential_equation">Bernoulli Differential Equation</a> has to be passed to the solver.</p>
@@ -886,7 +752,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_31_0.png" src="../_images/rheology_31_0.png" />
+<img alt="../_images/b90b7cd91a4162754c3e6b5821476268fc2e02013446e450ff08d86382f56bf7.png" src="../_images/b90b7cd91a4162754c3e6b5821476268fc2e02013446e450ff08d86382f56bf7.png" />
 </div>
 </div>
 <p>Let’s consider a first example in which <span class="math notranslate nohighlight">\(\gamma(t)\)</span> is a <a class="reference external" href="https://en.wikipedia.org/wiki/Step_function">step function</a> with <span class="math notranslate nohighlight">\(\gamma = 1\)</span> for <span class="math notranslate nohighlight">\(t&lt;0\)</span> and then it is imposed as <span class="math notranslate nohighlight">\(\gamma = 0\)</span> again for positive time.</p>
@@ -898,7 +764,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_33_0.png" src="../_images/rheology_33_0.png" />
+<img alt="../_images/675db32b5197d76e66ffbd0c3a0370b2335efd00e46c65c734ae0c7ff45f2a6e.png" src="../_images/675db32b5197d76e66ffbd0c3a0370b2335efd00e46c65c734ae0c7ff45f2a6e.png" />
 </div>
 </div>
 <p>That is, stress is relaxed in time according to the value of viscosity and spring constant. Note that, in general, the value of the stress is not only function of <span class="math notranslate nohighlight">\(\gamma\)</span> and its derivative but also, <em>of its history</em>.</p>
@@ -920,7 +786,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_36_0.png" src="../_images/rheology_36_0.png" />
+<img alt="../_images/0fb128ab9bb4f8ccb66745239712e9f62abe0373ffd03369cf912961ff682e69.png" src="../_images/0fb128ab9bb4f8ccb66745239712e9f62abe0373ffd03369cf912961ff682e69.png" />
 </div>
 </div>
 <p>After a while, when relaxation time has passed, the first term, <span class="math notranslate nohighlight">\(C_1 e^{-\frac{Gt}{\eta}}\)</span>, can be neglected</p>
@@ -932,7 +798,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_38_0.png" src="../_images/rheology_38_0.png" />
+<img alt="../_images/7b7f29fbafd03f1aef91a2db1a83739ec1906a7c82f83774ce032eaa3741ce2a.png" src="../_images/7b7f29fbafd03f1aef91a2db1a83739ec1906a7c82f83774ce032eaa3741ce2a.png" />
 </div>
 </div>
 <p>The modulus that multiplies the sinus term is known as <span class="math notranslate nohighlight">\(G'\)</span>, the <strong>storage modulus</strong>, and measures the ability of the fluid to store elastic energy.</p>
@@ -951,7 +817,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_41_0.png" src="../_images/rheology_41_0.png" />
+<img alt="../_images/8397113c7b82817dcb192bba7bbbf637a9f9ecb5cce587e76951f92d33a5bd07.png" src="../_images/8397113c7b82817dcb192bba7bbbf637a9f9ecb5cce587e76951f92d33a5bd07.png" />
 </div>
 </div>
 <p>The modulus that multiplies the cosinus term is known as <span class="math notranslate nohighlight">\(G''\)</span>, the <strong>loss modulus</strong>, and measures the ability of the fluid to lose energy through viscous dissipation.</p>
@@ -963,7 +829,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_43_0.png" src="../_images/rheology_43_0.png" />
+<img alt="../_images/d632bcdba8934eb80b60f6276a9c71154b7df346f99a545c5072aa633196fd04.png" src="../_images/d632bcdba8934eb80b60f6276a9c71154b7df346f99a545c5072aa633196fd04.png" />
 </div>
 </div>
 <p>We can write this moduli in terms of characteristic time (let me use here <span class="math notranslate nohighlight">\(t_c\)</span> since <span class="math notranslate nohighlight">\(\lambda\)</span> confuses python with the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function)</p>
@@ -978,8 +844,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_45_0.png" src="../_images/rheology_45_0.png" />
-<img alt="../_images/rheology_45_1.png" src="../_images/rheology_45_1.png" />
+<img alt="../_images/58436ab3540f0e5e7ee26c4711c593fb5ef91a442a4b92486b2fa498310007dc.png" src="../_images/58436ab3540f0e5e7ee26c4711c593fb5ef91a442a4b92486b2fa498310007dc.png" />
+<img alt="../_images/35b56226bf8d91baabe395f19d7b2e9df632e61d00f0c301b149f17b6e63e34a.png" src="../_images/35b56226bf8d91baabe395f19d7b2e9df632e61d00f0c301b149f17b6e63e34a.png" />
 </div>
 </div>
 <p>We can estimate the behavior of this two parameters as function of the frequency <span class="math notranslate nohighlight">\(\omega\)</span> of the experiment, using the dimensionless time <span class="math notranslate nohighlight">\(\epsilon = \omega t_c\)</span></p>
@@ -994,8 +860,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_47_0.png" src="../_images/rheology_47_0.png" />
-<img alt="../_images/rheology_47_1.png" src="../_images/rheology_47_1.png" />
+<img alt="../_images/b120d255c9ba3404d98be521b6649a862a8e8f584cd9f1cad7d2867751c18dbc.png" src="../_images/b120d255c9ba3404d98be521b6649a862a8e8f584cd9f1cad7d2867751c18dbc.png" />
+<img alt="../_images/3157d7ed24ce6026230854faf5a0a7420e48c8e366a85efcb3268aad3cac9254.png" src="../_images/3157d7ed24ce6026230854faf5a0a7420e48c8e366a85efcb3268aad3cac9254.png" />
 </div>
 </div>
 <p>Let’s plot it…</p>
@@ -1041,16 +907,16 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fc615ed3790&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fc479d4ddc0&gt;
 </pre></div>
 </div>
-<img alt="../_images/rheology_53_1.png" src="../_images/rheology_53_1.png" />
+<img alt="../_images/69308b44fd6d6a2864182d1c6473bf1db70de2da1f2527d9930ddf03a1466996.png" src="../_images/69308b44fd6d6a2864182d1c6473bf1db70de2da1f2527d9930ddf03a1466996.png" />
 </div>
 </div>
 <p>The value of <span class="math notranslate nohighlight">\(\tau\)</span> for large <span class="math notranslate nohighlight">\(\omega\)</span> gives <span class="math notranslate nohighlight">\(G^\prime\)</span>, the storage modulus. The slope of the curve for small <span class="math notranslate nohighlight">\(\omega\)</span> allows the estimation of <span class="math notranslate nohighlight">\(G^{\prime\prime}\)</span> the loss modulus and, hence, the viscous component of the fluid. That is the fundamentals of the <a class="reference external" href="http://www.mate.tue.nl/~wyss/home/resources/publications/2007/Wyss_GIT_Lab_J_2007.pdf">oscillatory rheometers</a></p>
-</div>
-<div class="section" id="voigth-kelvin-element">
-<h3>Voigth-Kelvin element<a class="headerlink" href="#voigth-kelvin-element" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="voigth-kelvin-element">
+<h3>Voigth-Kelvin element<a class="headerlink" href="#voigth-kelvin-element" title="Link to this heading">#</a></h3>
 <p>However, Maxwell model does not explain most of the viscoelastic behavior. Another option is the  Voigth, or Kelvin, element</p>
 <p><img alt="Image" src="../_images/VoigthKelvin.png" /></p>
 <p>In this element the strain <span class="math notranslate nohighlight">\(\gamma\)</span> (displacement) are the same, and the stress <span class="math notranslate nohighlight">\(\tau\)</span> (forces) are additives</p>
@@ -1098,7 +964,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_60_0.png" src="../_images/rheology_60_0.png" />
+<img alt="../_images/0b9b98aff4dfed1f20f14423ac6d83222386d0dc3653119d866f01feef32864d.png" src="../_images/0b9b98aff4dfed1f20f14423ac6d83222386d0dc3653119d866f01feef32864d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1109,7 +975,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_61_0.png" src="../_images/rheology_61_0.png" />
+<img alt="../_images/e88c6807eadf8d2e0d36c9f60bb6d27b27f4d98622c6d8005ad40b44b9bfbf45.png" src="../_images/e88c6807eadf8d2e0d36c9f60bb6d27b27f4d98622c6d8005ad40b44b9bfbf45.png" />
 </div>
 </div>
 <p>In a <strong>creep experiment</strong>, a constant stress is applied and then the element is released</p>
@@ -1122,7 +988,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_63_0.png" src="../_images/rheology_63_0.png" />
+<img alt="../_images/f1e6383cd87ad9e28f1454768207980196b18b0ca8859c7cd4f868f881320e6c.png" src="../_images/f1e6383cd87ad9e28f1454768207980196b18b0ca8859c7cd4f868f881320e6c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1134,7 +1000,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_64_0.png" src="../_images/rheology_64_0.png" />
+<img alt="../_images/fbafb021e9bfba1b21e4b2d3cf6a2c02d5f85e4dc3388b3ea4ae2a5c7f882ef1.png" src="../_images/fbafb021e9bfba1b21e4b2d3cf6a2c02d5f85e4dc3388b3ea4ae2a5c7f882ef1.png" />
 </div>
 </div>
 <div class="math notranslate nohighlight">
@@ -1148,7 +1014,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_66_0.png" src="../_images/rheology_66_0.png" />
+<img alt="../_images/f60a1840d7d0ff2ec905453aba3571b8f78cda0c1543dc9bb6592442c5d4f24d.png" src="../_images/f60a1840d7d0ff2ec905453aba3571b8f78cda0c1543dc9bb6592442c5d4f24d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1160,7 +1026,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_67_0.png" src="../_images/rheology_67_0.png" />
+<img alt="../_images/c8d782db5c720282af8282b2e0a160dd3443299ee6904e1d345cced929bc0fa8.png" src="../_images/c8d782db5c720282af8282b2e0a160dd3443299ee6904e1d345cced929bc0fa8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1196,16 +1062,16 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fc61546ccd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fc479bf81c0&gt;
 </pre></div>
 </div>
-<img alt="../_images/rheology_71_1.png" src="../_images/rheology_71_1.png" />
+<img alt="../_images/9a111eef037b665a69d901fe439963bfdb3e27a314ec3fcec57944f9274c5c24.png" src="../_images/9a111eef037b665a69d901fe439963bfdb3e27a314ec3fcec57944f9274c5c24.png" />
 </div>
 </div>
 <p>In this case, the characteristic time <span class="math notranslate nohighlight">\(\lambda = \frac{\eta}{G}\)</span> is called <strong>retardation time</strong>. This model describes the behavior of a viscoelastic solid.</p>
-</div>
-<div class="section" id="jeffreys-burger-element">
-<h3>Jeffreys-Burger element<a class="headerlink" href="#jeffreys-burger-element" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="jeffreys-burger-element">
+<h3>Jeffreys-Burger element<a class="headerlink" href="#jeffreys-burger-element" title="Link to this heading">#</a></h3>
 <p>However, Maxwell and Voight elements are not able to describe correctly real viscoelastic materials. The are several complex combinations of this elements, and the more usual is the Jeffreys (or Burger) element that replaces in the Maxwell element the spring by a Voight element.</p>
 <p><img alt="Image" src="../_images/JeffreysBurger.png" /></p>
 <p>Stress in both parts are the same</p>
@@ -1276,7 +1142,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_78_0.png" src="../_images/rheology_78_0.png" />
+<img alt="../_images/5170d923556f44a3a1ede6a83c918a0d513250877a3bc28b1fb5cf9b72419013.png" src="../_images/5170d923556f44a3a1ede6a83c918a0d513250877a3bc28b1fb5cf9b72419013.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1294,7 +1160,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_80_0.png" src="../_images/rheology_80_0.png" />
+<img alt="../_images/79feb9405b25e14fff2e8b8a9dfb5113a705b887cfcae4b2495021150bfcd53e.png" src="../_images/79feb9405b25e14fff2e8b8a9dfb5113a705b887cfcae4b2495021150bfcd53e.png" />
 </div>
 </div>
 <p>Again, first term can be neglected after a while</p>
@@ -1306,12 +1172,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/rheology_82_0.png" src="../_images/rheology_82_0.png" />
+<img alt="../_images/313e67cb456069042decf01b50fe6e7c2de8d97440feb61d0c1f46ab5d76b00c.png" src="../_images/313e67cb456069042decf01b50fe6e7c2de8d97440feb61d0c1f46ab5d76b00c.png" />
 </div>
 </div>
-</div>
-<div class="section" id="extension-to-vectorial-notation">
-<h3>Extension to vectorial notation<a class="headerlink" href="#extension-to-vectorial-notation" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="extension-to-vectorial-notation">
+<h3>Extension to vectorial notation<a class="headerlink" href="#extension-to-vectorial-notation" title="Link to this heading">#</a></h3>
 <p>Maxwell model is written, in vector and tensor notation as</p>
 <div class="math notranslate nohighlight">
 \[ \boldsymbol{\tau} + \lambda \stackrel{\triangledown}{\boldsymbol{\tau}} = \eta \boldsymbol{\dot\gamma} = \eta \left(\nabla \boldsymbol{u} + \nabla \boldsymbol{u}^T \right) \]</div>
@@ -1327,35 +1193,35 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="o">%</span><span class="k">load_ext</span> watermark
 <span class="k">except</span><span class="p">:</span>
-    <span class="o">!</span>pip install watermark
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>watermark
 <span class="o">%</span><span class="k">watermark</span> -v -m -iv
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python implementation: CPython
-Python version       : 3.8.15
-IPython version      : 8.7.0
+Python version       : 3.8.13
+IPython version      : 8.0.1
 
-Compiler    : GCC 10.4.0
+Compiler    : GCC 10.3.0
 OS          : Linux
-Release     : 5.4.0-139-generic
+Release     : 5.4.0-144-generic
 Machine     : x86_64
 Processor   : x86_64
-CPU cores   : 8
+CPU cores   : 4
 Architecture: 64bit
 
-numpy: 1.23.5
-sympy: 1.11.1
+sympy: 1.7.1
+numpy: 1.22.2
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <div class="toctree-wrapper compound">
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1377,50 +1243,118 @@ sympy: 1.11.1
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../1-microFlows/Assignment1.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Assignment 1. Computation of journal bearing</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../1-microFlows/Assignment1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Assignment 1. Computation of journal bearing</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="FDMViscoelastic.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="FDMViscoelastic.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Viscoelastic fluid in a pipe (Maxwell model)</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-of-fluids">1. Classification of fluids</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalized-newtonian-fluids">2. Generalized Newtonian Fluids</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-law-fluid-in-a-pipe">Power Law Fluid in a pipe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-of-the-velocity-profile">Plot of the velocity profile</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viscoelastic-fluids">3. Viscoelastic fluids</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxwell-element">Maxwell element</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voigth-kelvin-element">Voigth-Kelvin element</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jeffreys-burger-element">Jeffreys-Burger element</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extension-to-vectorial-notation">Extension to vectorial notation</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Robert Castilla - UPC CATMech Terrassa<br/>
-  
-      &copy; Copyright 2023.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Robert Castilla - UPC CATMech Terrassa
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

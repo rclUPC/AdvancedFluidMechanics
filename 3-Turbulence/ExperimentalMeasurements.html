@@ -1,111 +1,175 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Statistical process of experimental measurements &#8212; UPC-205237 Advanced Fluid Mechanics</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"TeX": {"Macros": {"Ma": "\\mathrm{Ma}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '3-Turbulence/ExperimentalMeasurements';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Assignment 3 : Computation of length scales and spectrum in space" href="Assignment3.html" />
     <link rel="prev" title="Turbulent flows. Statistical description and characteristic scales" href="turbulence.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/eseiaat-positiu-p3005-interior-blanc.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">UPC-205237 Advanced Fluid Mechanics</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/eseiaat-positiu-p3005-interior-blanc.png" class="logo__image only-light" alt="UPC-205237 Advanced Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../_static/eseiaat-positiu-p3005-interior-blanc.png" class="logo__image only-dark" alt="UPC-205237 Advanced Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -115,400 +179,250 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../0-Intro/IntroPython.html">
-   Introduction to scientific computation with Python
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../0-Intro/Assignment0.html">
-     Assignment 0: Conical tank emptying time
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../1-microFlows/Microflows.html">
-   Microflows. A very brief introduction with lubrication and capillarity
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../1-microFlows/Assignment1.html">
-     Assignment 1. Computation of journal bearing
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../2-Rheology/rheology.html">
-   Rheology. A brief introduction
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-Rheology/FDMViscoelastic.html">
-     Viscoelastic fluid in a pipe (Maxwell model)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-Rheology/Assignment2.html">
-     Assignment 2. Rheological behaviour of cosmetic creams
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="turbulence.html">
-   Turbulent flows. Statistical description and characteristic scales
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Statistical process of experimental measurements
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Assignment3.html">
-     Assignment 3 : Computation of length scales and spectrum in space
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../4-BoundaryLayer/BoundaryLayer.html">
-   Boundary Layer. An introduction
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../4-BoundaryLayer/Assignment4.html">
-     Assignment 4. Growth of Turbulent Boundary Layer
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../5-CompressibleFlow/CompressibleFlow.html">
-   Compressible Flow. An introduction
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5-CompressibleFlow/Assignment5.html">
-     Assignment 5. A function to compute the flow after a deflection angle
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../0-Intro/IntroPython.html">Introduction to scientific computation with Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../0-Intro/Assignment0.html">Assignment 0: Conical tank emptying time</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1-microFlows/Microflows.html">Microflows. A very brief introduction with lubrication and capillarity</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1-microFlows/Assignment1.html">Assignment 1. Computation of journal bearing</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-Rheology/rheology.html">Rheology. A brief introduction</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2-Rheology/FDMViscoelastic.html">Viscoelastic fluid in a pipe (Maxwell model)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-Rheology/Assignment2.html">Assignment 2. Rheological behaviour of cosmetic creams</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="turbulence.html">Turbulent flows. Statistical description and characteristic scales</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Statistical process of experimental measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Assignment3.html">Assignment 3 : Computation of length scales and spectrum in space</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4-BoundaryLayer/BoundaryLayer.html">Boundary Layer. An introduction</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../5-CompressibleFlow/CompressibleFlow.html">Compressible Flow. An introduction</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../5-CompressibleFlow/Assignment5.html">Assignment 5. A function to compute the flow after a deflection angle</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/rclUPC/AdvancedFluidMechanics/main?urlpath=lab/tree/3-Turbulence/ExperimentalMeasurements.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rclUPC/AdvancedFluidMechanics/main?urlpath=lab/tree/3-Turbulence/ExperimentalMeasurements.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://colab.research.google.com/github/rclUPC/AdvancedFluidMechanics/blob/main/3-Turbulence/ExperimentalMeasurements.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/rclUPC/AdvancedFluidMechanics/blob/main/3-Turbulence/ExperimentalMeasurements.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/3-Turbulence/ExperimentalMeasurements.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/3-Turbulence/ExperimentalMeasurements.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
 
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#description-of-the-data">
-   1. Description of the data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#computation-of-turbulence-intensities">
-   2. Computation of turbulence intensities
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#computation-of-fluctuations">
-   3. Computation of fluctuations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#computation-of-turbulence-kinetic-energy">
-   4. Computation of turbulence kinetic energy
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#some-time-scales">
-   5. Some time scales
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#histogram-and-pdf">
-   6. Histogram and PDF
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#power-spectrum">
-   7. Power spectrum
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Statistical process of experimental measurements</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#description-of-the-data">
-   1. Description of the data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#computation-of-turbulence-intensities">
-   2. Computation of turbulence intensities
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#computation-of-fluctuations">
-   3. Computation of fluctuations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#computation-of-turbulence-kinetic-energy">
-   4. Computation of turbulence kinetic energy
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#some-time-scales">
-   5. Some time scales
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#histogram-and-pdf">
-   6. Histogram and PDF
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#power-spectrum">
-   7. Power spectrum
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Statistical process of experimental measurements</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description-of-the-data">1. Description of the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computation-of-turbulence-intensities">2. Computation of turbulence intensities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computation-of-fluctuations">3. Computation of fluctuations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computation-of-turbulence-kinetic-energy">4. Computation of turbulence kinetic energy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-time-scales">5. Some time scales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-and-pdf">6. Histogram and PDF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-spectrum">7. Power spectrum</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="statistical-process-of-experimental-measurements">
-<h1>Statistical process of experimental measurements<a class="headerlink" href="#statistical-process-of-experimental-measurements" title="Permalink to this headline">#</a></h1>
-<div class="section" id="description-of-the-data">
-<h2>1. Description of the data<a class="headerlink" href="#description-of-the-data" title="Permalink to this headline">#</a></h2>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="statistical-process-of-experimental-measurements">
+<h1>Statistical process of experimental measurements<a class="headerlink" href="#statistical-process-of-experimental-measurements" title="Link to this heading">#</a></h1>
+<section id="description-of-the-data">
+<h2>1. Description of the data<a class="headerlink" href="#description-of-the-data" title="Link to this heading">#</a></h2>
 <p>In our lab some measurements of local velocity were made with a CTA probe (see for example the <a class="reference external" href="https://en.wikipedia.org/wiki/Anemometer#Hot-wire_anemometers">Wikipedia page for hot-wire anemometry</a>, or the <a class="reference external" href="https://www.dantecdynamics.com/solutions-applications/solutions/fluid-mechanics/constant-temperature-anemometry-cta/measurement-principles-of-cta/">Dantec information</a>)</p>
 <p>The measurements were performed in the wake behind a NACA profile with 5 degrees incidence angle</p>
 <p><img alt="image.png" src="../_images/profileWake.png" /></p>
@@ -1049,7 +963,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Time&#39;, ylabel=&#39;u&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/ExperimentalMeasurements_15_1.png" src="../_images/ExperimentalMeasurements_15_1.png" />
+<img alt="../_images/2fe4fe47fdf77f1c1154179e33eb4708b8d476e87bdd3418add7649f81986f02.png" src="../_images/2fe4fe47fdf77f1c1154179e33eb4708b8d476e87bdd3418add7649f81986f02.png" />
 </div>
 </div>
 <p>And also we can get the main features</p>
@@ -1273,12 +1187,12 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Mean velocities&#39;}&gt;
 </pre></div>
 </div>
-<img alt="../_images/ExperimentalMeasurements_18_1.png" src="../_images/ExperimentalMeasurements_18_1.png" />
+<img alt="../_images/7fa1b23e8987b27e57aec348be864ea8b0129328fd6a23bc6f7f574abe608542.png" src="../_images/7fa1b23e8987b27e57aec348be864ea8b0129328fd6a23bc6f7f574abe608542.png" />
 </div>
 </div>
-</div>
-<div class="section" id="computation-of-turbulence-intensities">
-<h2>2. Computation of turbulence intensities<a class="headerlink" href="#computation-of-turbulence-intensities" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="computation-of-turbulence-intensities">
+<h2>2. Computation of turbulence intensities<a class="headerlink" href="#computation-of-turbulence-intensities" title="Link to this heading">#</a></h2>
 <p>Remember the definition of turbulence intensity:</p>
 <div class="math notranslate nohighlight">
 \[ I = \frac{\sqrt{\overline{u'^2}}}{\bar{u}} \tag{1} \]</div>
@@ -1300,12 +1214,12 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Turbulence Intensity&#39;}&gt;
 </pre></div>
 </div>
-<img alt="../_images/ExperimentalMeasurements_21_1.png" src="../_images/ExperimentalMeasurements_21_1.png" />
+<img alt="../_images/58a6df31f977baf9c8ed08b9849d427b831a396ddcbdd6ab75d580b894e824d5.png" src="../_images/58a6df31f977baf9c8ed08b9849d427b831a396ddcbdd6ab75d580b894e824d5.png" />
 </div>
 </div>
-</div>
-<div class="section" id="computation-of-fluctuations">
-<h2>3. Computation of fluctuations<a class="headerlink" href="#computation-of-fluctuations" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="computation-of-fluctuations">
+<h2>3. Computation of fluctuations<a class="headerlink" href="#computation-of-fluctuations" title="Link to this heading">#</a></h2>
 <p>By definition, in each point the fluctuation of velocity is</p>
 <div class="math notranslate nohighlight">
 \[ u' = u  - \overline{u} \tag{2}\]</div>
@@ -1323,12 +1237,12 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ExperimentalMeasurements_24_0.png" src="../_images/ExperimentalMeasurements_24_0.png" />
+<img alt="../_images/33657c8a8911094a5ffd2a481aaff07038ab86cb502a52c069d5bb4356c5fa6f.png" src="../_images/33657c8a8911094a5ffd2a481aaff07038ab86cb502a52c069d5bb4356c5fa6f.png" />
 </div>
 </div>
-</div>
-<div class="section" id="computation-of-turbulence-kinetic-energy">
-<h2>4. Computation of turbulence kinetic energy<a class="headerlink" href="#computation-of-turbulence-kinetic-energy" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="computation-of-turbulence-kinetic-energy">
+<h2>4. Computation of turbulence kinetic energy<a class="headerlink" href="#computation-of-turbulence-kinetic-energy" title="Link to this heading">#</a></h2>
 <p>The turbulent kinetic energy (TKE), <span class="math notranslate nohighlight">\(k\)</span> is computed as</p>
 <div class="math notranslate nohighlight">
 \[ k = \frac{1}{2}\overline{\boldsymbol{u'}\cdot\boldsymbol{u'}} = \frac{1}{2} \overline{u'_i u'_i} \tag{3}\]</div>
@@ -1352,12 +1266,12 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../_images/ExperimentalMeasurements_27_1.png" src="../_images/ExperimentalMeasurements_27_1.png" />
+<img alt="../_images/55da0e49e1619810b984d1f9096116f4fff37a3084b5e48fbba2b5225bc18859.png" src="../_images/55da0e49e1619810b984d1f9096116f4fff37a3084b5e48fbba2b5225bc18859.png" />
 </div>
 </div>
-</div>
-<div class="section" id="some-time-scales">
-<h2>5. Some time scales<a class="headerlink" href="#some-time-scales" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="some-time-scales">
+<h2>5. Some time scales<a class="headerlink" href="#some-time-scales" title="Link to this heading">#</a></h2>
 <p>For the moment, we focus on <span class="math notranslate nohighlight">\(y = 0 \,\text{mm}\)</span> time series. The TKE in this point is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1367,7 +1281,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.8969099438209787
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.8969099438209802
 </pre></div>
 </div>
 </div>
@@ -1406,7 +1320,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.858803164295542
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.858803164295557
 </pre></div>
 </div>
 </div>
@@ -1420,7 +1334,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0012334840317132275
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0012334840317132266
 </pre></div>
 </div>
 </div>
@@ -1438,7 +1352,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ExperimentalMeasurements_38_0.png" src="../_images/ExperimentalMeasurements_38_0.png" />
+<img alt="../_images/d0b5bc6e76c35babea0c0a21e50534defef305793d9a7e7724a18b4ad0419885.png" src="../_images/d0b5bc6e76c35babea0c0a21e50534defef305793d9a7e7724a18b4ad0419885.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1448,7 +1362,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ExperimentalMeasurements_39_0.png" src="../_images/ExperimentalMeasurements_39_0.png" />
+<img alt="../_images/d0b5bc6e76c35babea0c0a21e50534defef305793d9a7e7724a18b4ad0419885.png" src="../_images/d0b5bc6e76c35babea0c0a21e50534defef305793d9a7e7724a18b4ad0419885.png" />
 </div>
 </div>
 <p>We change the “lag” <span class="math notranslate nohighlight">\(x\)</span> numbers with time lag, form the Data Frame</p>
@@ -1473,7 +1387,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ExperimentalMeasurements_43_0.png" src="../_images/ExperimentalMeasurements_43_0.png" />
+<img alt="../_images/6b8a3af1f0fe6d0ec5d720ad50c7e16277703c6ed3fb5697192ca3ea370e040a.png" src="../_images/6b8a3af1f0fe6d0ec5d720ad50c7e16277703c6ed3fb5697192ca3ea370e040a.png" />
 </div>
 </div>
 <p>The integral time scale is defined as the integral of autocorrelation function</p>
@@ -1541,8 +1455,8 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ExperimentalMeasurements_50_0.png" src="../_images/ExperimentalMeasurements_50_0.png" />
-<img alt="../_images/ExperimentalMeasurements_50_1.png" src="../_images/ExperimentalMeasurements_50_1.png" />
+<img alt="../_images/0e28130eb7be19292b00bb051b7edff4eebd1d6666a9ac0941702dddefef4e0c.png" src="../_images/0e28130eb7be19292b00bb051b7edff4eebd1d6666a9ac0941702dddefef4e0c.png" />
+<img alt="../_images/0e28130eb7be19292b00bb051b7edff4eebd1d6666a9ac0941702dddefef4e0c.png" src="../_images/0e28130eb7be19292b00bb051b7edff4eebd1d6666a9ac0941702dddefef4e0c.png" />
 </div>
 </div>
 <p>The computation of the integral time is more accurate because of the 0-lag point.</p>
@@ -1559,9 +1473,9 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="histogram-and-pdf">
-<h2>6. Histogram and PDF<a class="headerlink" href="#histogram-and-pdf" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="histogram-and-pdf">
+<h2>6. Histogram and PDF<a class="headerlink" href="#histogram-and-pdf" title="Link to this heading">#</a></h2>
 <p>PDF is the Probability Density Function. It defines the probability of an event between to values. For example, if the pdf of our velocity fluctuation is  <span class="math notranslate nohighlight">\(f(x)\)</span>, then the probability that a value of the fluctuation lies between <span class="math notranslate nohighlight">\(u'_1\)</span> and <span class="math notranslate nohighlight">\(u'_2\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[ P\left(u'_1 &lt; u' &lt; u'_2\right) = \int_{u'_1}^{u'_2} f(x) \text{d}x \tag{9}\]</div>
@@ -1576,7 +1490,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ExperimentalMeasurements_54_0.png" src="../_images/ExperimentalMeasurements_54_0.png" />
+<img alt="../_images/5742bfffb2b41025a1e2650969975d2dc5d6088b30dc4bd6791b52dd13a9dcc7.png" src="../_images/5742bfffb2b41025a1e2650969975d2dc5d6088b30dc4bd6791b52dd13a9dcc7.png" />
 </div>
 </div>
 <p>Since we have included the option <code class="docutils literal notranslate"><span class="pre">density=True</span></code>, the integral (moment of order 0) of this PDF is 1.</p>
@@ -1612,7 +1526,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.00034572943200417974
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.00034572943202194895
 </pre></div>
 </div>
 </div>
@@ -1641,7 +1555,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2646066292139857
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2646066292139868
 </pre></div>
 </div>
 </div>
@@ -1660,7 +1574,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.9216881739273899
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.9216881739274576
 </pre></div>
 </div>
 </div>
@@ -1673,7 +1587,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.3512851823741956
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.351285182374243
 </pre></div>
 </div>
 </div>
@@ -1693,7 +1607,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.337551070336458
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.337551070336596
 </pre></div>
 </div>
 </div>
@@ -1706,14 +1620,14 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.213435079007364
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.21343507900745
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="power-spectrum">
-<h2>7. Power spectrum<a class="headerlink" href="#power-spectrum" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="power-spectrum">
+<h2>7. Power spectrum<a class="headerlink" href="#power-spectrum" title="Link to this heading">#</a></h2>
 <p>Finally, from the time series signal, we can get the spectrum in frequency by performing a <a class="reference external" href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">Fast Fourier Transform</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1723,7 +1637,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ExperimentalMeasurements_70_0.png" src="../_images/ExperimentalMeasurements_70_0.png" />
+<img alt="../_images/0d9a4ebedcee458e10e7a3274b00b08b51c2495f0e899bc157589a0fd2f12444.png" src="../_images/0d9a4ebedcee458e10e7a3274b00b08b51c2495f0e899bc157589a0fd2f12444.png" />
 </div>
 </div>
 <p>We compute the frequencies range, providing the periode of the data acquisition</p>
@@ -1735,7 +1649,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ExperimentalMeasurements_72_0.png" src="../_images/ExperimentalMeasurements_72_0.png" />
+<img alt="../_images/308e893ab8e77787c310310829407e3d00ab8614aca0994e8ce281e61dc07463.png" src="../_images/308e893ab8e77787c310310829407e3d00ab8614aca0994e8ce281e61dc07463.png" />
 </div>
 </div>
 <p>and we keep only half the data, since it is symmetric</p>
@@ -1748,7 +1662,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ExperimentalMeasurements_74_0.png" src="../_images/ExperimentalMeasurements_74_0.png" />
+<img alt="../_images/48a85af7af837b3ccaf3b8e7be1b789159b64abe1821fb6f5b64299b45179476.png" src="../_images/48a85af7af837b3ccaf3b8e7be1b789159b64abe1821fb6f5b64299b45179476.png" />
 </div>
 </div>
 <p>and, finally, we compute the energy, which is the square of the velocity</p>
@@ -1760,10 +1674,10 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa8b7496340&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1742ac86a0&gt;]
 </pre></div>
 </div>
-<img alt="../_images/ExperimentalMeasurements_76_1.png" src="../_images/ExperimentalMeasurements_76_1.png" />
+<img alt="../_images/48a85af7af837b3ccaf3b8e7be1b789159b64abe1821fb6f5b64299b45179476.png" src="../_images/48a85af7af837b3ccaf3b8e7be1b789159b64abe1821fb6f5b64299b45179476.png" />
 </div>
 </div>
 <p>Let’s plot it in a log-log graph with the <a class="reference external" href="https://physics.stackexchange.com/questions/13161/physical-explanation-for-kolmogorov-5-3-spectrum-in-fluid-mechanics">-5/3 Kolmogorov’s law</a> as a reference line for the energy decay in frequency</p>
@@ -1782,7 +1696,7 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ExperimentalMeasurements_78_0.png" src="../_images/ExperimentalMeasurements_78_0.png" />
+<img alt="../_images/14347ed31aad46f6cb9d260c4b76b47cacc8621900fa4a51f76e7ab255687fa8.png" src="../_images/14347ed31aad46f6cb9d260c4b76b47cacc8621900fa4a51f76e7ab255687fa8.png" />
 </div>
 </div>
 <p>This spectrum can also be computed via the velocity autocorrelation</p>
@@ -1794,8 +1708,8 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ExperimentalMeasurements_80_0.png" src="../_images/ExperimentalMeasurements_80_0.png" />
-<img alt="../_images/ExperimentalMeasurements_80_1.png" src="../_images/ExperimentalMeasurements_80_1.png" />
+<img alt="../_images/35b7406663ed6e367aa0bdf425705788a821846a683f31d942aee6e949c408f2.png" src="../_images/35b7406663ed6e367aa0bdf425705788a821846a683f31d942aee6e949c408f2.png" />
+<img alt="../_images/35b7406663ed6e367aa0bdf425705788a821846a683f31d942aee6e949c408f2.png" src="../_images/35b7406663ed6e367aa0bdf425705788a821846a683f31d942aee6e949c408f2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1806,13 +1720,13 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ExperimentalMeasurements_81_0.png" src="../_images/ExperimentalMeasurements_81_0.png" />
+<img alt="../_images/9b3a6c850a38d53b7042fa8f982dd5731aada1695e03c8327c6d257d52963180.png" src="../_images/9b3a6c850a38d53b7042fa8f982dd5731aada1695e03c8327c6d257d52963180.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">rho</span><span class="o">.</span><span class="n">size</span><span class="p">,</span><span class="mf">0.001</span><span class="p">)</span>
-<span class="n">Pr</span> <span class="o">=</span> <span class="n">E</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Pr</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">Pr</span> <span class="o">=</span> <span class="n">Pr</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Pr</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">freq</span> <span class="o">=</span> <span class="n">freq</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">freq</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span>
 </pre></div>
 </div>
@@ -1821,19 +1735,19 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">1e6</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span><span class="n">Pr</span><span class="p">)</span>
 <span class="n">f_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">2.7</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">f_ref</span> <span class="o">=</span> <span class="mi">30</span>
-<span class="n">P_ref</span> <span class="o">=</span> <span class="mi">50000</span>
+<span class="n">P_ref</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">P_plot</span> <span class="o">=</span> <span class="n">P_ref</span><span class="o">/</span><span class="n">f_ref</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">f_plot</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">f_plot</span><span class="p">,</span><span class="n">P_plot</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="s1">&#39;-5/3&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="s1">&#39;-5/3&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ExperimentalMeasurements_83_0.png" src="../_images/ExperimentalMeasurements_83_0.png" />
+<img alt="../_images/28e68385ed4be3371846046198113763ac48de7117e0253d7ae4a6cfd7db0405.png" src="../_images/28e68385ed4be3371846046198113763ac48de7117e0253d7ae4a6cfd7db0405.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1841,35 +1755,35 @@ from <span class="math notranslate nohighlight">\(y=-4 \,\text{cm}\)</span> to <
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="o">%</span><span class="k">load_ext</span> watermark
 <span class="k">except</span><span class="p">:</span>
-    <span class="o">!</span>pip install watermark
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>watermark
 <span class="o">%</span><span class="k">watermark</span> -v -m -iv
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python implementation: CPython
-Python version       : 3.9.12
-IPython version      : 8.2.0
+Python version       : 3.8.13
+IPython version      : 8.0.1
 
-Compiler    : GCC 7.5.0
+Compiler    : GCC 10.3.0
 OS          : Linux
-Release     : 5.4.0-113-generic
+Release     : 5.4.0-144-generic
 Machine     : x86_64
 Processor   : x86_64
-CPU cores   : 8
+CPU cores   : 4
 Architecture: 64bit
 
-numpy      : 1.21.5
-pandas     : 1.4.2
 matplotlib : 3.5.1
 statsmodels: 0.13.2
-scipy      : 1.7.1
+pandas     : 1.4.2
+numpy      : 1.22.2
+scipy      : 1.8.1
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1891,50 +1805,109 @@ scipy      : 1.7.1
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="turbulence.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Turbulent flows. Statistical description and characteristic scales</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="turbulence.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Turbulent flows. Statistical description and characteristic scales</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="Assignment3.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="Assignment3.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Assignment 3 : Computation of length scales and spectrum in space</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description-of-the-data">1. Description of the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computation-of-turbulence-intensities">2. Computation of turbulence intensities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computation-of-fluctuations">3. Computation of fluctuations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computation-of-turbulence-kinetic-energy">4. Computation of turbulence kinetic energy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-time-scales">5. Some time scales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-and-pdf">6. Histogram and PDF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-spectrum">7. Power spectrum</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Robert Castilla - UPC CATMech Terrassa<br/>
-  
-      &copy; Copyright 2023.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Robert Castilla - UPC CATMech Terrassa
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

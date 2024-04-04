@@ -1,111 +1,175 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Compressible Flow. An introduction &#8212; UPC-205237 Advanced Fluid Mechanics</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"TeX": {"Macros": {"Ma": "\\mathrm{Ma}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '5-CompressibleFlow/CompressibleFlow';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Assignment 5. A function to compute the flow after a deflection angle" href="Assignment5.html" />
-    <link rel="prev" title="Assignment 4. Growth of Turbulent Boundary Layer" href="../4-BoundaryLayer/Assignment4.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+    <link rel="prev" title="Boundary Layer. An introduction" href="../4-BoundaryLayer/BoundaryLayer.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/eseiaat-positiu-p3005-interior-blanc.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">UPC-205237 Advanced Fluid Mechanics</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/eseiaat-positiu-p3005-interior-blanc.png" class="logo__image only-light" alt="UPC-205237 Advanced Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../_static/eseiaat-positiu-p3005-interior-blanc.png" class="logo__image only-dark" alt="UPC-205237 Advanced Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -115,453 +179,261 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../0-Intro/IntroPython.html">
-   Introduction to scientific computation with Python
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../0-Intro/Assignment0.html">
-     Assignment 0: Conical tank emptying time
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../1-microFlows/Microflows.html">
-   Microflows. A very brief introduction with lubrication and capillarity
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../1-microFlows/Assignment1.html">
-     Assignment 1. Computation of journal bearing
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../2-Rheology/rheology.html">
-   Rheology. A brief introduction
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-Rheology/FDMViscoelastic.html">
-     Viscoelastic fluid in a pipe (Maxwell model)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-Rheology/Assignment2.html">
-     Assignment 2. Rheological behaviour of cosmetic creams
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../3-Turbulence/turbulence.html">
-   Turbulent flows. Statistical description and characteristic scales
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-Turbulence/ExperimentalMeasurements.html">
-     Statistical process of experimental measurements
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-Turbulence/Assignment3.html">
-     Assignment 3 : Computation of length scales and spectrum in space
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../4-BoundaryLayer/BoundaryLayer.html">
-   Boundary Layer. An introduction
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../4-BoundaryLayer/Assignment4.html">
-     Assignment 4. Growth of Turbulent Boundary Layer
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
-   Compressible Flow. An introduction
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Assignment5.html">
-     Assignment 5. A function to compute the flow after a deflection angle
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../0-Intro/IntroPython.html">Introduction to scientific computation with Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../0-Intro/Assignment0.html">Assignment 0: Conical tank emptying time</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1-microFlows/Microflows.html">Microflows. A very brief introduction with lubrication and capillarity</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1-microFlows/Assignment1.html">Assignment 1. Computation of journal bearing</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-Rheology/rheology.html">Rheology. A brief introduction</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2-Rheology/FDMViscoelastic.html">Viscoelastic fluid in a pipe (Maxwell model)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-Rheology/Assignment2.html">Assignment 2. Rheological behaviour of cosmetic creams</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-Turbulence/turbulence.html">Turbulent flows. Statistical description and characteristic scales</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3-Turbulence/ExperimentalMeasurements.html">Statistical process of experimental measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3-Turbulence/Assignment3.html">Assignment 3 : Computation of length scales and spectrum in space</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4-BoundaryLayer/BoundaryLayer.html">Boundary Layer. An introduction</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Compressible Flow. An introduction</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Assignment5.html">Assignment 5. A function to compute the flow after a deflection angle</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/rclUPC/AdvancedFluidMechanics/main?urlpath=lab/tree/5-CompressibleFlow/CompressibleFlow.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rclUPC/AdvancedFluidMechanics/main?urlpath=lab/tree/5-CompressibleFlow/CompressibleFlow.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://colab.research.google.com/github/rclUPC/AdvancedFluidMechanics/blob/main/5-CompressibleFlow/CompressibleFlow.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/rclUPC/AdvancedFluidMechanics/blob/main/5-CompressibleFlow/CompressibleFlow.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/5-CompressibleFlow/CompressibleFlow.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/5-CompressibleFlow/CompressibleFlow.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
 
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#acoustics-and-velocity-of-sound">
-   1. Acoustics and velocity of sound
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#isentropic-flow">
-   2. Isentropic flow
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sonic-or-critical-values">
-     Sonic (or critical values)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Exercise
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#normal-shock-waves">
-   3. Normal shock waves
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Exercise
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#oblique-shock-wave-and-expansion-waves">
-   4. Oblique shock wave and expansion waves
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#shock-polar">
-     Shock Polar
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prandtl-meyer-expansion-fan">
-   5. Prandtl-Meyer expansion fan
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Compressible Flow. An introduction</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#acoustics-and-velocity-of-sound">
-   1. Acoustics and velocity of sound
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#isentropic-flow">
-   2. Isentropic flow
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sonic-or-critical-values">
-     Sonic (or critical values)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Exercise
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#normal-shock-waves">
-   3. Normal shock waves
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Exercise
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#oblique-shock-wave-and-expansion-waves">
-   4. Oblique shock wave and expansion waves
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#shock-polar">
-     Shock Polar
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prandtl-meyer-expansion-fan">
-   5. Prandtl-Meyer expansion fan
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Compressible Flow. An introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acoustics-and-velocity-of-sound">1. Acoustics and velocity of sound</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isentropic-flow">2. Isentropic flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sonic-or-critical-values">Sonic (or critical values)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-shock-waves">3. Normal shock waves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique-shock-wave-and-expansion-waves">4. Oblique shock wave and expansion waves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shock-polar">Shock Polar</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prandtl-meyer-expansion-fan">5. Prandtl-Meyer expansion fan</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="compressible-flow-an-introduction">
-<h1>Compressible Flow. An introduction<a class="headerlink" href="#compressible-flow-an-introduction" title="Permalink to this headline">#</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="compressible-flow-an-introduction">
+<h1>Compressible Flow. An introduction<a class="headerlink" href="#compressible-flow-an-introduction" title="Link to this heading">#</a></h1>
 <p>An excellent review of this subject can be read in the <a class="reference external" href="https://www.mheducation.com/highered/product/fluid-mechanics-white/M9781260258318.html">book by White</a> (<a class="reference external" href="https://discovery.upc.edu/permalink/34CSUC_UPC/11q3oqt/alma991004874831006711">UPC library link</a> ), or <a class="reference external" href="https://www.elsevier.com/books/fluid-mechanics/kundu/978-0-12-405935-1">by Kundu et al</a> (<a class="reference external" href="https://discovery.upc.edu/permalink/34CSUC_UPC/11q3oqt/alma991004876305406711">UPC library link</a> )</p>
-<div class="section" id="acoustics-and-velocity-of-sound">
-<h2>1. Acoustics and velocity of sound<a class="headerlink" href="#acoustics-and-velocity-of-sound" title="Permalink to this headline">#</a></h2>
+<section id="acoustics-and-velocity-of-sound">
+<h2>1. Acoustics and velocity of sound<a class="headerlink" href="#acoustics-and-velocity-of-sound" title="Link to this heading">#</a></h2>
 <p>We are going, for the moment, that our flow is 1-D and inviscid. Also gravity or other body forces are ignored. In this case, continuity and Euler equations are written as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -618,7 +490,7 @@ r = 287 \,\frac{\text{J}}{\text{Kg K}} \tag{9}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gasConstant</span><span class="p">(</span><span class="n">M</span><span class="o">=</span><span class="mf">0.0289647</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the gas constant for a gas with molecular mass M (in J/molK)</span>
 <span class="sd">    </span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -626,7 +498,7 @@ r = 287 \,\frac{\text{J}}{\text{Kg K}} \tag{9}
     <span class="k">return</span> <span class="n">R</span><span class="o">/</span><span class="n">M</span>
 
 <span class="k">def</span> <span class="nf">sound_velocity</span><span class="p">(</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span><span class="n">M</span><span class="o">=</span><span class="mf">0.0289647</span><span class="p">,</span><span class="n">T</span><span class="o">=</span><span class="mf">293.15</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the velocity of sound for a gas with adiabatic index gamma and molecular mass M,</span>
 <span class="sd">    at the temperature T (in K).</span>
 <span class="sd">    The default arguments are for air at T = 20 C deg = 293 K</span>
@@ -675,7 +547,7 @@ When the sound source is moving, the sound wave changes the origin and also wave
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MaNumber</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span><span class="n">M</span><span class="o">=</span><span class="mf">0.0289647</span><span class="p">,</span><span class="n">T</span><span class="o">=</span><span class="mf">293.15</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the Mach number for a velocity u for a gas with adiabatic index gamma and molecular mass M,</span>
 <span class="sd">    at the temperature T (in K).</span>
 <span class="sd">    The default arguments are for air at T = 20 C deg = 293 K</span>
@@ -703,9 +575,9 @@ When the sound source is moving, the sound wave changes the origin and also wave
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="isentropic-flow">
-<h2>2. Isentropic flow<a class="headerlink" href="#isentropic-flow" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="isentropic-flow">
+<h2>2. Isentropic flow<a class="headerlink" href="#isentropic-flow" title="Link to this heading">#</a></h2>
 <p>Many cases in Engineering can be considered steady and isentropic (friction can be neglected) and, hence, 1-D, with the flow behavior defined only by the area of the passage. Some examples are nozzles, exhaust gases in gas/steam turbines, diffusers in jet engines…</p>
 <p><img alt="image.png" src="../_images/u_x.png" /></p>
 <p>In these cases, continuity equation can be simply given as</p>
@@ -728,7 +600,7 @@ T_0 = T + \frac{u^2}{2 c_p} \tag{11}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">T0overT</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the ratio total temperature over static temperature.</span>
 <span class="sd">    </span>
 <span class="sd">    typical usage:</span>
@@ -765,7 +637,7 @@ T_0 = T + \frac{u^2}{2 c_p} \tag{11}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p0overp</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the ratio total pressure over static pressure.</span>
 <span class="sd">    </span>
 <span class="sd">    typical usage:</span>
@@ -775,7 +647,7 @@ T_0 = T + \frac{u^2}{2 c_p} \tag{11}
     <span class="k">return</span> <span class="p">(</span><span class="n">T0overT</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="n">gamma</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">gamma</span><span class="o">/</span><span class="p">(</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
 
 <span class="k">def</span> <span class="nf">rho0overrho</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the ratio total density over static density.</span>
 <span class="sd">    </span>
 <span class="sd">    typical usage:</span>
@@ -787,8 +659,8 @@ T_0 = T + \frac{u^2}{2 c_p} \tag{11}
 </div>
 </div>
 </div>
-<div class="section" id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h3>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>Define the functions <code class="docutils literal notranslate"><span class="pre">MaFromT0overT(T0_T,gamma)</span></code>, <code class="docutils literal notranslate"><span class="pre">MaFromP0overP(p0_p,gamma)</span></code> and <code class="docutils literal notranslate"><span class="pre">MaFromRho0overRho(rho0_rho,gamma)</span></code> that return the values of <span class="math notranslate nohighlight">\(\text{Ma}\)</span> from the thermodynamics conditions of the flow.</p>
 <p>Note the text enclosed as <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span> <span class="pre">...</span> <span class="pre">&quot;&quot;&quot;</span></code> in the functions. It is used for helping the user giving information about the function</p>
 <div class="cell docutils container">
@@ -826,9 +698,9 @@ T0 = T*T0overT(Ma=3.5)
 \[for $\text{Ma}$ = 2.1:                   $$\frac{p_0}{p} = 9.145 $$                   $$\frac{\rho_0}{\rho} = 4.859 $$\]</div>
 </div>
 </div>
-</div>
-<div class="section" id="sonic-or-critical-values">
-<h3>Sonic (or critical values)<a class="headerlink" href="#sonic-or-critical-values" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="sonic-or-critical-values">
+<h3>Sonic (or critical values)<a class="headerlink" href="#sonic-or-critical-values" title="Link to this heading">#</a></h3>
 <p>The values for temperature (and sound velocity), pressure and density, when Ma = 1, known as <strong>sonic values</strong> (also can be named critical values) arevery important.</p>
 <p>These values are function uniquely of <span class="math notranslate nohighlight">\(\gamma\)</span> and the total values</p>
 <div class="math notranslate nohighlight">
@@ -888,14 +760,14 @@ c^{*}(=u^{*})=c_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{1}{2}} \tag{17}
 \[
 {\textrm{Ma}^*}^2 = \frac{\gamma +1}{\frac{2}{\textrm{Ma}^2}+\gamma-1} \tag{19}
 \]</div>
-</div>
-<div class="section" id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id1">
+<h3>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Deduce this expression from energy balance between any point with a Mach value <span class="math notranslate nohighlight">\(\textrm{Ma}\)</span> and the point with sonic conditions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MaStar</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Returns Ma* as function of Ma &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns Ma* as function of Ma &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">gamma</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">Ma</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -913,7 +785,7 @@ c^{*}(=u^{*})=c_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{1}{2}} \tag{17}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/CompressibleFlow_23_0.png" src="../_images/CompressibleFlow_23_0.png" />
+<img alt="../_images/b576ced7c31f53b63b0c148d329f7faeac3455c6b04a07368b106194afdf50f2.png" src="../_images/b576ced7c31f53b63b0c148d329f7faeac3455c6b04a07368b106194afdf50f2.png" />
 </div>
 </div>
 <p>And, also,</p>
@@ -935,7 +807,7 @@ c^{*}(=u^{*})=c_{0}\left(\frac{2}{\gamma+1}\right)^{\frac{1}{2}} \tag{17}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/CompressibleFlow_25_0.png" src="../_images/CompressibleFlow_25_0.png" />
+<img alt="../_images/9220333d6638e9362cf92831eb2dc81a11315b56fca49a96dee8f3ac22f64527.png" src="../_images/9220333d6638e9362cf92831eb2dc81a11315b56fca49a96dee8f3ac22f64527.png" />
 </div>
 </div>
 <p>Ratios between critical and total magnitudes are only function of gamma. For air at standard conditions, they are</p>
@@ -985,13 +857,13 @@ u\frac{\text d u}{\text d x} + \frac{1}{\rho}\frac{\text d p}{\text d x} = 0 \ta
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">A_Astar</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the value of A/A* for a flow with Mach number Ma</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="n">Ma</span><span class="o">*</span><span class="p">((</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">Ma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">gamma</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">gamma</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 
 <span class="k">def</span> <span class="nf">MaFromA_Astar</span><span class="p">(</span><span class="n">A_Astar_value</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns both subsonic and supersonic values of Ma for a value of A/A*</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">A_Astar_value</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
@@ -1023,7 +895,7 @@ u\frac{\text d u}{\text d x} + \frac{1}{\rho}\frac{\text d p}{\text d x} = 0 \ta
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/CompressibleFlow_31_0.png" src="../_images/CompressibleFlow_31_0.png" />
+<img alt="../_images/ebbe74afd2b10455c359c5811923547fcc5ed85f7baba2e6267432efea9d9dfa.png" src="../_images/ebbe74afd2b10455c359c5811923547fcc5ed85f7baba2e6267432efea9d9dfa.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1039,10 +911,10 @@ u\frac{\text d u}{\text d x} + \frac{1}{\rho}\frac{\text d p}{\text d x} = 0 \ta
 </div>
 </div>
 <p>This shows that, for steady isentropic flow, the critical condition holds for the minimum area section (throat).</p>
-</div>
-</div>
-<div class="section" id="normal-shock-waves">
-<h2>3. Normal shock waves<a class="headerlink" href="#normal-shock-waves" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="normal-shock-waves">
+<h2>3. Normal shock waves<a class="headerlink" href="#normal-shock-waves" title="Link to this heading">#</a></h2>
 <p><a id="picturesSW"></a></p>
 <p>When flow is supersonic, usually transition to subsonic condition is achieved with a <a class="reference external" href="https://en.wikipedia.org/wiki/Shock_wave"><strong>shock wave</strong></a>. This can happens in an external supersonic flow, like a detached bow shock wave in front of a bullet</p>
 <p><img alt="image.png" src="../_images/bullet.png" /> <a class="reference external" href="https://americanart.si.edu/artwork/bullet-shock-wave-32701">source of image</a></p>
@@ -1104,7 +976,7 @@ u_1 u_2 = {c^*}^2 \tag{27}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MaShockwave</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return the Mach number after a normal shock wave as funtion of Ma before the shock wave.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">Ma</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
@@ -1150,7 +1022,7 @@ u_1 u_2 = {c^*}^2 \tag{27}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/CompressibleFlow_38_0.png" src="../_images/CompressibleFlow_38_0.png" />
+<img alt="../_images/15403c181cb9626c7e468662f342ad91e16cd0db9d06518776a66ccff8fad03d.png" src="../_images/15403c181cb9626c7e468662f342ad91e16cd0db9d06518776a66ccff8fad03d.png" />
 </div>
 </div>
 <p><span class="math notranslate nohighlight">\(\textrm{Ma}_1\)</span> (and consequently <span class="math notranslate nohighlight">\(\textrm{Ma}^*_1\)</span>) is an important parameter in normal shock wave. Its value determines, for example, the ratio between densities and velocities</p>
@@ -1173,7 +1045,7 @@ u_1 u_2 = {c^*}^2 \tag{27}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rho2_rho1</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns rho_2/rho_1 for a shock wave with Mach number Ma &gt; 1&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns rho_2/rho_1 for a shock wave with Mach number Ma &gt; 1&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">Ma</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ma has to be greater or equal to 1&#39;</span><span class="p">)</span>
         <span class="k">return</span>
@@ -1181,7 +1053,7 @@ u_1 u_2 = {c^*}^2 \tag{27}
         <span class="k">return</span> <span class="n">MaStar</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="n">gamma</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
     
 <span class="k">def</span> <span class="nf">u2_u1</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns u_2/u_1 for a shock wave with Mach number Ma &gt; 1&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns u_2/u_1 for a shock wave with Mach number Ma &gt; 1&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">Ma</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ma has to be greater or equal to 1&#39;</span><span class="p">)</span>
         <span class="k">return</span>
@@ -1189,7 +1061,7 @@ u_1 u_2 = {c^*}^2 \tag{27}
         <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="n">MaStar</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="n">gamma</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
 
 <span class="k">def</span> <span class="nf">p2_p1</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns p_2/p_1 for a shock wave with Mach number Ma &gt; 1&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns p_2/p_1 for a shock wave with Mach number Ma &gt; 1&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">Ma</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ma has to be greater or equal to 1&#39;</span><span class="p">)</span>
         <span class="k">return</span>
@@ -1197,7 +1069,7 @@ u_1 u_2 = {c^*}^2 \tag{27}
         <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">gamma</span><span class="o">/</span><span class="p">(</span><span class="n">gamma</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">Ma</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
     
 <span class="k">def</span> <span class="nf">T2_T1</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns T_2/T_1 for a shock wave with Mach number Ma &gt; 1&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns T_2/T_1 for a shock wave with Mach number Ma &gt; 1&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">Ma</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ma has to be greater or equal to 1&#39;</span><span class="p">)</span>
         <span class="k">return</span>
@@ -1245,7 +1117,7 @@ s_2 - s_1 = c_p \ln{\frac{T2}{T1}} - r \ln{\frac{p_2}{p_1}} \tag{33}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">DeltaS_r</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns (s_2-s_1)/r for a shock wave&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns (s_2-s_1)/r for a shock wave&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">Ma</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ma has to be greater or equal to 1&#39;</span><span class="p">)</span>
         <span class="k">return</span>
@@ -1263,7 +1135,7 @@ s_2 - s_1 = c_p \ln{\frac{T2}{T1}} - r \ln{\frac{p_2}{p_1}} \tag{33}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p02_p01</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns p02/p01 for a shock wave&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns p02/p01 for a shock wave&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">Ma</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ma has to be greater or equal to 1&#39;</span><span class="p">)</span>
         <span class="k">return</span>
@@ -1301,16 +1173,16 @@ s_2 - s_1 = c_p \ln{\frac{T2}{T1}} - r \ln{\frac{p_2}{p_1}} \tag{33}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/CompressibleFlow_46_0.png" src="../_images/CompressibleFlow_46_0.png" />
+<img alt="../_images/d01a6d71fe24df4dc173491ae8b2b8cf508f88f2e9eb9f44a6678019410d6d1f.png" src="../_images/d01a6d71fe24df4dc173491ae8b2b8cf508f88f2e9eb9f44a6678019410d6d1f.png" />
 </div>
 </div>
-<div class="section" id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<section id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Use the above functions to compute the mass flow rate in a nozzle knowing the area of the nozzle, the Mach number, the pressure and the temperature. It can be named, for instance <code class="docutils literal notranslate"><span class="pre">MassFlowRate(Ma,A,T,p,gamma=1.4,M=0.0289647)</span></code>.</p>
-</div>
-</div>
-<div class="section" id="oblique-shock-wave-and-expansion-waves">
-<h2>4. Oblique shock wave and expansion waves<a class="headerlink" href="#oblique-shock-wave-and-expansion-waves" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="oblique-shock-wave-and-expansion-waves">
+<h2>4. Oblique shock wave and expansion waves<a class="headerlink" href="#oblique-shock-wave-and-expansion-waves" title="Link to this heading">#</a></h2>
 <p>Normal shock waves are a particular case of the more general <a class="reference external" href="https://en.wikipedia.org/wiki/Oblique_shock">oblique shock waves</a>. In a oblique shock, supersonic flow is deviated by an obstacle. We are going to consider, for the shake of simplicity that the obstacle is a corner of angle <span class="math notranslate nohighlight">\(\theta\)</span>, and the flow is everywhere uniform and parallel to ground</p>
 <p><img alt="image.png" src="../_images/OSW.png" /></p>
 <p>In contrast, in an <a class="reference external" href="https://en.wikipedia.org/wiki/Prandtl%E2%80%93Meyer_expansion_fan">expansion wave</a>, the flow is accelerated by a convex corner.</p>
@@ -1368,7 +1240,7 @@ Actually, note that normal shock wave is the particular case of oblique shock fo
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ThetaOSW</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">beta</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the deflection angle theta for an oblique shock wave, given the incident Ma number and the angle os the SW, beta. </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">tanTheta</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">Ma</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">Ma</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">gamma</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">beta</span><span class="p">))</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
@@ -1434,23 +1306,23 @@ Actually, note that normal shock wave is the particular case of oblique shock fo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/CompressibleFlow_54_0.png" src="../_images/CompressibleFlow_54_0.png" />
+<img alt="../_images/825960dd9055e243fad870b846d9c55d6835a43ab1613f6e70676e3f0f79b8df.png" src="../_images/825960dd9055e243fad870b846d9c55d6835a43ab1613f6e70676e3f0f79b8df.png" />
 </div>
 </div>
 <p>Note that for given values of <span class="math notranslate nohighlight">\(\textrm{Ma}_1\)</span> and <span class="math notranslate nohighlight">\(\theta &lt; \theta_\mathrm{max}\)</span> there are two possible values of <span class="math notranslate nohighlight">\(\beta\)</span>. The smaller value is related to a <strong>weak shock wave</strong> whereas the larger value is for a <strong>strong shock wave</strong></p>
-<div class="section" id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<section id="id3">
+<h3>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>Write a function <code class="docutils literal notranslate"><span class="pre">betaOSW(Ma,theta,gamma=1.4)</span></code> that returns these two values.</p>
 <p>Usually, for typical situations, the weak OSW is the one obtained in the flow, but it will depend mainly on the back pressure. For the strong OSW flow downstream is subsonic. For the weak OSW, it is usually supersonic, except for some conditions.</p>
-<p>If, for a given <span class="math notranslate nohighlight">\(\textrm{Ma}_1\)</span> the deflection angle is <span class="math notranslate nohighlight">\(\theta &gt; \theta_\mathrm{max}\)</span>, there is no solution for an OSW, the shock wave then detaches and it becomes a normal, or bow, shock wave, like the one in the <a class="reference external" href="#picturesSW">first picture of this notebook</a>.</p>
-<p>The value of <span class="math notranslate nohighlight">\(\beta\)</span> obtained for <span class="math notranslate nohighlight">\(\theta=0\)</span> is related to the OSW when the obstacle is very sharp, or just a point. This is called the <em>Mach angle</em> and the OSW is a <em>Mach wave</em>. This angle is the same as in the <a class="reference external" href="#Mach-cone">Mach cone</a>.</p>
+<p>If, for a given <span class="math notranslate nohighlight">\(\textrm{Ma}_1\)</span> the deflection angle is <span class="math notranslate nohighlight">\(\theta &gt; \theta_\mathrm{max}\)</span>, there is no solution for an OSW, the shock wave then detaches and it becomes a normal, or bow, shock wave, like the one in the <a class="reference internal" href="#picturesSW"><span class="xref myst">first picture of this notebook</span></a>.</p>
+<p>The value of <span class="math notranslate nohighlight">\(\beta\)</span> obtained for <span class="math notranslate nohighlight">\(\theta=0\)</span> is related to the OSW when the obstacle is very sharp, or just a point. This is called the <em>Mach angle</em> and the OSW is a <em>Mach wave</em>. This angle is the same as in the <a class="reference internal" href="#Mach-cone"><span class="xref myst">Mach cone</span></a>.</p>
 <div class="math notranslate nohighlight">
 \[
 \beta_\mathrm{min} = \mu = \arcsin{\frac{1}{\textrm{Ma}_1}} \tag{44}
 \]</div>
-</div>
-<div class="section" id="shock-polar">
-<h3>Shock Polar<a class="headerlink" href="#shock-polar" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="shock-polar">
+<h3>Shock Polar<a class="headerlink" href="#shock-polar" title="Link to this heading">#</a></h3>
 <p>In a shock polar (see, for example, the section 6.7.3 in the <a class="reference external" href="https://discovery.upc.edu/iii/encore/record/C__Rb1437643?lang=cat">book by Houghton</a> ) the components of dimensionless velocity behind the OSW are plotted in an <a class="reference external" href="https://en.wikipedia.org/wiki/Hodograph">hodograph</a>. The polar angle of the points of the plot for a given <span class="math notranslate nohighlight">\(\textrm{Ma}_1\)</span> is the deflection angle. Nevertheless, to represent dimensionless velocity in the plot (not the label for the plot) is more convenient to use <span class="math notranslate nohighlight">\(\textrm{Ma}_2^*\)</span>, since it has a finite value  (see Eq (10)) even for <span class="math notranslate nohighlight">\(\textrm{Ma}_1 \rightarrow \infty\)</span>.</p>
 <p>We can plot the shock polar computing velocity components for all the angles <span class="math notranslate nohighlight">\(\theta\)</span> in the range of previous plot, or, also, it can be used the expression (that we are not going to prove)</p>
 <div class="math notranslate nohighlight">
@@ -1458,10 +1330,10 @@ Actually, note that normal shock wave is the particular case of oblique shock fo
 {{\textrm{Ma}_2^*}_y}^2 = \frac{\left(\textrm{Ma}_1^* - {\textrm{Ma}_2^*}_x \right)^2\left( {\textrm{Ma}_2^*}_x \textrm{Ma}_1^* - 1\right)}
 {\frac{2}{\gamma+1}{\textrm{Ma}_1^*}^2- \left({\textrm{Ma}_2^*}_x \textrm{Ma}_1^* - 1\right)} \tag{45}
 \]</div>
-</div>
-</div>
-<div class="section" id="prandtl-meyer-expansion-fan">
-<h2>5. Prandtl-Meyer expansion fan<a class="headerlink" href="#prandtl-meyer-expansion-fan" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="prandtl-meyer-expansion-fan">
+<h2>5. Prandtl-Meyer expansion fan<a class="headerlink" href="#prandtl-meyer-expansion-fan" title="Link to this heading">#</a></h2>
 <p>In the <a class="reference external" href="https://en.wikipedia.org/wiki/Prandtl%E2%80%93Meyer_expansion_fan">Prandtl-Meyer expansion fan</a> the behavior of the flow is just the opposite of with OSW. In this case, Mach number increases, and all temperature, pressure and density decrease. This expansion can be considered isentropic, and it can be interpreted as composed of infinite number of Mach waves, bounded by the angles <span class="math notranslate nohighlight">\(\mu_1 = \arcsin\left({\frac{1}{\textrm{Ma}_1}}\right)\)</span> and <span class="math notranslate nohighlight">\(\mu_2 = \arcsin\left({\frac{1}{\textrm{Ma}_2}}\right)\)</span></p>
 <p><img alt="Image" src="../_images/PrandtlMeyer.png" /></p>
 <p>The derivation, from purely geometrical basis, with an infinitesimal deviation produced by a Mach wave, leads to</p>
@@ -1491,7 +1363,7 @@ Actually, note that normal shock wave is the particular case of oblique shock fo
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">PrandtlMeyer</span><span class="p">(</span><span class="n">Ma</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span><span class="mf">1.4</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns the Prandtl-Meyer function for a given Mach number, greater than 1, in radians&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the Prandtl-Meyer function for a given Mach number, greater than 1, in radians&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">Ma</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ma has to be greater or equal to 1&#39;</span><span class="p">)</span>
         <span class="k">return</span>
@@ -1518,7 +1390,7 @@ Actually, note that normal shock wave is the particular case of oblique shock fo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/CompressibleFlow_61_0.png" src="../_images/CompressibleFlow_61_0.png" />
+<img alt="../_images/209d240ec61e3d04b1270571fb494e8e5109b26886709c6ed6734645511d6549.png" src="../_images/209d240ec61e3d04b1270571fb494e8e5109b26886709c6ed6734645511d6549.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1526,7 +1398,7 @@ Actually, note that normal shock wave is the particular case of oblique shock fo
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="o">%</span><span class="k">load_ext</span> watermark
 <span class="k">except</span><span class="p">:</span>
-    <span class="o">!</span>pip install watermark
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>watermark
 <span class="o">%</span><span class="k">watermark</span> -v -m -iv
 </pre></div>
 </div>
@@ -1550,10 +1422,10 @@ numpy     : 1.21.5
 </div>
 </div>
 </div>
-</div>
+</section>
 <div class="toctree-wrapper compound">
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1575,50 +1447,119 @@ numpy     : 1.21.5
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../4-BoundaryLayer/Assignment4.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Assignment 4. Growth of Turbulent Boundary Layer</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../4-BoundaryLayer/BoundaryLayer.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Boundary Layer. An introduction</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="Assignment5.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="Assignment5.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Assignment 5. A function to compute the flow after a deflection angle</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acoustics-and-velocity-of-sound">1. Acoustics and velocity of sound</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isentropic-flow">2. Isentropic flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sonic-or-critical-values">Sonic (or critical values)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-shock-waves">3. Normal shock waves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique-shock-wave-and-expansion-waves">4. Oblique shock wave and expansion waves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shock-polar">Shock Polar</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prandtl-meyer-expansion-fan">5. Prandtl-Meyer expansion fan</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Robert Castilla - UPC CATMech Terrassa<br/>
-  
-      &copy; Copyright 2023.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Robert Castilla - UPC CATMech Terrassa
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
